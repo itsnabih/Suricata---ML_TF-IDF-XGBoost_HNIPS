@@ -1,0 +1,134 @@
+2026-02-12 01:12:43 - INFO - === SQLi IPS Model Training (Fixed - Payload-Aware) ===
+2026-02-12 01:12:43 - INFO - XGBoost version: 3.1.3
+2026-02-12 01:12:43 - INFO - Preprocessing: strip_param_names=True, max_decode_passes=3
+2026-02-12 01:12:43 - INFO - Loaded dataset with utf-8 encoding
+2026-02-12 01:12:44 - INFO - Removed 5 duplicates
+2026-02-12 01:12:44 - INFO - Dataset loaded: 62976 rows (attack=24437, benign=38539)
+2026-02-12 01:12:44 - INFO - 
+=== Preprocessing Samples (QA) ===
+2026-02-12 01:12:44 - INFO -   [attack]
+2026-02-12 01:12:44 - INFO -     RAW  : GET http://<HOST>/<PATH>?id=1")) AND ELT(3511=3511,SLEEP(5)) AND (("PJDN" LIKE "PJDN
+2026-02-12 01:12:44 - INFO -     CLEAN: 1")) AND ELT(3511=3511,SLEEP(5)) AND (("PJDN" LIKE "PJDN
+2026-02-12 01:12:44 - INFO -   [benign]
+2026-02-12 01:12:44 - INFO -     RAW  : GET http://<HOST>/<PATH>?id=8
+2026-02-12 01:12:44 - INFO -     CLEAN: 8
+2026-02-12 01:12:44 - INFO -   [benign]
+2026-02-12 01:12:44 - INFO -     RAW  : GET http://<HOST>/<PATH>?cache=8383720517
+2026-02-12 01:12:44 - INFO -     CLEAN: 8383720517
+2026-02-12 01:12:44 - INFO -   [benign]
+2026-02-12 01:12:44 - INFO -     RAW  : GET http://<HOST>/<PATH>?sync=103&che=[cachebuster]&uuid=2974199843224157951
+2026-02-12 01:12:44 - INFO -     CLEAN: 103 [cachebuster] 2974199843224157951
+2026-02-12 01:12:44 - INFO -   [attack]
+2026-02-12 01:12:44 - INFO -     RAW  : GET http://<HOST>/<PATH>?id=-6588 ORDER BY 1#
+2026-02-12 01:12:44 - INFO -     CLEAN: -6588 ORDER BY 1
+2026-02-12 01:12:44 - INFO -   [benign]
+2026-02-12 01:12:44 - INFO -     RAW  : POST http://<HOST>/<PATH>?page=71&limit=10&sort=popular
+2026-02-12 01:12:44 - INFO -     CLEAN: 71 10 popular
+2026-02-12 01:12:44 - INFO - 
+Dataset: 62976 total | Train: 44082 | Val: 9447 | Test: 9447
+2026-02-12 01:12:44 - INFO - 
+=== Preprocessing Payloads ===
+2026-02-12 01:12:45 - INFO - Preprocessing changed 44082/44082 (100.0%) train samples
+2026-02-12 01:12:45 - INFO - 
+=== TF-IDF Vectorization ===
+2026-02-12 01:13:05 - INFO - Initial features: 30,000
+2026-02-12 01:13:05 - INFO - 
+=== Feature Selection (top 15,000) ===
+2026-02-12 01:13:05 - INFO - Selected features: 15,000
+2026-02-12 01:13:05 - INFO - 
+Class balance: benign=26977 | attack=17105 | scale_pos_weight=1.5771
+2026-02-12 01:13:05 - INFO - 
+=== Training XGBoost ===
+2026-02-12 01:13:05 - INFO - Parameters: n_estimators=1000, max_depth=6, learning_rate=0.05
+[0]	validation_0-logloss:0.65195
+[100]	validation_0-logloss:0.04096
+[200]	validation_0-logloss:0.02108
+[300]	validation_0-logloss:0.01568
+[400]	validation_0-logloss:0.01317
+[500]	validation_0-logloss:0.01175
+[600]	validation_0-logloss:0.01087
+[700]	validation_0-logloss:0.01025
+[800]	validation_0-logloss:0.00983
+[900]	validation_0-logloss:0.00957
+[999]	validation_0-logloss:0.00946
+2026-02-12 03:16:37 - INFO - Training complete. Best iteration: 994
+2026-02-12 03:16:37 - INFO - 
+=== Generating Predictions ===
+2026-02-12 03:16:40 - INFO - 
+=== Threshold Tuning ===
+2026-02-12 03:16:40 - INFO - Threshold: 0.435041 | FPR=0.000000 | TPR=0.990453 | F1=0.9952
+2026-02-12 03:16:40 - INFO - 
+=== Validation Metrics ===
+2026-02-12 03:16:40 - INFO -   roc_auc: 1.0000
+2026-02-12 03:16:40 - INFO -   avg_precision: 0.9999
+2026-02-12 03:16:40 - INFO -   fpr: 0.005708
+2026-02-12 03:16:40 - INFO -   tpr: 0.998363
+2026-02-12 03:16:40 - INFO -   f1: 0.994700
+2026-02-12 03:16:40 - INFO - 
+=== Test Metrics ===
+2026-02-12 03:16:40 - INFO -   roc_auc: 0.9999
+2026-02-12 03:16:40 - INFO -   avg_precision: 0.9999
+2026-02-12 03:16:40 - INFO -   fpr: 0.005708
+2026-02-12 03:16:40 - INFO -   tpr: 0.998636
+2026-02-12 03:16:40 - INFO -   f1: 0.994837
+2026-02-12 03:16:40 - INFO - 
+=== Top 30 Attack Indicators ===
+2026-02-12 03:16:40 - INFO -    1. )                    -> 0.223632
+2026-02-12 03:16:40 - INFO -    2. ))                   -> 0.081150
+2026-02-12 03:16:40 - INFO -    3. ")                   -> 0.075823
+2026-02-12 03:16:40 - INFO -    4. nd                   -> 0.048612
+2026-02-12 03:16:40 - INFO -    5. 1'                   -> 0.033184
+2026-02-12 03:16:40 - INFO -    6. selec                -> 0.031075
+2026-02-12 03:16:40 - INFO -    7. sele                 -> 0.024387
+2026-02-12 03:16:40 - INFO -    8. 1"                   -> 0.021815
+2026-02-12 03:16:40 - INFO -    9. sel                  -> 0.021806
+2026-02-12 03:16:40 - INFO -   10. --                   -> 0.021255
+2026-02-12 03:16:40 - INFO -   11. ')                   -> 0.019801
+2026-02-12 03:16:40 - INFO -   12. rder                 -> 0.017098
+2026-02-12 03:16:40 - INFO -   13. (s                   -> 0.016204
+2026-02-12 03:16:40 - INFO -   14. b3                   -> 0.015663
+2026-02-12 03:16:40 - INFO -   15. 1)                   -> 0.014690
+2026-02-12 03:16:40 - INFO -   16. se                   -> 0.011993
+2026-02-12 03:16:40 - INFO -   17. rde                  -> 0.011696
+2026-02-12 03:16:40 - INFO -   18. nic                  -> 0.011204
+2026-02-12 03:16:40 - INFO -   19. htt                  -> 0.009986
+2026-02-12 03:16:40 - INFO -   20. 1`                   -> 0.009718
+2026-02-12 03:16:40 - INFO -   21. cae                  -> 0.009070
+2026-02-12 03:16:40 - INFO -   22. whe                  -> 0.007434
+2026-02-12 03:16:40 - INFO -   23. and                  -> 0.007310
+2026-02-12 03:16:40 - INFO -   24. 0020\                -> 0.007276
+2026-02-12 03:16:40 - INFO -   25. orde                 -> 0.007220
+2026-02-12 03:16:40 - INFO -   26. 1%                   -> 0.006904
+2026-02-12 03:16:40 - INFO -   27. %'                   -> 0.006587
+2026-02-12 03:16:40 - INFO -   28. 0028\                -> 0.005933
+2026-02-12 03:16:40 - INFO -   29. or                   -> 0.005899
+2026-02-12 03:16:40 - INFO -   30.  or                  -> 0.005750
+2026-02-12 03:16:40 - INFO - 
+=== Testing Evasion Techniques ===
+2026-02-12 03:16:40 - INFO -   baseline              : 0.999843 ✓ BLOCKED  (clean: 1' OR '1'='1)
+2026-02-12 03:16:40 - INFO -   comment_injection     : 0.999130 ✓ BLOCKED  (clean: 1'/**/OR/**/'1'='1)
+2026-02-12 03:16:40 - INFO -   comment_suffix        : 0.999995 ✓ BLOCKED  (clean: 1' OR '1'='1'--)
+2026-02-12 03:16:40 - INFO -   tab_encoding          : 0.994950 ✓ BLOCKED  (clean: 1'	OR	'1'='1)
+2026-02-12 03:16:40 - INFO -   double_encoding       : 0.994950 ✓ BLOCKED  (clean: 1'	OR	'1'='1)
+2026-02-12 03:16:40 - INFO -   case_variation        : 0.999843 ✓ BLOCKED  (clean: 1' oR '1'='1)
+2026-02-12 03:16:40 - INFO -   whitespace_mix        : 0.999843 ✓ BLOCKED  (clean: 1'  OR  '1'='1)
+2026-02-12 03:16:40 - INFO -   null_byte             : 0.994950 ✓ BLOCKED  (clean: 1'OR'1'='1)
+2026-02-12 03:16:40 - INFO -   union_select          : 0.999764 ✓ BLOCKED  (clean: 1' UNION SELECT null,null,null--)
+2026-02-12 03:16:40 - INFO -   union_obfuscated      : 0.999844 ✓ BLOCKED  (clean: 1'/**/UnIoN/**/SeLeCt/**/null--)
+2026-02-12 03:16:40 - INFO -   time_based            : 0.999996 ✓ BLOCKED  (clean: 1' AND SLEEP(5)--)
+2026-02-12 03:16:40 - INFO -   boolean_based         : 0.999807 ✓ BLOCKED  (clean: 1' AND 1=1--)
+2026-02-12 03:16:40 - INFO -   stacked_query         : 0.950298 ✓ BLOCKED  (clean: 1'; DROP TABLE users--)
+2026-02-12 03:16:40 - INFO -   error_based           : 0.999824 ✓ BLOCKED  (clean: 1' AND extractvalue(0,0)--)
+2026-02-12 03:16:40 - INFO -   raw_payload           : 0.435041 ✓ BLOCKED  (clean: '1)
+2026-02-12 03:16:40 - INFO -   raw_union             : 0.996750 ✓ BLOCKED  (clean: 1' UNION SELECT username,password FROM users--)
+2026-02-12 03:16:40 - INFO - 
+Evasion Detection Rate: 100.00%
+2026-02-12 03:16:40 - INFO - 
+=== Saving Artifacts ===
+2026-02-12 03:16:41 - INFO - ✓ tfidf_vectorizer.pkl
+2026-02-12 03:16:41 - INFO - ✓ feature_selector.pkl
+2026-02-12 03:16:41 - INFO - ✓ xgb_sqli_model.pkl
+2026-02-12 03:16:41 - INFO - ✓ model_meta.json
+2026-02-12 03:16:41 - INFO - 
+=== Training Complete ===
+2026-02-12 03:16:41 - INFO - Final Test: FPR=0.005708 | TPR=0.998636 | F1=0.9948 | AUC=0.9999

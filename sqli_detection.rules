@@ -1,0 +1,52 @@
+# SQLi Detection Rules for Suricata IDS with Flowbits
+# SQL injection testing detection
+# rev:3, fixed syntax errors, logic errors, and typos
+
+# Basic SQL Injection patterns
+drop http any any -> any any (msg:"SQL Injection - Basic Quote Test"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*['\\\"])/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000002; rev:3;)
+drop http any any -> any any (msg:"SQL Injection - URI Comment Markers"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*)(--|#|\/\*)/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000003; rev:3;)
+
+# SQL Injection specific patterns - Boolean-based blind
+drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND Condition"; flow:established,to_server; http.uri; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000004; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND Condition POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000005; rev:3;)
+
+# Time-based blind SQL injection
+drop http any any -> any any (msg:"SQL Injection Time-based Blind - SLEEP Function"; flow:established,to_server; http.uri; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000006; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Time-based Blind - SLEEP Function POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000007; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Time-based Blind - PG_SLEEP Function"; flow:established,to_server; http.uri; content:"pg_sleep"; nocase; pcre:"/pg_sleep\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000008; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Time-based Blind - WAITFOR DELAY"; flow:established,to_server; http.uri; content:"WAITFOR"; nocase; content:"DELAY"; distance:0; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000009; rev:3;)
+
+# UNION-based SQL injection
+drop http any any -> any any (msg:"SQL Injection UNION-based SQL Injection"; flow:established,to_server; http.uri; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000010; rev:3;)
+drop http any any -> any any (msg:"SQL Injection UNION-based SQL Injection POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000011; rev:3;)
+
+# Error-based injection
+drop http any any -> any any (msg:"SQL Injection Error-based - EXTRACTVALUE Function"; flow:established,to_server; http.uri; content:"EXTRACTVALUE"; nocase; pcre:"/EXTRACTVALUE\s*\(\s*\d+\s*,\s*.*?\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000012; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Error-based - CONCAT Function"; flow:established,to_server; http.uri; content:"CONCAT"; nocase; content:"0x7e"; distance:0; within:100; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000013; rev:3;)
+
+# Encoded payload detection 
+drop http any any -> any any (msg:"SQL Injection URL Encoded SQL Injection"; flow:established,to_server; http.raw_uri; pcre:"/%27|%22|%2D%2D|%23|%2F%2A|%2A%2F/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000014; rev:3;)
+
+# SQL Injection fingerprint payloads
+drop http any any -> any any (msg:"SQL Injection Fingerprint - MySQL Banner Test"; flow:established,to_server; http.uri; content:"@@version"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000015; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Fingerprint - PostgreSQL Banner Test"; flow:established,to_server; http.uri; content:"version()"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000016; rev:3;)
+drop http any any -> any any (msg:"SQL Injection Fingerprint - SQL Server Banner Test"; flow:established,to_server; http.uri; content:"@@SERVERNAME"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000017; rev:3;)
+
+# Blind SQL ORDER BY testing
+drop http any any -> any any (msg:"SQL Injection Blind Columns Test - ORDER BY"; flow:established,to_server; http.uri; pcre:"/ORDER\s+BY\s+\d+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000018; rev:3;)
+
+# Detect NULL byte injections
+drop http any any -> any any (msg:"SQL Injection NULL Byte Injection"; flow:established,to_server; http.uri; content:"%00"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000019; rev:3;)
+
+# SQL Injection common database functions
+drop http any any -> any any (msg:"SQL Injection Function - Current User"; flow:established,to_server; http.uri; pcre:"/CURRENT_USER\(\)|USER\(\)|SESSION_USER\(\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000020; rev:3;)
+drop http any any -> any any (msg:"SQL Injection DB Function - Database Info"; flow:established,to_server; http.uri; pcre:"/DATABASE\(\)|SCHEMA\(\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000021; rev:3;)
+
+# Hex encoding detection 
+drop http any any -> any any (msg:"SQL Injection Hex Encoded SQL Injection"; flow:established,to_server; http.uri; pcre:"/[\?&][^&=]*=.*0x[0-9a-f]{2,}/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000023; rev:3;)
+
+# SQL Injection specific file read attempts
+drop http any any -> any any (msg:"SQL Injection File Read Attempt"; flow:established,to_server; http.uri; pcre:"/LOAD_FILE\(\s*'/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000024; rev:3;)
+
+# SQLMap Identification - User-Agent strings
+drop http any any -> any any (msg:"SQLMAP User-Agent detected"; flow:established,to_server; http.user_agent; content:"sqlmap"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000001; rev:3;)

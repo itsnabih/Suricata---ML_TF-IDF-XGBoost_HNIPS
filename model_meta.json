@@ -1,0 +1,398 @@
+{
+  "pos_label": "attack",
+  "neg_label": "benign",
+  "threshold": 0.43504145741462713,
+  "threshold_policy": "target_fpr=0.001, prefer_recall=True",
+  "scale_pos_weight": 1.577141186787489,
+  "best_iteration": 994,
+  "best_score": 0.00945211809056831,
+  "xgboost_version": "3.1.3",
+  "preprocessing": {
+    "strip_param_names": true,
+    "max_decode_passes": 3
+  },
+  "n_features_initial": 30000,
+  "n_features_selected": 15000,
+  "vectorizer": {
+    "analyzer": "char",
+    "ngram_range": [
+      2,
+      5
+    ],
+    "min_df": 2,
+    "max_features": 30000,
+    "lowercase": true,
+    "sublinear_tf": true
+  },
+  "feature_selection": {
+    "enabled": true,
+    "n_selected": 15000
+  },
+  "hyperparameter_search": {
+    "enabled": false,
+    "best_params": null
+  },
+  "top_features": [
+    {
+      "rank": 1,
+      "feature": ") ",
+      "importance": 0.22363179922103882
+    },
+    {
+      "rank": 2,
+      "feature": "))",
+      "importance": 0.08114966750144958
+    },
+    {
+      "rank": 3,
+      "feature": "\")",
+      "importance": 0.07582338899374008
+    },
+    {
+      "rank": 4,
+      "feature": "nd",
+      "importance": 0.048611752688884735
+    },
+    {
+      "rank": 5,
+      "feature": "1'",
+      "importance": 0.03318377211689949
+    },
+    {
+      "rank": 6,
+      "feature": "selec",
+      "importance": 0.03107535094022751
+    },
+    {
+      "rank": 7,
+      "feature": "sele",
+      "importance": 0.02438698709011078
+    },
+    {
+      "rank": 8,
+      "feature": "1\"",
+      "importance": 0.021815478801727295
+    },
+    {
+      "rank": 9,
+      "feature": "sel",
+      "importance": 0.021805906668305397
+    },
+    {
+      "rank": 10,
+      "feature": "--",
+      "importance": 0.021254941821098328
+    },
+    {
+      "rank": 11,
+      "feature": "')",
+      "importance": 0.019801342859864235
+    },
+    {
+      "rank": 12,
+      "feature": "rder",
+      "importance": 0.017097989097237587
+    },
+    {
+      "rank": 13,
+      "feature": "(s",
+      "importance": 0.016204144805669785
+    },
+    {
+      "rank": 14,
+      "feature": "b3",
+      "importance": 0.0156625397503376
+    },
+    {
+      "rank": 15,
+      "feature": "1)",
+      "importance": 0.01468973234295845
+    },
+    {
+      "rank": 16,
+      "feature": "se",
+      "importance": 0.011993400752544403
+    },
+    {
+      "rank": 17,
+      "feature": "rde",
+      "importance": 0.01169552281498909
+    },
+    {
+      "rank": 18,
+      "feature": "nic",
+      "importance": 0.011204438284039497
+    },
+    {
+      "rank": 19,
+      "feature": "htt",
+      "importance": 0.009985935874283314
+    },
+    {
+      "rank": 20,
+      "feature": "1`",
+      "importance": 0.00971816573292017
+    },
+    {
+      "rank": 21,
+      "feature": "cae",
+      "importance": 0.009069820865988731
+    },
+    {
+      "rank": 22,
+      "feature": "whe",
+      "importance": 0.007434474769979715
+    },
+    {
+      "rank": 23,
+      "feature": "and",
+      "importance": 0.0073100184090435505
+    },
+    {
+      "rank": 24,
+      "feature": "0020\\",
+      "importance": 0.007275833748281002
+    },
+    {
+      "rank": 25,
+      "feature": "orde",
+      "importance": 0.00722005357965827
+    },
+    {
+      "rank": 26,
+      "feature": "1%",
+      "importance": 0.006904310546815395
+    },
+    {
+      "rank": 27,
+      "feature": "%'",
+      "importance": 0.006587257608771324
+    },
+    {
+      "rank": 28,
+      "feature": "0028\\",
+      "importance": 0.005932619329541922
+    },
+    {
+      "rank": 29,
+      "feature": "or ",
+      "importance": 0.0058987983502447605
+    },
+    {
+      "rank": 30,
+      "feature": " or",
+      "importance": 0.005749627482146025
+    }
+  ],
+  "evasion_tests": {
+    "baseline": {
+      "payload": "http://site.com/page.php?id=1' OR '1'='1",
+      "clean": "1' OR '1'='1",
+      "probability": 0.9998432397842407,
+      "blocked": true
+    },
+    "comment_injection": {
+      "payload": "http://site.com/page.php?id=1'/**/OR/**/'1'='1",
+      "clean": "1'/**/OR/**/'1'='1",
+      "probability": 0.9991299510002136,
+      "blocked": true
+    },
+    "comment_suffix": {
+      "payload": "http://site.com/page.php?id=1' OR '1'='1'--",
+      "clean": "1' OR '1'='1'--",
+      "probability": 0.9999946355819702,
+      "blocked": true
+    },
+    "tab_encoding": {
+      "payload": "http://site.com/page.php?id=1'%09OR%09'1'='1",
+      "clean": "1'\tOR\t'1'='1",
+      "probability": 0.9949500560760498,
+      "blocked": true
+    },
+    "double_encoding": {
+      "payload": "http://site.com/page.php?id=1'%2509OR%2509'1'='1",
+      "clean": "1'\tOR\t'1'='1",
+      "probability": 0.9949500560760498,
+      "blocked": true
+    },
+    "case_variation": {
+      "payload": "http://site.com/page.php?id=1' oR '1'='1",
+      "clean": "1' oR '1'='1",
+      "probability": 0.9998432397842407,
+      "blocked": true
+    },
+    "whitespace_mix": {
+      "payload": "http://site.com/page.php?id=1'  OR  '1'='1",
+      "clean": "1'  OR  '1'='1",
+      "probability": 0.9998432397842407,
+      "blocked": true
+    },
+    "null_byte": {
+      "payload": "http://site.com/page.php?id=1'%00OR%00'1'='1",
+      "clean": "1'\u0000OR\u0000'1'='1",
+      "probability": 0.9949500560760498,
+      "blocked": true
+    },
+    "union_select": {
+      "payload": "http://site.com/page.php?id=1' UNION SELECT null,null,null--",
+      "clean": "1' UNION SELECT null,null,null--",
+      "probability": 0.9997636675834656,
+      "blocked": true
+    },
+    "union_obfuscated": {
+      "payload": "http://site.com/page.php?id=1'/**/UnIoN/**/SeLeCt/**/null--",
+      "clean": "1'/**/UnIoN/**/SeLeCt/**/null--",
+      "probability": 0.9998435974121094,
+      "blocked": true
+    },
+    "time_based": {
+      "payload": "http://site.com/page.php?id=1' AND SLEEP(5)--",
+      "clean": "1' AND SLEEP(5)--",
+      "probability": 0.9999955892562866,
+      "blocked": true
+    },
+    "boolean_based": {
+      "payload": "http://site.com/page.php?id=1' AND 1=1--",
+      "clean": "1' AND 1=1--",
+      "probability": 0.9998065829277039,
+      "blocked": true
+    },
+    "stacked_query": {
+      "payload": "http://site.com/page.php?id=1'; DROP TABLE users--",
+      "clean": "1'; DROP TABLE users--",
+      "probability": 0.9502984881401062,
+      "blocked": true
+    },
+    "error_based": {
+      "payload": "http://site.com/page.php?id=1' AND extractvalue(0,0)--",
+      "clean": "1' AND extractvalue(0,0)--",
+      "probability": 0.9998241066932678,
+      "blocked": true
+    },
+    "raw_payload": {
+      "payload": "1' OR '1'='1",
+      "clean": "'1",
+      "probability": 0.4350414574146271,
+      "blocked": true
+    },
+    "raw_union": {
+      "payload": "1' UNION SELECT username,password FROM users--",
+      "clean": "1' UNION SELECT username,password FROM users--",
+      "probability": 0.996749997138977,
+      "blocked": true
+    }
+  },
+  "metrics": {
+    "train": {
+      "threshold": 0.43504145741462713,
+      "roc_auc": 0.9999645773148078,
+      "avg_precision": 0.9998969214889385,
+      "confusion_matrix": [
+        [
+          26813,
+          164
+        ],
+        [
+          8,
+          17097
+        ]
+      ],
+      "rates": {
+        "fpr": 0.006079252696741669,
+        "fnr": 0.000467699503069278,
+        "tpr": 0.9995323004969308,
+        "tnr": 0.9939207473032583,
+        "precision": 0.9904988123515439,
+        "f1": 0.9949950532503055
+      }
+    },
+    "val": {
+      "threshold": 0.43504145741462713,
+      "roc_auc": 0.9999571087746953,
+      "avg_precision": 0.9998978578006418,
+      "confusion_matrix": [
+        [
+          5748,
+          33
+        ],
+        [
+          6,
+          3660
+        ]
+      ],
+      "rates": {
+        "fpr": 0.005708354955889984,
+        "fnr": 0.0016366612111292963,
+        "tpr": 0.9983633387888707,
+        "tnr": 0.99429164504411,
+        "precision": 0.9910641754670999,
+        "f1": 0.9947003668976763
+      }
+    },
+    "test": {
+      "threshold": 0.43504145741462713,
+      "roc_auc": 0.9999294819183523,
+      "avg_precision": 0.9998542332723399,
+      "confusion_matrix": [
+        [
+          5748,
+          33
+        ],
+        [
+          5,
+          3661
+        ]
+      ],
+      "rates": {
+        "fpr": 0.005708354955889984,
+        "fnr": 0.001363884342607747,
+        "tpr": 0.9986361156573923,
+        "tnr": 0.99429164504411,
+        "precision": 0.9910665944775311,
+        "f1": 0.9948369565217392
+      }
+    }
+  },
+  "config": {
+    "dataset_path": "dataset-finally.csv",
+    "text_col": "payload",
+    "label_col": "label",
+    "seed": 42,
+    "strip_param_names": true,
+    "max_decode_passes": 3,
+    "test_size": 0.15,
+    "val_size": 0.15,
+    "analyzer": "char",
+    "ngram_min": 2,
+    "ngram_max": 5,
+    "min_df": 2,
+    "max_features": 30000,
+    "lowercase": true,
+    "use_feature_selection": true,
+    "n_selected_features": 15000,
+    "n_estimators": 1000,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "min_child_weight": 2.0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.7,
+    "reg_lambda": 2.0,
+    "reg_alpha": 0.0,
+    "gamma": 0.0,
+    "n_jobs": 2,
+    "tree_method": "hist",
+    "target_fpr": 0.001,
+    "prefer_recall": true,
+    "use_cv_threshold": false,
+    "cv_folds": 3,
+    "early_stopping_rounds": 50,
+    "run_evasion_tests": true,
+    "show_top_features": 30,
+    "run_hyperparam_search": false,
+    "hyperparam_trials": 10,
+    "out_vectorizer": "tfidf_vectorizer.pkl",
+    "out_selector": "feature_selector.pkl",
+    "out_model": "xgb_sqli_model.pkl",
+    "out_meta": "model_meta.json"
+  }
+}
