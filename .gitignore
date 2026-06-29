@@ -15,7 +15,7 @@ __pycache__/
 *.tsv
 *.dat
 
-*.pkl
+.pkl
 *.joblib
 *.h5
 *.hdf5
@@ -28,4 +28,4 @@ model_meta.json
 *.swp
 .DS_Store
 
-*.log
+.log
