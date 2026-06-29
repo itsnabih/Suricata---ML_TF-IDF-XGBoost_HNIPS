@@ -60,6 +60,18 @@ _RE_VALID_KEY   = re.compile(r"^[A-Za-z_][A-Za-z0-9_\-\.]*$")
 HTTP_METHODS = (b"GET ", b"POST ", b"PUT ", b"DELETE ", b"PATCH ", b"HEAD ", b"OPTIONS ")
 HTTP_RESP_PREFIX = b"HTTP/"
 
+SQL_KEYWORDS = [
+    "select","union","insert","update","delete","drop","create","alter",
+    "truncate","exec","execute","xp_","sp_","sleep","benchmark","waitfor",
+    "delay","having","order by","limit","where","from","information_schema",
+    "sysobjects","pg_sleep","utl_","dbms_","extractvalue","updatexml",
+    "load_file","outfile","dumpfile","concat","char(","chr(","ascii(",
+    "substring","mid(","hex(","0x","cast(","convert(","ifnull","isnull",
+    "or 1=1","and 1=1","or '1'='1","'='","1--"," --","#","/*","*/","/*!",
+    "rlike","regexp","procedure","analyse","make_set","elt(","field(",
+    "row(","exp(","floor(rand","group by","benchmark(","dbms_pipe",
+]
+
 def normalize_encoded(text: str, max_passes: int = 3) -> str:
     prev = None
     result = text
@@ -73,6 +85,16 @@ def normalize_encoded(text: str, max_passes: int = 3) -> str:
             break
     return result
 
+_UA_SUFFIX = re.compile(r'\s+ua=\S+.*$', re.IGNORECASE)
+
+def strip_bias_artifacts(text: str) -> str:
+    text = _UA_SUFFIX.sub("", text).strip()
+    if "Submit" in text or "submit" in text:
+        text = re.sub(r'(?:&|(?<=\?))[Ss]ubmit=[^&\s#]*', '', text)
+        text = re.sub(r'&{2,}', '&', text)
+        text = re.sub(r'[?&]$', '', text).strip()
+    return text
+
 def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_passes: int = 3) -> str:
     if not raw or not isinstance(raw, str):
         return ""
@@ -82,6 +104,8 @@ def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_
 
     if " HTTP/" in text:
         text = text.split(" HTTP/")[0]
+        
+    text = strip_bias_artifacts(text)
 
     query_string = ""
 
@@ -117,7 +141,7 @@ def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_
                     for k, vals in params.items():
                         for v in vals:
                             parts.append(
-                                f"{normalize_encoded(k, max_passes=max_decode_passes)}="
+                                f"{normalize_encoded(k, max_passes=max_decode_passes)} "
                                 f"{normalize_encoded(v, max_passes=max_decode_passes)}"
                             )
                     if parts:
@@ -131,6 +155,24 @@ def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_
 
     return normalize_encoded(text, max_passes=max_decode_passes)
 
+import scipy.sparse as sp
+
+def extract_sql_keyword_features(texts: list) -> sp.csr_matrix:
+    n, k = len(texts), len(SQL_KEYWORDS)
+    data, rows, cols = [], [], []
+    for i, text in enumerate(texts):
+        lower = text.lower()
+        for j, kw in enumerate(SQL_KEYWORDS):
+            if kw in lower:
+                rows.append(i); cols.append(j); data.append(1.0)
+    return sp.csr_matrix((data, (rows, cols)), shape=(n, k))
+
+def build_features(texts, word_vec, char_vec):
+    X_word = word_vec.transform(texts)
+    X_char = char_vec.transform(texts)
+    X_kw = extract_sql_keyword_features(texts)
+    return sp.hstack([X_word, X_char, X_kw], format="csr")
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Model artifacts loader
 # ──────────────────────────────────────────────────────────────────────────────
@@ -140,21 +182,29 @@ class Artifacts:
     threshold: float
     strip_param_names: bool
     max_decode_passes: int
-    vectorizer: object
+    word_vec: object
+    char_vec: object
     selector: Optional[object]
     model: object
 
 def load_artifacts(meta_path: str, vectorizer_path: str, model_path: str, selector_path: Optional[str]) -> Artifacts:
     meta = json.loads(Path(meta_path).read_text(encoding="utf-8"))
 
-    vectorizer = joblib.load(vectorizer_path)
+    vec_data = joblib.load(vectorizer_path)
+    if isinstance(vec_data, dict) and "word" in vec_data:
+        word_vec = vec_data["word"]
+        char_vec = vec_data["char"]
+    else:
+        word_vec = vec_data
+        char_vec = None
+        
     model = joblib.load(model_path)
 
     selector = None
     if selector_path:
-        sp = Path(selector_path)
-        if sp.exists():
-            selector = joblib.load(str(sp))
+        sp_path = Path(selector_path)
+        if sp_path.exists():
+            selector = joblib.load(str(sp_path))
 
     thr = float(meta["threshold"])
     preprocessing = meta.get("preprocessing", {})
@@ -165,7 +215,8 @@ def load_artifacts(meta_path: str, vectorizer_path: str, model_path: str, select
         threshold=thr,
         strip_param_names=strip_param_names,
         max_decode_passes=max_decode_passes,
-        vectorizer=vectorizer,
+        word_vec=word_vec,
+        char_vec=char_vec,
         selector=selector,
         model=model,
     )
@@ -292,7 +343,11 @@ class MLIPS:
             strip_param_names=self.art.strip_param_names,
             max_decode_passes=self.art.max_decode_passes,
         )
-        X = self.art.vectorizer.transform([clean])
+        if self.art.char_vec is not None:
+            X = build_features([clean], self.art.word_vec, self.art.char_vec)
+        else:
+            X = self.art.word_vec.transform([clean])
+            
         if self.art.selector is not None:
             X = self.art.selector.transform(X)
         proba = float(self.art.model.predict_proba(X)[0, 1])

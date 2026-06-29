@@ -1,0 +1,3 @@
+Chain OUTPUT (policy ACCEPT 120 packets, 9600 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+  200 23K NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
