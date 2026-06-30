@@ -41,3 +41,19 @@ Karena *environment* saat ini adalah **Native Linux** (seperti Ubuntu VM/VPS), d
 
 ---
 **Pesan ke Agent**: Selalu utamakan solusi yang membantu pengerjaan penulisan Bab 4 dan Bab 5 dari Skripsi User. Fokus pada stabilitas deteksi model dan arsitektur *Hybrid*-nya. Selamat melanjutkan pekerjaan!
+
+## 4. Struktur Direktori Proyek
+Berikut adalah pemetaan dan penjelasan dari struktur direktori serta file penting dalam proyek ini berdasarkan hasil observasi:
+
+- **Dokumentasi Skripsi**: `Update22626-SKRIPSI_Ahmad Nabih-45FW.pdf`, `Techinical Summary Thesis.pdf` (Berkas pelaporan Skripsi dan teknis).
+- **Dataset (Data Latih & Uji)**: `datalatih.csv`, `datalatih_v2.csv`, `datauji-aio.csv` beserta variannya hingga `v5obfuscated`, dan `OneListSqli.txt` (Daftar payload/wordlist injeksi SQL).
+- **Pelatihan Model & Evaluasi**: `model-train-v1.py`, `model-train-v2.py` (Skrip training model), `test_model.py`, `test_model_v2.py` (Skrip evaluasi dan testing performa model).
+- **Model Storage**: `xgb_sqli_model.pkl` (Model klasifikasi XGBoost V2), `tfidf_vectorizer.pkl`, `feature_selector.pkl` (Model ekstraksi/seleksi fitur ML), serta `model_meta.json` (Metadata model).
+- **Komponen Inti IPS (Intrusion Prevention System)**:
+  - `sqli_detection.rules`: Aturan deteksi kustom Suricata untuk lapisan pertahanan pertama (*signature-based*).
+  - `model_ML_run.py`: Skrip eksekutor ML yang terkoneksi dengan `NetfilterQueue` untuk deteksi *traffic* secara langsung / *inline* (*anomaly-based second line of defense*).
+- **Otomatisasi & Simulasi**:
+  - `run_tests.sh`: Bash skrip untuk mengotomatisasi pengujian, di antaranya: reset IPtables, eksekusi Suricata, ML Runner, dan penyerangan SQLMap.
+  - `simulate_offline.py`: Skrip simulasi serangan PCAP luring yang dulunya dipakai sebagai bypass modul nfqueue saat pengembangan di WSL2.
+  - `data-hasil_pengujian/`: Folder tujuan (destinasi) dari penyimpanan log hasil uji dari skrip otomatisasi.
+- **Konfigurasi Tambahan**: `.agents/AGENTS.md` (Context memory / prompt base untuk AI Agent) dan `requirements.txt` (Daftar instalasi library Python).
