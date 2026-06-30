@@ -1,0 +1,169 @@
+2026-06-30 22:55:46 - INFO - Loaded artifacts. threshold=0.95285835 strip_param_names=True max_decode_passes=3 selector=yes
+2026-06-30 22:55:46 - INFO - Inspecting destination ports: (80, 8080, 8000)
+2026-06-30 22:55:46 - INFO - Binding to NFQUEUE 3 ... (dry_run=False)
+2026-06-30 22:55:47 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:47 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:47 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:48 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:49 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:50 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:55:54 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:00 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:14 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:17 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:17 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:17 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:18 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:19 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:21 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:25 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:32 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:40 - WARNING - DROP proba=0.998710 src=172.17.0.1:46754 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:47 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:47 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:48 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:48 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:48 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:49 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:51 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:56:54 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:01 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:16 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:17 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:17 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:18 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:18 - WARNING - DROP proba=0.998710 src=172.17.0.1:36426 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:18 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:19 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:21 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:24 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:32 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:44 - WARNING - DROP proba=0.998710 src=172.17.0.1:47062 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:46 - WARNING - DROP proba=0.998710 src=172.17.0.1:40638 dst=172.17.0.2:80 method=GET path=/vulnerabilities/sqli/?id=1&Submit=Submit ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36 clean=1
+2026-06-30 22:57:47 - INFO - ACCEPT proba=0.000678 src=172.17.0.1:41928 dst=172.17.0.2:80 method=GET path=/vulnerabilities/fi/?page=include.php ua=curl/8.18.0 clean=include.php
+2026-06-30 22:57:48 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:50 - INFO - Signal 15 received, stopping...
+2026-06-30 22:58:11 - INFO - Signal 2 received, stopping...
+2026-06-30 22:58:15 - INFO - Signal 2 received, stopping...
+2026-06-30 22:58:16 - INFO - Signal 2 received, stopping...
+2026-06-30 23:00:30 - INFO - Signal 15 received, stopping...
+2026-06-30 23:00:30 - INFO - Signal 15 received, stopping...
+2026-06-30 23:23:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:23:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:36:46 - INFO - Signal 15 received, stopping...
+2026-06-30 23:36:46 - INFO - Signal 15 received, stopping...
+                                                                            2026-06-30 22:57:48 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:50 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:00:30 - INFO - Signal 15 received, stopping...
+2026-06-30 23:00:30 - INFO - Signal 15 received, stopping...
+2026-06-30 23:23:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:36:46 - INFO - Signal 15 received, stopping...
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/logging/__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/logging/__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 516, in _handle_signal
+    LOG.info("Signal %s received, stopping...", signum)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1520, in info
+    self._log(INFO, msg, args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1665, in _log
+    self.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1681, in handle
+    self.callHandlers(record)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1737, in callHandlers
+    hdlr.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1027, in handle
+    self.emit(record)
+    ~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1159, in emit
+    self.handleError(record)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1075, in handleError
+    sys.stderr.write('--- Logging error ---\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+Call stack:
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 545, in <module>
+    raise SystemExit(main())
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 529, in main
+    nfq.run()
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 516, in _handle_signal
+    LOG.info("Signal %s received, stopping...", signum)
+Message: 'Signal %s received, stopping...'
+Arguments: (15,)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2026-06-30 22:57:48 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:48 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:48 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:50 - INFO - Signal 15 received, stopping...
+2026-06-30 22:57:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:00:30 - INFO - Signal 15 received, stopping...
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/logging/__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/logging/__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 516, in _handle_signal
+    LOG.info("Signal %s received, stopping...", signum)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1520, in info
+    self._log(INFO, msg, args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1665, in _log
+    self.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1681, in handle
+    self.callHandlers(record)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1737, in callHandlers
+    hdlr.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1027, in handle
+    self.emit(record)
+    ~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1159, in emit
+    self.handleError(record)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.14/logging/__init__.py", line 1075, in handleError
+    sys.stderr.write('--- Logging error ---\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+Call stack:
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 545, in <module>
+    raise SystemExit(main())
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 529, in main
+    nfq.run()
+  File "/home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/model_ML_run.py", line 516, in _handle_signal
+    LOG.info("Signal %s received, stopping...", signum)
+Message: 'Signal %s received, stopping...'
+Arguments: (15,)
+2026-06-30 23:23:50 - INFO - Signal 15 received, stopping...
+2026-06-30 23:31:57 - INFO - Signal 15 received, stopping...
+2026-06-30 23:36:46 - INFO - Signal 15 received, stopping...

