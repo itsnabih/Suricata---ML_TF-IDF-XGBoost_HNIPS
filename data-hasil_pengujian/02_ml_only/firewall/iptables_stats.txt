@@ -1,13 +1,13 @@
-Chain INPUT (policy ACCEPT 129K packets, 305M bytes)
+Chain INPUT (policy ACCEPT 521K packets, 944M bytes)
  pkts bytes target     prot opt in     out     source               destination         
-   46  2897 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+ 2326  351K NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination         
 
-Chain OUTPUT (policy ACCEPT 99566 packets, 343M bytes)
+Chain OUTPUT (policy ACCEPT 345K packets, 1146M bytes)
  pkts bytes target     prot opt in     out     source               destination         
-  103 19445 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+ 5410  925K NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
 
 Chain DOCKER (0 references)
  pkts bytes target     prot opt in     out     source               destination         

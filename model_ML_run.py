@@ -29,6 +29,7 @@ import re
 import signal
 import sys
 import time
+import csv
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Tuple
@@ -315,6 +316,7 @@ class MLIPS:
         report_every: int,
         log_payloads: bool,
         max_log_len: int,
+        csv_log_path: str = "",
     ):
         self.art = art
         self.inspect_ports = inspect_ports
@@ -323,6 +325,21 @@ class MLIPS:
         self.log_payloads = log_payloads
         self.max_log_len = max_log_len
         self.stats = Stats()
+        self.csv_file = None
+        self.csv_writer = None
+        if csv_log_path:
+            os.makedirs(os.path.dirname(os.path.abspath(csv_log_path)), exist_ok=True)
+            self.csv_file = open(csv_log_path, "w", newline="", encoding="utf-8")
+            self.csv_writer = csv.writer(self.csv_file)
+            self.csv_writer.writerow([
+                "timestamp", "src_ip", "src_port", "dst_ip", "dst_port",
+                "method", "path", "user_agent", "cleaned_payload", "proba", "action"
+            ])
+            self.csv_file.flush()
+
+    def close(self):
+        if getattr(self, "csv_file", None):
+            self.csv_file.close()
 
     def should_inspect(self, ip_pkt: IP, tcp_pkt: TCP, tcp_payload: bytes) -> bool:
         # Only TCP with payload
@@ -343,6 +360,12 @@ class MLIPS:
             strip_param_names=self.art.strip_param_names,
             max_decode_passes=self.art.max_decode_passes,
         )
+
+        # prefilter request! kalo payload hanya angka/huruf tanpa karakter query logic (proba SQLi), auto accept aja!
+        if clean.isalnum() and len(clean) < 20:
+            LOG.debug("PRE-FILTER ACCEPT (alphanumeric, len=%d): %s", len(clean), clean)
+            return 0.0, False, clean
+
         if self.art.char_vec is not None:
             X = build_features([clean], self.art.word_vec, self.art.char_vec)
         else:
@@ -403,6 +426,7 @@ class MLIPS:
             src = f"{ip_pkt.src}:{tcp_pkt.sport}"
             dst = f"{ip_pkt.dst}:{tcp_pkt.dport}"
 
+            action = ""
             if blocked:
                 self.stats.dropped += 1
                 if self.log_payloads:
@@ -416,16 +440,27 @@ class MLIPS:
                 if self.dry_run:
                     nfpacket.accept()
                     self.stats.accepted += 1
+                    action = "DROP (DRY_RUN)"
                 else:
                     nfpacket.drop()
+                    action = "DROP"
             else:
                 self.stats.accepted += 1
+                action = "ACCEPT"
                 if self.log_payloads:
                     LOG.info(
                         "ACCEPT proba=%.6f src=%s dst=%s method=%s path=%s ua=%s clean=%s",
                         proba, src, dst, method, path[:120], ua[:120], clean[: self.max_log_len]
                     )
                 nfpacket.accept()
+                
+            if self.csv_writer:
+                ts = time.strftime("%Y-%m-%d %H:%M:%S")
+                self.csv_writer.writerow([
+                    ts, ip_pkt.src, tcp_pkt.sport, ip_pkt.dst, tcp_pkt.dport,
+                    method, path, ua, clean, f"{proba:.6f}", action
+                ])
+                self.csv_file.flush()
 
             self._maybe_report()
 
@@ -460,6 +495,7 @@ def parse_args():
     ap.add_argument("--log-payloads", action="store_true", help="Log cleaned payload (may contain sensitive data).")
     ap.add_argument("--max-log-len", type=int, default=180, help="Max chars for clean payload log.")
     ap.add_argument("--report-every", type=int, default=2000, help="Print stats every N packets (0 to disable).")
+    ap.add_argument("--csv-log", type=str, default="", help="Path to write detailed CSV log.")
 
     return ap.parse_args()
 
@@ -505,6 +541,7 @@ def main() -> int:
         report_every=args.report_every,
         log_payloads=args.log_payloads,
         max_log_len=args.max_log_len,
+        csv_log_path=args.csv_log,
     )
 
     nfq = NetfilterQueue()
@@ -518,6 +555,14 @@ def main() -> int:
             nfq.unbind()
         except Exception:
             pass
+        
+        LOG.info(
+            "FINAL STATS total=%d inspected=%d accept=%d drop=%d errors=%d",
+            ips.stats.total, ips.stats.inspected, ips.stats.accepted, ips.stats.dropped, ips.stats.errors
+        )
+        ips.close()
+        import os
+        os._exit(0)
 
     signal.signal(signal.SIGINT, _handle_signal)
     signal.signal(signal.SIGTERM, _handle_signal)
@@ -534,6 +579,7 @@ def main() -> int:
             nfq.unbind()
         except Exception:
             pass
+        ips.close()
 
     LOG.info(
         "FINAL STATS total=%d inspected=%d accept=%d drop=%d errors=%d",

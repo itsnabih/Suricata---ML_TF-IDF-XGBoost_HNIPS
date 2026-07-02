@@ -1,52 +1,102 @@
-# SQLi Detection Rules for Suricata IDS with Flowbits
-# SQL injection testing detection
-# rev:3, fixed syntax errors, logic errors, and typos
+# SQLi Detection Rules for Suricata IPS (Suricata 8.x compatible)
+# Custom ruleset — 24 aturan kustom untuk deteksi SQL Injection
+# rev:4 — Fixed: per-category flowbits, NULL byte detection, Suricata 8.x keywords
+#
+# Flowbits Strategy:
+#   Setiap KATEGORI serangan memiliki flowbit sendiri (e.g., sqli_basic, sqli_union).
+#   Ini memastikan:
+#     1. Satu kategori hanya menghasilkan 1 alert per TCP flow (anti-flooding)
+#     2. Kategori berbeda tetap bisa terdeteksi pada flow yang sama
+#   Sebelumnya semua rule memakai flowbit "alerted" yang sama — menyebabkan
+#   hanya 1 rule dari SEMUA kategori yang bisa terpicu per flow.
 
-# Basic SQL Injection patterns
-drop http any any -> any any (msg:"SQL Injection - Basic Quote Test"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*['\\\"])/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000002; rev:3;)
-drop http any any -> any any (msg:"SQL Injection - URI Comment Markers"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*)(--|#|\/\*)/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000003; rev:3;)
+# =============================================================================
+# 1. Basic SQL Injection patterns (SID 1000002-1000003)
+#    Mendeteksi karakter dasar SQLi: tanda kutip dan komentar SQL di parameter URI
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - Basic Quote Test"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*['\\\"])/"; flowbits:isnotset,sqli_basic; flowbits:set,sqli_basic; classtype:web-application-attack; sid:1000002; rev:4;)
+drop http any any -> any any (msg:"SQL Injection - URI Comment Markers"; flow:established,to_server; http.uri; pcre:"/(\?|&)([^=]+=)([^&]*)(--|#|\/\*)/"; flowbits:isnotset,sqli_basic; flowbits:set,sqli_basic; classtype:web-application-attack; sid:1000003; rev:4;)
 
-# SQL Injection specific patterns - Boolean-based blind
-drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND Condition"; flow:established,to_server; http.uri; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000004; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND Condition POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000005; rev:3;)
+# =============================================================================
+# 2. Boolean-based Blind SQL Injection (SID 1000004-1000005)
+#    Mendeteksi pola kondisi logika: AND/OR diikuti perbandingan angka (e.g., AND 1=1)
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND/OR Condition"; flow:established,to_server; http.uri; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,sqli_boolean; flowbits:set,sqli_boolean; classtype:web-application-attack; sid:1000004; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Boolean Blind - AND/OR Condition POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; pcre:"/\b(AND|OR)\b.{0,40}\b([\d]+)=([\d]+)\b/i"; flowbits:isnotset,sqli_boolean; flowbits:set,sqli_boolean; classtype:web-application-attack; sid:1000005; rev:4;)
 
-# Time-based blind SQL injection
-drop http any any -> any any (msg:"SQL Injection Time-based Blind - SLEEP Function"; flow:established,to_server; http.uri; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000006; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Time-based Blind - SLEEP Function POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000007; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Time-based Blind - PG_SLEEP Function"; flow:established,to_server; http.uri; content:"pg_sleep"; nocase; pcre:"/pg_sleep\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000008; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Time-based Blind - WAITFOR DELAY"; flow:established,to_server; http.uri; content:"WAITFOR"; nocase; content:"DELAY"; distance:0; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000009; rev:3;)
+# =============================================================================
+# 3. Time-based Blind SQL Injection (SID 1000006-1000009)
+#    Mendeteksi fungsi delay: SLEEP(), pg_sleep(), WAITFOR DELAY, BENCHMARK()
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection Time-based - SLEEP Function"; flow:established,to_server; http.uri; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,sqli_timebased; flowbits:set,sqli_timebased; classtype:web-application-attack; sid:1000006; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Time-based - SLEEP Function POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"SLEEP"; nocase; pcre:"/SLEEP\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,sqli_timebased; flowbits:set,sqli_timebased; classtype:web-application-attack; sid:1000007; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Time-based - PG_SLEEP Function"; flow:established,to_server; http.uri; content:"pg_sleep"; nocase; pcre:"/pg_sleep\s*\(\s*\d+\s*\)/i"; flowbits:isnotset,sqli_timebased; flowbits:set,sqli_timebased; classtype:web-application-attack; sid:1000008; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Time-based - WAITFOR DELAY"; flow:established,to_server; http.uri; content:"WAITFOR"; nocase; content:"DELAY"; distance:0; nocase; flowbits:isnotset,sqli_timebased; flowbits:set,sqli_timebased; classtype:web-application-attack; sid:1000009; rev:4;)
 
-# UNION-based SQL injection
-drop http any any -> any any (msg:"SQL Injection UNION-based SQL Injection"; flow:established,to_server; http.uri; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000010; rev:3;)
-drop http any any -> any any (msg:"SQL Injection UNION-based SQL Injection POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000011; rev:3;)
+# =============================================================================
+# 4. UNION-based SQL Injection (SID 1000010-1000011)
+#    Mendeteksi pola UNION SELECT / UNION ALL SELECT
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection UNION-based - UNION SELECT"; flow:established,to_server; http.uri; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,sqli_union; flowbits:set,sqli_union; classtype:web-application-attack; sid:1000010; rev:4;)
+drop http any any -> any any (msg:"SQL Injection UNION-based - UNION SELECT POST"; flow:established,to_server; http.method; content:"POST"; http.request_body; content:"UNION"; nocase; pcre:"/UNION\s+(ALL\s+)?SELECT\s+/i"; flowbits:isnotset,sqli_union; flowbits:set,sqli_union; classtype:web-application-attack; sid:1000011; rev:4;)
 
-# Error-based injection
-drop http any any -> any any (msg:"SQL Injection Error-based - EXTRACTVALUE Function"; flow:established,to_server; http.uri; content:"EXTRACTVALUE"; nocase; pcre:"/EXTRACTVALUE\s*\(\s*\d+\s*,\s*.*?\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000012; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Error-based - CONCAT Function"; flow:established,to_server; http.uri; content:"CONCAT"; nocase; content:"0x7e"; distance:0; within:100; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000013; rev:3;)
+# =============================================================================
+# 5. Error-based SQL Injection (SID 1000012-1000013)
+#    Mendeteksi eksploitasi fungsi XML (EXTRACTVALUE) dan CONCAT+0x7e
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection Error-based - EXTRACTVALUE"; flow:established,to_server; http.uri; content:"EXTRACTVALUE"; nocase; pcre:"/EXTRACTVALUE\s*\(\s*\d+\s*,\s*.*?\)/i"; flowbits:isnotset,sqli_error; flowbits:set,sqli_error; classtype:web-application-attack; sid:1000012; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Error-based - CONCAT 0x7e"; flow:established,to_server; http.uri; content:"CONCAT"; nocase; content:"0x7e"; distance:0; within:100; nocase; flowbits:isnotset,sqli_error; flowbits:set,sqli_error; classtype:web-application-attack; sid:1000013; rev:4;)
 
-# Encoded payload detection 
-drop http any any -> any any (msg:"SQL Injection URL Encoded SQL Injection"; flow:established,to_server; http.raw_uri; pcre:"/%27|%22|%2D%2D|%23|%2F%2A|%2A%2F/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000014; rev:3;)
+# =============================================================================
+# 6. URL Encoded Payload Detection (SID 1000014)
+#    Mendeteksi karakter SQLi yang di-encode: %27('), %22("), %2D%2D(--), %23(#), %2F%2A(/*)
+#    Menggunakan http.uri.raw agar encoding TIDAK didekode sebelum pencocokan
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection URL Encoded Payload"; flow:established,to_server; http.uri.raw; pcre:"/%27|%22|%2D%2D|%23|%2F%2A|%2A%2F/i"; flowbits:isnotset,sqli_encoded; flowbits:set,sqli_encoded; classtype:web-application-attack; sid:1000014; rev:4;)
 
-# SQL Injection fingerprint payloads
-drop http any any -> any any (msg:"SQL Injection Fingerprint - MySQL Banner Test"; flow:established,to_server; http.uri; content:"@@version"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000015; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Fingerprint - PostgreSQL Banner Test"; flow:established,to_server; http.uri; content:"version()"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000016; rev:3;)
-drop http any any -> any any (msg:"SQL Injection Fingerprint - SQL Server Banner Test"; flow:established,to_server; http.uri; content:"@@SERVERNAME"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000017; rev:3;)
+# =============================================================================
+# 7. Database Fingerprinting (SID 1000015-1000017)
+#    Mendeteksi upaya enumerasi versi/informasi DBMS
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection Fingerprint - MySQL @@version"; flow:established,to_server; http.uri; content:"@@version"; nocase; flowbits:isnotset,sqli_fingerprint; flowbits:set,sqli_fingerprint; classtype:web-application-attack; sid:1000015; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Fingerprint - PostgreSQL version()"; flow:established,to_server; http.uri; content:"version()"; nocase; flowbits:isnotset,sqli_fingerprint; flowbits:set,sqli_fingerprint; classtype:web-application-attack; sid:1000016; rev:4;)
+drop http any any -> any any (msg:"SQL Injection Fingerprint - SQL Server @@SERVERNAME"; flow:established,to_server; http.uri; content:"@@SERVERNAME"; nocase; flowbits:isnotset,sqli_fingerprint; flowbits:set,sqli_fingerprint; classtype:web-application-attack; sid:1000017; rev:4;)
 
-# Blind SQL ORDER BY testing
-drop http any any -> any any (msg:"SQL Injection Blind Columns Test - ORDER BY"; flow:established,to_server; http.uri; pcre:"/ORDER\s+BY\s+\d+/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000018; rev:3;)
+# =============================================================================
+# 8. ORDER BY Column Enumeration (SID 1000018)
+#    Mendeteksi teknik pencarian jumlah kolom: ORDER BY <angka>
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - ORDER BY Column Test"; flow:established,to_server; http.uri; pcre:"/ORDER\s+BY\s+\d+/i"; flowbits:isnotset,sqli_orderby; flowbits:set,sqli_orderby; classtype:web-application-attack; sid:1000018; rev:4;)
 
-# Detect NULL byte injections
-drop http any any -> any any (msg:"SQL Injection NULL Byte Injection"; flow:established,to_server; http.uri; content:"%00"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000019; rev:3;)
+# =============================================================================
+# 9. NULL Byte Injection (SID 1000019)
+#    Mendeteksi penyisipan karakter NULL (%00) untuk bypass filter
+#    PERBAIKAN: Menggunakan http.uri.raw karena content:"%00" pada buffer
+#    normalized (http.uri) akan mencari string literal "%00", bukan byte \x00
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - NULL Byte Injection"; flow:established,to_server; http.uri.raw; content:"%00"; flowbits:isnotset,sqli_nullbyte; flowbits:set,sqli_nullbyte; classtype:web-application-attack; sid:1000019; rev:4;)
 
-# SQL Injection common database functions
-drop http any any -> any any (msg:"SQL Injection Function - Current User"; flow:established,to_server; http.uri; pcre:"/CURRENT_USER\(\)|USER\(\)|SESSION_USER\(\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000020; rev:3;)
-drop http any any -> any any (msg:"SQL Injection DB Function - Database Info"; flow:established,to_server; http.uri; pcre:"/DATABASE\(\)|SCHEMA\(\)/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000021; rev:3;)
+# =============================================================================
+# 10. Database Function Calls (SID 1000020-1000021)
+#     Mendeteksi pemanggilan fungsi informasi database: USER(), DATABASE(), dll.
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - User Info Function Call"; flow:established,to_server; http.uri; pcre:"/CURRENT_USER\(\)|USER\(\)|SESSION_USER\(\)/i"; flowbits:isnotset,sqli_dbfunc; flowbits:set,sqli_dbfunc; classtype:web-application-attack; sid:1000020; rev:4;)
+drop http any any -> any any (msg:"SQL Injection - Database Info Function Call"; flow:established,to_server; http.uri; pcre:"/DATABASE\(\)|SCHEMA\(\)/i"; flowbits:isnotset,sqli_dbfunc; flowbits:set,sqli_dbfunc; classtype:web-application-attack; sid:1000021; rev:4;)
 
-# Hex encoding detection 
-drop http any any -> any any (msg:"SQL Injection Hex Encoded SQL Injection"; flow:established,to_server; http.uri; pcre:"/[\?&][^&=]*=.*0x[0-9a-f]{2,}/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000023; rev:3;)
+# =============================================================================
+# 11. Hex Encoding Detection (SID 1000023)
+#     Mendeteksi penggunaan notasi heksadesimal (0x...) dalam nilai parameter
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - Hex Encoded Value"; flow:established,to_server; http.uri; pcre:"/[\?&][^&=]*=.*0x[0-9a-f]{2,}/i"; flowbits:isnotset,sqli_hex; flowbits:set,sqli_hex; classtype:web-application-attack; sid:1000023; rev:4;)
 
-# SQL Injection specific file read attempts
-drop http any any -> any any (msg:"SQL Injection File Read Attempt"; flow:established,to_server; http.uri; pcre:"/LOAD_FILE\(\s*'/i"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000024; rev:3;)
+# =============================================================================
+# 12. File System Access (SID 1000024)
+#     Mendeteksi upaya membaca file server via LOAD_FILE()
+# =============================================================================
+drop http any any -> any any (msg:"SQL Injection - LOAD_FILE Attempt"; flow:established,to_server; http.uri; pcre:"/LOAD_FILE\s*\(/i"; flowbits:isnotset,sqli_fileread; flowbits:set,sqli_fileread; classtype:web-application-attack; sid:1000024; rev:4;)
 
-# SQLMap Identification - User-Agent strings
-drop http any any -> any any (msg:"SQLMAP User-Agent detected"; flow:established,to_server; http.user_agent; content:"sqlmap"; nocase; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000001; rev:3;)
+# =============================================================================
+# 13. SQLMap User-Agent (SID 1000001) — SUSPENDED
+#     Dinonaktifkan agar pengujian fokus pada deteksi payload, bukan nama alat
+# =============================================================================
+# drop http any any -> any any (msg:"SQLMAP User-Agent detected"; flow:established,to_server; http.user_agent; content:"sqlmap"; nocase; flowbits:isnotset,sqli_tool; flowbits:set,sqli_tool; classtype:web-application-attack; sid:1000001; rev:4;)

@@ -1,14 +1,19 @@
 === STATISTIK 01_SURICATA_ONLY ===
-Total Requests Processed: 2494
+
+--- INPUT ---
+Attack Payloads Sent  : 468
+Normal Requests Sent  : 166
+Total Requests        : 634
 
 --- CONFUSION MATRIX ---
-True Positives (Attack Blocked) : 0
-False Negatives (Attack Passed) : 1237
-True Negatives (Benign Passed)  : 1257
-False Positives (Benign Blocked): 0
+True Positives  (Attack Blocked) : 387
+False Negatives (Attack Passed)  : 81
+True Negatives  (Normal Passed)  : 154
+False Positives (Normal Blocked)  : 12
 
 --- METRICS ---
-Accuracy : 0.5040
-Precision: 0.0000
-Recall (TPR): 0.0000
-False Positive Rate (FPR): 0.0000
+Accuracy  : 0.8533
+Precision : 0.9699
+Recall    : 0.8269
+F1-Score  : 0.8927
+FPR       : 0.0723

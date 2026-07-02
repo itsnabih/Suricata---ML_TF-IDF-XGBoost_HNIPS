@@ -1,8 +1,4 @@
 i: suricata: This is Suricata version 8.0.3 RELEASE running in SYSTEM mode
-W: detect: No rule files match the pattern /var/lib/suricata/rules/suricata.rules
-W: detect: 1 rule files specified, but no rules were loaded!
-i: mpm-hs: Rule group caching - loaded: 0 newly cached: 0 total cacheable: 0
-i: threads: Threads created -> RX: 1 W: 4 TX: 1 FM: 1 FR: 1   Engine started.
-i: suricata: Signal Received.  Stopping engine.
-i: nfq: (RX-NFQ#2) Treated: Pkts 10866, Bytes 1803138, Errors 0
-i: nfq: (RX-NFQ#2) Verdict: Accepted 10858, Dropped 8, Replaced 0
+i: mpm-hs: Rule group caching - loaded: 4 newly cached: 0 total cacheable: 4
+E: nfq: nfq_create_queue failed
+E: nfq: nfq thread failed to initialize

@@ -1,5 +1,4 @@
 i: suricata: This is Suricata version 8.0.3 RELEASE running in SYSTEM mode
-E: detect-parse: unknown rule keyword 'http.raw_uri'.
-E: detect: error parsing signature "drop http any any -> any any (msg:"SQL Injection URL Encoded SQL Injection"; flow:established,to_server; http.raw_uri; pcre:"/%27|%22|%2D%2D|%23|%2F%2A|%2A%2F/"; flowbits:isnotset,alerted; flowbits:set,alerted; classtype:web-application-attack; sid:1000014; rev:3;)" from file /home/ubuntu/Documents/Suricata---ML_TF-IDF-XGBoost_HNIPS/sqli_detection.rules at line 28
 i: mpm-hs: Rule group caching - loaded: 4 newly cached: 0 total cacheable: 4
-i: threads: Threads created -> RX: 1 W: 4 TX: 1 FM: 1 FR: 1   Engine started.
+E: nfq: nfq_create_queue failed
+E: nfq: nfq thread failed to initialize

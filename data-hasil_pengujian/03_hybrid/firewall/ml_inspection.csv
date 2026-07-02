@@ -1,0 +1,250 @@
+timestamp,src_ip,src_port,dst_ip,dst_port,method,path,user_agent,cleaned_payload,proba,action
+2026-07-02 00:22:51,172.17.0.1,50764,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%2527%2520or%25201%3d1&Submit=Submit,curl/8.18.0,' or 1=1,0.035971,ACCEPT
+2026-07-02 00:23:12,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:12,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:12,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:13,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:13,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:13,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:13,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:14,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:14,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:15,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:15,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:15,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:16,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:16,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:16,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:17,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:17,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:17,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:17,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:17,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:17,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:18,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:19,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:19,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:20,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:20,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:22,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:23,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:26,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:27,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:29,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:31,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:35,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:35,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:35,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:36,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:36,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:38,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:40,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:41,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:42,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:43,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:23:44,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:23:48,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:02,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:07,172.17.0.1,57190,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:08,172.17.0.1,57202,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,") and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:10,172.17.0.1,57226,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,"and 0=benchmark(3000000,MD5(1)) #",0.999905,DROP
+2026-07-02 00:24:11,172.17.0.1,57228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")))) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:29,172.17.0.1,42736,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%29%29+and+0%3dbenchmark%283000000%2cMD5%281%29%29%2520%2523&Submit=Submit,curl/8.18.0,")) and 0=benchmark(3000000,MD5(1)) #",0.999908,DROP
+2026-07-02 00:24:34,172.17.0.1,60348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+16&Submit=Submit,curl/8.18.0,ORDER BY 16,0.471273,ACCEPT
+2026-07-02 00:24:40,172.17.0.1,60386,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+22&Submit=Submit,curl/8.18.0,ORDER BY 22,0.558257,ACCEPT
+2026-07-02 00:24:51,172.17.0.1,52514,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+16&Submit=Submit,curl/8.18.0,ORDER BY 16,0.471273,ACCEPT
+2026-07-02 00:24:52,172.17.0.1,54606,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+27&Submit=Submit,curl/8.18.0,ORDER BY 27,0.558257,ACCEPT
+2026-07-02 00:24:52,172.17.0.1,54616,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+25&Submit=Submit,curl/8.18.0,ORDER BY 25,0.558257,ACCEPT
+2026-07-02 00:25:02,172.17.0.1,54222,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=ORDER+BY+2&Submit=Submit,curl/8.18.0,ORDER BY 2,0.536623,ACCEPT
+2026-07-02 00:25:03,172.17.0.1,54238,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctest-2.sqlite&Submit=Submit,curl/8.18.0,"1,test-2.sqlite",0.595219,ACCEPT
+2026-07-02 00:25:05,172.17.0.1,54276,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-423.sqlite&Submit=Submit,curl/8.18.0,"4,run-423.sqlite",0.001362,ACCEPT
+2026-07-02 00:25:06,172.17.0.1,54292,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-134.sqlite&Submit=Submit,curl/8.18.0,"4,run-134.sqlite",0.000893,ACCEPT
+2026-07-02 00:25:08,172.17.0.1,54316,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=while+%5b%5b+%24ahcount+-le+%24maxxcount+%5d%5d+%3b+do&Submit=Submit,curl/8.18.0,while [[ $ahcount -le $maxxcount ]] ; do,0.000589,ACCEPT
+2026-07-02 00:25:08,172.17.0.1,54326,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=7%2cdb-setup.sqlite&Submit=Submit,curl/8.18.0,"7,db-setup.sqlite",0.003120,ACCEPT
+2026-07-02 00:25:09,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:09,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:09,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:10,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:10,172.17.0.1,54356,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-907.sqlite&Submit=Submit,curl/8.18.0,"4,run-907.sqlite",0.002285,ACCEPT
+2026-07-02 00:25:10,172.17.0.1,54368,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-259.sqlite&Submit=Submit,curl/8.18.0,"4,run-259.sqlite",0.001116,ACCEPT
+2026-07-02 00:25:11,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:13,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:13,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:13,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:13,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:14,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:14,172.17.0.1,59648,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-377.sqlite&Submit=Submit,curl/8.18.0,"4,run-377.sqlite",0.002179,ACCEPT
+2026-07-02 00:25:15,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:15,172.17.0.1,59674,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-530.sqlite&Submit=Submit,curl/8.18.0,"4,run-530.sqlite",0.000591,ACCEPT
+2026-07-02 00:25:16,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:17,172.17.0.1,59694,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=8%2crun-97.sqlite&Submit=Submit,curl/8.18.0,"8,run-97.sqlite",0.002706,ACCEPT
+2026-07-02 00:25:17,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:18,172.17.0.1,59718,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-480.sqlite&Submit=Submit,curl/8.18.0,"4,run-480.sqlite",0.000752,ACCEPT
+2026-07-02 00:25:20,172.17.0.1,59754,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-403.sqlite&Submit=Submit,curl/8.18.0,"4,run-403.sqlite",0.000866,ACCEPT
+2026-07-02 00:25:21,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:23,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:25,172.17.0.1,59616,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-326.sqlite&Submit=Submit,curl/8.18.0,"4,run-326.sqlite",0.001336,ACCEPT
+2026-07-02 00:25:25,172.17.0.1,59622,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-338.sqlite&Submit=Submit,curl/8.18.0,"4,run-338.sqlite",0.000893,ACCEPT
+2026-07-02 00:25:27,172.17.0.1,59656,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=inurl%3a%26%238221%3bgames.php%3fid%3d&Submit=Submit,curl/8.18.0,inurl:&#8221;games.php?id=,0.002607,ACCEPT
+2026-07-02 00:25:28,172.17.0.1,59664,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-138.sqlite&Submit=Submit,curl/8.18.0,"4,run-138.sqlite",0.000893,ACCEPT
+2026-07-02 00:25:28,172.17.0.1,59676,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%3f%08+%3f%08+%3f%14%3f%1b%3f%08-%3f%08-%3f%08-%3f%1d%21%3f%04%3f&Submit=Submit,curl/8.18.0,? ? ???-?-?-?!??,0.000893,ACCEPT
+2026-07-02 00:25:29,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:30,172.17.0.1,59712,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=10%2crun-18.sqlite&Submit=Submit,curl/8.18.0,"10,run-18.sqlite",0.000408,ACCEPT
+2026-07-02 00:25:30,172.17.0.1,59724,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-430.sqlite&Submit=Submit,curl/8.18.0,"4,run-430.sqlite",0.000591,ACCEPT
+2026-07-02 00:25:30,172.17.0.1,59728,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-921.sqlite&Submit=Submit,curl/8.18.0,"4,run-921.sqlite",0.002706,ACCEPT
+2026-07-02 00:25:30,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:31,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:31,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:31,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:31,172.17.0.1,33536,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-837.sqlite&Submit=Submit,curl/8.18.0,"4,run-837.sqlite",0.002179,ACCEPT
+2026-07-02 00:25:32,172.17.0.1,33552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=while+%5b%5b+%24bicount+-le+%24length+%5d%5d+%3b+do&Submit=Submit,curl/8.18.0,while [[ $bicount -le $length ]] ; do,0.000324,ACCEPT
+2026-07-02 00:25:32,172.17.0.1,33568,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-770.sqlite&Submit=Submit,curl/8.18.0,"4,run-770.sqlite",0.000721,ACCEPT
+2026-07-02 00:25:32,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:34,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:34,172.17.0.1,33594,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-105.sqlite&Submit=Submit,curl/8.18.0,"4,run-105.sqlite",0.000408,ACCEPT
+2026-07-02 00:25:37,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:38,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:25:39,172.17.0.1,33644,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-169.sqlite&Submit=Submit,curl/8.18.0,"4,run-169.sqlite",0.000893,ACCEPT
+2026-07-02 00:25:43,172.17.0.1,34882,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-637.sqlite&Submit=Submit,curl/8.18.0,"4,run-637.sqlite",0.003112,ACCEPT
+2026-07-02 00:25:44,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:25:45,172.17.0.1,34900,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=6%2c5.2.5-6.0.0.sqlite&Submit=Submit,curl/8.18.0,"6,5.2.5-6.0.0.sqlite",0.002304,ACCEPT
+2026-07-02 00:25:46,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:25:50,172.17.0.1,34948,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-197.sqlite&Submit=Submit,curl/8.18.0,"4,run-197.sqlite",0.000893,ACCEPT
+2026-07-02 00:25:52,172.17.0.1,40916,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-905.sqlite&Submit=Submit,curl/8.18.0,"4,run-905.sqlite",0.002285,ACCEPT
+2026-07-02 00:25:57,172.17.0.1,40966,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-596.sqlite&Submit=Submit,curl/8.18.0,"4,run-596.sqlite",0.002503,ACCEPT
+2026-07-02 00:25:58,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:26:00,172.17.0.1,41016,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-818.sqlite&Submit=Submit,curl/8.18.0,"4,run-818.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:00,172.17.0.1,41020,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-136.sqlite&Submit=Submit,curl/8.18.0,"4,run-136.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:03,172.17.0.1,58516,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-164.sqlite&Submit=Submit,curl/8.18.0,"4,run-164.sqlite",0.000923,ACCEPT
+2026-07-02 00:26:06,172.17.0.1,54348,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctestcod-1000055.sqlite3&Submit=Submit,curl/8.18.0,"1,testcod-1000055.sqlite3",0.992256,DROP
+2026-07-02 00:26:06,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:06,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:07,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:07,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:07,172.17.0.1,58554,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-767.sqlite&Submit=Submit,curl/8.18.0,"4,run-767.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:08,172.17.0.1,58558,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%28%28timediff%3d%24time_true-%24time_false%29%29&Submit=Submit,curl/8.18.0,((timediff=$time_true-$time_false)),0.048267,ACCEPT
+2026-07-02 00:26:08,172.17.0.1,58570,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctest-rel.sqlite3&Submit=Submit,curl/8.18.0,"1,test-rel.sqlite3",0.834943,ACCEPT
+2026-07-02 00:26:08,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:10,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:13,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:15,172.17.0.1,34194,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=while+%5b%5b+%24attgcount+-le+%24maxxcount+%5d%5d+%3b+do&Submit=Submit,curl/8.18.0,while [[ $attgcount -le $maxxcount ]] ; do,0.000365,ACCEPT
+2026-07-02 00:26:15,172.17.0.1,34206,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=if+%5b%5b+%24timediff+-gt+3+%7c%7c+%24timediff+-lt+-3+%5d%5d+%3b+then&Submit=Submit,curl/8.18.0,if [[ $timediff -gt 3 || $timediff -lt -3 ]] ; then,0.001251,ACCEPT
+2026-07-02 00:26:15,172.17.0.1,34210,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-850.sqlite&Submit=Submit,curl/8.18.0,"4,run-850.sqlite",0.000883,ACCEPT
+2026-07-02 00:26:16,172.17.0.1,34228,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-967.sqlite&Submit=Submit,curl/8.18.0,"4,run-967.sqlite",0.006060,ACCEPT
+2026-07-02 00:26:16,172.17.0.1,34240,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-307.sqlite&Submit=Submit,curl/8.18.0,"4,run-307.sqlite",0.000591,ACCEPT
+2026-07-02 00:26:18,172.17.0.1,59642,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpadu-destination.sqlite&Submit=Submit,curl/8.18.0,"1,padu-destination.sqlite",0.982232,DROP
+2026-07-02 00:26:19,172.17.0.1,34250,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-779.sqlite&Submit=Submit,curl/8.18.0,"4,run-779.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:20,172.17.0.1,34268,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-102.sqlite&Submit=Submit,curl/8.18.0,"4,run-102.sqlite",0.000408,ACCEPT
+2026-07-02 00:26:20,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:25,172.17.0.1,59738,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2coqmd-1514.sqlite3&Submit=Submit,curl/8.18.0,"1,oqmd-1514.sqlite3",0.997120,DROP
+2026-07-02 00:26:26,172.17.0.1,33886,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=%28%28lendiff%3d%24lengthselY-%24lengthselN%29%29&Submit=Submit,curl/8.18.0,((lendiff=$lengthselY-$lengthselN)),0.163464,ACCEPT
+2026-07-02 00:26:26,172.17.0.1,33892,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-590.sqlite&Submit=Submit,curl/8.18.0,"4,run-590.sqlite",0.000942,ACCEPT
+2026-07-02 00:26:26,172.17.0.1,33898,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=8%2crun-59.sqlite&Submit=Submit,curl/8.18.0,"8,run-59.sqlite",0.001116,ACCEPT
+2026-07-02 00:26:28,172.17.0.1,33932,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-726.sqlite&Submit=Submit,curl/8.18.0,"4,run-726.sqlite",0.001455,ACCEPT
+2026-07-02 00:26:30,172.17.0.1,33950,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2csafari-partial.sqlite&Submit=Submit,curl/8.18.0,"1,safari-partial.sqlite",0.826999,ACCEPT
+2026-07-02 00:26:30,172.17.0.1,33954,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=8%2crun-22.sqlite&Submit=Submit,curl/8.18.0,"8,run-22.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:34,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:26:36,172.17.0.1,38178,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=8%2crun-86.sqlite&Submit=Submit,curl/8.18.0,"8,run-86.sqlite",0.000871,ACCEPT
+2026-07-02 00:26:37,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:37,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:37,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:38,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:39,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:40,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:44,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:49,172.17.0.1,35580,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-111.sqlite&Submit=Submit,curl/8.18.0,"4,run-111.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:49,172.17.0.1,35594,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-608.sqlite&Submit=Submit,curl/8.18.0,"4,run-608.sqlite",0.000937,ACCEPT
+2026-07-02 00:26:49,172.17.0.1,35600,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-459.sqlite&Submit=Submit,curl/8.18.0,"4,run-459.sqlite",0.001116,ACCEPT
+2026-07-02 00:26:49,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:49,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:50,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:50,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:51,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:26:51,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:53,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:53,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:53,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:53,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:53,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:54,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:56,172.17.0.1,49768,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-623.sqlite&Submit=Submit,curl/8.18.0,"4,run-623.sqlite",0.001362,ACCEPT
+2026-07-02 00:26:56,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:26:56,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:26:57,172.17.0.1,49784,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=8%2crun-25.sqlite&Submit=Submit,curl/8.18.0,"8,run-25.sqlite",0.000893,ACCEPT
+2026-07-02 00:26:57,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:26:58,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:26:58,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:26:58,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:26:59,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:26:59,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:27:01,172.17.0.1,53822,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=6%2ctoken-version-1.5.sqlite&Submit=Submit,curl/8.18.0,"6,token-version-1.5.sqlite",0.053725,ACCEPT
+2026-07-02 00:27:01,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:27:01,172.17.0.1,53828,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=if+%5b%5b+%24lendiff+-gt+6+%7c%7c+%24lendiff+-lt+-6+%5d%5d+%3b+then&Submit=Submit,curl/8.18.0,if [[ $lendiff -gt 6 || $lendiff -lt -6 ]] ; then,0.008914,ACCEPT
+2026-07-02 00:27:01,172.17.0.1,53834,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-425.sqlite&Submit=Submit,curl/8.18.0,"4,run-425.sqlite",0.000893,ACCEPT
+2026-07-02 00:27:02,172.17.0.1,58552,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cflasky-sqlalchemy-dev-sqlite3.sqlite&Submit=Submit,curl/8.18.0,"1,flasky-sqlalchemy-dev-sqlite3.sqlite",0.998221,DROP
+2026-07-02 00:27:03,172.17.0.1,53844,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=4%2crun-555.sqlite&Submit=Submit,curl/8.18.0,"4,run-555.sqlite",0.000893,ACCEPT
+2026-07-02 00:27:03,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:27:04,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:27:05,172.17.0.1,38198,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cstorage-sync.sqlite&Submit=Submit,curl/8.18.0,"1,storage-sync.sqlite",0.980904,DROP
+2026-07-02 00:27:07,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:27:07,172.17.0.1,53876,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cpi-ager.sqlite3&Submit=Submit,curl/8.18.0,"1,pi-ager.sqlite3",0.927187,ACCEPT
+2026-07-02 00:27:11,172.17.0.1,49786,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cdb-PORT-ZOMPARELLI.sqlite3&Submit=Submit,curl/8.18.0,"1,db-PORT-ZOMPARELLI.sqlite3",0.965285,DROP
+2026-07-02 00:27:14,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:14,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:15,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:15,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:16,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:17,172.17.0.1,44824,172.17.0.2,80,GET,/,curl/8.18.0,http://172.17.0.2/,0.001052,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,44840,172.17.0.2,80,GET,/index.php,curl/8.18.0,http://172.17.0.2/index.php,0.003285,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,44852,172.17.0.2,80,GET,/login.php,curl/8.18.0,http://172.17.0.2/login.php,0.001414,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,35612,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2cbio-fake.sqlite3&Submit=Submit,curl/8.18.0,"1,bio-fake.sqlite3",0.998347,DROP
+2026-07-02 00:27:17,172.17.0.1,44856,172.17.0.2,80,GET,/logout.php,curl/8.18.0,http://172.17.0.2/logout.php,0.001709,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,44866,172.17.0.2,80,GET,/setup.php,curl/8.18.0,http://172.17.0.2/setup.php,0.005745,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,44872,172.17.0.2,80,GET,/about.php,curl/8.18.0,http://172.17.0.2/about.php,0.001709,ACCEPT
+2026-07-02 00:27:17,172.17.0.1,44880,172.17.0.2,80,GET,/instructions.php,curl/8.18.0,http://172.17.0.2/instructions.php,0.000898,ACCEPT
+2026-07-02 00:27:18,172.17.0.1,44894,172.17.0.2,80,GET,/ids_log.php,curl/8.18.0,http://172.17.0.2/ids_log.php,0.001334,ACCEPT
+2026-07-02 00:27:18,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:18,172.17.0.1,44894,172.17.0.2,80,GET,/ids_log.php,curl/8.18.0,http://172.17.0.2/ids_log.php,0.001334,ACCEPT
+2026-07-02 00:27:18,172.17.0.1,44902,172.17.0.2,80,GET,/phpinfo.php,curl/8.18.0,http://172.17.0.2/phpinfo.php,0.001428,ACCEPT
+2026-07-02 00:27:18,172.17.0.1,44908,172.17.0.2,80,GET,/robots.txt,curl/8.18.0,http://172.17.0.2/robots.txt,0.001052,ACCEPT
+2026-07-02 00:27:18,172.17.0.1,44912,172.17.0.2,80,GET,/favicon.ico,curl/8.18.0,http://172.17.0.2/favicon.ico,0.000774,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44922,172.17.0.2,80,GET,/CHANGELOG.md,curl/8.18.0,http://172.17.0.2/CHANGELOG.md,0.003036,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44924,172.17.0.2,80,GET,/README.md,curl/8.18.0,http://172.17.0.2/README.md,0.000466,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44926,172.17.0.2,80,GET,/LICENSE.md,curl/8.18.0,http://172.17.0.2/LICENSE.md,0.000998,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44930,172.17.0.2,80,GET,/docs/,curl/8.18.0,http://172.17.0.2/docs/,0.001052,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44940,172.17.0.2,80,GET,/docs/index.html,curl/8.18.0,http://172.17.0.2/docs/index.html,0.004077,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44946,172.17.0.2,80,GET,/login.php,curl/8.18.0,http://172.17.0.2/login.php,0.001414,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44954,172.17.0.2,80,GET,/login.php?username=admin&password=password&Login=Login,curl/8.18.0,admin password Login,0.001205,ACCEPT
+2026-07-02 00:27:19,172.17.0.1,44958,172.17.0.2,80,GET,/login.php?user_token=,curl/8.18.0,http://172.17.0.2/login.php?user_token=,0.004657,ACCEPT
+2026-07-02 00:27:20,172.17.0.1,44960,172.17.0.2,80,GET,/index.php,curl/8.18.0,http://172.17.0.2/index.php,0.003285,ACCEPT
+2026-07-02 00:27:20,172.17.0.1,44962,172.17.0.2,80,GET,/vulnerabilities/,curl/8.18.0,http://172.17.0.2/vulnerabilities/,0.000344,ACCEPT
+2026-07-02 00:27:20,172.17.0.1,44962,172.17.0.2,80,GET,/vulnerabilities/,curl/8.18.0,http://172.17.0.2/vulnerabilities/,0.000344,ACCEPT
+2026-07-02 00:27:20,172.17.0.1,44966,172.17.0.2,80,GET,/vulnerabilities/view_source.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/view_source.php,0.000447,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,49746,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2c-sqlite.sqlite3&Submit=Submit,curl/8.18.0,"1,-sqlite.sqlite3",0.998347,DROP
+2026-07-02 00:27:21,172.17.0.1,44968,172.17.0.2,80,GET,/vulnerabilities/view_help.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/view_help.php,0.001455,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,44984,172.17.0.2,80,GET,/vulnerabilities/brute/,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/,0.000344,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,48944,172.17.0.2,80,GET,/vulnerabilities/brute/index.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/index.php,0.000935,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,48958,172.17.0.2,80,GET,/vulnerabilities/brute/index.php?username=admin&password=password&Login=Login,curl/8.18.0,admin password Login,0.001205,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,48962,172.17.0.2,80,GET,/vulnerabilities/brute/source/,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/source/,0.000353,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,44804,172.17.0.2,80,GET,/vulnerabilities/sqli/?id=1%2ctub-bourg.sqlite3&Submit=Submit,curl/8.18.0,"1,tub-bourg.sqlite3",0.998347,DROP
+2026-07-02 00:27:21,172.17.0.1,48964,172.17.0.2,80,GET,/vulnerabilities/brute/source/low.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/source/low.php,0.000339,ACCEPT
+2026-07-02 00:27:21,172.17.0.1,48976,172.17.0.2,80,GET,/vulnerabilities/brute/source/medium.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/source/medium.php,0.000339,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,48986,172.17.0.2,80,GET,/vulnerabilities/brute/source/high.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/brute/source/high.php,0.000339,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,48994,172.17.0.2,80,GET,/vulnerabilities/exec/,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/,0.000502,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,49008,172.17.0.2,80,GET,/vulnerabilities/exec/index.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/index.php,0.000935,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,49014,172.17.0.2,80,GET,/vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Submit,curl/8.18.0,127.0.0.1,0.088591,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,49030,172.17.0.2,80,GET,/vulnerabilities/exec/source/,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/source/,0.000339,ACCEPT
+2026-07-02 00:27:22,172.17.0.1,49034,172.17.0.2,80,GET,/vulnerabilities/exec/source/low.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/source/low.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49042,172.17.0.2,80,GET,/vulnerabilities/exec/source/medium.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/source/medium.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49056,172.17.0.2,80,GET,/vulnerabilities/exec/source/high.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/exec/source/high.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49068,172.17.0.2,80,GET,/vulnerabilities/csrf/,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/,0.000344,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49078,172.17.0.2,80,GET,/vulnerabilities/csrf/index.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/index.php,0.000935,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49088,172.17.0.2,80,GET,/vulnerabilities/csrf/index.php?password_new=Password1&password_conf=Password1&Change=Change,curl/8.18.0,Password1 Password1 Change,0.000193,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49090,172.17.0.2,80,GET,/vulnerabilities/csrf/source/,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/source/,0.000353,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49094,172.17.0.2,80,GET,/vulnerabilities/csrf/source/low.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/source/low.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49106,172.17.0.2,80,GET,/vulnerabilities/csrf/source/medium.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/source/medium.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49112,172.17.0.2,80,GET,/vulnerabilities/csrf/source/high.php,curl/8.18.0,http://172.17.0.2/vulnerabilities/csrf/source/high.php,0.000339,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49124,172.17.0.2,80,GET,/vulnerabilities/fi/,curl/8.18.0,http://172.17.0.2/vulnerabilities/fi/,0.000379,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49136,172.17.0.2,80,GET,/vulnerabilities/fi/?page=include.php,curl/8.18.0,include.php,0.000678,ACCEPT
+2026-07-02 00:27:23,172.17.0.1,49152,172.17.0.2,80,GET,/vulnerabilities/fi/?page=file1.php,curl/8.18.0,file1.php,0.000588,ACCEPT
+2026-07-02 00:27:24,172.17.0.1,49166,172.17.0.2,80,GET,/vulnerabilities/fi/?page=file2.php,curl/8.18.0,file2.php,0.000588,ACCEPT
