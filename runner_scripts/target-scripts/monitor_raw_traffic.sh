@@ -6,6 +6,17 @@
 #  Berguna untuk melihat payload mentah yang melintas di jaringan.
 # ============================================================
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/target"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 2_monitor_raw_traffic.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 TARGET_IP="172.17.0.2"
 TARGET_PORT="80"
 INTERFACE="any"  # Ganti ke 'docker0' jika ingin spesifik bridge Docker

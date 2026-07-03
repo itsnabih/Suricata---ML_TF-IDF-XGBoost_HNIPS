@@ -6,6 +6,17 @@
 # ============================================================
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/attacker"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 1_send_attack.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 ATTACK_FILE="$PROJECT_DIR/sqli_payloads.txt"
 TARGET_IP="172.17.0.2"
 TARGET_URL="http://$TARGET_IP/vulnerabilities/sqli/"

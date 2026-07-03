@@ -6,6 +6,17 @@
 # ============================================================
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/attacker"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 2_send_normal.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 NORMAL_FILE="$PROJECT_DIR/dvwa_wordlist.txt"
 TARGET_IP="172.17.0.2"
 COOKIE="PHPSESSID=pnb708okemms8g0a3ejaocb535; security=low"

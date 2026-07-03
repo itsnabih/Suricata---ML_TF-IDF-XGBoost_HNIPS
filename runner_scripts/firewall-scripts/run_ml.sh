@@ -6,6 +6,17 @@
 # ============================================================
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/firewall"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 5_run_ml.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 ML_SCRIPT="$PROJECT_DIR/model_ML_run.py"
 QUEUE_NUM="3"
 

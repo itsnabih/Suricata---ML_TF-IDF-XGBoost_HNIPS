@@ -5,6 +5,17 @@
 #  Jalankan SETELAH setup_suricata_only.sh atau setup_hybrid.sh.
 # ============================================================
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/firewall"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 4_run_suricata.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
+
 SURICATA_CONF="/etc/suricata/suricata.yaml"
 FAST_LOG="/var/log/suricata/fast.log"
 QUEUE_NUM="2"

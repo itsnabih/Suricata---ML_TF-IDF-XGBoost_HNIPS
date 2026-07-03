@@ -2,9 +2,20 @@
 # ============================================================
 #  target-scripts/monitor_iptables.sh
 #  Memantau statistik packet counter pada MANGLE dan FILTER
-#  secara real-time menggunakan 'watch'.
+#  secara real-time menggunakan loop.
 #  Berguna untuk membuktikan berapa paket yang di-NFQUEUE.
 # ============================================================
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# ── Logging Setup ──────────────────────────────────────────────
+LOG_DIR="$SCRIPT_DIR/saved_logs/target"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/log-nomor 1_monitor_iptables.txt"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "[LOG] File log: $LOG_FILE"
+# ───────────────────────────────────────────────────────────────
 
 INTERVAL=2  # refresh setiap N detik
 
@@ -23,16 +34,22 @@ echo ""
 
 sleep 2
 
-watch -n "$INTERVAL" '
-echo "--------------------------------------------------------"
-echo "  IPTABLES PACKET COUNTER — $(date "+%H:%M:%S")"
-echo "--------------------------------------------------------"
-echo ""
-echo "  ── TABEL MANGLE (Garda 1: Suricata) ──────────────"
-sudo iptables -t mangle -L -v -n --line-numbers 2>/dev/null | grep -E "NFQUEUE|pkts|bytes|Chain" || echo "  (Tidak ada rule MANGLE aktif)"
-echo ""
-echo "  ── TABEL FILTER (Garda 2: ML Runner) ─────────────"
-sudo iptables -t filter -L -v -n --line-numbers 2>/dev/null | grep -E "NFQUEUE|pkts|bytes|Chain" || echo "  (Tidak ada rule FILTER aktif)"
-echo ""
-echo "  Tip: Kolom pertama = paket (#pkts), kedua = bytes"
-'
+# Gunakan while-loop agar output bisa di-tee ke file log
+# (watch tidak kompatibel dengan exec > >(tee ...))
+trap 'echo ""; echo "[LOG] Monitor iptables dihentikan: $(date "+%Y-%m-%d %H:%M:%S")"; exit 0' SIGINT SIGTERM
+
+while true; do
+    echo "--------------------------------------------------------"
+    echo "  IPTABLES PACKET COUNTER — $(date '+%H:%M:%S')"
+    echo "--------------------------------------------------------"
+    echo ""
+    echo "  ── TABEL MANGLE (Garda 1: Suricata) ──────────────"
+    sudo iptables -t mangle -L -v -n --line-numbers 2>/dev/null | grep -E "NFQUEUE|pkts|bytes|Chain" || echo "  (Tidak ada rule MANGLE aktif)"
+    echo ""
+    echo "  ── TABEL FILTER (Garda 2: ML Runner) ─────────────"
+    sudo iptables -t filter -L -v -n --line-numbers 2>/dev/null | grep -E "NFQUEUE|pkts|bytes|Chain" || echo "  (Tidak ada rule FILTER aktif)"
+    echo ""
+    echo "  Tip: Kolom pertama = paket (#pkts), kedua = bytes"
+    echo ""
+    sleep "$INTERVAL"
+done
