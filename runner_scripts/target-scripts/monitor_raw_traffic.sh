@@ -1,21 +1,13 @@
 #!/bin/bash
-# ============================================================
-#  target-scripts/monitor_raw_traffic.sh
-#  Menangkap dan menampilkan raw HTTP traffic secara real-time
-#  menggunakan tcpdump pada interface docker (port 80).
-#  Berguna untuk melihat payload mentah yang melintas di jaringan.
-# ============================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# ── Logging Setup ──────────────────────────────────────────────
 LOG_DIR="$SCRIPT_DIR/saved_logs/target"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/log-nomor 2_monitor_raw_traffic.txt"
 exec > >(tee -a "$LOG_FILE") 2>&1
 echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "[LOG] File log: $LOG_FILE"
-# ───────────────────────────────────────────────────────────────
 
 TARGET_IP="172.17.0.2"
 TARGET_PORT="80"
@@ -36,7 +28,6 @@ echo "  Tekan Ctrl+C untuk menghentikan."
 echo "--------------------------------------------------------"
 echo ""
 
-# Pilihan mode inspeksi
 echo "Pilih mode inspeksi:"
 echo "  [1] HTTP Request Headers + URL saja (ringkas)"
 echo "  [2] Full Raw Payload ASCII (detail, verbose)"
@@ -49,13 +40,11 @@ echo "[INFO] Memulai tcpdump..."
 echo ""
 
 if [ "$MODE" = "2" ]; then
-    # Mode verbose: tampilkan full ASCII payload (-A)
     sudo tcpdump -i "$INTERFACE" \
         "host $TARGET_IP and port $TARGET_PORT" \
         -A -n -l 2>/dev/null | grep --line-buffered -v "^$" | \
         grep --line-buffered -v "^E\." | \
         while IFS= read -r line; do
-            # Highlight baris yang mengandung SQLi keywords
             if echo "$line" | grep -qiE "(select|union|insert|drop|--\+|%27|0x|sleep|benchmark|and\s+1=1)"; then
                 echo -e "\e[1;31m[ SQLi?] $line\e[0m"
             elif echo "$line" | grep -qiE "(GET|POST|HTTP|Host:|Cookie:)"; then
@@ -65,7 +54,6 @@ if [ "$MODE" = "2" ]; then
             fi
         done
 else
-    # Mode ringkas: hanya tampilkan baris HTTP method dan URL
     sudo tcpdump -i "$INTERFACE" \
         "host $TARGET_IP and port $TARGET_PORT" \
         -A -n -l 2>/dev/null | grep --line-buffered -E "^(GET|POST|PUT|DELETE|HTTP)" | \

@@ -1,0 +1,2163 @@
+[LOG] Logging dimulai: 2026-07-04 06:57:11
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 2_send_normal.txt
+
+     NODE ATTACKER: SEND NORMAL TRAFFIC (Wordlist)    
+  Target  : http://172.17.0.2                          
+  File    : /home/ubuntu/Documents/HNIPS_project/dvwa_wordlist.txt
+  Requests: 700                                    
+
+  Format output:
+  -> Menampilkan URL yang dikunjungi
+  -> HTTP Status Code respons
+  (Semua request normal HARUS lolos -> HTTP 200/302)
+
+--------------------------------------------------------
+[  1/700] /                                                       [PASS] OK -> HTTP 200
+[  2/700] /index.php                                              [PASS] OK -> HTTP 200
+[  3/700] /login.php                                              [PASS] OK -> HTTP 200
+[  4/700] /logout.php                                             [PASS] OK -> HTTP 302
+[  5/700] /setup.php/?article=union_jack                          [PASS] OK -> HTTP 200
+[  6/700] /about.php                                              [PASS] OK -> HTTP 200
+[  7/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[  8/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[  9/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[ 10/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[ 11/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[ 12/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[ 13/700] /README.md                                              [PASS] OK -> HTTP 200
+[ 14/700] /LICENSE.md                                             [WARN] HTTP 404
+[ 15/700] /docs/                                                  [PASS] OK -> HTTP 200
+[ 16/700] /docs/index.html                                        [WARN] HTTP 404
+[ 17/700] /login.php                                              [PASS] OK -> HTTP 200
+[ 18/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[ 19/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[ 20/700] /index.php/?article=union_jack                          [PASS] OK -> HTTP 302
+[ 21/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[ 22/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[ 23/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[ 24/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[ 25/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[ 26/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[ 27/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[ 28/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[ 29/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[ 30/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[ 31/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[ 32/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[ 33/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[ 34/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[ 35/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[ 36/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[ 37/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[ 38/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[ 39/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[ 40/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[ 41/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[ 42/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[ 43/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[ 44/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[ 45/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[ 46/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[ 47/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[ 48/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[ 49/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[ 50/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[ 51/700] /vulnerabilities/fi/source/?article=union_jack          [PASS] OK -> HTTP 200
+[ 52/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[ 53/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[ 54/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[ 55/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[ 56/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[ 57/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[ 58/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[ 59/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[ 60/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[ 61/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[ 62/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[ 63/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[ 64/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[ 65/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[ 66/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[ 67/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[ 68/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[ 69/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[ 70/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[ 71/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[ 72/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[ 73/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[ 74/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[ 75/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[ 76/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[ 77/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[ 78/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[ 79/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[ 80/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[ 81/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[ 82/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[ 83/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[ 84/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[ 85/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[ 86/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[ 87/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[ 88/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[ 89/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[ 90/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[ 91/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[ 92/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[ 93/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[ 94/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[ 95/700] /vulnerabilities/xss_d/?desc=drop_point                 [PASS] OK -> HTTP 302
+[ 96/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[ 97/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[ 98/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[ 99/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[100/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[101/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[102/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[103/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[104/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[105/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[106/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[107/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[108/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[109/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[110/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[111/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[112/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[113/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[114/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[115/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[116/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[117/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[118/700] /vulnerabilities/csp/?desc=drop_point                   [PASS] OK -> HTTP 302
+[119/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[120/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[121/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[122/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[123/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[124/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[125/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[126/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[127/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[128/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[129/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[130/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[131/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[132/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[133/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[134/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[135/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[136/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[137/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[138/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[139/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[140/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[141/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[142/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[143/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[144/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[145/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[146/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[147/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[148/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[149/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[150/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[151/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[152/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[153/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[154/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[155/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[156/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[157/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[158/700] /dvwa/includes/?desc=drop_point                         [PASS] OK -> HTTP 200
+[159/700] /external/                                              [PASS] OK -> HTTP 200
+[160/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[161/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[162/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[163/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[164/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[165/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[166/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[167/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[168/700] /                                                       [PASS] OK -> HTTP 302
+[169/700] /index.php                                              [PASS] OK -> HTTP 302
+[170/700] /login.php                                              [PASS] OK -> HTTP 200
+[171/700] /logout.php                                             [PASS] OK -> HTTP 302
+[172/700] /setup.php                                              [PASS] OK -> HTTP 200
+[173/700] /about.php                                              [PASS] OK -> HTTP 200
+[174/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[175/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[176/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[177/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[178/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[179/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[180/700] /README.md                                              [PASS] OK -> HTTP 200
+[181/700] /LICENSE.md                                             [WARN] HTTP 404
+[182/700] /docs/                                                  [PASS] OK -> HTTP 200
+[183/700] /docs/index.html                                        [WARN] HTTP 404
+[184/700] /login.php                                              [PASS] OK -> HTTP 200
+[185/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[186/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[187/700] /index.php                                              [PASS] OK -> HTTP 302
+[188/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[189/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[190/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[191/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[192/700] /vulnerabilities/brute/?name=O'Connor                   [DROP] DIBLOKIR (False Positive!) 
+[193/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[194/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[195/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[196/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[197/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[198/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[199/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[200/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[201/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[202/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[203/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[204/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[205/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[206/700] /vulnerabilities/csrf/?name=O'Connor                    [DROP] DIBLOKIR (False Positive!) 
+[207/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[208/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[209/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[210/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[211/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[212/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[213/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[214/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[215/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[216/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[217/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[218/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[219/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[220/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[221/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[222/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[223/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[224/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[225/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[226/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[227/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[228/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[229/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[230/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[231/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[232/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[233/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[234/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[235/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[236/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[237/700] /vulnerabilities/sqli/?name=O'Connor                    [DROP] DIBLOKIR (False Positive!) 
+[238/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[239/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[240/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[241/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[242/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[243/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[244/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[245/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[246/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[247/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[248/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[249/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[250/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[251/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[252/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[253/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[254/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[255/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[256/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[257/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[258/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[259/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[260/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[261/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[262/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[263/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[264/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[265/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[266/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[267/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[268/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[269/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[270/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[271/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[272/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[273/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[274/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[275/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[276/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[277/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[278/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[279/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[280/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[281/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[282/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[283/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[284/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[285/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[286/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[287/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[288/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[289/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[290/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[291/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[292/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[293/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[294/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[295/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[296/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[297/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[298/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[299/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[300/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[301/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[302/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[303/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[304/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[305/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[306/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[307/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[308/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[309/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[310/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[311/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[312/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[313/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[314/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[315/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[316/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[317/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[318/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[319/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[320/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[321/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[322/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[323/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[324/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[325/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[326/700] /external/                                              [PASS] OK -> HTTP 200
+[327/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[328/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[329/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[330/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[331/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[332/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[333/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[334/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[335/700] /                                                       [PASS] OK -> HTTP 302
+[336/700] /index.php                                              [PASS] OK -> HTTP 302
+[337/700] /login.php                                              [PASS] OK -> HTTP 200
+[338/700] /logout.php                                             [PASS] OK -> HTTP 302
+[339/700] /setup.php                                              [PASS] OK -> HTTP 200
+[340/700] /about.php                                              [PASS] OK -> HTTP 200
+[341/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[342/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[343/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[344/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[345/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[346/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[347/700] /README.md                                              [PASS] OK -> HTTP 200
+[348/700] /LICENSE.md                                             [WARN] HTTP 404
+[349/700] /docs/                                                  [PASS] OK -> HTTP 200
+[350/700] /docs/index.html                                        [WARN] HTTP 404
+[351/700] /login.php                                              [PASS] OK -> HTTP 200
+[352/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[353/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[354/700] /index.php                                              [PASS] OK -> HTTP 302
+[355/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[356/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[357/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[358/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[359/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[360/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[361/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[362/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[363/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[364/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[365/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[366/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[367/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[368/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[369/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[370/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[371/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[372/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[373/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[374/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[375/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[376/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[377/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[378/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[379/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[380/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[381/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[382/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[383/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[384/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[385/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[386/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[387/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[388/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[389/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[390/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[391/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[392/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[393/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[394/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[395/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[396/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[397/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[398/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[399/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[400/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[401/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[402/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[403/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[404/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[405/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[406/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[407/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[408/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[409/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[410/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[411/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[412/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[413/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[414/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[415/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[416/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[417/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[418/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[419/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[420/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[421/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[422/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[423/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[424/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[425/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[426/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[427/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[428/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[429/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[430/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[431/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[432/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[433/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[434/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[435/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[436/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[437/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[438/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[439/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[440/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[441/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[442/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[443/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[444/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[445/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[446/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[447/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[448/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[449/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[450/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[451/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[452/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[453/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[454/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[455/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[456/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[457/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[458/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[459/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[460/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[461/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[462/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[463/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[464/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[465/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[466/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[467/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[468/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[469/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[470/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[471/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[472/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[473/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[474/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[475/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[476/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[477/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[478/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[479/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[480/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[481/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[482/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[483/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[484/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[485/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[486/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[487/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[488/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[489/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[490/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[491/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[492/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[493/700] /external/                                              [PASS] OK -> HTTP 200
+[494/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[495/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[496/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[497/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[498/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[499/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[500/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[501/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[502/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[503/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[504/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[505/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[506/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[507/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[508/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[509/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[510/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[511/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[512/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[513/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[514/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[515/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[516/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[517/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[518/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[519/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[520/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[521/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[522/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[523/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[524/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[525/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[526/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[527/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[528/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[529/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[530/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[531/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[532/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[533/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[534/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[535/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[536/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[537/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[538/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[539/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[540/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[541/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[542/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[543/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[544/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[545/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[546/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[547/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[548/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[549/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[550/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[551/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[552/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[553/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[554/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[555/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[556/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[557/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[558/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[559/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[560/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[561/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[562/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[563/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[564/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[565/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[566/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[567/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[568/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[569/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[570/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[571/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[572/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[573/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[574/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[575/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[576/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[577/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[578/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[579/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[580/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[581/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[582/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[583/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[584/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[585/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[586/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[587/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[588/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[589/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[590/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[591/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[592/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[593/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[594/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[595/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[596/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[597/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[598/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[599/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[600/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[601/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[602/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[603/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[604/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[605/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[606/700] /external/                                              [PASS] OK -> HTTP 200
+[607/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[608/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[609/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[610/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[611/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[612/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[613/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[614/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[615/700] /README.md                                              [PASS] OK -> HTTP 200
+[616/700] /LICENSE.md                                             [WARN] HTTP 404
+[617/700] /docs/                                                  [PASS] OK -> HTTP 200
+[618/700] /docs/index.html                                        [WARN] HTTP 404
+[619/700] /login.php                                              [PASS] OK -> HTTP 200
+[620/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[621/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[622/700] /index.php                                              [PASS] OK -> HTTP 302
+[623/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[624/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[625/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[626/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[627/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[628/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[629/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[630/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[631/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[632/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[633/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[634/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[635/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[636/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[637/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[638/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[639/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[640/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[641/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[642/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[643/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[644/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[645/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[646/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[647/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[648/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[649/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[650/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[651/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[652/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[653/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[654/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[655/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[656/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[657/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[658/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[659/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[660/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[661/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[662/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[663/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[664/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[665/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[666/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[667/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[668/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[669/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[670/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[671/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[672/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[673/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[674/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[675/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[676/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[677/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[678/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[679/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[680/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[681/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[682/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[683/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[684/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[685/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[686/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[687/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[688/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[689/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[690/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[691/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[692/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[693/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[694/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[695/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[696/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[697/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[698/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[699/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+
+--------------------------------------------------------
+  RINGKASAN TRAFFIC NORMAL:
+  Total Request Dikirim   : 699
+  Berhasil (True Negative): 692
+  Diblokir (False Positive): 7
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 08:18:45
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 2_send_normal.txt
+
+     NODE ATTACKER: SEND NORMAL TRAFFIC (Wordlist)    
+  Target  : http://172.17.0.2                          
+  File    : /home/ubuntu/Documents/HNIPS_project/dvwa_wordlist.txt
+  Requests: 700                                    
+
+  Format output:
+  -> Menampilkan URL yang dikunjungi
+  -> HTTP Status Code respons
+  (Semua request normal HARUS lolos -> HTTP 200/302)
+
+--------------------------------------------------------
+[  1/700] /                                                       [PASS] OK -> HTTP 200
+[  2/700] /index.php                                              [PASS] OK -> HTTP 200
+[  3/700] /login.php                                              [PASS] OK -> HTTP 200
+[  4/700] /logout.php                                             [PASS] OK -> HTTP 302
+[  5/700] /setup.php/?article=union_jack                          [PASS] OK -> HTTP 200
+[  6/700] /about.php                                              [PASS] OK -> HTTP 200
+[  7/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[  8/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[  9/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[ 10/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[ 11/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[ 12/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[ 13/700] /README.md                                              [PASS] OK -> HTTP 200
+[ 14/700] /LICENSE.md                                             [WARN] HTTP 404
+[ 15/700] /docs/                                                  [PASS] OK -> HTTP 200
+[ 16/700] /docs/index.html                                        [WARN] HTTP 404
+[ 17/700] /login.php                                              [PASS] OK -> HTTP 200
+[ 18/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[ 19/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[ 20/700] /index.php/?article=union_jack                          [PASS] OK -> HTTP 302
+[ 21/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[ 22/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[ 23/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[ 24/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[ 25/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[ 26/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[ 27/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[ 28/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[ 29/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[ 30/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[ 31/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[ 32/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[ 33/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[ 34/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[ 35/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[ 36/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[ 37/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[ 38/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[ 39/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[ 40/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[ 41/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[ 42/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[ 43/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[ 44/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[ 45/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[ 46/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[ 47/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[ 48/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[ 49/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[ 50/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[ 51/700] /vulnerabilities/fi/source/?article=union_jack          [PASS] OK -> HTTP 200
+[ 52/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[ 53/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[ 54/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[ 55/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[ 56/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[ 57/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[ 58/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[ 59/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[ 60/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[ 61/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[ 62/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[ 63/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[ 64/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[ 65/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[ 66/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[ 67/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[ 68/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[ 69/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[ 70/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[ 71/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[ 72/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[ 73/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[ 74/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[ 75/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[ 76/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[ 77/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[ 78/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[ 79/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[ 80/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[ 81/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[ 82/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[ 83/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[ 84/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[ 85/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[ 86/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[ 87/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[ 88/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[ 89/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[ 90/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[ 91/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[ 92/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[ 93/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[ 94/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[ 95/700] /vulnerabilities/xss_d/?desc=drop_point                 [PASS] OK -> HTTP 302
+[ 96/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[ 97/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[ 98/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[ 99/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[100/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[101/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[102/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[103/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[104/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[105/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[106/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[107/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[108/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[109/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[110/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[111/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[112/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[113/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[114/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[115/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[116/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[117/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[118/700] /vulnerabilities/csp/?desc=drop_point                   [PASS] OK -> HTTP 302
+[119/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[120/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[121/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[122/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[123/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[124/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[125/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[126/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[127/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[128/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[129/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[130/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[131/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[132/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[133/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[134/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[135/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[136/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[137/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[138/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[139/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[140/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[141/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[142/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[143/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[144/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[145/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[146/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[147/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[148/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[149/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[150/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[151/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[152/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[153/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[154/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[155/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[156/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[157/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[158/700] /dvwa/includes/?desc=drop_point                         [PASS] OK -> HTTP 200
+[159/700] /external/                                              [PASS] OK -> HTTP 200
+[160/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[161/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[162/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[163/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[164/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[165/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[166/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[167/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[168/700] /                                                       [PASS] OK -> HTTP 302
+[169/700] /index.php                                              [PASS] OK -> HTTP 302
+[170/700] /login.php                                              [PASS] OK -> HTTP 200
+[171/700] /logout.php                                             [PASS] OK -> HTTP 302
+[172/700] /setup.php                                              [PASS] OK -> HTTP 200
+[173/700] /about.php                                              [PASS] OK -> HTTP 200
+[174/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[175/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[176/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[177/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[178/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[179/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[180/700] /README.md                                              [PASS] OK -> HTTP 200
+[181/700] /LICENSE.md                                             [WARN] HTTP 404
+[182/700] /docs/                                                  [PASS] OK -> HTTP 200
+[183/700] /docs/index.html                                        [WARN] HTTP 404
+[184/700] /login.php                                              [PASS] OK -> HTTP 200
+[185/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[186/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[187/700] /index.php                                              [PASS] OK -> HTTP 302
+[188/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[189/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[190/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[191/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[192/700] /vulnerabilities/brute/?name=O'Connor                   [PASS] OK -> HTTP 302
+[193/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[194/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[195/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[196/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[197/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[198/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[199/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[200/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[201/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[202/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[203/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[204/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[205/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[206/700] /vulnerabilities/csrf/?name=O'Connor                    [PASS] OK -> HTTP 302
+[207/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[208/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[209/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[210/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[211/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[212/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[213/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[214/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[215/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[216/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[217/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[218/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[219/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[220/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[221/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[222/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[223/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[224/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[225/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[226/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[227/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[228/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[229/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[230/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[231/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[232/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[233/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[234/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[235/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[236/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[237/700] /vulnerabilities/sqli/?name=O'Connor                    [PASS] OK -> HTTP 302
+[238/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[239/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[240/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[241/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[242/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[243/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[244/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[245/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[246/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[247/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[248/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[249/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[250/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[251/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[252/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[253/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[254/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[255/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[256/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[257/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[258/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[259/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[260/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[261/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[262/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[263/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[264/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[265/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[266/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[267/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[268/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[269/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[270/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[271/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[272/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[273/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[274/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[275/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[276/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[277/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[278/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[279/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[280/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[281/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[282/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[283/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[284/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[285/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[286/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[287/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[288/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[289/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[290/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[291/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[292/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[293/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[294/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[295/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[296/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[297/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[298/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[299/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[300/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[301/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[302/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[303/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[304/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[305/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[306/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[307/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[308/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[309/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[310/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[311/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[312/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[313/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[314/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[315/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[316/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[317/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[318/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[319/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[320/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[321/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[322/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[323/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[324/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[325/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[326/700] /external/                                              [PASS] OK -> HTTP 200
+[327/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[328/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[329/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[330/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[331/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[332/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[333/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[334/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[335/700] /                                                       [PASS] OK -> HTTP 302
+[336/700] /index.php                                              [PASS] OK -> HTTP 302
+[337/700] /login.php                                              [PASS] OK -> HTTP 200
+[338/700] /logout.php                                             [PASS] OK -> HTTP 302
+[339/700] /setup.php                                              [PASS] OK -> HTTP 200
+[340/700] /about.php                                              [PASS] OK -> HTTP 200
+[341/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[342/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[343/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[344/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[345/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[346/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[347/700] /README.md                                              [PASS] OK -> HTTP 200
+[348/700] /LICENSE.md                                             [WARN] HTTP 404
+[349/700] /docs/                                                  [PASS] OK -> HTTP 200
+[350/700] /docs/index.html                                        [WARN] HTTP 404
+[351/700] /login.php                                              [PASS] OK -> HTTP 200
+[352/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[353/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[354/700] /index.php                                              [PASS] OK -> HTTP 302
+[355/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[356/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[357/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[358/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[359/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[360/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[361/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[362/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[363/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[364/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[365/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[366/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[367/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[368/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[369/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[370/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[371/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[372/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[373/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[374/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[375/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[376/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[377/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[378/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[379/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[380/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[381/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[382/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[383/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[384/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[385/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[386/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[387/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[388/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[389/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[390/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[391/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[392/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[393/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[394/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[395/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[396/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[397/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[398/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[399/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[400/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[401/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[402/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[403/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[404/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[405/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[406/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[407/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[408/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[409/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[410/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[411/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[412/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[413/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[414/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[415/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[416/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[417/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[418/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[419/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[420/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[421/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[422/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[423/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[424/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[425/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[426/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[427/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[428/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[429/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[430/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[431/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[432/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[433/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[434/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[435/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[436/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[437/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[438/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[439/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[440/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[441/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[442/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[443/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[444/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[445/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[446/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[447/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[448/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[449/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[450/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[451/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[452/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[453/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[454/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[455/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[456/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[457/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[458/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[459/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[460/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[461/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[462/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[463/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[464/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[465/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[466/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[467/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[468/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[469/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[470/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[471/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[472/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[473/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[474/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[475/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[476/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[477/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[478/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[479/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[480/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[481/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[482/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[483/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[484/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[485/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[486/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[487/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[488/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[489/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[490/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[491/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[492/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[493/700] /external/                                              [PASS] OK -> HTTP 200
+[494/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[495/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[496/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[497/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[498/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[499/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[500/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[501/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[502/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[503/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[504/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[505/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[506/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[507/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[508/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[509/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[510/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[511/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[512/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[513/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[514/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[515/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[516/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[517/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[518/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[519/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[520/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[521/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[522/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[523/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[524/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[525/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[526/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[527/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[528/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[529/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[530/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[531/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[532/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[533/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[534/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[535/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[536/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[537/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[538/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[539/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[540/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[541/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[542/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[543/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[544/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[545/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[546/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[547/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[548/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[549/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[550/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[551/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[552/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[553/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[554/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[555/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[556/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[557/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[558/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[559/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[560/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[561/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[562/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[563/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[564/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[565/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[566/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[567/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[568/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[569/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[570/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[571/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[572/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[573/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[574/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[575/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[576/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[577/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[578/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[579/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[580/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[581/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[582/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[583/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[584/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[585/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[586/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[587/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[588/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[589/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[590/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[591/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[592/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[593/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[594/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[595/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[596/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[597/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[598/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[599/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[600/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[601/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[602/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[603/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[604/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[605/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[606/700] /external/                                              [PASS] OK -> HTTP 200
+[607/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[608/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[609/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[610/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[611/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[612/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[613/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[614/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[615/700] /README.md                                              [PASS] OK -> HTTP 200
+[616/700] /LICENSE.md                                             [WARN] HTTP 404
+[617/700] /docs/                                                  [PASS] OK -> HTTP 200
+[618/700] /docs/index.html                                        [WARN] HTTP 404
+[619/700] /login.php                                              [PASS] OK -> HTTP 200
+[620/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[621/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[622/700] /index.php                                              [PASS] OK -> HTTP 302
+[623/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[624/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[625/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[626/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[627/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[628/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[629/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[630/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[631/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[632/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[633/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[634/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[635/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[636/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[637/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[638/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[639/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[640/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[641/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[642/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[643/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[644/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[645/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[646/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[647/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[648/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[649/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[650/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[651/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[652/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[653/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[654/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[655/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[656/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[657/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[658/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[659/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[660/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[661/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[662/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[663/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[664/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[665/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[666/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[667/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[668/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[669/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[670/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[671/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[672/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[673/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[674/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[675/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[676/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[677/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[678/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[679/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[680/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[681/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[682/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[683/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[684/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[685/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[686/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[687/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[688/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[689/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[690/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[691/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[692/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[693/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[694/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[695/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[696/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[697/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[698/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[699/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+
+--------------------------------------------------------
+  RINGKASAN TRAFFIC NORMAL:
+  Total Request Dikirim   : 699
+  Berhasil (True Negative): 695
+  Diblokir (False Positive): 4
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 09:13:27
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 2_send_normal.txt
+
+     NODE ATTACKER: SEND NORMAL TRAFFIC (Wordlist)    
+  Target  : http://172.17.0.2                          
+  File    : /home/ubuntu/Documents/HNIPS_project/dvwa_wordlist.txt
+  Requests: 700                                    
+
+  Format output:
+  -> Menampilkan URL yang dikunjungi
+  -> HTTP Status Code respons
+  (Semua request normal HARUS lolos -> HTTP 200/302)
+
+--------------------------------------------------------
+[  1/700] /                                                       [PASS] OK -> HTTP 302
+[  2/700] /index.php                                              [PASS] OK -> HTTP 302
+[  3/700] /login.php                                              [PASS] OK -> HTTP 200
+[  4/700] /logout.php                                             [PASS] OK -> HTTP 302
+[  5/700] /setup.php/?article=union_jack                          [PASS] OK -> HTTP 200
+[  6/700] /about.php                                              [PASS] OK -> HTTP 200
+[  7/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[  8/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[  9/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[ 10/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[ 11/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[ 12/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[ 13/700] /README.md                                              [PASS] OK -> HTTP 200
+[ 14/700] /LICENSE.md                                             [WARN] HTTP 404
+[ 15/700] /docs/                                                  [PASS] OK -> HTTP 200
+[ 16/700] /docs/index.html                                        [WARN] HTTP 404
+[ 17/700] /login.php                                              [PASS] OK -> HTTP 200
+[ 18/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[ 19/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[ 20/700] /index.php/?article=union_jack                          [PASS] OK -> HTTP 302
+[ 21/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[ 22/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[ 23/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[ 24/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[ 25/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[ 26/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[ 27/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[ 28/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[ 29/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[ 30/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[ 31/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[ 32/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[ 33/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[ 34/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[ 35/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[ 36/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[ 37/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[ 38/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[ 39/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[ 40/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[ 41/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[ 42/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[ 43/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[ 44/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[ 45/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[ 46/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[ 47/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[ 48/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[ 49/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[ 50/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[ 51/700] /vulnerabilities/fi/source/?article=union_jack          [PASS] OK -> HTTP 200
+[ 52/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[ 53/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[ 54/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[ 55/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[ 56/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[ 57/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[ 58/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[ 59/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[ 60/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[ 61/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[ 62/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[ 63/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[ 64/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[ 65/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[ 66/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[ 67/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[ 68/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[ 69/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[ 70/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[ 71/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[ 72/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[ 73/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[ 74/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[ 75/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[ 76/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[ 77/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[ 78/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[ 79/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[ 80/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[ 81/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[ 82/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[ 83/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[ 84/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[ 85/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[ 86/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[ 87/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[ 88/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[ 89/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[ 90/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[ 91/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[ 92/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[ 93/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[ 94/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[ 95/700] /vulnerabilities/xss_d/?desc=drop_point                 [PASS] OK -> HTTP 302
+[ 96/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[ 97/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[ 98/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[ 99/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[100/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[101/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[102/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[103/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[104/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[105/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[106/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[107/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[108/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[109/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[110/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[111/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[112/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[113/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[114/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[115/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[116/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[117/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[118/700] /vulnerabilities/csp/?desc=drop_point                   [PASS] OK -> HTTP 302
+[119/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[120/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[121/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[122/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[123/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[124/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[125/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[126/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[127/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[128/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[129/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[130/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[131/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[132/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[133/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[134/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[135/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[136/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[137/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[138/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[139/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[140/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[141/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[142/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[143/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[144/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[145/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[146/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[147/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[148/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[149/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[150/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[151/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[152/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[153/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[154/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[155/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[156/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[157/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[158/700] /dvwa/includes/?desc=drop_point                         [PASS] OK -> HTTP 200
+[159/700] /external/                                              [PASS] OK -> HTTP 200
+[160/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[161/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[162/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[163/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[164/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[165/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[166/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[167/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[168/700] /                                                       [PASS] OK -> HTTP 302
+[169/700] /index.php                                              [PASS] OK -> HTTP 302
+[170/700] /login.php                                              [PASS] OK -> HTTP 200
+[171/700] /logout.php                                             [PASS] OK -> HTTP 302
+[172/700] /setup.php                                              [PASS] OK -> HTTP 200
+[173/700] /about.php                                              [PASS] OK -> HTTP 200
+[174/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[175/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[176/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[177/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[178/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[179/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[180/700] /README.md                                              [PASS] OK -> HTTP 200
+[181/700] /LICENSE.md                                             [WARN] HTTP 404
+[182/700] /docs/                                                  [PASS] OK -> HTTP 200
+[183/700] /docs/index.html                                        [WARN] HTTP 404
+[184/700] /login.php                                              [PASS] OK -> HTTP 200
+[185/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[186/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[187/700] /index.php                                              [PASS] OK -> HTTP 302
+[188/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[189/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[190/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[191/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[192/700] /vulnerabilities/brute/?name=O'Connor                   [DROP] DIBLOKIR (False Positive!) 
+[193/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[194/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[195/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[196/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[197/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[198/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[199/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[200/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[201/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[202/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[203/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[204/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[205/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[206/700] /vulnerabilities/csrf/?name=O'Connor                    [DROP] DIBLOKIR (False Positive!) 
+[207/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[208/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[209/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[210/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[211/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[212/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[213/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[214/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[215/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[216/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[217/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[218/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[219/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[220/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[221/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[222/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[223/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[224/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[225/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[226/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[227/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[228/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[229/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[230/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[231/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[232/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[233/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[234/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[235/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[236/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[237/700] /vulnerabilities/sqli/?name=O'Connor                    [DROP] DIBLOKIR (False Positive!) 
+[238/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[239/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[240/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[241/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[242/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[243/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[244/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[245/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[246/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[247/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[248/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[249/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[250/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[251/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[252/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[253/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[254/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[255/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[256/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[257/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[258/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[259/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[260/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[261/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[262/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[263/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[264/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[265/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[266/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[267/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[268/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[269/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[270/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[271/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[272/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[273/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[274/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[275/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[276/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[277/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[278/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[279/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[280/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[281/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[282/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[283/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[284/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[285/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[286/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[287/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[288/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[289/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[290/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[291/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[292/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[293/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[294/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[295/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[296/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[297/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[298/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[299/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[300/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[301/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[302/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[303/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[304/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[305/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[306/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[307/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[308/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[309/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[310/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[311/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[312/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[313/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[314/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[315/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[316/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[317/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[318/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[319/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[320/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[321/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[322/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[323/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[324/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[325/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[326/700] /external/                                              [PASS] OK -> HTTP 200
+[327/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[328/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[329/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[330/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[331/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[332/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[333/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[334/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[335/700] /                                                       [PASS] OK -> HTTP 302
+[336/700] /index.php                                              [PASS] OK -> HTTP 302
+[337/700] /login.php                                              [PASS] OK -> HTTP 200
+[338/700] /logout.php                                             [PASS] OK -> HTTP 302
+[339/700] /setup.php                                              [PASS] OK -> HTTP 200
+[340/700] /about.php                                              [PASS] OK -> HTTP 200
+[341/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[342/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[343/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[344/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[345/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[346/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[347/700] /README.md                                              [PASS] OK -> HTTP 200
+[348/700] /LICENSE.md                                             [WARN] HTTP 404
+[349/700] /docs/                                                  [PASS] OK -> HTTP 200
+[350/700] /docs/index.html                                        [WARN] HTTP 404
+[351/700] /login.php                                              [PASS] OK -> HTTP 200
+[352/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[353/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[354/700] /index.php                                              [PASS] OK -> HTTP 302
+[355/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[356/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[357/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[358/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[359/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[360/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[361/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[362/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[363/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[364/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[365/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[366/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[367/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[368/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[369/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[370/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[371/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[372/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[373/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[374/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[375/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[376/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[377/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[378/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[379/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[380/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[381/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[382/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[383/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[384/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[385/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[386/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[387/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[388/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[389/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[390/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[391/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[392/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[393/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[394/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[395/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[396/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[397/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[398/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[399/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[400/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[401/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[402/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[403/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[404/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[405/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[406/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[407/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[408/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[409/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[410/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[411/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[412/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[413/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[414/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[415/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[416/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[417/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[418/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[419/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[420/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[421/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[422/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[423/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[424/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[425/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[426/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[427/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[428/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[429/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[430/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[431/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[432/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[433/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[434/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[435/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[436/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[437/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[438/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[439/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[440/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[441/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[442/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[443/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[444/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[445/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[446/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[447/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[448/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[449/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[450/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[451/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[452/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[453/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[454/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[455/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[456/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[457/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[458/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[459/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[460/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[461/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[462/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[463/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[464/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[465/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[466/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[467/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[468/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[469/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[470/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[471/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[472/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[473/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[474/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[475/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[476/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[477/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[478/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[479/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[480/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[481/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[482/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[483/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[484/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[485/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[486/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[487/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[488/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[489/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[490/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[491/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[492/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[493/700] /external/                                              [PASS] OK -> HTTP 200
+[494/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[495/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[496/700] /vulnerabilities/view_source.php?id=sqli&security=low   [PASS] OK -> HTTP 302
+[497/700] /vulnerabilities/view_source.php?id=xss_r&security=low  [PASS] OK -> HTTP 302
+[498/700] /vulnerabilities/view_source.php?id=exec&security=low   [PASS] OK -> HTTP 302
+[499/700] /vulnerabilities/view_help.php?id=sqli                  [PASS] OK -> HTTP 302
+[500/700] /vulnerabilities/view_help.php?id=xss_r                 [PASS] OK -> HTTP 302
+[501/700] /vulnerabilities/view_help.php?id=exec                  [PASS] OK -> HTTP 302
+[502/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[503/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[504/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[505/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[506/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[507/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[508/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[509/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[510/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[511/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[512/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[513/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[514/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[515/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[516/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[517/700] /vulnerabilities/sqli/                                  [PASS] OK -> HTTP 302
+[518/700] /vulnerabilities/sqli/?id=8&Submit=Submit               [PASS] OK -> HTTP 302
+[519/700] /vulnerabilities/sqli/?id=2&Submit=Submit               [PASS] OK -> HTTP 302
+[520/700] /vulnerabilities/sqli/?id=7&Submit=Submit               [PASS] OK -> HTTP 302
+[521/700] /vulnerabilities/sqli/?id=9&Submit=Submit               [PASS] OK -> HTTP 302
+[522/700] /vulnerabilities/sqli/?id=3&Submit=Submit               [PASS] OK -> HTTP 302
+[523/700] /vulnerabilities/sqli/source/                           [PASS] OK -> HTTP 200
+[524/700] /vulnerabilities/sqli/source/low.php                    [PASS] OK -> HTTP 200
+[525/700] /vulnerabilities/sqli/source/medium.php                 [PASS] OK -> HTTP 200
+[526/700] /vulnerabilities/sqli/source/high.php                   [PASS] OK -> HTTP 200
+[527/700] /vulnerabilities/sqli_blind/                            [PASS] OK -> HTTP 302
+[528/700] /vulnerabilities/sqli_blind/?id=8&Submit=Submit         [PASS] OK -> HTTP 302
+[529/700] /vulnerabilities/sqli_blind/?id=2&Submit=Submit         [PASS] OK -> HTTP 302
+[530/700] /vulnerabilities/sqli_blind/?id=6&Submit=Submit         [PASS] OK -> HTTP 302
+[531/700] /vulnerabilities/sqli_blind/source/                     [PASS] OK -> HTTP 200
+[532/700] /vulnerabilities/sqli_blind/source/low.php              [PASS] OK -> HTTP 200
+[533/700] /vulnerabilities/sqli_blind/source/medium.php           [PASS] OK -> HTTP 200
+[534/700] /vulnerabilities/sqli_blind/source/high.php             [PASS] OK -> HTTP 200
+[535/700] /vulnerabilities/weak_id/                               [PASS] OK -> HTTP 302
+[536/700] /vulnerabilities/weak_id/index.php                      [PASS] OK -> HTTP 302
+[537/700] /vulnerabilities/weak_id/index.php?Generate=Generate    [PASS] OK -> HTTP 302
+[538/700] /vulnerabilities/weak_id/source/                        [PASS] OK -> HTTP 200
+[539/700] /vulnerabilities/weak_id/source/low.php                 [PASS] OK -> HTTP 200
+[540/700] /vulnerabilities/weak_id/source/medium.php              [PASS] OK -> HTTP 200
+[541/700] /vulnerabilities/weak_id/source/high.php                [PASS] OK -> HTTP 200
+[542/700] /vulnerabilities/xss_d/                                 [PASS] OK -> HTTP 302
+[543/700] /vulnerabilities/xss_d/?default=English                 [PASS] OK -> HTTP 302
+[544/700] /vulnerabilities/xss_d/?default=French                  [PASS] OK -> HTTP 302
+[545/700] /vulnerabilities/xss_d/?default=Spanish                 [PASS] OK -> HTTP 302
+[546/700] /vulnerabilities/xss_d/?default=German                  [PASS] OK -> HTTP 302
+[547/700] /vulnerabilities/xss_d/?default=Japanese                [PASS] OK -> HTTP 302
+[548/700] /vulnerabilities/xss_d/source/                          [PASS] OK -> HTTP 200
+[549/700] /vulnerabilities/xss_d/source/low.php                   [PASS] OK -> HTTP 200
+[550/700] /vulnerabilities/xss_d/source/medium.php                [PASS] OK -> HTTP 200
+[551/700] /vulnerabilities/xss_d/source/high.php                  [PASS] OK -> HTTP 200
+[552/700] /vulnerabilities/xss_r/                                 [PASS] OK -> HTTP 302
+[553/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[554/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[555/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[556/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[557/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[558/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[559/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[560/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[561/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[562/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[563/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[564/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[565/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[566/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[567/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[568/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[569/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[570/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[571/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[572/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[573/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[574/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[575/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[576/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[577/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[578/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[579/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[580/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+[581/700] /vulnerabilities/authbypass/index.php                   [WARN] HTTP 404
+[582/700] /vulnerabilities/authbypass/source/                     [WARN] HTTP 404
+[583/700] /vulnerabilities/authbypass/source/low.php              [WARN] HTTP 404
+[584/700] /vulnerabilities/authbypass/source/medium.php           [WARN] HTTP 404
+[585/700] /vulnerabilities/authbypass/source/high.php             [WARN] HTTP 404
+[586/700] /vulnerabilities/open_redirect/                         [WARN] HTTP 404
+[587/700] /vulnerabilities/open_redirect/source/high.php?redirect [WARN] HTTP 404
+[588/700] /vulnerabilities/open_redirect/source/                  [WARN] HTTP 404
+[589/700] /vulnerabilities/open_redirect/source/low.php           [WARN] HTTP 404
+[590/700] /vulnerabilities/open_redirect/source/medium.php        [WARN] HTTP 404
+[591/700] /vulnerabilities/open_redirect/source/high.php          [WARN] HTTP 404
+[592/700] /vulnerabilities/xxe/                                   [WARN] HTTP 404
+[593/700] /vulnerabilities/xxe/index.php                          [WARN] HTTP 404
+[594/700] /vulnerabilities/xxe/source/                            [WARN] HTTP 404
+[595/700] /vulnerabilities/xxe/source/low.php                     [WARN] HTTP 404
+[596/700] /vulnerabilities/xxe/source/medium.php                  [WARN] HTTP 404
+[597/700] /vulnerabilities/xxe/source/high.php                    [WARN] HTTP 404
+[598/700] /dvwa/css/main.css                                      [PASS] OK -> HTTP 200
+[599/700] /dvwa/css/login.css                                     [PASS] OK -> HTTP 200
+[600/700] /dvwa/js/dvwaPage.js                                    [PASS] OK -> HTTP 200
+[601/700] /dvwa/js/dvwaUtils.js                                   [WARN] HTTP 404
+[602/700] /dvwa/images/logo.png                                   [PASS] OK -> HTTP 200
+[603/700] /dvwa/images/success.png                                [WARN] HTTP 404
+[604/700] /dvwa/images/fail.png                                   [WARN] HTTP 404
+[605/700] /dvwa/includes/                                         [PASS] OK -> HTTP 200
+[606/700] /external/                                              [PASS] OK -> HTTP 200
+[607/700] /external/CryptoJS/                                     [WARN] HTTP 404
+[608/700] /external/phpids/                                       [PASS] OK -> HTTP 200
+[609/700] /instructions.php                                       [PASS] OK -> HTTP 200
+[610/700] /ids_log.php                                            [PASS] OK -> HTTP 302
+[611/700] /phpinfo.php                                            [PASS] OK -> HTTP 302
+[612/700] /robots.txt                                             [PASS] OK -> HTTP 200
+[613/700] /favicon.ico                                            [PASS] OK -> HTTP 200
+[614/700] /CHANGELOG.md                                           [PASS] OK -> HTTP 200
+[615/700] /README.md                                              [PASS] OK -> HTTP 200
+[616/700] /LICENSE.md                                             [WARN] HTTP 404
+[617/700] /docs/                                                  [PASS] OK -> HTTP 200
+[618/700] /docs/index.html                                        [WARN] HTTP 404
+[619/700] /login.php                                              [PASS] OK -> HTTP 200
+[620/700] /login.php?username=admin&password=password&Login=Login [PASS] OK -> HTTP 200
+[621/700] /login.php?user_token=                                  [PASS] OK -> HTTP 200
+[622/700] /index.php                                              [PASS] OK -> HTTP 302
+[623/700] /security.php                                           [DROP] DIBLOKIR (False Positive!) 
+[624/700] /vulnerabilities/                                       [PASS] OK -> HTTP 200
+[625/700] /vulnerabilities/view_source.php                        [PASS] OK -> HTTP 302
+[626/700] /vulnerabilities/view_help.php                          [PASS] OK -> HTTP 302
+[627/700] /vulnerabilities/brute/                                 [PASS] OK -> HTTP 302
+[628/700] /vulnerabilities/brute/index.php                        [PASS] OK -> HTTP 302
+[629/700] /vulnerabilities/brute/index.php?username=admin&passwor [PASS] OK -> HTTP 302
+[630/700] /vulnerabilities/brute/source/                          [PASS] OK -> HTTP 200
+[631/700] /vulnerabilities/brute/source/low.php                   [PASS] OK -> HTTP 200
+[632/700] /vulnerabilities/brute/source/medium.php                [PASS] OK -> HTTP 200
+[633/700] /vulnerabilities/brute/source/high.php                  [WARN] HTTP 500
+[634/700] /vulnerabilities/exec/                                  [PASS] OK -> HTTP 302
+[635/700] /vulnerabilities/exec/index.php                         [PASS] OK -> HTTP 302
+[636/700] /vulnerabilities/exec/index.php?ip=127.0.0.1&Submit=Sub [PASS] OK -> HTTP 302
+[637/700] /vulnerabilities/exec/source/                           [PASS] OK -> HTTP 200
+[638/700] /vulnerabilities/exec/source/low.php                    [PASS] OK -> HTTP 200
+[639/700] /vulnerabilities/exec/source/medium.php                 [PASS] OK -> HTTP 200
+[640/700] /vulnerabilities/exec/source/high.php                   [PASS] OK -> HTTP 200
+[641/700] /vulnerabilities/csrf/                                  [PASS] OK -> HTTP 302
+[642/700] /vulnerabilities/csrf/index.php                         [PASS] OK -> HTTP 302
+[643/700] /vulnerabilities/csrf/index.php?password_new=Password1& [PASS] OK -> HTTP 302
+[644/700] /vulnerabilities/csrf/source/                           [PASS] OK -> HTTP 200
+[645/700] /vulnerabilities/csrf/source/low.php                    [PASS] OK -> HTTP 200
+[646/700] /vulnerabilities/csrf/source/medium.php                 [PASS] OK -> HTTP 200
+[647/700] /vulnerabilities/csrf/source/high.php                   [WARN] HTTP 500
+[648/700] /vulnerabilities/fi/                                    [PASS] OK -> HTTP 302
+[649/700] /vulnerabilities/fi/?page=include.php                   [PASS] OK -> HTTP 302
+[650/700] /vulnerabilities/fi/?page=file1.php                     [PASS] OK -> HTTP 302
+[651/700] /vulnerabilities/fi/?page=file2.php                     [PASS] OK -> HTTP 302
+[652/700] /vulnerabilities/fi/?page=file3.php                     [PASS] OK -> HTTP 302
+[653/700] /vulnerabilities/fi/source/                             [PASS] OK -> HTTP 200
+[654/700] /vulnerabilities/fi/source/low.php                      [PASS] OK -> HTTP 200
+[655/700] /vulnerabilities/fi/source/medium.php                   [PASS] OK -> HTTP 200
+[656/700] /vulnerabilities/fi/source/high.php                     [PASS] OK -> HTTP 200
+[657/700] /vulnerabilities/upload/                                [PASS] OK -> HTTP 302
+[658/700] /vulnerabilities/upload/index.php                       [PASS] OK -> HTTP 302
+[659/700] /vulnerabilities/upload/index.php?Upload=Upload         [PASS] OK -> HTTP 302
+[660/700] /vulnerabilities/upload/source/                         [PASS] OK -> HTTP 200
+[661/700] /vulnerabilities/upload/source/low.php                  [PASS] OK -> HTTP 200
+[662/700] /vulnerabilities/upload/source/medium.php               [PASS] OK -> HTTP 200
+[663/700] /vulnerabilities/upload/source/high.php                 [PASS] OK -> HTTP 200
+[664/700] /hackable/uploads/                                      [PASS] OK -> HTTP 200
+[665/700] /vulnerabilities/captcha/                               [PASS] OK -> HTTP 302
+[666/700] /vulnerabilities/captcha/index.php                      [PASS] OK -> HTTP 302
+[667/700] /vulnerabilities/captcha/index.php?g-recaptcha-response [PASS] OK -> HTTP 302
+[668/700] /vulnerabilities/captcha/source/                        [PASS] OK -> HTTP 200
+[669/700] /vulnerabilities/captcha/source/low.php                 [PASS] OK -> HTTP 200
+[670/700] /vulnerabilities/captcha/source/medium.php              [PASS] OK -> HTTP 200
+[671/700] /vulnerabilities/captcha/source/high.php                [WARN] HTTP 500
+[672/700] /vulnerabilities/xss_r/?name=John&Submit=Submit         [PASS] OK -> HTTP 302
+[673/700] /vulnerabilities/xss_r/source/                          [PASS] OK -> HTTP 200
+[674/700] /vulnerabilities/xss_r/source/low.php                   [PASS] OK -> HTTP 200
+[675/700] /vulnerabilities/xss_r/source/medium.php                [PASS] OK -> HTTP 200
+[676/700] /vulnerabilities/xss_r/source/high.php                  [PASS] OK -> HTTP 200
+[677/700] /vulnerabilities/xss_s/                                 [PASS] OK -> HTTP 302
+[678/700] /vulnerabilities/xss_s/index.php                        [PASS] OK -> HTTP 302
+[679/700] /vulnerabilities/xss_s/index.php?txtName=Guest&mtxMessa [PASS] OK -> HTTP 302
+[680/700] /vulnerabilities/xss_s/source/                          [PASS] OK -> HTTP 200
+[681/700] /vulnerabilities/xss_s/source/low.php                   [PASS] OK -> HTTP 200
+[682/700] /vulnerabilities/xss_s/source/medium.php                [PASS] OK -> HTTP 200
+[683/700] /vulnerabilities/xss_s/source/high.php                  [PASS] OK -> HTTP 200
+[684/700] /vulnerabilities/csp/                                   [PASS] OK -> HTTP 302
+[685/700] /vulnerabilities/csp/index.php                          [PASS] OK -> HTTP 302
+[686/700] /vulnerabilities/csp/source/                            [PASS] OK -> HTTP 200
+[687/700] /vulnerabilities/csp/source/low.php                     [PASS] OK -> HTTP 200
+[688/700] /vulnerabilities/csp/source/medium.php                  [PASS] OK -> HTTP 200
+[689/700] /vulnerabilities/csp/source/high.php                    [PASS] OK -> HTTP 200
+[690/700] /vulnerabilities/javascript/                            [PASS] OK -> HTTP 302
+[691/700] /vulnerabilities/javascript/index.php                   [PASS] OK -> HTTP 302
+[692/700] /vulnerabilities/javascript/source/                     [PASS] OK -> HTTP 200
+[693/700] /vulnerabilities/javascript/source/low.php              [PASS] OK -> HTTP 200
+[694/700] /vulnerabilities/javascript/source/medium.php           [PASS] OK -> HTTP 200
+[695/700] /vulnerabilities/javascript/source/high.php             [PASS] OK -> HTTP 200
+[696/700] /vulnerabilities/javascript/source/low.js               [WARN] HTTP 404
+[697/700] /vulnerabilities/javascript/source/medium.js            [PASS] OK -> HTTP 200
+[698/700] /vulnerabilities/javascript/source/high.js              [PASS] OK -> HTTP 200
+[699/700] /vulnerabilities/authbypass/                            [WARN] HTTP 404
+
+--------------------------------------------------------
+  RINGKASAN TRAFFIC NORMAL:
+  Total Request Dikirim   : 699
+  Berhasil (True Negative): 692
+  Diblokir (False Positive): 7
+--------------------------------------------------------
+

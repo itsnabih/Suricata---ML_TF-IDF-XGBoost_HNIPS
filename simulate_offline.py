@@ -9,7 +9,6 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 
-# Impor library jaringan & model
 from scapy.all import IP, TCP, Raw, wrpcap, Ether
 import joblib
 import pandas as pd
@@ -32,11 +31,9 @@ def load_sample_payloads():
     payloads = []
     try:
         df = pd.read_csv("datauji-aio.csv", on_bad_lines='skip', engine='python')
-        # Ambil 50 normal
         normal = df[df['label'] == 'benign'].head(50)['payload'].tolist()
         for p in normal: payloads.append((p, 0, 'normal'))
         
-        # Ambil 150 attack (mengandung campuran basic & obfuscated)
         attack = df[df['label'] == 'attack'].head(150)['payload'].tolist()
         for p in attack: payloads.append((p, 1, 'attack'))
     except Exception as e:
@@ -52,7 +49,6 @@ def build_pcap(payloads, pcap_file):
     dport = 80
     
     for i, (payload, label, ptype) in enumerate(payloads):
-        # Build HTTP Request
         import urllib.parse
         encoded = urllib.parse.quote_plus(str(payload))
         http_req = (f"GET /vulnerabilities/sqli/?id={encoded}&Submit=Submit HTTP/1.1\r\n"
@@ -60,7 +56,6 @@ def build_pcap(payloads, pcap_file):
                     f"User-Agent: sqlmap/1.8.4\r\n"
                     f"Cookie: PHPSESSID=hdcoukkc72vv9ha0fjeop7g5m6; security=low\r\n\r\n")
         
-        # Build scapy packet
         pkt = Ether(src="00:11:22:33:44:55", dst="aa:bb:cc:dd:ee:ff") / \
               IP(src=src_ip, dst=dst_ip) / \
               TCP(sport=sport+i, dport=dport, flags="PA", seq=1000, ack=1000) / \
@@ -73,12 +68,10 @@ def build_pcap(payloads, pcap_file):
 def run_suricata(pcap_file, log_dir):
     log_dir_path = Path(log_dir)
     log_dir_path.mkdir(exist_ok=True)
-    # Jalankan suricata
     cmd = ["sudo", "suricata", "-r", str(pcap_file), "-c", "/etc/suricata/suricata.yaml", "-l", str(log_dir_path)]
     print(f"[*] Running Suricata on {pcap_file}...")
     subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
-    # Parse eve.json to find alerted ports
     eve_file = log_dir_path / "eve.json"
     alerted_sports = set()
     if eve_file.exists():
@@ -92,7 +85,6 @@ def run_suricata(pcap_file, log_dir):
     return alerted_sports
 
 def evaluate_ml(payloads):
-    # Load ML artifacts
     art = load_artifacts("model_meta.json", "tfidf_vectorizer.pkl", "xgb_sqli_model.pkl", "feature_selector.pkl")
     results = []
     for payload, label, ptype in payloads:
@@ -128,13 +120,10 @@ def generate_reports():
     pcap_path = "traffic.pcap"
     build_pcap(payloads, pcap_path)
     
-    # Run Suricata
     suricata_alerts = run_suricata(pcap_path, "suricata_temp")
     
-    # Run ML
     ml_results = evaluate_ml(payloads)
     
-    # Combine results
     for i, res in enumerate(ml_results):
         sport = 12345 + i
         res["suricata_dropped"] = (sport in suricata_alerts)
@@ -181,12 +170,10 @@ def generate_reports():
         write_logs(scenario, dvwa_logs, "target", "dvwa_access.log")
         write_logs(scenario, fw_logs, "firewall", "ips_action.log")
         
-        # Copy suricata logs for 1 and 3
         if scenario_idx in [0, 2] and Path("suricata_temp").exists():
             shutil.copy("suricata_temp/fast.log", OUT_DIR / scenario / "firewall" / "suricata_fast.log")
             shutil.copy("suricata_temp/eve.json", OUT_DIR / scenario / "firewall" / "suricata_eve.json")
             
-        # Write mock iptables stats
         iptables_stats = [
             f"Chain OUTPUT (policy ACCEPT 120 packets, 9600 bytes)",
             f" pkts bytes target     prot opt in     out     source               destination         ",
@@ -194,7 +181,6 @@ def generate_reports():
         ]
         write_logs(scenario, iptables_stats, "firewall", "iptables_stats.txt")
 
-    # Cleanup
     if Path("suricata_temp").exists():
         shutil.rmtree("suricata_temp")
     if os.path.exists("traffic.pcap"):

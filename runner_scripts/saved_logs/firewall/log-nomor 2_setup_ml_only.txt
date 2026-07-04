@@ -1,0 +1,25 @@
+[LOG] Logging dimulai: 2026-07-04 08:14:26
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 2_setup_ml_only.txt
+
+    SETUP IPTABLES: SKENARIO 2 - ML ONLY  
+
+[1/2] Menerapkan rule iptables (tabel FILTER -> Queue 3)...
+      OK OUTPUT -> NFQUEUE 3 (tujuan 172.17.0.2:80)
+      OK INPUT  ← NFQUEUE 3 (sumber 172.17.0.2:80)
+[2/2] Verifikasi rule iptables aktif:
+
+Chain INPUT (policy ACCEPT 406K packets, 179M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 324K packets, 45M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+Chain DOCKER (0 references)
+Chain DOCKER-BRIDGE (0 references)
+Chain DOCKER-CT (0 references)
+Chain DOCKER-FORWARD (0 references)
+Chain DOCKER-INTERNAL (0 references)
+Chain DOCKER-USER (0 references)
+
+[OK]  IPTables Skenario 2 (ML Only) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_ml.sh di terminal ini.
+

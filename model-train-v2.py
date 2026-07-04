@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-SQLi IPS Model Training - v2 (Enhanced Recall)
-================================================
-Perbaikan v2 (vs v1):
-  1. Dual TF-IDF: word n-gram (1-3) + char n-gram (2-5) digabung
-     -> Model belajar kata kunci utuh (UNION, SELECT, SLEEP) sekaligus pola karakter
-  2. Threshold dipilih berdasarkan F1-Score maksimal (bukan FPR target)
-     -> Keseimbangan Precision/Recall lebih baik untuk dataset baru
-  3. Preprocessing lebih lunak: strip_param_names=False (default)
-     -> Konteks nama parameter (id=, name=) tetap tersimpan sebagai fitur
-  4. Fitur keyword SQL manual (biner) ditambahkan ke feature matrix
-"""
 
 from __future__ import annotations
 import argparse, json, logging, os, re, warnings
@@ -43,10 +30,6 @@ _RE_HTTP_LINE   = re.compile(r"^(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+", 
 _RE_PATH_PREFIX = re.compile(r"^(?:/[^?#]*)?\?", re.IGNORECASE)
 _RE_VALID_KEY   = re.compile(r"^[A-Za-z_][A-Za-z0-9_\-\.]*$")
 
-# ── Bias artifact removal ─────────────────────────────────────────────────
-# Parameter names yang berperilaku sebagai konfounding (muncul 100% di satu kelas)
-# Submit=Submit: hanya ada di dataset DVWA attack, tidak di benign → pure bias
-# ua=...: user-agent string, tidak relevan untuk SQL injection detection
 _BIAS_PARAM_KEYS = re.compile(
     r"(?:^|&)Submit=[^&]*",  # parameter Submit (DVWA artifact)
     re.IGNORECASE
@@ -68,7 +51,6 @@ SQL_KEYWORDS = [
     "row(","exp(","floor(rand","group by","benchmark(","dbms_pipe",
 ]
 
-
 def normalize_encoded(text: str, max_passes: int = 3) -> str:
     prev = None
     result = text
@@ -82,7 +64,6 @@ def normalize_encoded(text: str, max_passes: int = 3) -> str:
             break
     return result
 
-
 def strip_bias_artifacts(text: str) -> str:
     """
     Buang token-token yang bersifat konfounding (menyebabkan bias dataset):
@@ -90,25 +71,18 @@ def strip_bias_artifacts(text: str) -> str:
     2. Suffix ' ua=Mozilla/5.0 ...' yang ditambahkan logger (bukan bagian dari payload)
     Operasi ini dilakukan SEBELUM URL parsing agar bersih dari awal.
     """
-    # Buang suffix ua= (misalnya: ...Submit ua=Mozilla/5.0)
     text = _UA_SUFFIX.sub("", text).strip()
-    # Buang parameter Submit dari query string jika ada
-    # Handle encoded (%26Submit%3DSubmit) maupun plain (&Submit=Submit)
     if "Submit" in text or "submit" in text:
-        # Decode dulu untuk menangkap yang masih encoded
         decoded_check = text
         try:
             from urllib.parse import unquote
             decoded_check = unquote(text)
         except Exception:
             pass
-        # Buang &Submit=... atau Submit=... di awal query string
         text = re.sub(r'(?:&|(?<=\?))[Ss]ubmit=[^&\s#]*', '', text)
-        # Cleanup double && atau trailing &
         text = re.sub(r'&{2,}', '&', text)
         text = re.sub(r'[?&]$', '', text).strip()
     return text
-
 
 def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
     if not raw or not isinstance(raw, str):
@@ -118,7 +92,6 @@ def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
     if " HTTP/" in text:
         text = text.split(" HTTP/")[0]
 
-    # ── Buang artifact yang menyebabkan bias dataset ───────────────────────
     text = strip_bias_artifacts(text)
 
     query_string = ""
@@ -163,7 +136,6 @@ def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
         text = text[m.end():]
     return normalize_encoded(text)
 
-
 def extract_sql_keyword_features(texts: List[str]) -> sp.csr_matrix:
     n, k = len(texts), len(SQL_KEYWORDS)
     data, rows, cols = [], [], []
@@ -174,10 +146,8 @@ def extract_sql_keyword_features(texts: List[str]) -> sp.csr_matrix:
                 rows.append(i); cols.append(j); data.append(1.0)
     return sp.csr_matrix((data, (rows, cols)), shape=(n, k))
 
-
 def preprocess_texts(texts, strip_param_names: bool = False) -> List[str]:
     return [extract_payload_text(t, strip_param_names) for t in texts]
-
 
 @dataclass
 class TrainConfig:
@@ -223,7 +193,6 @@ class TrainConfig:
     out_model: str = "xgb_sqli_model.pkl"
     out_meta: str = "model_meta.json"
 
-
 def load_dataset(cfg: TrainConfig) -> pd.DataFrame:
     path = Path(cfg.dataset_path)
     if not path.exists():
@@ -255,10 +224,8 @@ def load_dataset(cfg: TrainConfig) -> pd.DataFrame:
     logger.info(f"Dataset loaded: {len(df)} rows (attack={attack}, benign={benign})")
     return df
 
-
 def encode_labels(df: pd.DataFrame, cfg: TrainConfig) -> np.ndarray:
     return (df[cfg.label_col].values == POS_LABEL).astype(np.int32)
-
 
 def safe_rates_from_cm(cm: np.ndarray) -> Dict[str, float]:
     tn, fp = int(cm[0, 0]), int(cm[0, 1])
@@ -271,7 +238,6 @@ def safe_rates_from_cm(cm: np.ndarray) -> Dict[str, float]:
     return {"fpr": float(fpr), "tpr": float(tpr), "tnr": float(tnr),
             "precision": float(precision), "f1": float(f1),
             "tn": tn, "fp": fp, "fn": fn, "tp": tp}
-
 
 def pick_threshold_f1_max(y_true: np.ndarray, proba: np.ndarray) -> Tuple[float, Dict]:
     thresholds = np.unique(np.percentile(proba, np.linspace(1, 99, 300)))
@@ -287,7 +253,6 @@ def pick_threshold_f1_max(y_true: np.ndarray, proba: np.ndarray) -> Tuple[float,
     logger.info(f"F1-Max: threshold={best_thr:.6f} | F1={best_f1:.4f} | FPR={best_info.get('fpr',0):.4f} | TPR={best_info.get('tpr',0):.4f}")
     return best_thr, best_info
 
-
 def pick_threshold_fpr(y_true, proba, target_fpr, prefer_recall=True):
     neg_scores = proba[y_true == 0]
     if neg_scores.size == 0:
@@ -300,7 +265,6 @@ def pick_threshold_fpr(y_true, proba, target_fpr, prefer_recall=True):
     logger.info(f"FPR-Target: thr={thr:.6f} | FPR={rates['fpr']:.4f} | TPR={rates['tpr']:.4f} | F1={rates['f1']:.4f}")
     return thr, rates
 
-
 def evaluate(y_true, proba, thr):
     pred = (proba >= thr).astype(np.int32)
     cm = confusion_matrix(y_true, pred, labels=[0, 1])
@@ -312,7 +276,6 @@ def evaluate(y_true, proba, thr):
     return {"threshold": float(thr), "roc_auc": roc_auc, "avg_precision": ap, "accuracy": acc,
             "confusion_matrix": cm.tolist(), "rates": rates}
 
-
 def build_features(texts, word_vec, char_vec, fit=False):
     if fit:
         X_word = word_vec.fit_transform(texts)
@@ -322,7 +285,6 @@ def build_features(texts, word_vec, char_vec, fit=False):
         X_char = char_vec.transform(texts)
     X_kw = extract_sql_keyword_features(texts)
     return sp.hstack([X_word, X_char, X_kw], format="csr")
-
 
 def show_feature_importance(model, feature_names, top_k=30):
     logger.info(f"\n=== Top {top_k} Attack Indicators ===")
@@ -335,7 +297,6 @@ def show_feature_importance(model, feature_names, top_k=30):
         feature_list.append({"rank": rank, "feature": name, "importance": float(imp)})
         logger.info(f"  {rank:2d}. {name[:22]:22s} -> {imp:.6f}")
     return feature_list
-
 
 def train(cfg: TrainConfig) -> None:
     logger.info("=== SQLi IPS Model Training v2 (Enhanced Recall) ===")
@@ -479,7 +440,6 @@ def train(cfg: TrainConfig) -> None:
         f"AUC={test_metrics['roc_auc']:.4f}"
     )
 
-
 def parse_args() -> TrainConfig:
     p = argparse.ArgumentParser(description="Train SQLi IPS Model v2")
     p.add_argument("--data", default="dataset-balanced.csv")
@@ -527,7 +487,6 @@ def parse_args() -> TrainConfig:
         out_model=args.out_model,
         out_meta=args.out_meta,
     )
-
 
 if __name__ == "__main__":
     cfg = parse_args()

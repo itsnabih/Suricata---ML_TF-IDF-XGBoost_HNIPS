@@ -1,0 +1,182 @@
+[LOG] Logging dimulai: 2026-07-04 08:04:37
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 3_send_sqlmap.txt
+
+     NODE ATTACKER: SEND SQLMAP ATTACK     
+  Target : http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit
+  Cookie : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.10.4#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [(]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:04:38 /2026-07-04/
+
+[08:04:38] [DEBUG] cleaning up configuration parameters
+[08:04:38] [DEBUG] setting the HTTP timeout
+[08:04:38] [DEBUG] setting the HTTP Cookie header
+[08:04:38] [DEBUG] setting the HTTP User-Agent header
+[08:04:38] [DEBUG] loading random HTTP User-Agent header(s) from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:04:38] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:04:38] [DEBUG] creating HTTP requests opener object
+[08:04:38] [DEBUG] forcing back-end DBMS to user defined value
+[08:04:38] [INFO] testing connection to the target URL
+got a 302 redirect to 'http://172.17.0.2/login.php'. Do you want to follow? [Y/n] Y
+[08:04:38] [DEBUG] used the default behavior, running in batch mode
+[08:04:38] [DEBUG] declared web page charset 'utf-8'
+[08:04:38] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:04:38] [INFO] testing if the target URL content is stable
+[08:04:39] [WARNING] GET parameter 'id' does not appear to be dynamic
+[08:04:39] [PAYLOAD] 1,,"))(,)'.
+
+
+[*] ending @ 08:05:00 /2026-07-04/
+
+
+--------------------------------------------------------
+  [OK] sqlmap done bang! :D
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 08:05:14
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 3_send_sqlmap.txt
+
+     NODE ATTACKER: SEND SQLMAP ATTACK     
+  Target : http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit
+  Cookie : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+
+        ___
+       __H__
+ ___ ___[.]_____ ___ ___  {1.10.4#stable}
+|_ -| . [)]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:05:15 /2026-07-04/
+
+[08:05:15] [DEBUG] cleaning up configuration parameters
+[08:05:15] [DEBUG] setting the HTTP timeout
+[08:05:15] [DEBUG] setting the HTTP Cookie header
+[08:05:15] [DEBUG] setting the HTTP User-Agent header
+[08:05:15] [DEBUG] loading random HTTP User-Agent header(s) from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:05:15] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:05:15] [DEBUG] creating HTTP requests opener object
+[08:05:15] [DEBUG] forcing back-end DBMS to user defined value
+[08:05:15] [INFO] testing connection to the target URL
+got a 302 redirect to 'http://172.17.0.2/login.php'. Do you want to follow? [Y/n] Y
+[08:05:15] [DEBUG] used the default behavior, running in batch mode
+[08:05:15] [DEBUG] declared web page charset 'utf-8'
+[08:05:15] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:05:15] [INFO] testing if the target URL content is stable
+[08:05:16] [WARNING] GET parameter 'id' does not appear to be dynamic
+[08:05:16] [PAYLOAD] 1,"(,',(,.,
+[08:05:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:06:16] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+[08:06:46] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+
+
+[*] ending @ 08:07:01 /2026-07-04/
+
+
+--------------------------------------------------------
+  [OK] sqlmap done bang! :D
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 08:49:59
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 3_send_sqlmap.txt
+
+     NODE ATTACKER: SEND SQLMAP ATTACK     
+  Target : http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit
+  Cookie : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.10.4#stable}
+|_ -| . [.]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:49:59 /2026-07-04/
+
+[08:49:59] [DEBUG] cleaning up configuration parameters
+[08:49:59] [DEBUG] setting the HTTP timeout
+[08:49:59] [DEBUG] setting the HTTP Cookie header
+[08:49:59] [DEBUG] setting the HTTP User-Agent header
+[08:49:59] [DEBUG] loading random HTTP User-Agent header(s) from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:49:59] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[08:49:59] [DEBUG] creating HTTP requests opener object
+[08:49:59] [DEBUG] forcing back-end DBMS to user defined value
+[08:50:00] [INFO] testing connection to the target URL
+got a 302 redirect to 'http://172.17.0.2/login.php'. Do you want to follow? [Y/n] Y
+[08:50:00] [DEBUG] used the default behavior, running in batch mode
+[08:50:00] [DEBUG] declared web page charset 'utf-8'
+[08:50:00] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:50:00] [INFO] testing if the target URL content is stable
+[08:50:00] [WARNING] GET parameter 'id' does not appear to be dynamic
+[08:50:00] [PAYLOAD] 1(,))'".)((
+[08:50:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:51:00] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+[08:51:30] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+[08:52:00] [CRITICAL] connection timed out to the target URL
+
+[*] ending @ 08:52:00 /2026-07-04/
+
+
+--------------------------------------------------------
+  [OK] sqlmap done bang! :D
+--------------------------------------------------------
+
+[LOG] Logging dimulai: 2026-07-04 09:47:47
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/attacker/log-nomor 3_send_sqlmap.txt
+
+     NODE ATTACKER: SEND SQLMAP ATTACK     
+  Target : http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit
+  Cookie : PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; se...
+
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.10.4#stable}
+|_ -| . [,]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 09:47:47 /2026-07-04/
+
+[09:47:47] [DEBUG] cleaning up configuration parameters
+[09:47:47] [DEBUG] setting the HTTP timeout
+[09:47:47] [DEBUG] setting the HTTP Cookie header
+[09:47:47] [DEBUG] setting the HTTP User-Agent header
+[09:47:47] [DEBUG] loading random HTTP User-Agent header(s) from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[09:47:47] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[09:47:47] [DEBUG] creating HTTP requests opener object
+[09:47:47] [DEBUG] forcing back-end DBMS to user defined value
+[09:47:48] [INFO] testing connection to the target URL
+[09:47:48] [DEBUG] declared web page charset 'utf-8'
+[09:47:48] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[09:47:48] [INFO] testing if the target URL content is stable
+[09:47:48] [INFO] target URL content is stable
+[09:47:48] [INFO] testing if GET parameter 'id' is dynamic
+[09:47:48] [PAYLOAD] 4696
+[09:47:48] [WARNING] GET parameter 'id' does not appear to be dynamic
+[09:47:48] [PAYLOAD] 1,),(."')()
+[09:48:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:48:48] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+[09:49:18] [DEBUG] connection timed out to the target URL. sqlmap is going to retry the request
+[09:49:48] [CRITICAL] connection timed out to the target URL
+
+[*] ending @ 09:49:48 /2026-07-04/
+
+
+--------------------------------------------------------
+  [OK] sqlmap done bang! :D
+--------------------------------------------------------
+

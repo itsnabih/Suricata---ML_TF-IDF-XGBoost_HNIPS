@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-Evaluate / test a trained TF-IDF + XGBoost SQLi detector artifacts.
-
-Artifacts required:
-  - model_meta.json
-  - tfidf_vectorizer.pkl
-  - xgb_sqli_model.pkl
-Optional:
-  - feature_selector.pkl
-
-Supports:
-  1) --wordlist: batch eval with labeled lines (recommended for accuracy)
-  2) --payload:  manual single payload
-  3) --interactive: REPL-like testing
-
-Label format in wordlist (auto-detected):
-  - "payload,label"  (CSV 2 columns)
-  - "label,payload"  (CSV 2 columns)
-  - "payload<TAB>label" or "label<TAB>payload"
-  - "payload | label" or "label | payload"
-  - If a line has no label, it's treated as unlabeled and skipped (unless --allow-unlabeled).
-"""
 
 from __future__ import annotations
 
@@ -44,13 +20,11 @@ from sklearn.metrics import (
     classification_report,
 )
 
-# ── Regex helpers (copied from training script, kept consistent) ───────────
 from urllib.parse import parse_qs, unquote_plus, urlparse
 
 _RE_HTTP_LINE   = re.compile(r"^(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+", re.IGNORECASE)
 _RE_PATH_PREFIX = re.compile(r"^(?:/[^?#]*)?\?", re.IGNORECASE)
 _RE_VALID_KEY   = re.compile(r"^[A-Za-z_][A-Za-z0-9_\-\.]*$")
-
 
 def normalize_encoded(text: str, max_passes: int = 3) -> str:
     prev = None
@@ -64,7 +38,6 @@ def normalize_encoded(text: str, max_passes: int = 3) -> str:
         if result == prev:
             break
     return result
-
 
 def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_passes: int = 3) -> str:
     if not raw or not isinstance(raw, str):
@@ -124,7 +97,6 @@ def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_
 
     return normalize_encoded(text, max_passes=max_decode_passes)
 
-
 @dataclass
 class Artifacts:
     threshold: float
@@ -133,7 +105,6 @@ class Artifacts:
     vectorizer: object
     selector: Optional[object]
     model: object
-
 
 def load_artifacts(meta_path: str, vectorizer_path: str, model_path: str, selector_path: Optional[str]) -> Artifacts:
     meta = json.loads(Path(meta_path).read_text(encoding="utf-8"))
@@ -161,7 +132,6 @@ def load_artifacts(meta_path: str, vectorizer_path: str, model_path: str, select
         model=model,
     )
 
-
 def featurize(art: Artifacts, raws: List[str]):
     cleaned = [
         extract_payload_values(x, art.strip_param_names, art.max_decode_passes)
@@ -172,12 +142,10 @@ def featurize(art: Artifacts, raws: List[str]):
         X = art.selector.transform(X)
     return cleaned, X
 
-
 def predict_proba(art: Artifacts, raws: List[str]) -> Tuple[List[str], np.ndarray]:
     cleaned, X = featurize(art, raws)
     proba = art.model.predict_proba(X)[:, 1].astype(np.float64)
     return cleaned, proba
-
 
 def parse_labeled_line(line: str) -> Optional[Tuple[str, str]]:
     """
@@ -188,7 +156,6 @@ def parse_labeled_line(line: str) -> Optional[Tuple[str, str]]:
     if not s:
         return None
 
-    # common separators
     seps = ["\t", "|", ","]
     parts = None
     used_sep = None
@@ -200,18 +167,13 @@ def parse_labeled_line(line: str) -> Optional[Tuple[str, str]]:
     if not parts or len(parts) < 2:
         return None
 
-    # if there are more than 2 parts (because payload contains commas), re-join intelligently:
-    # for comma-separated: assume last token is label (common "payload,label")
     if len(parts) > 2 and used_sep == ",":
-        # try payload,label
         payload = ",".join(parts[:-1]).strip()
         label = parts[-1].strip()
         return payload, label
 
-    # exactly 2 parts
     a, b = parts[0], parts[1]
 
-    # decide which is label: accept attack/benign/1/0
     def is_label(x: str) -> bool:
         t = x.strip().lower()
         return t in ("attack", "benign", "1", "0", "true", "false", "pos", "neg", "positive", "negative")
@@ -221,9 +183,7 @@ def parse_labeled_line(line: str) -> Optional[Tuple[str, str]]:
     if is_label(a) and not is_label(b):
         return b, a
 
-    # ambiguous: prefer second as label (payload,label) convention
     return a, b
-
 
 def label_to_int(label: str) -> Optional[int]:
     t = label.strip().lower()
@@ -232,7 +192,6 @@ def label_to_int(label: str) -> Optional[int]:
     if t in ("benign", "0", "false", "neg", "negative"):
         return 0
     return None
-
 
 def eval_wordlist(art: Artifacts, wordlist_path: str, allow_unlabeled: bool = False) -> int:
     p = Path(wordlist_path)
@@ -291,11 +250,9 @@ def eval_wordlist(art: Artifacts, wordlist_path: str, allow_unlabeled: bool = Fa
     print("Classification report:")
     print(classification_report(y_true_arr, y_pred, target_names=["benign(0)", "attack(1)"], zero_division=0))
 
-    # show a few worst / most confident mistakes
     mistakes = np.where(y_pred != y_true_arr)[0]
     if mistakes.size:
         print("\n=== TOP MISTAKES (by confidence) ===")
-        # confidence = distance from threshold
         conf = np.abs(proba[mistakes] - art.threshold)
         top = mistakes[np.argsort(conf)[::-1]][:10]
         for i in top:
@@ -309,7 +266,6 @@ def eval_wordlist(art: Artifacts, wordlist_path: str, allow_unlabeled: bool = Fa
 
     return 0
 
-
 def test_single(art: Artifacts, payload: str) -> int:
     cleaned, proba = predict_proba(art, [payload])
     p = float(proba[0])
@@ -321,7 +277,6 @@ def test_single(art: Artifacts, payload: str) -> int:
     print(f"clean_payload   : {cleaned[0]}")
     print(f"raw_input       : {payload}")
     return 0
-
 
 def interactive_mode(art: Artifacts) -> int:
     print("=== INTERACTIVE MODE ===")
@@ -343,7 +298,6 @@ def interactive_mode(art: Artifacts) -> int:
         print(f"proba_attack={p:.8f}  =>  {'BLOCK' if blocked else 'ALLOW'}")
         print(f"clean: {cleaned[0]}\n")
 
-
 def parse_args():
     ap = argparse.ArgumentParser(description="Evaluate/test existing SQLi model artifacts.")
     ap.add_argument("--meta", default="model_meta.json")
@@ -360,19 +314,16 @@ def parse_args():
     ap.add_argument("--allow-unlabeled", action="store_true", help="Ignore unlabeled lines instead of counting as skipped.")
     return ap.parse_args()
 
-
 def main() -> int:
     args = parse_args()
     selector_path = None if args.no_selector else args.selector
 
     art = load_artifacts(args.meta, args.vectorizer, args.model, selector_path)
 
-    # sanity checks
     for f in (args.meta, args.vectorizer, args.model):
         if not Path(f).exists():
             raise FileNotFoundError(f"Missing required file: {Path(f).resolve()}")
     if (not args.no_selector) and args.selector and (not Path(args.selector).exists()):
-        # selector optional, so do not hard-fail
         pass
 
     if args.wordlist:
@@ -382,7 +333,6 @@ def main() -> int:
     if args.interactive:
         return interactive_mode(art)
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

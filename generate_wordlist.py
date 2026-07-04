@@ -1,7 +1,6 @@
 import re
 import random
 
-# Definisi regex untuk setiap kategori berdasarkan sqli_detection.rules
 categories = {
     'Time-based Blind': re.compile(r'(?i)(sleep\s*\(|pg_sleep\s*\(|waitfor\s+delay)'),
     'UNION-based': re.compile(r'(?i)union\s+(all\s+)?select'),
@@ -14,7 +13,6 @@ categories = {
     'Basic Quote/Comment': re.compile(r"['\"\-#]|/\*")
 }
 
-# Target distribusi jumlah payload per kategori (Total: 500)
 targets = {
     'Time-based Blind': 40,
     'UNION-based': 60,
@@ -30,14 +28,11 @@ targets = {
 buckets = {k: [] for k in categories.keys()}
 unmatched = []
 
-# Proses file sqli.txt
 with open('sqli.txt', 'r', encoding='utf-8', errors='ignore') as f:
     payloads = [line.strip() for line in f if line.strip()]
 
-# Kategorisasi payload
 for payload in payloads:
     matched = False
-    # Cek dari kategori paling spesifik ke paling umum
     for cat in ['Time-based Blind', 'UNION-based', 'Error-based', 'Boolean-based Blind', 'URL Encoded', 'Hex Encoded', 'Null Byte', 'Misc (Fingerprint/DB/File/Order)', 'Basic Quote/Comment']:
         if categories[cat].search(payload):
             buckets[cat].append(payload)
@@ -47,21 +42,18 @@ for payload in payloads:
     if not matched:
         unmatched.append(payload)
 
-# Pilih sampel acak sesuai target
 final_payloads = []
 print(f"{'Kategori':<35} | {'Tersedia':<10} | {'Target':<10} | {'Diambil':<10}")
 print("-" * 75)
 
 for cat, target in targets.items():
     available = len(buckets[cat])
-    # Jika tidak cukup, ambil semua yang ada
     take = min(available, target)
     sampled = random.sample(buckets[cat], take)
     final_payloads.extend(sampled)
     
     print(f"{cat:<35} | {available:<10} | {target:<10} | {take:<10}")
 
-# Tulis ke file output
 out_file = 'sqli_test_payloads.txt'
 with open(out_file, 'w', encoding='utf-8') as f:
     for payload in final_payloads:

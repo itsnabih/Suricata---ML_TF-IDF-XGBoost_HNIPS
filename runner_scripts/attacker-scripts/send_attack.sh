@@ -1,34 +1,25 @@
 #!/bin/bash
-# ============================================================
-#  attacker-scripts/send_attack.sh
-#  Mengirim serangan SQLi dari sqli_payloads.txt satu per satu.
-#  Menampilkan payload yang dikirim dan respons HTTP secara real-time.
-# ============================================================
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# ── Logging Setup ──────────────────────────────────────────────
 LOG_DIR="$SCRIPT_DIR/saved_logs/attacker"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/log-nomor 1_send_attack.txt"
 exec > >(tee -a "$LOG_FILE") 2>&1
 echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "[LOG] File log: $LOG_FILE"
-# ───────────────────────────────────────────────────────────────
 
 ATTACK_FILE="$PROJECT_DIR/sqli_payloads.txt"
 TARGET_IP="172.17.0.2"
 TARGET_URL="http://$TARGET_IP/vulnerabilities/sqli/"
-COOKIE="PHPSESSID=pnb708okemms8g0a3ejaocb535; security=low"
+COOKIE="PHPSESSID=pgdrle5m5kd2rdvs9rbp8u6il6; security=low"
 DELAY=0.5   # detik antar request (ubah ke 0 untuk kecepatan penuh)
 
-# ── Override Cookie dari argumen jika ada ──────────────────
 if [ -n "$1" ]; then
     COOKIE="$1"
 fi
 
-# ── Hitung total payload ───────────────────────────────────
 TOTAL=$(grep -cv '^\s*$\|^#' "$ATTACK_FILE" 2>/dev/null || echo 0)
 
 echo ""
@@ -53,12 +44,10 @@ BLOCKED=0
 ALLOWED=0
 
 while IFS= read -r payload; do
-    # Lewati baris kosong dan komentar
     [[ -z "$payload" || "$payload" == \#* ]] && continue
 
     COUNT=$((COUNT + 1))
 
-    # Kirim payload dan tangkap HTTP status code
     HTTP_STATUS=$(curl -s -o /dev/null --max-time 2 \
         -w "%{http_code}" \
         -G "$TARGET_URL" \
@@ -66,7 +55,6 @@ while IFS= read -r payload; do
         --data-urlencode "Submit=Submit" \
         -H "Cookie: $COOKIE")
 
-    # Tentukan label berdasarkan status
     if [ "$HTTP_STATUS" = "000" ]; then
         LABEL="[DROP] BLOCKED/DROPPED (timeout)"
         BLOCKED=$((BLOCKED + 1))
@@ -78,7 +66,6 @@ while IFS= read -r payload; do
         ALLOWED=$((ALLOWED + 1))
     fi
 
-    # Tampilkan hasil secara real-time
     printf "[%3d/%d] %-60s %s\n" "$COUNT" "$TOTAL" "${payload:0:60}" "$LABEL"
 
     sleep "$DELAY"

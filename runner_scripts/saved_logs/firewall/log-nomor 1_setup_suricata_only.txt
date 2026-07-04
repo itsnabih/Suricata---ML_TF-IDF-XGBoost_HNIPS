@@ -1,0 +1,27 @@
+[LOG] Logging dimulai: 2026-07-04 06:56:06
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 1_setup_suricata_only.txt
+
+  SETUP IPTABLES: SKENARIO 1 - SURICATA   
+
+[1/3] Memastikan route-queue Suricata DINONAKTIFKAN (Suricata Only mode)...
+      OK route-queue di suricata.yaml dinonaktifkan.
+[2/3] Menerapkan rule iptables (tabel FILTER -> Queue 2)...
+      OK OUTPUT -> NFQUEUE 2 (tujuan 172.17.0.2:80)
+      OK INPUT  ← NFQUEUE 2 (sumber 172.17.0.2:80)
+[3/3] Verifikasi rule iptables aktif:
+
+Chain INPUT (policy ACCEPT 335K packets, 172M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 249K packets, 38M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+Chain DOCKER (0 references)
+Chain DOCKER-BRIDGE (0 references)
+Chain DOCKER-CT (0 references)
+Chain DOCKER-FORWARD (0 references)
+Chain DOCKER-INTERNAL (0 references)
+Chain DOCKER-USER (0 references)
+
+[OK]  IPTables Skenario 1 (Suricata Only) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_suricata.sh di terminal ini.
+

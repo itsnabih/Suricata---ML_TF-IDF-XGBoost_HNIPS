@@ -1,21 +1,14 @@
 #!/bin/bash
-# ============================================================
-#  operation/cleanup.sh
-#  Bersihkan semua aturan IPTables dan proses IPS yang berjalan.
-#  Jalankan ini SEBELUM memulai skenario apapun.
-# ============================================================
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# ── Logging Setup ──────────────────────────────────────────────
 LOG_DIR="$SCRIPT_DIR/saved_logs/firewall"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/log-nomor 6_cleanup.txt"
 exec > >(tee -a "$LOG_FILE") 2>&1
 echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "[LOG] File log: $LOG_FILE"
-# ───────────────────────────────────────────────────────────────
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 

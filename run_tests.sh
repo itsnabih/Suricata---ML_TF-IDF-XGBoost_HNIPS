@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Configuration
 TARGET="http://172.17.0.2/vulnerabilities/sqli/?id=1&Submit=Submit"
 COOKIE="PHPSESSID=vgaqqh5gc08093scgsg7lkmi20; security=low"
 OUT_DIR="data-hasil_pengujian"
@@ -8,12 +7,10 @@ DVWA_CONTAINER="dvwa"
 SURICATA_CONF="/etc/suricata/suricata.yaml"
 ML_SCRIPT="model_ML_run.py"
 
-# === Level 1 Flags: Scenario Selection ===
 RUN_SURICATA=false
 RUN_ML=false
 RUN_HYBRID=false
 
-# === Level 2-3 Flags: Custom Payload Sources ===
 ATTACK_FILE="sqli_payloads.txt"          # --attack <file> : gunakan payload file, bukan SQLMap
 NORMAL_WORDLIST="dvwa_wordlist.txt"  # --wordlist <file> : override wordlist normal
 
@@ -33,7 +30,6 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-# Parse arguments (support flags with values)
 while [ "$#" -gt 0 ]; do
     case $1 in
         --suricata) RUN_SURICATA=true ;;
@@ -76,13 +72,11 @@ while [ "$#" -gt 0 ]; do
     shift
 done
 
-# Validasi: minimal satu skenario harus dipilih
 if [ "$RUN_SURICATA" = false ] && [ "$RUN_ML" = false ] && [ "$RUN_HYBRID" = false ]; then
     echo "Error: Pilih minimal satu skenario (--suricata, --ML, --hybrid, --all)"
     exit 1
 fi
 
-# Print konfigurasi
 echo "========================================="
 echo " KONFIGURASI PENGUJIAN"
 echo "========================================="
@@ -105,7 +99,6 @@ function cleanup() {
     sudo iptables -t mangle -F
     sudo pkill -x suricata
     sudo pkill -f model_ML_run.py
-    # Bersihkan log Docker dengan cara yang aman (Stop -> Truncate -> Start) agar file JSON tidak korup
     sudo docker stop $DVWA_CONTAINER
     sudo sh -c "truncate -s 0 /var/lib/docker/containers/\$(sudo docker inspect -f '{{.Id}}' $DVWA_CONTAINER)/*-json.log"
     sudo docker start $DVWA_CONTAINER
@@ -116,13 +109,10 @@ function fetch_logs() {
     local scenario_dir=$1
     echo "[*] Fetching logs to $scenario_dir..."
 
-    # Target logs
     sudo docker logs "$DVWA_CONTAINER" > "$scenario_dir/target/dvwa_access.log" 2>&1
 
-    # Iptables stats
     sudo iptables -L -v -n > "$scenario_dir/firewall/iptables_stats.txt"
 
-    # Suricata logs
     if [ -f /var/log/suricata/fast.log ]; then
         sudo cp /var/log/suricata/fast.log "$scenario_dir/firewall/suricata_fast.log"
     fi
@@ -144,8 +134,6 @@ function purge_scenario() {
     mkdir -p "$scenario_dir"/{user,firewall,target,stats}
 }
 
-# === Fungsi pengiriman traffic ===
-# Mengirim serangan: SQLMap ATAU custom payload file
 function send_attack_traffic() {
     local log_dir=$1
 
@@ -156,16 +144,12 @@ function send_attack_traffic() {
         while IFS= read -r payload; do
             [[ -z "$payload" || "$payload" == \#* ]] && continue
             count=$((count + 1))
-            # Kirim payload sebagai parameter id ke halaman SQLi DVWA
-            # --max-time 1: timeout 1 detik (sangat ideal untuk local container)
-            # --data-urlencode: encode payload agar karakter spesial aman ditransmisikan
             curl -s --max-time 1 \
                 -G "http://172.17.0.2/vulnerabilities/sqli/" \
                 --data-urlencode "id=$payload" \
                 --data-urlencode "Submit=Submit" \
                 -H "Cookie: $COOKIE" \
                 > /dev/null 2>&1
-            # Progress indicator setiap 50 payload
             if (( count % 50 == 0 )); then
                 echo "    [$count/$total] payloads sent..."
             fi
@@ -178,7 +162,6 @@ function send_attack_traffic() {
     fi
 }
 
-# Mengirim traffic normal dari wordlist
 function send_normal_traffic() {
     local log_dir=$1
     echo "[*] Sending normal traffic from $NORMAL_WORDLIST..."
@@ -192,9 +175,6 @@ function send_normal_traffic() {
     echo "$count" > "$log_dir/user/normal_count.txt"
 }
 
-# ===========================================================================
-#  SCENARIO 1: SURICATA ONLY
-# ===========================================================================
 if [ "$RUN_SURICATA" = true ]; then
 echo "========================================="
 echo " SCENARIO 1: SURICATA ONLY"
@@ -202,7 +182,6 @@ echo "========================================="
 cleanup
 clear_logs
 purge_scenario "$OUT_DIR/01_suricata_only"
-# Disable route-queue in suricata.yaml
 sudo sed -i 's/^ *route-queue: 3/#  route-queue: 3/' "$SURICATA_CONF"
 
 sudo iptables -I OUTPUT -p tcp -d 172.17.0.2 --dport 80 -j NFQUEUE --queue-num 2
@@ -220,9 +199,6 @@ cleanup
 python3 calculate_stats.py 01_suricata_only
 fi
 
-# ===========================================================================
-#  SCENARIO 2: ML ONLY
-# ===========================================================================
 if [ "$RUN_ML" = true ]; then
 echo "========================================="
 echo " SCENARIO 2: ML ONLY"
@@ -246,9 +222,6 @@ cleanup
 python3 calculate_stats.py 02_ml_only
 fi
 
-# ===========================================================================
-#  SCENARIO 3: HYBRID (Suricata + ML)
-# ===========================================================================
 if [ "$RUN_HYBRID" = true ]; then
 echo "========================================="
 echo " SCENARIO 3: HYBRID (Suricata + ML)"
@@ -257,20 +230,12 @@ cleanup
 clear_logs
 purge_scenario "$OUT_DIR/03_hybrid"
 
-# Enable route-queue
 sudo sed -i 's/#  route-queue: 3/  route-queue: 3/' "$SURICATA_CONF"
 
-# Konfigurasi Cascading Iptables untuk Hybrid (Solusi Pasti):
-# Di Linux, jika NFQUEUE mengembalikan verdict ACCEPT, paket akan BERHENTI dievaluasi di tabel yang sama.
-# Agar paket bisa dievaluasi oleh DUA NFQUEUE yang berbeda (Suricata lalu ML), kita harus meletakkannya di tabel (table) yang berbeda.
-# Urutan traversing iptables: MANGLE -> FILTER.
-# Oleh karena itu, kita tempatkan Suricata di tabel 'mangle' dan ML di tabel 'filter'.
 
-# 1. Tabel MANGLE untuk Suricata (Queue 2) - Dijalankan PERTAMA
 sudo iptables -t mangle -I OUTPUT -p tcp -d 172.17.0.2 --dport 80 -j NFQUEUE --queue-num 2
 sudo iptables -t mangle -I INPUT -p tcp -s 172.17.0.2 --sport 80 -j NFQUEUE --queue-num 2
 
-# 2. Tabel FILTER untuk ML (Queue 3) - Dijalankan KEDUA (Jika lolos dari Mangle)
 sudo iptables -t filter -I OUTPUT -p tcp -d 172.17.0.2 --dport 80 -j NFQUEUE --queue-num 3
 sudo iptables -t filter -I INPUT -p tcp -s 172.17.0.2 --sport 80 -j NFQUEUE --queue-num 3
 

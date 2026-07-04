@@ -1,0 +1,126 @@
+[LOG] Logging dimulai: 2026-07-03 22:10:57
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+
+[LOG] Logging dimulai: 2026-07-04 08:11:05
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+
+[LOG] Logging dimulai: 2026-07-04 09:06:37
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+
+[LOG] Logging dimulai: 2026-07-04 09:44:59
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+
+[LOG] Logging dimulai: 2026-07-04 09:46:37
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+
+[LOG] Logging dimulai: 2026-07-04 10:00:26
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 7_reset_logs.txt
+
+           RESET LOG FILES            
+
+[1/4] Menghapus log Suricata (fast.log, eve.json, stats.log)...
+      OK fast.log dikosongkan.
+      OK eve.json dikosongkan.
+      OK stats.log dikosongkan.
+
+[2/4] Menghentikan container DVWA untuk reset log-nya...
+      OK Container DVWA dihentikan.
+[3/4] Mengosongkan log container DVWA...
+      OK Log DVWA dikosongkan: /var/lib/docker/containers/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f/be4a608284f287777b49bd844b758b0baf9f161c07d3f88d1683edd392f3694f-json.log
+[4/4] Menghidupkan kembali container DVWA...
+      OK Container DVWA dijalankan kembali.
+
+[WAIT]  Menunggu DVWA siap melayani request (7 detik)...
+
+[OK]  Reset log selesai. Semua log sudah bersih.
+

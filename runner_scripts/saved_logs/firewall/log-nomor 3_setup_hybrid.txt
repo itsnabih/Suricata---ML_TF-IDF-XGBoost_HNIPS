@@ -1,0 +1,125 @@
+[LOG] Logging dimulai: 2026-07-04 09:07:48
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 3_setup_hybrid.txt
+
+     SETUP IPTABLES: SKENARIO 3 - HYBRID (Cascade)         
+  Flow: Attacker -> MANGLE/Suricata(Q2) -> FILTER/ML(Q3)     
+
+[1/4] Mengaktifkan route-queue Suricata (agar paket diteruskan ke ML setelah ACCEPT)...
+      OK route-queue: 3 diaktifkan di suricata.yaml
+[2/4] Menerapkan Garda PERTAMA: Suricata di tabel MANGLE (Queue 2)...
+      OK [MANGLE] OUTPUT -> NFQUEUE 2 (Suricata)
+      OK [MANGLE] INPUT  ← NFQUEUE 2 (Suricata)
+[3/4] Menerapkan Garda KEDUA: ML di tabel FILTER (Queue 3)...
+      OK [FILTER] OUTPUT -> NFQUEUE 3 (ML Runner)
+      OK [FILTER] INPUT  ← NFQUEUE 3 (ML Runner)
+[4/4] Verifikasi kedua tabel iptables:
+
+  --- TABEL MANGLE (Garda 1: Suricata) ---
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+
+  --- TABEL FILTER (Garda 2: ML Runner) ---
+Chain INPUT (policy ACCEPT 459K packets, 184M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 381K packets, 51M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+Chain DOCKER (0 references)
+Chain DOCKER-BRIDGE (0 references)
+Chain DOCKER-CT (0 references)
+Chain DOCKER-FORWARD (0 references)
+Chain DOCKER-INTERNAL (0 references)
+
+[OK]  IPTables Skenario 3 (Hybrid) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_suricata.sh di Terminal 1
+    Jalankan: firewall-scripts/run_ml.sh di Terminal 2
+
+[LOG] Logging dimulai: 2026-07-04 09:45:52
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 3_setup_hybrid.txt
+
+     SETUP IPTABLES: SKENARIO 3 - HYBRID (Cascade)         
+  Flow: Attacker -> MANGLE/Suricata(Q2) -> FILTER/ML(Q3)     
+
+[1/4] Mengaktifkan route-queue Suricata (agar paket diteruskan ke ML setelah ACCEPT)...
+      OK route-queue: 3 diaktifkan di suricata.yaml
+[2/4] Menerapkan Garda PERTAMA: Suricata di tabel MANGLE (Queue 2)...
+      OK [MANGLE] OUTPUT -> NFQUEUE 2 (Suricata)
+      OK [MANGLE] INPUT  ← NFQUEUE 2 (Suricata)
+[3/4] Menerapkan Garda KEDUA: ML di tabel FILTER (Queue 3)...
+      OK [FILTER] OUTPUT -> NFQUEUE 3 (ML Runner)
+      OK [FILTER] INPUT  ← NFQUEUE 3 (ML Runner)
+[4/4] Verifikasi kedua tabel iptables:
+
+  --- TABEL MANGLE (Garda 1: Suricata) ---
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+Chain INPUT (policy ACCEPT 40120 packets, 4139K bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+2     3815  827K NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 42457 packets, 4304K bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+2     9178 1567K NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+
+  --- TABEL FILTER (Garda 2: ML Runner) ---
+Chain INPUT (policy ACCEPT 500K packets, 188M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+2     3635  815K NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 424K packets, 56M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+2     5602  454K NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+Chain DOCKER (0 references)
+Chain DOCKER-BRIDGE (0 references)
+Chain DOCKER-CT (0 references)
+
+[OK]  IPTables Skenario 3 (Hybrid) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_suricata.sh di Terminal 1
+    Jalankan: firewall-scripts/run_ml.sh di Terminal 2
+
+[LOG] Logging dimulai: 2026-07-04 09:47:14
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 3_setup_hybrid.txt
+
+     SETUP IPTABLES: SKENARIO 3 - HYBRID (Cascade)         
+  Flow: Attacker -> MANGLE/Suricata(Q2) -> FILTER/ML(Q3)     
+
+[1/4] Mengaktifkan route-queue Suricata (agar paket diteruskan ke ML setelah ACCEPT)...
+      OK route-queue: 3 diaktifkan di suricata.yaml
+[2/4] Menerapkan Garda PERTAMA: Suricata di tabel MANGLE (Queue 2)...
+      OK [MANGLE] OUTPUT -> NFQUEUE 2 (Suricata)
+      OK [MANGLE] INPUT  ← NFQUEUE 2 (Suricata)
+[3/4] Menerapkan Garda KEDUA: ML di tabel FILTER (Queue 3)...
+      OK [FILTER] OUTPUT -> NFQUEUE 3 (ML Runner)
+      OK [FILTER] INPUT  ← NFQUEUE 3 (ML Runner)
+[4/4] Verifikasi kedua tabel iptables:
+
+  --- TABEL MANGLE (Garda 1: Suricata) ---
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+Chain INPUT (policy ACCEPT 41748 packets, 4599K bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 44277 packets, 4775K bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+
+  --- TABEL FILTER (Garda 2: ML Runner) ---
+Chain INPUT (policy ACCEPT 501K packets, 189M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 425K packets, 56M bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+Chain DOCKER (0 references)
+Chain DOCKER-BRIDGE (0 references)
+Chain DOCKER-CT (0 references)
+Chain DOCKER-FORWARD (0 references)
+Chain DOCKER-INTERNAL (0 references)
+
+[OK]  IPTables Skenario 3 (Hybrid) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_suricata.sh di Terminal 1
+    Jalankan: firewall-scripts/run_ml.sh di Terminal 2
+

@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Test script untuk model v2 (dual vectorizer: word + char + SQL keywords)
-Mendukung override threshold agar bisa eksplorasi trade-off Precision/Recall.
-"""
 from __future__ import annotations
 import argparse, json, re
 from dataclasses import dataclass
@@ -34,7 +29,6 @@ SQL_KEYWORDS = [
     "row(","exp(","floor(rand","group by","benchmark(","dbms_pipe",
 ]
 
-
 def normalize_encoded(text: str, max_passes: int = 3) -> str:
     prev = None
     result = text
@@ -48,9 +42,7 @@ def normalize_encoded(text: str, max_passes: int = 3) -> str:
             break
     return result
 
-
 _UA_SUFFIX = re.compile(r'\s+ua=\S+.*$', re.IGNORECASE)
-
 
 def strip_bias_artifacts(text: str) -> str:
     """
@@ -65,8 +57,6 @@ def strip_bias_artifacts(text: str) -> str:
         text = re.sub(r'[?&]$', '', text).strip()
     return text
 
-
-
 def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
     if not raw or not isinstance(raw, str):
         return ""
@@ -74,7 +64,6 @@ def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
     text = _RE_HTTP_LINE.sub("", text).strip()
     if " HTTP/" in text:
         text = text.split(" HTTP/")[0]
-    # Buang artifact yang menyebabkan bias dataset
     text = strip_bias_artifacts(text)
     query_string = ""
     if "://" in text:
@@ -108,7 +97,6 @@ def extract_payload_text(raw: str, strip_param_names: bool = False) -> str:
         text = text[m.end():]
     return normalize_encoded(text)
 
-
 def extract_sql_keyword_features(texts: List[str]) -> sp.csr_matrix:
     n, k = len(texts), len(SQL_KEYWORDS)
     data, rows, cols = [], [], []
@@ -119,13 +107,11 @@ def extract_sql_keyword_features(texts: List[str]) -> sp.csr_matrix:
                 rows.append(i); cols.append(j); data.append(1.0)
     return sp.csr_matrix((data, (rows, cols)), shape=(n, k))
 
-
 def build_features(texts, word_vec, char_vec):
     X_word = word_vec.transform(texts)
     X_char = char_vec.transform(texts)
     X_kw = extract_sql_keyword_features(texts)
     return sp.hstack([X_word, X_char, X_kw], format="csr")
-
 
 @dataclass
 class ModelArtifacts:
@@ -137,7 +123,6 @@ class ModelArtifacts:
     model: object
     version: int
 
-
 def load_artifacts(meta_path, vectorizer_path, model_path, selector_path=None) -> ModelArtifacts:
     meta = json.loads(Path(meta_path).read_text(encoding="utf-8"))
     version = meta.get("version", 1)
@@ -147,11 +132,9 @@ def load_artifacts(meta_path, vectorizer_path, model_path, selector_path=None) -
     vec_data = joblib.load(vectorizer_path)
 
     if isinstance(vec_data, dict) and "word" in vec_data:
-        # v2 dual vectorizer
         word_vec = vec_data["word"]
         char_vec = vec_data["char"]
     else:
-        # v1 single vectorizer — wrap untuk kompatibilitas
         word_vec = vec_data
         char_vec = None
 
@@ -168,7 +151,6 @@ def load_artifacts(meta_path, vectorizer_path, model_path, selector_path=None) -
         selector=selector, model=model, version=version
     )
 
-
 def featurize(art: ModelArtifacts, raws: List[str]):
     cleaned = [extract_payload_text(x, art.strip_param_names) for x in raws]
     if art.char_vec is not None:
@@ -179,12 +161,10 @@ def featurize(art: ModelArtifacts, raws: List[str]):
         X = art.selector.transform(X)
     return cleaned, X
 
-
 def predict_proba(art: ModelArtifacts, raws: List[str]):
     cleaned, X = featurize(art, raws)
     proba = art.model.predict_proba(X)[:, 1].astype(np.float64)
     return cleaned, proba
-
 
 def parse_labeled_line(line: str):
     s = line.strip()
@@ -213,7 +193,6 @@ def parse_labeled_line(line: str):
         return b, a
     return a, b
 
-
 def label_to_int(label: str):
     t = label.strip().lower()
     if t in ("attack","1","true","pos","positive"):
@@ -221,7 +200,6 @@ def label_to_int(label: str):
     if t in ("benign","0","false","neg","negative"):
         return 0
     return None
-
 
 def eval_wordlist(art: ModelArtifacts, wordlist_path: str, override_threshold: float = None):
     p = Path(wordlist_path)
@@ -283,7 +261,6 @@ def eval_wordlist(art: ModelArtifacts, wordlist_path: str, override_threshold: f
             print(f"  clean: {cleaned[i][:120]}")
     return 0
 
-
 def main():
     ap = argparse.ArgumentParser(description="Evaluate SQLi model v2")
     ap.add_argument("--meta",       default="model_meta.json")
@@ -331,7 +308,6 @@ def main():
             print(f"proba={p:.8f}  => {'BLOCK' if p >= thr else 'ALLOW'}")
             print(f"clean: {cleaned[0]}\n")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

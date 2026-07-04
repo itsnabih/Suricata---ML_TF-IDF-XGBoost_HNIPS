@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-Active IPS (Layer-2) using TF-IDF + XGBoost model on NFQUEUE (default: queue 3).
-
-Pipeline assumption:
-  iptables -> NFQUEUE 2 (Suricata IPS layer 1) -> Suricata nfq: route-queue 3 -> this script
-Only inspects HTTP REQUEST payloads, not HTTP responses.
-
-Artifacts expected (default names match your outputs):
-  - model_meta.json
-  - tfidf_vectorizer.pkl
-  - xgb_sqli_model.pkl
-  - feature_selector.pkl (optional but you have it)
-
-Decision:
-  prob_attack >= threshold  => DROP
-  else                     => ACCEPT
-"""
 
 from __future__ import annotations
 
@@ -37,10 +18,8 @@ from typing import Optional, Tuple
 import joblib
 from netfilterqueue import NetfilterQueue
 
-# scapy for parsing and extract TCP payloads
 from scapy.all import IP, TCP
 
-# logging
 LOG = logging.getLogger("model_ML_run")
 
 def setup_logging(level: str) -> None:
@@ -51,7 +30,6 @@ def setup_logging(level: str) -> None:
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-# preprocessing func
 from urllib.parse import parse_qs, unquote_plus, urlparse
 
 _RE_HTTP_LINE   = re.compile(r"^(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+", re.IGNORECASE)
@@ -174,10 +152,6 @@ def build_features(texts, word_vec, char_vec):
     X_kw = extract_sql_keyword_features(texts)
     return sp.hstack([X_word, X_char, X_kw], format="csr")
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Model artifacts loader
-# ──────────────────────────────────────────────────────────────────────────────
-
 @dataclass
 class Artifacts:
     threshold: float
@@ -222,10 +196,6 @@ def load_artifacts(meta_path: str, vectorizer_path: str, model_path: str, select
         model=model,
     )
 
-# ──────────────────────────────────────────────────────────────────────────────
-# HTTP request parsing and feature string builder
-# ──────────────────────────────────────────────────────────────────────────────
-
 _RE_HEADER_UA = re.compile(r"(?im)^User-Agent:\s*(.+)$")
 _RE_HEADER_HOST = re.compile(r"(?im)^Host:\s*(.+)$")
 
@@ -242,14 +212,12 @@ def parse_http_request(tcp_payload: bytes) -> Optional[Tuple[str, str, str, str]
     host and user_agent can be empty string if not found.
     """
     try:
-        # Split headers from body
         header_blob = tcp_payload.split(b"\r\n\r\n", 1)[0]
         header_text = header_blob.decode("iso-8859-1", errors="ignore")
         lines = header_text.split("\r\n")
         if not lines:
             return None
 
-        # Request line: METHOD SP PATH SP HTTP/x
         req = lines[0].strip()
         parts = req.split()
         if len(parts) < 2:
@@ -278,11 +246,9 @@ def build_model_input(method: str, path: str, host: str, ua: str) -> str:
       "GET http://<HOST>/<PATH>?... ua=Mozilla/5.0"
     If host is missing, we keep it empty but still stable.
     """
-    # path may be absolute-form url in proxies, handle if it has scheme already
     if "://" in path:
         url = path
     else:
-        # Ensure path begins with /
         if not path.startswith("/"):
             path = "/" + path
         if host:
@@ -293,10 +259,6 @@ def build_model_input(method: str, path: str, host: str, ua: str) -> str:
     if ua:
         return f"{method} {url} ua={ua}"
     return f"{method} {url}"
-
-# ──────────────────────────────────────────────────────────────────────────────
-# IPS engine
-# ──────────────────────────────────────────────────────────────────────────────
 
 @dataclass
 class Stats:
@@ -342,26 +304,21 @@ class MLIPS:
             self.csv_file.close()
 
     def should_inspect(self, ip_pkt: IP, tcp_pkt: TCP, tcp_payload: bytes) -> bool:
-        # Only TCP with payload
         if not tcp_payload:
             return False
 
-        # Only inspect requests toward server ports (request direction is usually dport = 80/8080)
         if self.inspect_ports and int(tcp_pkt.dport) not in self.inspect_ports:
             return False
 
-        # Only HTTP request signature
         return is_http_request_payload(tcp_payload)
 
     def classify(self, model_input: str) -> Tuple[float, bool, str]:
-        # Apply SAME preprocessing extractor as training (payload-aware extraction)
         clean = extract_payload_values(
             model_input,
             strip_param_names=self.art.strip_param_names,
             max_decode_passes=self.art.max_decode_passes,
         )
 
-        # prefilter request! kalo payload hanya angka/huruf tanpa karakter query logic (proba SQLi), auto accept aja!
         if clean.isalnum() and len(clean) < 20:
             LOG.debug("PRE-FILTER ACCEPT (alphanumeric, len=%d): %s", len(clean), clean)
             return 0.0, False, clean
@@ -393,7 +350,6 @@ class MLIPS:
             payload = nfpacket.get_payload()
             ip_pkt = IP(payload)
 
-            # Only IPv4 TCP packets
             if not ip_pkt.haslayer(TCP):
                 nfpacket.accept()
                 self.stats.accepted += 1
@@ -403,7 +359,6 @@ class MLIPS:
             tcp_pkt = ip_pkt[TCP]
             tcp_payload = bytes(tcp_pkt.payload) if tcp_pkt.payload else b""
 
-            # Skip responses and non-request packets
             if not self.should_inspect(ip_pkt, tcp_pkt, tcp_payload):
                 nfpacket.accept()
                 self.stats.accepted += 1
@@ -466,7 +421,6 @@ class MLIPS:
 
         except Exception as e:
             self.stats.errors += 1
-            # fail-open behavior: accept on error
             LOG.error("ERROR processing packet: %s", e, exc_info=True)
             try:
                 nfpacket.accept()
@@ -474,10 +428,6 @@ class MLIPS:
             except Exception:
                 pass
             self._maybe_report()
-
-# ──────────────────────────────────────────────────────────────────────────────
-# CLI and main
-# ──────────────────────────────────────────────────────────────────────────────
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Run ML IPS on NFQUEUE (queue 3 by default).")
@@ -510,7 +460,6 @@ def main() -> int:
 
     require_root()
 
-    # Validate artifacts exist
     for f in (args.meta, args.vectorizer, args.model):
         if not Path(f).exists():
             LOG.error("Missing required file: %s", Path(f).resolve())
@@ -525,7 +474,6 @@ def main() -> int:
     LOG.info("Loaded artifacts. threshold=%.8f strip_param_names=%s max_decode_passes=%d selector=%s",
              art.threshold, art.strip_param_names, art.max_decode_passes, "yes" if art.selector else "no")
 
-    # Parse ports
     ports: Tuple[int, ...] = tuple(
         int(p.strip()) for p in args.ports.split(",") if p.strip().isdigit()
     )

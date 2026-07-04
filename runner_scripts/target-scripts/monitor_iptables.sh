@@ -1,21 +1,13 @@
 #!/bin/bash
-# ============================================================
-#  target-scripts/monitor_iptables.sh
-#  Memantau statistik packet counter pada MANGLE dan FILTER
-#  secara real-time menggunakan loop.
-#  Berguna untuk membuktikan berapa paket yang di-NFQUEUE.
-# ============================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# ── Logging Setup ──────────────────────────────────────────────
 LOG_DIR="$SCRIPT_DIR/saved_logs/target"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/log-nomor 1_monitor_iptables.txt"
 exec > >(tee -a "$LOG_FILE") 2>&1
 echo "[LOG] Logging dimulai: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "[LOG] File log: $LOG_FILE"
-# ───────────────────────────────────────────────────────────────
 
 INTERVAL=2  # refresh setiap N detik
 
@@ -34,8 +26,6 @@ echo ""
 
 sleep 2
 
-# Gunakan while-loop agar output bisa di-tee ke file log
-# (watch tidak kompatibel dengan exec > >(tee ...))
 trap 'echo ""; echo "[LOG] Monitor iptables dihentikan: $(date "+%Y-%m-%d %H:%M:%S")"; exit 0' SIGINT SIGTERM
 
 while true; do
