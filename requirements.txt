@@ -1,6 +1,12 @@
+# home install: sudo apt install libnetfilter-queue-dev python3-dev build-essential
+# Install semua library:
+#   pip install -r requirements.txt
+
 numpy>=1.23
+scipy>=1.10
 scikit-learn>=1.2
-xgboost>=1.7
+xgboost>=2.0
 joblib>=1.2
-scapy>=2.5
+pandas>=1.5
 NetfilterQueue>=1.0.0
+scapy>=2.5
