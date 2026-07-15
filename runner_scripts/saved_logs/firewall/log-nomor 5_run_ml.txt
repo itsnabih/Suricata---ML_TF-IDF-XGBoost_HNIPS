@@ -4490,3 +4490,20 @@
 2026-07-04 09:49:18 - INFO - STATS total=100 inspected=3 accept=100 drop=0 errors=0
 2026-07-04 09:58:53 - INFO - Signal 2 received, stopping...
 2026-07-04 09:58:53 - INFO - FINAL STATS total=122 inspected=3 accept=122 drop=0 errors=0
+[LOG] Logging dimulai: 2026-07-13 08:39:11
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 5_run_ml.txt
+
+   NODE FIREWALL 2: ML RUNNER (XGBoost)   
+
+ ML Runner akan menginspeksi traffic di NFQUEUE 3
+ Setiap payload yang terdeteksi akan ditampilkan real-time.
+ Format: [KEPUTUSAN] Payload | Probabilitas Serangan: X.XX%
+ Tekan Ctrl+C untuk menghentikan.
+
+--------------------------------------------------------
+
+2026-07-13 08:39:16 - INFO - Loaded artifacts. threshold=0.95285835 strip_param_names=True max_decode_passes=3 selector=yes
+2026-07-13 08:39:16 - INFO - Inspecting destination ports: (80, 8080, 8000)
+2026-07-13 08:39:16 - INFO - Binding to NFQUEUE 3 ... (dry_run=False)
+2026-07-13 08:41:03 - INFO - Signal 2 received, stopping...
+2026-07-13 08:41:03 - INFO - FINAL STATS total=0 inspected=0 accept=0 drop=0 errors=0

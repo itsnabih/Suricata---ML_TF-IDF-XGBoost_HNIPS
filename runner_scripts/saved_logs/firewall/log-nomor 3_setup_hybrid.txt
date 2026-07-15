@@ -123,3 +123,44 @@ Chain DOCKER-INTERNAL (0 references)
     Jalankan: firewall-scripts/run_suricata.sh di Terminal 1
     Jalankan: firewall-scripts/run_ml.sh di Terminal 2
 
+[LOG] Logging dimulai: 2026-07-13 08:36:45
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 3_setup_hybrid.txt
+
+     SETUP IPTABLES: SKENARIO 3 - HYBRID (Cascade)         
+  Flow: Attacker -> MANGLE/Suricata(Q2) -> FILTER/ML(Q3)     
+
+[1/4] Mengaktifkan route-queue Suricata (agar paket diteruskan ke ML setelah ACCEPT)...
+      OK route-queue: 3 diaktifkan di suricata.yaml
+[2/4] Menerapkan Garda PERTAMA: Suricata di tabel MANGLE (Queue 2)...
+      OK [MANGLE] OUTPUT -> NFQUEUE 2 (Suricata)
+      OK [MANGLE] INPUT  ← NFQUEUE 2 (Suricata)
+[3/4] Menerapkan Garda KEDUA: ML di tabel FILTER (Queue 3)...
+      OK [FILTER] OUTPUT -> NFQUEUE 3 (ML Runner)
+      OK [FILTER] INPUT  ← NFQUEUE 3 (ML Runner)
+[4/4] Verifikasi kedua tabel iptables:
+
+  --- TABEL MANGLE (Garda 1: Suricata) ---
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 2
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 2
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+
+  --- TABEL FILTER (Garda 2: ML Runner) ---
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       172.17.0.2           0.0.0.0/0            tcp spt:80 NFQUEUE num 3
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+1        0     0 NFQUEUE    tcp  --  *      *       0.0.0.0/0            172.17.0.2           tcp dpt:80 NFQUEUE num 3
+Chain DOCKER (1 references)
+Chain DOCKER-BRIDGE (1 references)
+Chain DOCKER-CT (1 references)
+Chain DOCKER-FORWARD (1 references)
+Chain DOCKER-INTERNAL (1 references)
+
+[OK]  IPTables Skenario 3 (Hybrid) berhasil dikonfigurasi!
+    Jalankan: firewall-scripts/run_suricata.sh di Terminal 1
+    Jalankan: firewall-scripts/run_ml.sh di Terminal 2
+
