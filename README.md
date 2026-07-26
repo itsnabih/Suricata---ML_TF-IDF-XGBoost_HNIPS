@@ -126,5 +126,3 @@ runner_scripts/saved_logs/
 ├── firewall/   # Log setup iptables, Suricata alert, ML Runner output
 └── target/     # Log monitor iptables, web access log, raw traffic
 ```
-
-Log-log tersebut dapat digunakan untuk melengkapi hasil **Bab 4 (Implementasi)** dan **Bab 5 (Pengujian)** Skripsi, membuktikan bahwa **traffic SQLi benar-benar berhasil diblokir (DROP)** di level jaringan!
