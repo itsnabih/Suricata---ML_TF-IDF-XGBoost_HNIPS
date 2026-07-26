@@ -38,7 +38,7 @@ def normalize_encoded(text: str, max_passes: int = 3) -> str:
         if result == prev:
             break
     return result
-
+ 
 def extract_payload_values(raw: str, strip_param_names: bool = True, max_decode_passes: int = 3) -> str:
     if not raw or not isinstance(raw, str):
         return ""

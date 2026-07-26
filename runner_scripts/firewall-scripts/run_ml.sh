@@ -12,7 +12,7 @@ echo "[LOG] File log: $LOG_FILE"
 
 ML_SCRIPT="$PROJECT_DIR/model_ML_run.py"
 QUEUE_NUM="3"
-
+ 
 echo ""
 echo "   NODE FIREWALL 2: ML RUNNER (XGBoost)   "
 echo ""

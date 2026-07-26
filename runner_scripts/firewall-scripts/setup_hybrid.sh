@@ -23,7 +23,7 @@ echo ""
 echo "[1/4] Mengaktifkan route-queue Suricata (agar paket diteruskan ke ML setelah ACCEPT)..."
 sudo sed -i 's/#  route-queue: 3/  route-queue: 3/' "$SURICATA_CONF" 2>/dev/null
 echo "      OK route-queue: 3 diaktifkan di suricata.yaml"
-
+ 
 echo "[2/4] Menerapkan Garda PERTAMA: Suricata di tabel MANGLE (Queue $SURICATA_QUEUE)..."
 sudo iptables -t mangle -I OUTPUT -p tcp -d "$TARGET_IP" --dport "$TARGET_PORT" -j NFQUEUE --queue-num "$SURICATA_QUEUE"
 sudo iptables -t mangle -I INPUT  -p tcp -s "$TARGET_IP" --sport "$TARGET_PORT" -j NFQUEUE --queue-num "$SURICATA_QUEUE"

@@ -29,7 +29,7 @@ XGBOOST_MAJOR = int(xgboost.__version__.split(".")[0])
 _RE_HTTP_LINE   = re.compile(r"^(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+", re.IGNORECASE)
 _RE_PATH_PREFIX = re.compile(r"^(?:/[^?#]*)?\?", re.IGNORECASE)
 _RE_VALID_KEY   = re.compile(r"^[A-Za-z_][A-Za-z0-9_\-\.]*$")
-
+ 
 _BIAS_PARAM_KEYS = re.compile(
     r"(?:^|&)Submit=[^&]*",  # parameter Submit (DVWA artifact)
     re.IGNORECASE

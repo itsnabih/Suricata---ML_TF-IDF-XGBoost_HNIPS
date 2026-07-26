@@ -78,3 +78,19 @@
 
 [OK]  Cleanup selesai. Environment siap untuk skenario baru.
 
+[LOG] Logging dimulai: 2026-07-22 10:04:17
+[LOG] File log: /home/ubuntu/Documents/HNIPS_project/runner_scripts/saved_logs/firewall/log-nomor 6_cleanup.txt
+
+         CLEANUP / RESET ENV          
+
+[1/4] Mematikan proses Suricata...
+      - Suricata tidak berjalan.
+[2/4] Mematikan proses ML Runner...
+      OK ML Runner dihentikan.
+[3/4] Membersihkan iptables tabel FILTER...
+      OK Tabel filter bersih.
+[4/4] Membersihkan iptables tabel MANGLE...
+      OK Tabel mangle bersih.
+
+[OK]  Cleanup selesai. Environment siap untuk skenario baru.
+

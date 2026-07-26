@@ -23,7 +23,7 @@ targets = {
     'Null Byte': 20,
     'Misc (Fingerprint/DB/File/Order)': 30,
     'Basic Quote/Comment': 200
-}
+} 
 
 buckets = {k: [] for k in categories.keys()}
 unmatched = []
