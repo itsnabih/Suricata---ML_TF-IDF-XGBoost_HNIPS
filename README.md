@@ -60,36 +60,71 @@ Karena pengujian ini bersifat *authenticated SQLi* (menyerang halaman beranda ya
 
 ## Workflow Skenario Pengujian
 
-Penelitian ini memiliki tiga skenario pengujian utama untuk membandingkan performa model Hibrida, yang seluruhnya otomatis dijalankan melalui skrip Bash.
+Pengujian dilakukan secara **modular dengan multi-terminal**. Setiap skenario membutuhkan beberapa terminal yang menjalankan skrip secara terpisah berdasarkan peran node-nya. Seluruh skrip berada di dalam direktori `runner_scripts/`.
 
-**Cara Menjalankan Pengujian:**
-```bash
-sudo ./run_tests.sh
-```
+### Struktur Skrip (`runner_scripts/`)
 
-**Skenario yang Berjalan Secara Otomatis:**
-1. **Skenario 1: Suricata Only**
-   - Hanya Suricata yang berjalan mendengarkan NFQUEUE. 
-   - Berfungsi untuk melihat seberapa banyak serangan SQLMap yang bisa di- *block* oleh *rule* statis.
-2. **Skenario 2: ML Only**
-   - Hanya skrip Python XGBoost (`model_ML_run.py`) yang berjalan pada NFQUEUE.
-   - Menguji keandalan deteksi ML secara murni dengan akurasi model V2 yang mencapai di atas 99%.
-3. **Skenario 3: Hybrid (Suricata + ML)**
-   - Menggabungkan keduanya. Paket masuk akan melewati Suricata terlebih dahulu. Jika gagal terdeteksi (lolos *signature*), paket akan diteruskan ke NFQUEUE Python untuk dianalisis oleh AI. Ini merupakan arsitektur utama penelitian ini.
+| Subdirektori | Peran (Node) | Skrip | Fungsi |
+|---|---|---|---|
+| `firewall-scripts/` | **Firewall** | `setup_suricata_only.sh` | Setup iptables Skenario 1 (Suricata Only) |
+| | | `setup_ml_only.sh` | Setup iptables Skenario 2 (ML Only) |
+| | | `setup_hybrid.sh` | Setup iptables Skenario 3 (Hybrid Cascade) |
+| | | `run_suricata.sh` | Menjalankan Suricata pada NFQUEUE 2 |
+| | | `run_ml.sh` | Menjalankan ML Runner (XGBoost) pada NFQUEUE 3 |
+| `target-scripts/` | **Target** | `monitor_web_log.sh` | Memantau log akses HTTP dari container DVWA |
+| | | `monitor_iptables.sh` | Memantau counter paket iptables secara *real-time* |
+| | | `monitor_raw_traffic.sh` | Menampilkan *raw* HTTP traffic via `tcpdump` |
+| `attacker-scripts/` | **Attacker** | `send_attack.sh` | Mengirim payload SQLi dari file `sqli_payloads.txt` |
+| | | `send_normal.sh` | Mengirim *traffic* normal dari file `dvwa_wordlist.txt` |
+| | | `send_sqlmap.sh` | Menjalankan serangan `sqlmap` otomatis |
+| `operation/` | **Operasional** | `cleanup.sh` | Reset environment (kill proses, flush iptables) |
+| | | `reset_logs.sh` | Mengosongkan semua log (Suricata, DVWA, dll.) |
+
+### Langkah Pengujian Per-Skenario
+
+> **Catatan**: Sebelum memulai setiap skenario, jalankan `cleanup.sh` lalu `reset_logs.sh` untuk memastikan lingkungan bersih.
+
+#### Skenario 1: Suricata Only
+Hanya Suricata yang berjalan mendengarkan NFQUEUE. Menguji seberapa banyak serangan yang bisa di-*block* oleh *rule* statis.
+
+| Terminal | Perintah | Keterangan |
+|---|---|---|
+| **Terminal 1** (Firewall) | `sudo bash firewall-scripts/setup_suricata_only.sh` | Setup iptables → NFQUEUE 2 |
+| | `sudo bash firewall-scripts/run_suricata.sh` | Jalankan Suricata (real-time alert) |
+| **Terminal 2** (Target) | `sudo bash target-scripts/monitor_web_log.sh` | Pantau log akses DVWA |
+| **Terminal 3** (Attacker) | `sudo bash attacker-scripts/send_attack.sh` | Kirim payload SQLi |
+
+#### Skenario 2: ML Only
+Hanya skrip Python XGBoost (`model_ML_run.py`) yang berjalan pada NFQUEUE. Menguji keandalan deteksi ML secara murni.
+
+| Terminal | Perintah | Keterangan |
+|---|---|---|
+| **Terminal 1** (Firewall) | `sudo bash firewall-scripts/setup_ml_only.sh` | Setup iptables → NFQUEUE 3 |
+| | `sudo bash firewall-scripts/run_ml.sh` | Jalankan ML Runner (real-time log) |
+| **Terminal 2** (Target) | `sudo bash target-scripts/monitor_web_log.sh` | Pantau log akses DVWA |
+| **Terminal 3** (Attacker) | `sudo bash attacker-scripts/send_attack.sh` | Kirim payload SQLi |
+
+#### Skenario 3: Hybrid (Suricata + ML)
+Arsitektur utama penelitian. Paket melewati Suricata (MANGLE/Q2) terlebih dahulu, lalu diteruskan ke ML Runner (FILTER/Q3) untuk inspeksi lanjutan.
+
+| Terminal | Perintah | Keterangan |
+|---|---|---|
+| **Terminal 1** (Firewall) | `sudo bash firewall-scripts/setup_hybrid.sh` | Setup iptables → MANGLE Q2 + FILTER Q3 |
+| | `sudo bash firewall-scripts/run_suricata.sh` | Jalankan Suricata (Garda 1) |
+| **Terminal 2** (Firewall) | `sudo bash firewall-scripts/run_ml.sh` | Jalankan ML Runner (Garda 2) |
+| **Terminal 3** (Target) | `sudo bash target-scripts/monitor_web_log.sh` | Pantau log akses DVWA |
+| **Terminal 4** (Attacker) | `sudo bash attacker-scripts/send_attack.sh` | Kirim payload SQLi |
+
+> **Tips**: Untuk pengujian *False Positive*, ganti skrip attacker dengan `send_normal.sh` yang mengirimkan *traffic* normal. Request yang terblokir (status `000`/timeout) menandakan *false positive*.
 
 ### Hasil Log & Analisis
-Setiap selesai menjalankan skenario, skrip `run_tests.sh` akan secara otomatis menyalin dan mengekspor seluruh log aktivitas dari Docker DVWA, Log Iptables, Suricata, dan *stdout* ML ke dalam direktori:
-`data-hasil_pengujian/`
+Seluruh *output* dari setiap skrip secara otomatis tersimpan ke dalam direktori `runner_scripts/saved_logs/`:
 
-Struktur *output* pengujian:
 ```text
-data-hasil_pengujian/
-├── 01_suricata_only/
-├── 02_ml_only/
-└── 03_hybrid/
-    ├── firewall/  # (Log iptables, log Suricata eve.json/fast.log, dll.)
-    ├── target/    # (Log akses HTTP dari container DVWA)
-    └── user/      # (Log aktivitas serangan dari SQLmap)
+runner_scripts/saved_logs/
+├── attacker/   # Log serangan (send_attack, send_normal, send_sqlmap)
+├── firewall/   # Log setup iptables, Suricata alert, ML Runner output
+└── target/     # Log monitor iptables, web access log, raw traffic
 ```
 
-Anda dapat menggunakan log-log tersebut untuk melengkapi hasil Bab 4 (Implementasi) dan Bab 5 (Pengujian) Skripsi Anda, membuktikan bahwa **traffic SQLMap benar-benar berhasil diblokir (DROP)** di level jaringan!
+Log-log tersebut dapat digunakan untuk melengkapi hasil **Bab 4 (Implementasi)** dan **Bab 5 (Pengujian)** Skripsi, membuktikan bahwa **traffic SQLi benar-benar berhasil diblokir (DROP)** di level jaringan!
